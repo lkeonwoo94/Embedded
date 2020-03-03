@@ -5,8 +5,31 @@
 ---
 > C 전처리문
 ```C
-#define foo(x) #x    // # 연산자는 매개변수를 문자화 하는 연산자입니다
+#define foo(x) #x    // # 연산자는 매개변수를 문자화 하는 연산자입니다              
 #define foo(x) X##n   // ## 연산자는 토큰들을 결합합니다. X(1)이라고 하면 X1 변수를 입력한것과 동일합니다.
+```
+
+> Compiler vs Interpreter
+```
+             |       +----------+    +-------------+
+   Translate |       | Compiler |    |             |
+             v       +----------+    |             |
+             |       +----------+    | Interpreter |
+   Execute   |       |  Process |    |             |
+             v       +----------+    +-------------+
+              
+
+```
+> Build Process
+
+```
+<--------------------------------------------------------Build Process------------------------------------------------------>
+        Compiler                     Linker     +-> map file         format converter
+C/C++ -----------> Object file -------------------> ELF / DWARF -----------------------> hex file -----> Flash/ROM programmer
+                  ^                                 ^
+                  |                                 |
+Assembly ---------+                                lib & 
+          Assembler                            start-up code
 ```
 
 ---
