@@ -30,17 +30,6 @@
               
 
 ```
-> Build Process
-
-```
-<--------------------------------------------------------Build Process------------------------------------------------------>
-        Compiler                     Linker     +-> map file         format converter
-C/C++ -----------> Object file -------------------> ELF / DWARF -----------------------> hex file -----> Flash/ROM programmer
-                  ^                                 ^
-                  |                                 |
-Assembly ---------+                                lib & 
-          Assembler                            start-up code
-```
 
 ---
 
