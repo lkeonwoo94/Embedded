@@ -1,6 +1,16 @@
 # Embedded
 임베디드에 대해 학습해봅니다
 
+---
+# 임베디드 시스템 학습을 위해 필요한 선수지식
+1. [C]()
+2. Mapping of memory : DRAM or SRAM, ROM, EEPROM, or Flash memory (Memory system 이해)
+3. Communication with peripheral units : device support, accessing special function registers(SFR) (register 이해)
+4. Event handling : interrupt functions (interrupt vector)
+5. System startup : start-up code
+6. Real-time OS
+
+
 
 ---
 > C 전처리문
