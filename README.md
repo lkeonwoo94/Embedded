@@ -3,21 +3,16 @@
 
 ---
 # 임베디드 시스템 학습을 위해 필요한 선수지식
-1. [C]()
+1. [C language](https://github.com/lkeonwoo94/Embedded/edit/master/1.C.md)
 2. Mapping of memory : DRAM or SRAM, ROM, EEPROM, or Flash memory (Memory system 이해)
 3. Communication with peripheral units : device support, accessing special function registers(SFR) (register 이해)
 4. Event handling : interrupt functions (interrupt vector)
 5. System startup : start-up code
 6. Real-time OS
 
-
-
 ---
-> C 전처리문
-```C
-#define foo(x) #x    // # 연산자는 매개변수를 문자화 하는 연산자입니다              
-#define foo(x) X##n   // ## 연산자는 토큰들을 결합합니다. X(1)이라고 하면 X1 변수를 입력한것과 동일합니다.
-```
+
+
 
 > Compiler vs Interpreter
 ```
