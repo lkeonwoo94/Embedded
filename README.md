@@ -14,19 +14,6 @@
 
 
 
-> Compiler vs Interpreter
-```
-             |       +----------+    +-------------+
-   Translate |       | Compiler |    |             |
-             v       +----------+    |             |
-             |       +----------+    | Interpreter |
-   Execute   |       |  Process |    |             |
-             v       +----------+    +-------------+
-              
-
-```
-
----
 
 > 역공학(Reversing) - Decompiler
 ```
