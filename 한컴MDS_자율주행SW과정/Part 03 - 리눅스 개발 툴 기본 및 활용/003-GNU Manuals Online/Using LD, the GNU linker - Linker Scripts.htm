@@ -1,0 +1,2458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html -->
+<HTML><HEAD><TITLE>Using LD, the GNU linker - Linker Scripts</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ks_c_5601-1987"><!-- Created by texi2html 1.56k from ld.texinfo on 26 July 2001 -->
+<META content="MSHTML 6.00.2800.1505" name=GENERATOR></HEAD>
+<BODY>Go to the <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_1.html">first</A>, <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html">previous</A>, 
+<A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_4.html">next</A>, 
+<A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_9.html">last</A> 
+section, <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html">table of 
+contents</A>. 
+<P>
+<HR>
+
+<P><!-- <H1><A NAME="SEC6" HREF="ld_toc.html#TOC6">Linker Scripts</A></H1> --><BR><FONT 
+color=blue>
+<H1><A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC6" 
+name=SEC6>링커 스크립트</A></H1></FONT>
+<P><A name=IDX244></A><A name=IDX245></A><A name=IDX246></A>Every link is 
+controlled by a <EM>linker script</EM>. This script is written in the linker 
+command language. <BR><FONT color=blue>
+<P>모든 링크 과정은 <EM>링커 스크립트</EM>가 조정한다. 이 스크립트는 링커 명령 언어로 쓰여진다. </FONT>
+<P>The main purpose of the linker script is to describe how the sections in the 
+input files should be mapped into the output file, and to control the memory 
+layout of the output file. Most linker scripts do nothing more than this. 
+However, when necessary, the linker script can also direct the linker to perform 
+many other operations, using the commands described below. <BR><FONT color=blue>
+<P>링커 스크립트의 주목적은 입력파일의 섹션이 어떻게 출력파일로 대응하는지와 출력파일의 메모리 상태를 어떻게 조정하는지를 지정하는 것이다. 
+대부분 링커 스크립트는 이것으로 충분하다. 그러나 필요하다는 아래 명령어들을 사용하여 링커에 다른 작업을 지시할 수도 있다. </FONT>
+<P>The linker always uses a linker script. If you do not supply one yourself, 
+the linker will use a default script that is compiled into the linker 
+executable. You can use the <SAMP>`--verbose'</SAMP> command line option to 
+display the default linker script. Certain command line options, such as 
+<SAMP>`-r'</SAMP> or <SAMP>`-N'</SAMP>, will affect the default linker script. 
+<BR><FONT color=blue>
+<P>링커는 항상 링커 스크립트를 사용한다. 직접 제공하지 않으면 링커는 링커 실행파일에 컴파일된 기본 스크립트를 사용한다. 
+<SAMP>`--verbose'</SAMP> 옵션을 사용하여 기본 링커 스크립트를 볼 수 있다. <SAMP>`-r'</SAMP>나 
+<SAMP>`-N'</SAMP> 같은 옵션으로 기본 링커 스크립트에 영향을 줄 수 있다. </FONT>
+<P>You may supply your own linker script by using the <SAMP>`-T'</SAMP> command 
+line option. When you do this, your linker script will replace the default 
+linker script. <BR><FONT color=blue>
+<P><SAMP>`-T'</SAMP> 옵션으로 자신의 링커 스크립트을 사용할 수 있다. 이 옵션을 사용하면 이 스크립트가 기본 링커 스크립트를 
+대체한다. </FONT>
+<P>You may also use linker scripts implicitly by naming them as input files to 
+the linker, as though they were files to be linked. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC49">Implicit 
+Linker Scripts</A>. <BR><FONT color=blue>
+<P>또 링커 스크립트를 링크될 파일은 아니지만 링커에 입력파일로 사용할 수도 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC49">Implicit 
+Linker Scripts</A>를 참조하라. </FONT><!-- <H2><A NAME="SEC7" HREF="ld_toc.html#TOC7">Basic Linker Script Concepts</A></H2> --><BR><FONT 
+color=blue>
+<H2><A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC7" 
+name=SEC7>링커 스크립트 기본 개념</A></H2></FONT>
+<P><A name=IDX247></A>We need to define some basic concepts and vocabulary in 
+order to describe the linker script language. <BR><FONT color=blue>
+<P>링커 스크립트 언어를 설명하기 위해서 기본 개념과 단어를 설명해야 한다. </FONT>
+<P>The linker combines input files into a single output file. The output file 
+and each input file are in a special data format known as an <EM>object file 
+format</EM>. Each file is called an <EM>object file</EM>. The output file is 
+often called an <EM>executable</EM>, but for our purposes we will also call it 
+an object file. Each object file has, among other things, a list of 
+<EM>sections</EM>. We sometimes refer to a section in an input file as an 
+<EM>input section</EM>; similarly, a section in the output file is an <EM>output 
+section</EM>. <BR><FONT color=blue>링커는 입력파일을 합쳐서 하나의 출력파일을 만든다. 출력파일과 각 입력파일은 
+<EM>오브젝트 파일 형식</EM>이라는 특수한 형식으로 쓰여진다. 각 파일을 <EM>오브젝트 파일</EM>이라 한다. 출력 파일이 종종 
+<EM>실행파일</EM>이라고도 불리지만 이도 또한 오브젝트 파일이라 부를 것이다. 각 오브젝트 파일은 우선 <EM>섹션</EM> 목록을 
+포함한다. 입력파일의 섹션을 <EM>입력 섹션</EM>이라고 한다. 비슷하게 출력파일의 섹션을 <EM>출력 섹션</EM>이라 한다. 
+</FONT>
+<P>Each section in an object file has a name and a size. Most sections also have 
+an associated block of data, known as the <EM>section contents</EM>. A section 
+may be marked as <EM>loadable</EM>, which mean that the contents should be 
+loaded into memory when the output file is run. A section with no contents may 
+be <EM>allocatable</EM>, which means that an area in memory should be set aside, 
+but nothing in particular should be loaded there (in some cases this memory must 
+be zeroed out). A section which is neither loadable nor allocatable typically 
+contains some sort of debugging information. <BR><FONT color=blue>
+<P>오브젝트 파일의 각 섹션의 이름과 크기를 가진다. 섹션은 대부분 <EM>섹션 내용</EM>이라는 연관된 자료를 가진다. 
+<EM>로드가능한</EM> 표시가 된 섹션은 출력파일이 실행될 때 그 내용이 메모리로 읽혀져야한다는 것을 의미한다. 내용이 없는 섹션도 
+<EM>할당가능할</EM> 수 있다. 다른 말로 메모리의 일부가 할당되지만 특별히 어떤 것도 그곳에 읽혀지지 않을 수 있다. (보통 이 메모리는 
+0으로 채워진다.) 로드가능하지도 할당가능하지도 않은 섹션은 보통 일종의 디버그 정보를 가진다. </FONT>
+<P>Every loadable or allocatable output section has two addresses. The first is 
+the <EM>VMA</EM>, or virtual memory address. This is the address the section 
+will have when the output file is run. The second is the <EM>LMA</EM>, or load 
+memory address. This is the address at which the section will be loaded. In most 
+cases the two addresses will be the same. An example of when they might be 
+different is when a data section is loaded into ROM, and then copied into RAM 
+when the program starts up (this technique is often used to initialize global 
+variables in a ROM based system). In this case the ROM address would be the LMA, 
+and the RAM address would be the VMA. <BR><FONT color=blue>
+<P>모든 로드가능하고 할당가능한 출력 섹션은 두 주소를 가진다. 첫째는 가상 메모리 주소(virtual memory address)인 
+<EM>VMA</EM>이다. 이는 출력파일이 실행될 때 섹션이 위치하는 주소이다. 두번째는 로드 메모리 주소(load memory 
+address)인 <EM>LMA</EM>이다. 대부분 이 두 주소는 같다. 다른 경우의 예는 프로그램이 시작될 때 자료 섹션을 ROM에서 읽어서 
+RAM에 복사하는 경우이다. (이 기법은 ROM 기반 시스템에서 전역 변수를 초기화하기 위해 사용된다.) 이 경우 ROM 주소가 LMA이고, 
+RAM 주소가 VMA이 된다. </FONT>
+<P>You can see the sections in an object file by using the <CODE>objdump</CODE> 
+program with the <SAMP>`-h'</SAMP> option. <BR><FONT color=blue>
+<P><CODE>objdump</CODE> 프로그램의 <SAMP>`-h'</SAMP> 옵션으로 오브젝트 파일의 섹션을 확인할 수 있다. 
+</FONT>
+<P>Every object file also has a list of <EM>symbols</EM>, known as the 
+<EM>symbol table</EM>. A symbol may be defined or undefined. Each symbol has a 
+name, and each defined symbol has an address, among other information. If you 
+compile a C or C++ program into an object file, you will get a defined symbol 
+for every defined function and global or static variable. Every undefined 
+function or global variable which is referenced in the input file will become an 
+undefined symbol. <BR><FONT color=blue>
+<P>모든 오브젝트 파일은 또한 <EM>심볼표</EM>라는 <EM>심볼</EM> 목록을 가진다. 심볼은 정의되거나 정의되지 않을 수 있다. 각 
+심볼은 우선 이름을 가지고, 정의된 심볼은 주소를 가진다. C나 C++ 프로그램을 오브젝트 파일로 컴파일하면 모든 정의된 함수와 전역 또는 정적 
+변수의 정의된 심볼을 얻는다. 입력파일에서 참조하는 모든 정의되지 않은 함수나 전역 변수는 정의되지 않은 심볼이 된다. </FONT>
+<P>You can see the symbols in an object file by using the <CODE>nm</CODE> 
+program, or by using the <CODE>objdump</CODE> program with the <SAMP>`-t'</SAMP> 
+option. <BR><FONT color=blue>
+<P>오브젝트 파일의 심볼들을 <CODE>nm</CODE> 프로그램이나, <CODE>objdump</CODE> 프로그램의 
+<SAMP>`-t'</SAMP> 옵션으로 볼 수 있다. </FONT><!-- <H2><A NAME="SEC8" HREF="ld_toc.html#TOC8">Linker Script Format</A></H2> --><BR><FONT 
+color=blue>
+<H2><A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC8" 
+name=SEC8>링커 스크립트 형식</A></H2></FONT>
+<P><A name=IDX248></A>Linker scripts are text files. <BR><FONT color=blue>
+<P>링커 스크립트는 일반 텍스트 파일이다. </FONT>
+<P>You write a linker script as a series of commands. Each command is either a 
+keyword, possibly followed by arguments, or an assignment to a symbol. You may 
+separate commands using semicolons. Whitespace is generally ignored. <BR><FONT 
+color=blue>
+<P>스크립트는 일련의 명령어로 이루어져 있다. 각 명령어는 키워드로 뒤에 아규먼트를 가지거나, 심볼에 할당될 수 있다. `;'으로 각 명령어를 
+구분한다. 공백은 일반적으로 무시된다. </FONT>
+<P>Strings such as file or format names can normally be entered directly. If the 
+file name contains a character such as a comma which would otherwise serve to 
+separate file names, you may put the file name in double quotes. There is no way 
+to use a double quote character in a file name. <BR><FONT color=blue>
+<P>파일이나 형식 이름과 같은 문자열은 보통 직접 입력한다. 파일명이 보통 파일명을 구분하는 `,' 같은 문자를 포함한다면 파일명을 쌍따옴표 
+안에 두어라. 파일명에 쌍따옴표를 사용할 수 없다. </FONT>
+<P>You may include comments in linker scripts just as in C, delimited by 
+<SAMP>`/*'</SAMP> and <SAMP>`*/'</SAMP>. As in C, comments are syntactically 
+equivalent to whitespace. <BR><FONT color=blue>
+<P>링커 스크립트에 C와 같이 <SAMP>`/*'</SAMP>와 <SAMP>`*/'</SAMP>로 둘려싸인 주석을 포함할 수 있다. C와 
+같이, 주석은 공백과 같이 취급된다. </FONT><!-- <H2><A NAME="SEC9" HREF="ld_toc.html#TOC9">Simple Linker Script Example</A></H2> --><BR><FONT 
+color=blue>
+<H2><A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC9" 
+name=SEC9>링커 스크립트의 간단한 예</A></H2></FONT>
+<P><A name=IDX249></A><A name=IDX250></A>Many linker scripts are fairly simple. 
+<BR><FONT color=blue>
+<P>많은 링커 스크립트는 매우 간단하다. </FONT>
+<P>The simplest possible linker script has just one command: 
+<SAMP>`SECTIONS'</SAMP>. You use the <SAMP>`SECTIONS'</SAMP> command to describe 
+the memory layout of the output file. <BR><FONT color=blue>
+<P>가장 간단한 링커 스크립트는 <SAMP>`SECTIONS'</SAMP>이라는 단 하나의 명령어를 가진다. 
+<SAMP>`SECTIONS'</SAMP> 명령어는 출력파일의 메모리 구조를 기술한다. </FONT>
+<P>The <SAMP>`SECTIONS'</SAMP> command is a powerful command. Here we will 
+describe a simple use of it. Let's assume your program consists only of code, 
+initialized data, and uninitialized data. These will be in the 
+<SAMP>`.text'</SAMP>, <SAMP>`.data'</SAMP>, and <SAMP>`.bss'</SAMP> sections, 
+respectively. Let's assume further that these are the only sections which appear 
+in your input files. <BR><FONT color=blue>
+<P><SAMP>`SECTIONS'</SAMP> 명령어는 강력한 명령어다. 여기서는 간단한 사용을 보여준다. 프로그램이 코드, 초기화된 자료, 
+초기화되지 않은 자료로만 이루어진다고 가정하자. 이는 각각 <SAMP>`.text'</SAMP>, <SAMP>`.data'</SAMP>, 
+<SAMP>`.bss'</SAMP> 섹션이다. 또, 입력파일에 이 섹션들만 나온다고 가정하자. </FONT>
+<P>For this example, let's say that the code should be loaded at address 
+0x10000, and that the data should start at address 0x8000000. Here is a linker 
+script which will do that: <BR><FONT color=blue>
+<P>이 예에서 코드가 주소 0x10000에 로드되고 자료는 0x8000000에서 시작한다고 하자. 다음은 이에 대한 링커 스크립트이다. <PRE>SECTIONS
+{
+  . = 0x10000;
+  .text : { *(.text) }
+  . = 0x8000000;
+  .data : { *(.data) }
+  .bss : { *(.bss) }
+}
+</PRE></FONT>
+<P>You write the <SAMP>`SECTIONS'</SAMP> command as the keyword 
+<SAMP>`SECTIONS'</SAMP>, followed by a series of symbol assignments and output 
+section descriptions enclosed in curly braces. <BR><FONT color=blue>
+<P><SAMP>`SECTIONS'</SAMP> 명령어는 <SAMP>`SECTIONS'</SAMP> 키워드 다음에 대괄호로 묶인 일련의 심볼 
+할당과 출력 섹션 명이 나온다. </FONT>
+<P>The first line inside the <SAMP>`SECTIONS'</SAMP> command of the above 
+example sets the value of the special symbol <SAMP>`.'</SAMP>, which is the 
+location counter. If you do not specify the address of an output section in some 
+other way (other ways are described later), the address is set from the current 
+value of the location counter. The location counter is then incremented by the 
+size of the output section. At the start of the <SAMP>`SECTIONS'</SAMP> command, 
+the location counter has the value <SAMP>`0'</SAMP>. <BR><FONT color=blue>
+<P>위의 예에서 <SAMP>`SECTIONS'</SAMP> 명령어 안의 첫 줄은 위치 카운터인 특별 심볼 <SAMP>`.'</SAMP>의 값을 
+설정한다. (아래에서 설명할) 다른 방법으로 출력 섹션의 주소를 설정하지 않으면 위치 카운터의 현재 값이 사용된다. 위치 카운터는 출력 섹션의 
+크기만큼 증가한다. <SAMP>`SECTIONS'</SAMP> 명령 처음에는 위치 카운터는 <SAMP>`0'</SAMP>이다. </FONT>
+<P>The second line defines an output section, <SAMP>`.text'</SAMP>. The colon is 
+required syntax which may be ignored for now. Within the curly braces after the 
+output section name, you list the names of the input sections which should be 
+placed into this output section. The <SAMP>`*'</SAMP> is a wildcard which 
+matches any file name. The expression <SAMP>`*(.text)'</SAMP> means all 
+<SAMP>`.text'</SAMP> input sections in all input files. <BR><FONT color=blue>
+<P>두번째 줄은 출력 섹션 <SAMP>`.text'</SAMP>을 정의한다. `:'은 현재는 넘어가지만 필요하다. 그 뒤에 나오는 대괄호 안에 
+출력 섹션에 추가할 입력 섹션 이름을 열거한다. The <SAMP>`*'</SAMP>는 어떤 파일명에도 대응한다. 
+<SAMP>`*(.text)'</SAMP>는 모든 입력파일의 모든 입력 섹션 <SAMP>`.text'</SAMP>을 의미한다. </FONT>
+<P>Since the location counter is <SAMP>`0x10000'</SAMP> when the output section 
+<SAMP>`.text'</SAMP> is defined, the linker will set the address of the 
+<SAMP>`.text'</SAMP> section in the output file to be <SAMP>`0x10000'</SAMP>. 
+<BR><FONT color=blue>
+<P>출력 섹션 <SAMP>`.text'</SAMP>이 정의될 때 위치 카운터가 <SAMP>`0x10000'</SAMP>이므로 링커는 
+출력파일에서 <SAMP>`.text'</SAMP> 섹션의 주소를 <SAMP>`0x10000'</SAMP>로 한다. </FONT>
+<P>The remaining lines define the <SAMP>`.data'</SAMP> and <SAMP>`.bss'</SAMP> 
+sections in the output file. The linker will place the <SAMP>`.data'</SAMP> 
+output section at address <SAMP>`0x8000000'</SAMP>. After the linker places the 
+<SAMP>`.data'</SAMP> output section, the value of the location counter will be 
+<SAMP>`0x8000000'</SAMP> plus the size of the <SAMP>`.data'</SAMP> output 
+section. The effect is that the linker will place the <SAMP>`.bss'</SAMP> output 
+section immediately after the <SAMP>`.data'</SAMP> output section in memory 
+<BR><FONT color=blue>
+<P>나머지 줄은 출력파일의 <SAMP>`.data'</SAMP>, <SAMP>`.bss'</SAMP> 섹션을 정의한다. 링커는 출력 섹션 
+<SAMP>`.data'</SAMP>을 주소 <SAMP>`0x8000000'</SAMP>에 위치한다. 그 후 위치 카운터는 
+<SAMP>`0x8000000'</SAMP> 더하기 출력 섹션 <SAMP>`.data'</SAMP>의 크기가 된다. 그 결과 링커는 출력 섹션 
+<SAMP>`.bss'</SAMP>을 메모리에서 출력 섹션 <SAMP>`.data'</SAMP> 바로 뒤에 위치시킨다. </FONT>
+<P>The linker will ensure that each output section has the required alignment, 
+by increasing the location counter if necessary. In this example, the specified 
+addresses for the <SAMP>`.text'</SAMP> and <SAMP>`.data'</SAMP> sections will 
+probably satisfy any alignment constraints, but the linker may have to create a 
+small gap between the <SAMP>`.data'</SAMP> and <SAMP>`.bss'</SAMP> sections. 
+<BR><FONT color=blue>
+<P>링커는 필요하다면 위치 카운터를 증가하여 각 출력 섹션이 올바로 정렬되게 한다. 이 경우 <SAMP>`.text'</SAMP> 섹션과 
+<SAMP>`.data'</SAMP> 셕션의 지정된 주소는 어떤 정렬 제약에도 만족할 것이다. 그러나 <SAMP>`.data'</SAMP>와 
+<SAMP>`.bss'</SAMP> 사이에 작은 공간이 빌 것이다. </FONT>
+<P>That's it! That's a simple and complete linker script. <BR><FONT color=blue>
+<P>이게 모두다! 완전하고 간단한 링커 스크립트이다. </FONT><!-- <H2><A NAME="SEC10" HREF="ld_toc.html#TOC10">Simple Linker Script Commands</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC10" 
+name=SEC10>간단한 링커 스크립트 명령어</A></H2></FONT>
+<P><A name=IDX251></A>In this section we describe the simple linker script 
+commands. <BR><FONT color=blue>
+<P>여기서 간단한 링커 스크립트 명령을 설명한다. </FONT><!-- <H3><A NAME="SEC11" HREF="ld_toc.html#TOC11">Setting the entry point</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC11" 
+name=SEC11>진입점을 설정하기</A></H3></FONT>
+<P><A name=IDX252></A><A name=IDX253></A><A name=IDX254></A><A 
+name=IDX255></A>The first instruction to execute in a program is called the 
+<EM>entry point</EM>. You can use the <CODE>ENTRY</CODE> linker script command 
+to set the entry point. The argument is a symbol name: <BR><FONT color=blue>
+<P>프로그램에서 처음으로 실행되는 명령이 <EM>진입점</EM>이다. <CODE>ENTRY</CODE> 명령어로 진입점을 설정한다. 아규먼트는 
+심볼이름이다. <PRE>ENTRY(<VAR>symbol</VAR>)
+</PRE></FONT>
+<P>There are several ways to set the entry point. The linker will set the entry 
+point by trying each of the following methods in order, and stopping when one of 
+them succeeds: 
+<UL>
+  <LI>the <SAMP>`-e'</SAMP> <VAR>entry</VAR> command-line option; 
+  <LI>the <CODE>ENTRY(<VAR>symbol</VAR>)</CODE> command in a linker script; 
+  <LI>the value of the symbol <CODE>start</CODE>, if defined; 
+  <LI>the address of the first byte of the <SAMP>`.text'</SAMP> section, if 
+  present; 
+  <LI>The address <CODE>0</CODE>. </LI></UL><BR><FONT color=blue>
+<P>진입점을 설정하는 방법은 많다. 링커는 다음 방법을 성공할 때까지 순서대로 시도한다. 
+<UL>
+  <LI><SAMP>`-e'</SAMP> <VAR>entry</VAR> 옵션 
+  <LI>링커 스크립트의 <CODE>ENTRY(<VAR>symbol</VAR>)</CODE> 명령어 
+  <LI><CODE>start</CODE> 심볼이 정의되있다면 심볼 값 
+  <LI><SAMP>`.text'</SAMP> 섹션이 있다면 첫 바이트 주소 
+  <LI>주소 <CODE>0</CODE> </LI></UL></FONT><!-- <H3><A NAME="SEC12" HREF="ld_toc.html#TOC12">Commands dealing with files</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC12" 
+name=SEC12>파일을 다루는 명령어</A></H3></FONT>
+<P><A name=IDX256></A>Several linker script commands deal with files. <BR><FONT 
+color=blue>
+<P>많은 링커 스크립트 명령어는 파일을 다룬다. </FONT>
+<DL compact>
+  <DT><CODE>INCLUDE <VAR>filename</VAR></CODE> 
+  <DD><A name=IDX257></A><A name=IDX258></A>Include the linker script 
+  <VAR>filename</VAR> at this point. The file will be searched for in the 
+  current directory, and in any directory specified with the <CODE>-L</CODE> 
+  option. You can nest calls to <CODE>INCLUDE</CODE> up to 10 levels deep. 
+  <BR><FONT color=blue>이 지점에서 링커 스크립트 <VAR>filename</VAR>를 포함한다. 파일은 현재 디렉토리와 
+  <CODE>-L</CODE> 옵션으로 주어진 디렉토리에서 검색한다. <CODE>INCLUDE</CODE>를 10 단계까지 사용할 수 있다. 
+  </FONT>
+  <DT><CODE>INPUT(<VAR>file</VAR>, <VAR>file</VAR>, ...)</CODE> 
+  <DD>
+  <DT><CODE>INPUT(<VAR>file</VAR> <VAR>file</VAR> ...)</CODE> 
+  <DD><A name=IDX259></A><A name=IDX260></A><A name=IDX261></A><A 
+  name=IDX262></A>The <CODE>INPUT</CODE> command directs the linker to include 
+  the named files in the link, as though they were named on the command line. 
+  For example, if you always want to include <TT>`subr.o'</TT> any time you do a 
+  link, but you can't be bothered to put it on every link command line, then you 
+  can put <SAMP>`INPUT (subr.o)'</SAMP> in your linker script. In fact, if you 
+  like, you can list all of your input files in the linker script, and then 
+  invoke the linker with nothing but a <SAMP>`-T'</SAMP> option. The linker will 
+  first try to open the file in the current directory. If it is not found, the 
+  linker will search through the archive library search path. See the 
+  description of <SAMP>`-L'</SAMP> in section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>. If you use <SAMP>`INPUT (-l<VAR>file</VAR>)'</SAMP>, 
+  <CODE>ld</CODE> will transform the name to <CODE>lib<VAR>file</VAR>.a</CODE>, 
+  as with the command line argument <SAMP>`-l'</SAMP>. When you use the 
+  <CODE>INPUT</CODE> command in an implicit linker script, the files will be 
+  included in the link at the point at which the linker script file is included. 
+  This can affect archive searching. <BR><FONT color=blue><CODE>INPUT</CODE> 
+  명령어는 링커가 파일들을 마치 명령행에 있는 것 처럼 포함하게 한다. 예를 들면 링크할 때마다 <TT>`subr.o'</TT>를 포함하고 
+  싶다면, 매번 명령행에 이를 적어주지 않고 링크 스크립트에 <SAMP>`INPUT (subr.o)'</SAMP>를 포함하면 된다. 원한다면 
+  모든 입력파일을 링커 스크립트에 적어주고 아무것도 없이 <SAMP>`-T'</SAMP> 옵션만으로 링커를 실행해도 된다. 링커는 먼저 현재 
+  디렉토리에서 파일을 찾으려 시도한다. 발견되지 않으면 링커는 아카이브 라이브러리 검색 패스에서 검색한다. <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>의 <SAMP>`-L'</SAMP> 옵션 설명을 참조하라. <SAMP>`INPUT 
+  (-l<VAR>file</VAR>)'</SAMP>을 사용하면 명령행 옵션 <SAMP>`-l'</SAMP>과 같이 
+  <CODE>lib<VAR>file</VAR>.a</CODE>를 찾는다. <CODE>INPUT</CODE> 명령어를 사용하면 링커 스크립트가 
+  포함된는 시점에서 파일을 링크에 포함한다. 이는 아카이브 검색에 영향을 준다. </FONT>
+  <DT><CODE>GROUP(<VAR>file</VAR>, <VAR>file</VAR>, ...)</CODE> 
+  <DD>
+  <DT><CODE>GROUP(<VAR>file</VAR> <VAR>file</VAR> ...)</CODE> 
+  <DD><A name=IDX263></A><A name=IDX264></A>The <CODE>GROUP</CODE> command is 
+  like <CODE>INPUT</CODE>, except that the named files should all be archives, 
+  and they are searched repeatedly until no new undefined references are 
+  created. See the description of <SAMP>`-('</SAMP> in section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>. <BR><FONT color=blue><CODE>GROUP</CODE> 명령어는 
+  <CODE>INPUT</CODE>와 같지만, 파일이 모두 아카이브 파일이어야 하며, 정의되지 않은 참조가 새로 만들어지지 않을 때까지 
+  반복해서 검색된다. <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>의 <SAMP>`-('</SAMP> 옵션 설명을 참고하라. </FONT>
+  <DT><CODE>OUTPUT(<VAR>filename</VAR>)</CODE> 
+  <DD><A name=IDX265></A><A name=IDX266></A>The <CODE>OUTPUT</CODE> command 
+  names the output file. Using <CODE>OUTPUT(<VAR>filename</VAR>)</CODE> in the 
+  linker script is exactly like using <SAMP>`-o <VAR>filename</VAR>'</SAMP> on 
+  the command line (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>). If both are used, the command line option takes precedence. 
+  You can use the <CODE>OUTPUT</CODE> command to define a default name for the 
+  output file other than the usual default of <TT>`a.out'</TT>. <BR><FONT 
+  color=blue><CODE>OUTPUT</CODE> 명령어는 출력파일의 이름을 지정한다. 링커 스크립트의 
+  <CODE>OUTPUT(<VAR>filename</VAR>)</CODE>는 명령행 옵션인 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>를 참조) <SAMP>`-o <VAR>filename</VAR>'</SAMP>과 동일하다. 둘 다 사용하면 
+  명령행 옵션이 우선순위를 가진다. <CODE>OUTPUT</CODE> 명령어를 사용하지 않으면 기본값으로 <TT>`a.out'</TT>이 
+  사용된다. </FONT>
+  <DT><CODE>SEARCH_DIR(<VAR>path</VAR>)</CODE> 
+  <DD><A name=IDX267></A><A name=IDX268></A><A name=IDX269></A><A 
+  name=IDX270></A>The <CODE>SEARCH_DIR</CODE> command adds <VAR>path</VAR> to 
+  the list of paths where <CODE>ld</CODE> looks for archive libraries. Using 
+  <CODE>SEARCH_DIR(<VAR>path</VAR>)</CODE> is exactly like using <SAMP>`-L 
+  <VAR>path</VAR>'</SAMP> on the command line (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>). If both are used, then the linker will search both paths. 
+  Paths specified using the command line option are searched first. <BR><FONT 
+  color=blue><CODE>SEARCH_DIR</CODE> 명령어는 아카이브 라이브러리를 검색하는 패스에 <VAR>path</VAR>를 
+  추가한다. <CODE>SEARCH_DIR(<VAR>path</VAR>)</CODE>는 명령행 옵션 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A> 참조) <SAMP>`-L <VAR>path</VAR>'</SAMP>와 동일하다. 둘 다 사용하면 링커는 모두를 
+  패스에 추가한다. 명령행 옵션으로 지정된 패스가 먼저 검색된다. </FONT>
+  <DT><CODE>STARTUP(<VAR>filename</VAR>)</CODE> 
+  <DD><A name=IDX271></A><A name=IDX272></A>The <CODE>STARTUP</CODE> command is 
+  just like the <CODE>INPUT</CODE> command, except that <VAR>filename</VAR> will 
+  become the first input file to be linked, as though it were specified first on 
+  the command line. This may be useful when using a system in which the entry 
+  point is always the start of the first file. <BR><FONT 
+  color=blue><CODE>STARTUP</CODE> 명령어는 <VAR>filename</VAR>이 명령행 처음에 나온 것 처럼 가장 
+  먼저 링크하는 것을 제외하고는 <CODE>INPUT</CODE> 명령어와 같다. 이 명령어는 진입점이 항상 첫 파일의 시작인 시스템에서 
+  유용하다. </FONT></DD></DL><!-- <H3><A NAME="SEC13" HREF="ld_toc.html#TOC13">Commands dealing with object file formats</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC13" 
+name=SEC13>오브젝트 파일 형식을 다루는 명령어</A></H3></FONT>
+<P>A couple of linker script commands deal with object file formats. <BR><FONT 
+color=blue>
+<P>다음은 오브젝트 파일 형식을 다루는 링커 스크립트 명령어들이다. </FONT>
+<DL compact>
+  <DT><CODE>OUTPUT_FORMAT(<VAR>bfdname</VAR>)</CODE> 
+  <DD>
+  <DT><CODE>OUTPUT_FORMAT(<VAR>default</VAR>, <VAR>big</VAR>, 
+  <VAR>little</VAR>)</CODE> 
+  <DD><A name=IDX273></A><A name=IDX274></A>The <CODE>OUTPUT_FORMAT</CODE> 
+  command names the BFD format to use for the output file (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A>). 
+  Using <CODE>OUTPUT_FORMAT(<VAR>bfdname</VAR>)</CODE> is exactly like using 
+  <SAMP>`-oformat <VAR>bfdname</VAR>'</SAMP> on the command line (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>). If both are used, the command line option takes precedence. 
+  You can use <CODE>OUTPUT_FORMAT</CODE> with three arguments to use different 
+  formats based on the <SAMP>`-EB'</SAMP> and <SAMP>`-EL'</SAMP> command line 
+  options. This permits the linker script to set the output format based on the 
+  desired endianness. If neither <SAMP>`-EB'</SAMP> nor <SAMP>`-EL'</SAMP> are 
+  used, then the output format will be the first argument, <VAR>default</VAR>. 
+  If <SAMP>`-EB'</SAMP> is used, the output format will be the second argument, 
+  <VAR>big</VAR>. If <SAMP>`-EL'</SAMP> is used, the output format will be the 
+  third argument, <VAR>little</VAR>. For example, the default linker script for 
+  the MIPS ELF target uses this command: <BR><FONT 
+  color=blue><CODE>OUTPUT_FORMAT</CODE> 명령어는 출력파일에 사용할 BFD 형식 이름을 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A> 
+  참조) 지정한다. <CODE>OUTPUT_FORMAT(<VAR>bfdname</VAR>)</CODE>는 명령행 옵션 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A> 참조) <SAMP>`-oformat <VAR>bfdname</VAR>'</SAMP>과 동일하다. 둘 다 
+  사용하면 명령행 옵션이 우선순위를 가진다. <CODE>OUTPUT_FORMAT</CODE>을 세 아규먼트와 사용하여 명령행 옵션 
+  <SAMP>`-EB'</SAMP>나 <SAMP>`-EL'</SAMP>로 다른 형식을 지정할 수도 있다. 그래서 원하는 endian에 따라 
+  출력 형식을 지정한다. <SAMP>`-EB'</SAMP>와 <SAMP>`-EL'</SAMP> 둘 다 사용하지 않으면 출력 형식은 첫 
+  아규먼트인 <VAR>default</VAR>이다. <SAMP>`-EB'</SAMP>를 사용하면 출력 형식은 두번째 아규먼트인 
+  <VAR>big</VAR>이다. <SAMP>`-EL'</SAMP>를 사용하면 출력 형식은 세번째 아규먼트인 
+  <VAR>little</VAR>이다. 예를 들어 MIPS ELF의 기본 링커 스크립트는 다음 명령어를 사용한다. <PRE>OUTPUT_FORMAT(elf32-bigmips, elf32-bigmips, elf32-littlemips)
+</PRE></FONT>This says that the default format for the output file is 
+  <SAMP>`elf32-bigmips'</SAMP>, but if the user uses the <SAMP>`-EL'</SAMP> 
+  command line option, the output file will be created in the 
+  <SAMP>`elf32-littlemips'</SAMP> format. <BR><FONT color=blue>이는 출력파일 기본 형식으로 
+  <SAMP>`elf32-bigmips'</SAMP>을 사용하지만, <SAMP>`-EL'</SAMP> 옵션을 사용하면 
+  <SAMP>`elf32-littlemips'</SAMP> 형식을 사용한다. </FONT>
+  <DT><CODE>TARGET(<VAR>bfdname</VAR>)</CODE> 
+  <DD><A name=IDX275></A><A name=IDX276></A>The <CODE>TARGET</CODE> command 
+  names the BFD format to use when reading input files. It affects subsequent 
+  <CODE>INPUT</CODE> and <CODE>GROUP</CODE> commands. This command is like using 
+  <SAMP>`-b <VAR>bfdname</VAR>'</SAMP> on the command line (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A>). If the <CODE>TARGET</CODE> command is used but 
+  <CODE>OUTPUT_FORMAT</CODE> is not, then the last <CODE>TARGET</CODE> command 
+  is also used to set the format for the output file. See section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A>. 
+  <BR><FONT color=blue><CODE>TARGET</CODE> 명령어는 입력파일의 BFD 형식을 지정한다. 이 명령어는 뒤에 
+  나오는 <CODE>INPUT</CODE>와 <CODE>GROUP</CODE> 명령어에 영향을 준다. 이 명령어는 명령행 옵션 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html#SEC3">Command 
+  Line Options</A> 참조) <SAMP>`-b <VAR>bfdname</VAR>'</SAMP>과 동일하다. 
+  <CODE>OUTPUT_FORMAT</CODE>을 사용하지 않고 <CODE>TARGET</CODE>만 사용한다면, 마지막 
+  <CODE>TARGET</CODE> 명령어가 출력파일 형식도 지정한다. <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A>를 
+  참조하라. </FONT></DD></DL><!-- <H3><A NAME="SEC14" HREF="ld_toc.html#TOC14">Other linker script commands</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC14" 
+name=SEC14>기타 링커 스크립트 명령어들</A></H3></FONT>
+<P>There are a few other linker scripts commands. <BR><FONT color=blue>다음은 기타 
+명령어들이다. </FONT>
+<DL compact>
+  <DT><CODE>ASSERT(<VAR>exp</VAR>, <VAR>message</VAR>)</CODE> 
+  <DD><A name=IDX277></A><A name=IDX278></A>Ensure that <VAR>exp</VAR> is 
+  non-zero. If it is zero, then exit the linker with an error code, and print 
+  <VAR>message</VAR>. <BR><FONT color=blue><VAR>exp</VAR>가 0이 아닌지를 확인한다. 만약 0이라면 
+  <VAR>message</VAR>를 출력하고 오류코드로 링커를 종료한다. </FONT>
+  <DT><CODE>EXTERN(<VAR>symbol</VAR> <VAR>symbol</VAR> ...)</CODE> 
+  <DD><A name=IDX279></A><A name=IDX280></A>Force <VAR>symbol</VAR> to be 
+  entered in the output file as an undefined symbol. Doing this may, for 
+  example, trigger linking of additional modules from standard libraries. You 
+  may list several <VAR>symbol</VAR>s for each <CODE>EXTERN</CODE>, and you may 
+  use <CODE>EXTERN</CODE> multiple times. This command has the same effect as 
+  the <SAMP>`-u'</SAMP> command-line option. <BR><FONT 
+  color=blue><VAR>symbol</VAR>을 출력파일에 정의되지 않은 심볼로 포함시킨다. 그래서 표준 라이브러리에서 추가로 모듈이 
+  링크되게 만든다. 각 <CODE>EXTERN</CODE>에 여러 <VAR>symbol</VAR>를 열거하거나, 
+  <CODE>EXTERN</CODE>를 여려번 사용할 수 있다. 이 명령어는 명령행 옵션 <SAMP>`-u'</SAMP>과 동일하다. 
+  </FONT>
+  <DT><CODE>FORCE_COMMON_ALLOCATION</CODE> 
+  <DD><A name=IDX281></A><A name=IDX282></A>This command has the same effect as 
+  the <SAMP>`-d'</SAMP> command-line option: to make <CODE>ld</CODE> assign 
+  space to common symbols even if a relocatable output file is specified 
+  (<SAMP>`-r'</SAMP>). <BR><FONT color=blue>이 명령어는 출력을 재배치가능하게 
+  (<SAMP>`-r'</SAMP>) 지정하였어도 공통 심볼에 공간을 할당하게하는, 명령행 옵션 <SAMP>`-d'</SAMP>과 동일하다. 
+  </FONT>
+  <DT><CODE>NOCROSSREFS(<VAR>section</VAR> <VAR>section</VAR> ...)</CODE> 
+  <DD><A name=IDX283></A><A name=IDX284></A>This command may be used to tell 
+  <CODE>ld</CODE> to issue an error about any references among certain output 
+  sections. In certain types of programs, particularly on embedded systems when 
+  using overlays, when one section is loaded into memory, another section will 
+  not be. Any direct references between the two sections would be errors. For 
+  example, it would be an error if code in one section called a function defined 
+  in the other section. The <CODE>NOCROSSREFS</CODE> command takes a list of 
+  output section names. If <CODE>ld</CODE> detects any cross references between 
+  the sections, it reports an error and returns a non-zero exit status. Note 
+  that the <CODE>NOCROSSREFS</CODE> command uses output section names, not input 
+  section names. <BR><FONT color=blue>이 명령어는 어떤 출력 섹션들 간의 참조를 오류로 보고한다. 오버레이를 
+  사용하는 임베디드 시스템에서와 같이 특정 종류의 프로그램에서 한 섹션은 메모리에 로드되고, 다른 섹션은 로드안될 경우가 있다. 이 경우 두 
+  섹션간의 직접 참조는 오류이다. 예를 들어 한 섹션이 다른 섹션에서 정의된 함수를 호출하면 오류가 발생한다. 
+  <CODE>NOCROSSREFS</CODE> 명령어는 출력 섹션 이름의 목록을 받는다. 이 섹션들 간의 교차참조를 발견하면 오류를 알리고 
+  0이 아닌 오류값으로 프로그램을 종료한다. 주의! <CODE>NOCROSSREFS</CODE>는 입력 섹션 이름이 아니라 출력 섹션 이릉을 
+  사용한다. </FONT>
+  <DT><CODE>OUTPUT_ARCH(<VAR>bfdarch</VAR>)</CODE> 
+  <DD><A name=IDX285></A><A name=IDX286></A><A name=IDX287></A>Specify a 
+  particular output machine architecture. The argument is one of the names used 
+  by the BFD library (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A>). 
+  You can see the architecture of an object file by using the 
+  <CODE>objdump</CODE> program with the <SAMP>`-f'</SAMP> option. <BR><FONT 
+  color=blue>출력 아키텍쳐를 정한다. 아규먼트는 BFD 라이브러리에서 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_5.html#SEC56">BFD</A> 
+  참조) 사용하는 이름 중 하나이다. 가능한 아키텍쳐는 <CODE>objdump</CODE> 프로그램의 <SAMP>`-f'</SAMP> 
+  옵션으로 알 수 있다. </FONT></DD></DL><!-- <H2><A NAME="SEC15" HREF="ld_toc.html#TOC15">Assigning Values to Symbols</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC15" 
+name=SEC15>심볼에 값을 대입하기</A></H2></FONT>
+<P><A name=IDX288></A><A name=IDX289></A><A name=IDX290></A>You may assign a 
+value to a symbol in a linker script. This will define the symbol as a global 
+symbol. <BR><FONT color=blue>
+<P>링커 스크립트에서 심볼에 값을 대입할 수 있다. 그러면 심볼을 전역 심볼로 정의한다. </FONT><!-- <H3><A NAME="SEC16" HREF="ld_toc.html#TOC16">Simple Assignments</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC16" 
+name=SEC16>간단한 대입</A></H3></FONT>
+<P>You may assign to a symbol using any of the C assignment operators: <BR><FONT 
+color=blue>
+<P>C 대입 연산자를 사용하여 심볼에 값을 대입한다. 
+<DL compact>
+  <DT><CODE><VAR>symbol</VAR> = <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> += <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> -= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> *= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> /= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> &lt;&lt;= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> &gt;&gt;= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> &amp;= <VAR>expression</VAR> ;</CODE> 
+  <DD>
+  <DT><CODE><VAR>symbol</VAR> |= <VAR>expression</VAR> ;</CODE> 
+  <DD></DD></DL></FONT>
+<P>The first case will define <VAR>symbol</VAR> to the value of 
+<VAR>expression</VAR>. In the other cases, <VAR>symbol</VAR> must already be 
+defined, and the value will be adjusted accordingly. 
+<P>The special symbol name <SAMP>`.'</SAMP> indicates the location counter. You 
+may only use this within a <CODE>SECTIONS</CODE> command. 
+<P>The semicolon after <VAR>expression</VAR> is required. 
+<P>Expressions are defined below; see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>. <BR><FONT color=blue>
+<P>첫번째 경우는 표현식 <VAR>expression</VAR> 값을 <VAR>symbol</VAR>에 대입한다. 다른 경우는 이미 정의되있는 
+<VAR>symbol</VAR>의 값을 변경한다. 
+<P>특별히 <SAMP>`.'</SAMP>는 위치 카운터를 나타낸다. 위치 카운터는 <CODE>SECTIONS</CODE> 명령어에서 
+설명되었다. 
+<P><VAR>expression</VAR> 뒤의 `;'는 필수이다. 
+<P>표현식은 <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>에서 설명된다. </FONT>
+<P>You may write symbol assignments as commands in their own right, or as 
+statements within a <CODE>SECTIONS</CODE> command, or as part of an output 
+section description in a <CODE>SECTIONS</CODE> command. 
+<P>The section of the symbol will be set from the section of the expression; for 
+more information, see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC47">The 
+Section of an Expression</A>. 
+<P>Here is an example showing the three different places that symbol assignments 
+may be used: <BR><FONT color=blue>
+<P>심볼 대입을 <CODE>SECTIONS</CODE> 명령어 안에서, 혹은 <CODE>SECTIONS</CODE>의 출력 섹션 기술의 
+일부로, 아니면 별도로 사용할 수 있다. 
+<P>표현식으로 섹션에 상대적인 심볼을 설정한다. 자세한 내용은 <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC47">The 
+Section of an Expression</A>을 참고하라. 
+<P>아래는 심볼 대입이 사용되는 세 다른 경우의 예이다. <PRE>floating_point = 0;
+SECTIONS
+{
+  .text :
+    {
+      *(.text)
+      _etext = .;
+    }
+  _bdata = (. + 3) &amp; ~ 4;
+  .data : { *(.data) }
+}
+</PRE></FONT>
+<P>In this example, the symbol <SAMP>`floating_point'</SAMP> will be defined as 
+zero. The symbol <SAMP>`_etext'</SAMP> will be defined as the address following 
+the last <SAMP>`.text'</SAMP> input section. The symbol <SAMP>`_bdata'</SAMP> 
+will be defined as the address following the <SAMP>`.text'</SAMP> output section 
+aligned upward to a 4 byte boundary. <BR><FONT color=blue>위에서 
+<SAMP>`floating_point'</SAMP> 심볼은 0으로 정의된다. <SAMP>`_etext'</SAMP> 심볼은 마지막 
+<SAMP>`.text'</SAMP> 입력 섹션 뒤의 주소로 정의된다. <SAMP>`_bdata'</SAMP> 심볼은 
+<SAMP>`.text'</SAMP> 출력 섹션 뒤에서 4 바이트 경계로 정렬된 주소로 정의된다. </FONT><!-- <H3><A NAME="SEC17" HREF="ld_toc.html#TOC17">PROVIDE</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC17" 
+name=SEC17>PROVIDE</A></H3></FONT>
+<P><A name=IDX291></A>In some cases, it is desirable for a linker script to 
+define a symbol only if it is referenced and is not defined by any object 
+included in the link. For example, traditional linkers defined the symbol 
+<SAMP>`etext'</SAMP>. However, ANSI C requires that the user be able to use 
+<SAMP>`etext'</SAMP> as a function name without encountering an error. The 
+<CODE>PROVIDE</CODE> keyword may be used to define a symbol, such as 
+<SAMP>`etext'</SAMP>, only if it is referenced but not defined. The syntax is 
+<CODE>PROVIDE(<VAR>symbol</VAR> = <VAR>expression</VAR>)</CODE>. 
+<P>Here is an example of using <CODE>PROVIDE</CODE> to define 
+<SAMP>`etext'</SAMP>: <BR><FONT color=blue>
+<P>참조는 되지만 링크에 포함된 어떤 객체에서도 정의되지 않은 심볼을 정의할 필요가 있을 수 있다. 예를 들면 전통적인 링커는 심볼 
+<SAMP>`etext'</SAMP>를 정의한다. 그러나 ANSI C에서는 사용자가 <SAMP>`etext'</SAMP>을 함수이름으로 아무 
+문제없이 사용할 수 있다. 키워드 <CODE>PROVIDE</CODE>은 <SAMP>`etext'</SAMP> 같이 참조는 되지만 정의되지 않은 
+심볼을 정의할 때 쓰인다. 문법은 <CODE>PROVIDE(<VAR>symbol</VAR> = 
+<VAR>expression</VAR>)</CODE>과 같다. <PRE>SECTIONS
+{
+  .text :
+    {
+      *(.text)
+      _etext = .;
+      PROVIDE(etext = .);
+    }
+}
+</PRE></FONT>
+<P>In this example, if the program defines <SAMP>`_etext'</SAMP> (with a leading 
+underscore), the linker will give a multiple definition error. If, on the other 
+hand, the program defines <SAMP>`etext'</SAMP> (with no leading underscore), the 
+linker will silently use the definition in the program. If the program 
+references <SAMP>`etext'</SAMP> but does not define it, the linker will use the 
+definition in the linker script. <BR><FONT color=blue>
+<P>이 경우 프로그램이 (`_'으로 시작하는) <SAMP>`_etext'</SAMP>을 정의하면 링커는 중복 정의 오류를 낸다. 그러나 
+(`_'으로 시작하지 않는) <SAMP>`etext'</SAMP>을 정의하면 링커는 프로그램의 정의를 사용한다. 프로그램이 
+<SAMP>`etext'</SAMP>을 정의하지 않고 참조만 한다면 링커는 링커 스크립트의 정의를 사용한다. </FONT><!-- <H2><A NAME="SEC18" HREF="ld_toc.html#TOC18">SECTIONS command</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC18" 
+name=SEC18>SECTIONS 명령어</A></H2></FONT>
+<P><A name=IDX292></A>The <CODE>SECTIONS</CODE> command tells the linker how to 
+map input sections into output sections, and how to place the output sections in 
+memory. 
+<P>The format of the <CODE>SECTIONS</CODE> command is: <BR><FONT color=blue>
+<P><CODE>SECTIONS</CODE> 명령어는 링커가 어떻게 입력 섹션을 출력 섹션으로 대응하고, 출력 섹션을 메모리에 위치하는지를 
+결정한다. 
+<P><CODE>SECTIONS</CODE>의 형식은 다음과 같다. <PRE>SECTIONS
+{
+  <VAR>sections-command</VAR>
+  <VAR>sections-command</VAR>
+  ...
+}
+</PRE></FONT>
+<P>Each <VAR>sections-command</VAR> may of be one of the following: 
+<UL>
+  <LI>an <CODE>ENTRY</CODE> command (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC11">Setting 
+  the entry point</A>) 
+  <LI>a symbol assignment (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+  Values to Symbols</A>) 
+  <LI>an output section description 
+  <LI>an overlay description </LI></UL><BR><FONT color=blue>
+<P>각 <VAR>sections-command</VAR>는 다음 중 하나이다. 
+<UL>
+  <LI><CODE>ENTRY</CODE> 명령어 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC11">Setting 
+  the entry point</A>를 참고) 
+  <LI>심볼 대입 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+  Values to Symbols</A> 참고) 
+  <LI>출력 섹션 기술 
+  <LI>오버레이 기술 </LI></UL></FONT>
+<P>The <CODE>ENTRY</CODE> command and symbol assignments are permitted inside 
+the <CODE>SECTIONS</CODE> command for convenience in using the location counter 
+in those commands. This can also make the linker script easier to understand 
+because you can use those commands at meaningful points in the layout of the 
+output file. 
+<P>Output section descriptions and overlay descriptions are described below. 
+<P>If you do not use a <CODE>SECTIONS</CODE> command in your linker script, the 
+linker will place each input section into an identically named output section in 
+the order that the sections are first encountered in the input files. If all 
+input sections are present in the first file, for example, the order of sections 
+in the output file will match the order in the first input file. The first 
+section will be at address zero. <BR><FONT color=blue>위치 카운터를 편리하게 사용하기 위해서 
+<CODE>ENTRY</CODE> 명령어와 심볼 대입은 <CODE>SECTIONS</CODE> 명령어 안에서 허용된다. 또 명령어를 의미있는 
+장소에 사용하여 링커 스크립트가 읽기 쉽게 된다. 
+<P>출력 섹션 기술과 오버레이 기술은 아래에서 설명된다. 
+<P>링커 스크립트에 <CODE>SECTIONS</CODE> 명령어가 없다면 링커는 입력 파일의 순서대로 각 입력 섹션을 같은 이름의 출력 
+섹션으로 대응시킨다. 예를 들어 첫째 파일에 모든 입력 섹션이 있다면 출력파일의 섹션 순서는 첫째 파일의 순서와 같다. 첫번째 섹션은 주소 
+0에서 시작한다. </FONT><!-- <H3><A NAME="SEC19" HREF="ld_toc.html#TOC19">Output section description</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC19" 
+name=SEC19>출력 섹션 기술</A></H3></FONT>
+<P>The full description of an output section looks like this: <BR><FONT 
+color=blue>
+<P>출력 섹션 기술은 다음과 같다. <PRE><VAR>section</VAR> [<VAR>address</VAR>] [(<VAR>type</VAR>)] : [AT(<VAR>lma</VAR>)]
+  {
+    <VAR>output-section-command</VAR>
+    <VAR>output-section-command</VAR>
+    ...
+  } [&gt;<VAR>region</VAR>] [AT&gt;<VAR>lma_region</VAR>] [:<VAR>phdr</VAR> :<VAR>phdr</VAR> ...] [=<VAR>fillexp</VAR>]
+</PRE></FONT>
+<P>Most output sections do not use most of the optional section attributes. 
+<P>The whitespace around <VAR>section</VAR> is required, so that the section 
+name is unambiguous. The colon and the curly braces are also required. The line 
+breaks and other white space are optional. <BR><FONT color=blue>
+<P>대부분 출력 섹션은 선택적인 섹션 속성을 사용하지 않는다. 
+<P>섹션 이름을 구별하기 위해서 <VAR>section</VAR> 주위에 공백이 필요하다. `:'과 대괄호도 필요하다. 줄바꿈과 기타 공백은 
+선택적이다. </FONT>
+<P>Each <VAR>output-section-command</VAR> may be one of the following: 
+<UL>
+  <LI>a symbol assignment (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+  Values to Symbols</A>) 
+  <LI>an input section description (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC22">Input 
+  section description</A>) 
+  <LI>data values to include directly (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC28">Output 
+  section data</A>) 
+  <LI>a special output section keyword (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC29">Output 
+  section keywords</A>) </LI></UL><BR><FONT color=blue>
+<P>각 <VAR>output-section-command</VAR>는 다음 중 하나이다. 
+<UL>
+  <LI>심볼 할당 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+  Values to Symbols</A> 참조) 
+  <LI>입력 섹션 기술 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC22">Input 
+  section description</A> 참조) 
+  <LI>직접 포함할 자료값 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC28">Output 
+  section data</A> 참조) 
+  <LI>특별한 출력 섹션 키워드 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC29">Output 
+  section keywords</A> 참조) </LI></UL></FONT><!-- <H3><A NAME="SEC20" HREF="ld_toc.html#TOC20">Output section name</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC20" 
+name=SEC20>출력 섹션 이름</A></H3></FONT>
+<P><A name=IDX293></A><A name=IDX294></A>The name of the output section is 
+<VAR>section</VAR>. <VAR>section</VAR> must meet the constraints of your output 
+format. In formats which only support a limited number of sections, such as 
+<CODE>a.out</CODE>, the name must be one of the names supported by the format 
+(<CODE>a.out</CODE>, for example, allows only <SAMP>`.text'</SAMP>, 
+<SAMP>`.data'</SAMP> or <SAMP>`.bss'</SAMP>). If the output format supports any 
+number of sections, but with numbers and not names (as is the case for Oasys), 
+the name should be supplied as a quoted numeric string. A section name may 
+consist of any sequence of characters, but a name which contains any unusual 
+characters such as commas must be quoted. 
+<P>The output section name <SAMP>`/DISCARD/'</SAMP> is special; section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC30">Output 
+section discarding</A>. <BR><FONT color=blue>
+<P>출력 섹션 이름은 <VAR>section</VAR>이다. <VAR>section</VAR>은 출력 형식의 제약을 만족해야 한다. 
+<CODE>a.out</CODE>과 같이 제한된 수의 섹션만을 지원하는 형식에서 이름은 형식이 지원하는 이름 중 하나이어야 한다. (예를 들어 
+<CODE>a.out</CODE>는 <SAMP>`.text'</SAMP>, <SAMP>`.data'</SAMP>, 
+<SAMP>`.bss'</SAMP>만이 가능하다.) (Oasys와 같이) 섹션의 수에는 제한이 없지만 섹션 이름이 숫자이어야 하는 형식에서 
+이름은 따옴표로 둘러싼 숫자 문자열이어야 한다. 섹션 이름으로 어떤 문자도 가능하나 `,'와 같은 문자를 포함한 경우에는 따옴표를 해야 한다. 
+<P>출력 섹션 이름으로 <SAMP>`/DISCARD/'</SAMP>은 특별하다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC30">Output 
+section discarding</A>를 참고하라. </FONT><!-- <H3><A NAME="SEC21" HREF="ld_toc.html#TOC21">Output section address</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC21" 
+name=SEC21>출력 섹션 주소</A></H3></FONT>
+<P><A name=IDX295></A><A name=IDX296></A>The <VAR>address</VAR> is an expression 
+for the VMA (the virtual memory address) of the output section. If you do not 
+provide <VAR>address</VAR>, the linker will set it based on <VAR>region</VAR> if 
+present, or otherwise based on the current value of the location counter. 
+<P>If you provide <VAR>address</VAR>, the address of the output section will be 
+set to precisely that. If you provide neither <VAR>address</VAR> nor 
+<VAR>region</VAR>, then the address of the output section will be set to the 
+current value of the location counter aligned to the alignment requirements of 
+the output section. The alignment requirement of the output section is the 
+strictest alignment of any input section contained within the output section. 
+<BR><FONT color=blue>
+<P><VAR>address</VAR>는 출력 섹션의 VMA로 쓰일 표현식이다. <VAR>address</VAR>를 사용하지 않은 경우 링커는 
+출력 섹션의 VMA로 <VAR>region</VAR>이 있다면 이에 기초하여 설정하고, 그렇지 않다면 위치 카운터의 현재 값에 기초하여 
+결정한다. 
+<P><VAR>address</VAR>가 주어지면 출력 섹션 주소로 정확히 그 값을 사용한다. <VAR>address</VAR>와 
+<VAR>region</VAR>이 주어지지 않으면 출력 섹션 주소로 위치 카운터의 현재 값을 출력 섹션의 정렬 요구에 따라 정렬하여 사용한다. 
+출력 섹션의 정렬 요구는 출력 섹션에 포함된 입력 섹션 중 가장 엄격한 정렬을 따른다. </FONT>
+<P>For example, <BR><FONT color=blue>
+<P>예를 들어, <PRE>.text . : { *(.text) }
+</PRE>
+<P>와 <PRE>.text : { *(.text) }
+</PRE></FONT>
+<P>are subtly different. The first will set the address of the 
+<SAMP>`.text'</SAMP> output section to the current value of the location 
+counter. The second will set it to the current value of the location counter 
+aligned to the strictest alignment of a <SAMP>`.text'</SAMP> input section. 
+<P>The <VAR>address</VAR> may be an arbitrary expression; section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>. For example, if you want to align the section on a 0x10 
+byte boundary, so that the lowest four bits of the section address are zero, you 
+could do something like this: <BR><FONT color=blue>는 다소 다르다. 첫번째는 
+<SAMP>`.text'</SAMP> 주소를 현재 위치 카운터로 설정한다. 두번째는 현재 위치 카운터를 입력 섹션 
+<SAMP>`.text'</SAMP>의 가장 엄격한 정렬에 정렬하여 사용한다. 
+<P><VAR>address</VAR>는 임의의 표현식이다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>를 참고하라. 예를 들어 섹션을 0x10 바이트 경계로 정렬하여 섹션 주소 하위 4 비트가 0이게 하려면 
+다음과 같이 하면 된다. <PRE>.text ALIGN(0x10) : { *(.text) }
+</PRE></FONT>
+<P>This works because <CODE>ALIGN</CODE> returns the current location counter 
+aligned upward to the specified value. 
+<P>Specifying <VAR>address</VAR> for a section will change the value of the 
+location counter. <BR><FONT color=blue>
+<P><CODE>ALIGN</CODE>는 현재 위치 카운터를 지정한 값으로 (큰 쪽으로) 정렬한다. 
+<P>섹션의 <VAR>address</VAR>을 주면 위치 카운터값도 변경된다. </FONT><!-- <H3><A NAME="SEC22" HREF="ld_toc.html#TOC22">Input section description</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC22" 
+name=SEC22>입력 섹션 기술</A></H3></FONT>
+<P><A name=IDX297></A><A name=IDX298></A>The most common output section command 
+is an input section description. 
+<P>The input section description is the most basic linker script operation. You 
+use output sections to tell the linker how to lay out your program in memory. 
+You use input section descriptions to tell the linker how to map the input files 
+into your memory layout. <BR><FONT color=blue>
+<P>대부분의 출력 섹션 명령어는 입력 섹션 기술에도 사용된다. 
+<P>입력 섹션 기술은 가장 기본적인 스크립트 기능이다. 링커에게 프로그램을 메모리에 어떻게 배치할지를 알려주기 위해서 출력 섹션을 사용한다. 
+링커에게 입력파일을 어떻게 메모리에 배치할지를 알려주기 위해서 입력 섹션 기술을 사용한다. </FONT><!-- <H4><A NAME="SEC23" HREF="ld_toc.html#TOC23">Input section basics</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC23" 
+name=SEC23>입력 섹션 기본</A></H4></FONT>
+<P><A name=IDX299></A>An input section description consists of a file name 
+optionally followed by a list of section names in parentheses. 
+<P>The file name and the section name may be wildcard patterns, which we 
+describe further below (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC24">Input 
+section wildcard patterns</A>). 
+<P>The most common input section description is to include all input sections 
+with a particular name in the output section. For example, to include all input 
+<SAMP>`.text'</SAMP> sections, you would write: <BR><FONT color=blue>
+<P>입력 섹션 기술은 파일명과 괄호안에 선택적인 섹션 이름 목록으로 이루어진다. 
+<P>파일명과 섹션 이름으로 아래 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC24">Input 
+section wildcard patterns</A> 참고) 설명할 와일드카드 패턴을 사용할 수 있다. 
+<P>대부분 입력 섹션 기술은 모든 입력 섹션과 출력 섹션에서 사용할 이름을 포함한다. 예를 들어 모든 입력 섹션 
+<SAMP>`.text'</SAMP>을 포함하려면, <PRE>*(.text)
+</PRE></FONT>
+<P>Here the <SAMP>`*'</SAMP> is a wildcard which matches any file name. To 
+exclude a list of files from matching the file name wildcard, EXCLUDE_FILE may 
+be used to match all files except the ones specified in the EXCLUDE_FILE list. 
+For example: <BR><FONT color=blue>여기서 <SAMP>`*'</SAMP>는 어떤 파일명에도 대응하는 와일드카드이다. 
+특정 목록의 파일을 제외하고 모든 파일에 대응하기 위해서 EXCLUDE_FILE를 사용한다. 예를 들면, <PRE>(*(EXCLUDE_FILE (*crtend.o *otherfile.o) .ctors))
+</PRE></FONT>
+<P>will cause all .ctors sections from all files except <TT>`crtend.o'</TT> and 
+<TT>`otherfile.o'</TT> to be included. 
+<P>There are two ways to include more than one section: <BR><FONT color=blue>
+<P>는 <TT>`crtend.o'</TT>나 <TT>`otherfile.o'</TT>가 포함되지 않은 모든 파일에서 모든 .ctors 섹션을 
+포함한다. 
+<P>한 섹션 이상을 포함하는 방법은 두가지가 있다. <PRE>*(.text .rdata)
+*(.text) *(.rdata)
+</PRE></FONT>
+<P>The difference between these is the order in which the <SAMP>`.text'</SAMP> 
+and <SAMP>`.rdata'</SAMP> input sections will appear in the output section. In 
+the first example, they will be intermingled. In the second example, all 
+<SAMP>`.text'</SAMP> input sections will appear first, followed by all 
+<SAMP>`.rdata'</SAMP> input sections. 
+<P>You can specify a file name to include sections from a particular file. You 
+would do this if one or more of your files contain special data that needs to be 
+at a particular location in memory. For example: <BR><FONT color=blue>
+<P>위의 차이는 입력 섹션 <SAMP>`.text'</SAMP>과 <SAMP>`.rdata'</SAMP>이 출력 섹션에 나타날 순서이다. 
+두번째 예에서 모든 <SAMP>`.text'</SAMP> 입력 섹션이 먼저 나오고, 그 뒤에 모든 <SAMP>`.rdata'</SAMP> 입력 
+섹션이 위치한다. <PRE>data.o(.data)
+</PRE></FONT>
+<P>If you use a file name without a list of sections, then all sections in the 
+input file will be included in the output section. This is not commonly done, 
+but it may by useful on occasion. For example: <BR><FONT color=blue>
+<P>섹션 목록 없이 파일명을 사용하면 입력파일에 있는 모든 섹션이 출력 섹션에 포함된다. 이는 흔한 경우는 아니지만 때로는 유용할 수 있다. 
+예를 들면, <PRE>data.o
+</PRE></FONT>
+<P>When you use a file name which does not contain any wild card characters, the 
+linker will first see if you also specified the file name on the linker command 
+line or in an <CODE>INPUT</CODE> command. If you did not, the linker will 
+attempt to open the file as an input file, as though it appeared on the command 
+line. Note that this differs from an <CODE>INPUT</CODE> command, because the 
+linker will not search for the file in the archive search path. <BR><FONT 
+color=blue>와일드카드를 사용하지 않고 파일명을 주면 링커는 먼저 명령행이나 <CODE>INPUT</CODE> 명령어에 파일명이 있는지 
+확안한다. 그렇지 않으면 링커는 마치 명령행에 있었던 것 처럼 입력파일로 취급한다. 주의! 이는 링커가 아카이브 검색 패스에서 파일을 찾지 않기 
+때문에 <CODE>INPUT</CODE> 명령어와 다르다. </FONT><!-- <H4><A NAME="SEC24" HREF="ld_toc.html#TOC24">Input section wildcard patterns</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC24" 
+name=SEC24>입력 섹션 와일드카드 패턴</A></H4></FONT>
+<P><A name=IDX300></A><A name=IDX301></A><A name=IDX302></A><A 
+name=IDX303></A>In an input section description, either the file name or the 
+section name or both may be wildcard patterns. 
+<P>The file name of <SAMP>`*'</SAMP> seen in many examples is a simple wildcard 
+pattern for the file name. 
+<P>The wildcard patterns are like those used by the Unix shell. <BR><FONT 
+color=blue>
+<P>입력 섹션 기술에서 파일명이나 섹션 이름에 와일드카드 섹션을 사용할 수 있다. 
+<P>많은 예에서 파일명으로 <SAMP>`*'</SAMP>를 사용한 것이 간단한 와일드카드 패턴의 예이다. 
+<P>와일드카드 패턴은 유닉스 쉘에서 사용하는 것과 동일하다. </FONT>
+<DL compact>
+  <DT><SAMP>`*'</SAMP> 
+  <DD>matches any number of characters 
+  <DT><SAMP>`?'</SAMP> 
+  <DD>matches any single character 
+  <DT><SAMP>`[<VAR>chars</VAR>]'</SAMP> 
+  <DD>matches a single instance of any of the <VAR>chars</VAR>; the 
+  <SAMP>`-'</SAMP> character may be used to specify a range of characters, as in 
+  <SAMP>`[a-z]'</SAMP> to match any lower case letter 
+  <DT><SAMP>`\'</SAMP> 
+  <DD>quotes the following character </DD></DL><BR><FONT color=blue>
+<DL compact>
+  <DT><SAMP>`*'</SAMP> 
+  <DD>어떤 문자들과도 대응한다 
+  <DT><SAMP>`?'</SAMP> 
+  <DD>어떤 한 문자와 대응한다 
+  <DT><SAMP>`[<VAR>chars</VAR>]'</SAMP> 
+  <DD><VAR>chars</VAR> 중 한 문자와 대응한다. <SAMP>`-'</SAMP> 문자는 문자들의 범위를 나타낸다. 그래서 
+  <SAMP>`[a-z]'</SAMP>는 어떤 한 소문자와 대응한다. 
+  <DT><SAMP>`\'</SAMP> 
+  <DD>다음 문자를 그대로 사용한다 </DD></DL></FONT>
+<P>When a file name is matched with a wildcard, the wildcard characters will not 
+match a <SAMP>`/'</SAMP> character (used to separate directory names on Unix). A 
+pattern consisting of a single <SAMP>`*'</SAMP> character is an exception; it 
+will always match any file name, whether it contains a <SAMP>`/'</SAMP> or not. 
+In a section name, the wildcard characters will match a <SAMP>`/'</SAMP> 
+character. 
+<P>File name wildcard patterns only match files which are explicitly specified 
+on the command line or in an <CODE>INPUT</CODE> command. The linker does not 
+search directories to expand wildcards. <BR><FONT color=blue>
+<P>파일명에 사용한 와일드카드 문자는 (유닉스에서 디렉토리 이름을 구분하는데 사용하는) <SAMP>`/'</SAMP> 문자와 대응하지 않는다. 
+한 <SAMP>`*'</SAMP>로만 이루어진 패턴은 예외이다. 이는 <SAMP>`/'</SAMP>이 포함된 것과 관계없이 어떤 파일명에도 
+대응한다. 섹션 이름으로 사용한 와일드카드 문자도 <SAMP>`/'</SAMP>를 포함한다. 
+<P>파일명 와일드카드 패턴은 명령행이나 <CODE>INPUT</CODE> 명령어에 직접 주어진 파일에만 대응한다. 링커는 와일드카드 때문에 
+디렉토리를 검색하지 않는다. </FONT>
+<P>If a file name matches more than one wildcard pattern, or if a file name 
+appears explicitly and is also matched by a wildcard pattern, the linker will 
+use the first match in the linker script. For example, this sequence of input 
+section descriptions is probably in error, because the <TT>`data.o'</TT> rule 
+will not be used: <BR><FONT color=blue>파일명이 여러 와일드카드 패턴에 대응하거나, 파일명이 명시적으로 주어지고 
+와일드카드 패턴에도 대응하는 경우 링커는 링커 스크립트에서 처음 대응한 것을 사용한다. 예를 들어 다음 입력 섹션 기술은 
+<TT>`data.o'</TT>에 대한 규칙이 사용되지 않기 때문에 아마도 의도한 바가 아닐 것이다. <PRE>.data : { *(.data) }
+.data1 : { data.o(.data) }
+</PRE></FONT>
+<P><A name=IDX304></A>Normally, the linker will place files and sections matched 
+by wildcards in the order in which they are seen during the link. You can change 
+this by using the <CODE>SORT</CODE> keyword, which appears before a wildcard 
+pattern in parentheses (e.g., <CODE>SORT(.text*)</CODE>). When the 
+<CODE>SORT</CODE> keyword is used, the linker will sort the files or sections 
+into ascending order by name before placing them in the output file. 
+<P>If you ever get confused about where input sections are going, use the 
+<SAMP>`-M'</SAMP> linker option to generate a map file. The map file shows 
+precisely how input sections are mapped to output sections. <BR><FONT 
+color=blue>
+<P>보통 링커는 링크 중 와일드카드에 대응하는 파일과 섹션을 발견하는 순서대로 배치한다. 이 순서를 
+(<CODE>SORT(.text*)</CODE> 같이) 괄호안의 와일드카드 패턴에 선행하는 <CODE>SORT</CODE> 키워드로 변경할 수 
+있다. <CODE>SORT</CODE> 키워드가 사용되면 출력파일에 파일이나 섹션을 이름이 증가하는 순서로 정렬한다. 
+<P>입력 섹션이 어디로 가는지 궁금하다면 <SAMP>`-M'</SAMP> 옵션으로 맵파일을 만들면 된다. 맵파일은 입력 섹션이 어떻게 출력 
+섹션으로 대응되는지 알려준다. </FONT>
+<P>This example shows how wildcard patterns might be used to partition files. 
+This linker script directs the linker to place all <SAMP>`.text'</SAMP> sections 
+in <SAMP>`.text'</SAMP> and all <SAMP>`.bss'</SAMP> sections in 
+<SAMP>`.bss'</SAMP>. The linker will place the <SAMP>`.data'</SAMP> section from 
+all files beginning with an upper case character in <SAMP>`.DATA'</SAMP>; for 
+all other files, the linker will place the <SAMP>`.data'</SAMP> section in 
+<SAMP>`.data'</SAMP>. <BR><FONT color=blue>아래 예는 와일드카드 패턴으로 어떻게 파일을 나누는지 보여준다. 이 
+링커 스크립트는 모든 <SAMP>`.text'</SAMP> 섹션을 <SAMP>`.text'</SAMP>에, 모든 
+<SAMP>`.bss'</SAMP> 섹션을 <SAMP>`.bss'</SAMP>에 둔다. 링커는 대문자로 시작하는 파일의 
+<SAMP>`.data'</SAMP> 섹션을 <SAMP>`.DATA'</SAMP>에, 다른 파일의 <SAMP>`.data'</SAMP> 섹션은 
+<SAMP>`.data'</SAMP>에 둔다. <PRE>SECTIONS {
+  .text : { *(.text) }
+  .DATA : { [A-Z]*(.data) }
+  .data : { *(.data) }
+  .bss : { *(.bss) }
+}
+</PRE></FONT><!-- <H4><A NAME="SEC25" HREF="ld_toc.html#TOC25">Input section for common symbols</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC25" 
+name=SEC25>공통 심볼을 위한 입력 섹션</A></H4></FONT>
+<P><A name=IDX305></A><A name=IDX306></A>A special notation is needed for common 
+symbols, because in many object file formats common symbols do not have a 
+particular input section. The linker treats common symbols as though they are in 
+an input section named <SAMP>`COMMON'</SAMP>. 
+<P>You may use file names with the <SAMP>`COMMON'</SAMP> section just as with 
+any other input sections. You can use this to place common symbols from a 
+particular input file in one section while common symbols from other input files 
+are placed in another section. <BR><FONT color=blue>많은 오브젝트 파일 형식에서 공통 심볼은 특정한 
+입력 섹션을 가지지 않기 때문에 공통 심볼에는 특별한 표시가 필요하다. 링커는 공통 심볼을 마치 <SAMP>`COMMON'</SAMP>란 입력 
+섹션에 있는 것 처럼 취급한다. 
+<P>다른 입력 섹션과 같이, 파일명과 함께 <SAMP>`COMMON'</SAMP> 섹션을 사용할 수 있다. 그래서 한 입력파일의 공통 심볼을 
+한 섹션으로 담고, 다른 파일의 공통 심볼은 다른 섹션에 저장할 수 있다. </FONT>
+<P>In most cases, common symbols in input files will be placed in the 
+<SAMP>`.bss'</SAMP> section in the output file. For example: <BR><FONT 
+color=blue>대부분의 경우 입력파일의 공통 심볼은 다음과 같이 출력파일의 <SAMP>`.bss'</SAMP> 섹션에 위치한다. (역주; 
+그리고 보통 <SAMP>`.bss'</SAMP> 섹션 뒷 부분에 위치한다.) <PRE>.bss { *(.bss) *(COMMON) }
+</PRE></FONT>
+<P><A name=IDX307></A><A name=IDX308></A>Some object file formats have more than 
+one type of common symbol. For example, the MIPS ELF object file format 
+distinguishes standard common symbols and small common symbols. In this case, 
+the linker will use a different special section name for other types of common 
+symbols. In the case of MIPS ELF, the linker uses <SAMP>`COMMON'</SAMP> for 
+standard common symbols and <SAMP>`.scommon'</SAMP> for small common symbols. 
+This permits you to map the different types of common symbols into memory at 
+different locations. 
+<P><A name=IDX309></A>You will sometimes see <SAMP>`[COMMON]'</SAMP> in old 
+linker scripts. This notation is now considered obsolete. It is equivalent to 
+<SAMP>`*(COMMON)'</SAMP>. <BR><FONT color=blue>어떤 오브젝트 파일 형식에는 공통 심볼 형식이 많다. 예를 
+들어 MIPS ELF 형식은 표준 공통 심볼과 작은 공통 심볼을 구분한다. 이 경우 링커는 각 공통 심볼 형식에 다른 섹션 이름을 사용한다. 
+MIP ELF의 경우 표준 공통 심볼로 <SAMP>`COMMON'</SAMP>, 작은 공통 심볼로 <SAMP>`.scommon'</SAMP>을 
+사용한다. 그래서 다른 형식의 공통 심볼을 메모리의 다른 위치에 대응시킬 수 있다. </FONT><!-- <H4><A NAME="SEC26" HREF="ld_toc.html#TOC26">Input section and garbage collection</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC26" 
+name=SEC26>입력 섹션과 가비지 컬렉션</A></H4></FONT>
+<P><A name=IDX310></A><A name=IDX311></A>When link-time garbage collection is in 
+use (<SAMP>`--gc-sections'</SAMP>), it is often useful to mark sections that 
+should not be eliminated. This is accomplished by surrounding an input section's 
+wildcard entry with <CODE>KEEP()</CODE>, as in <CODE>KEEP(*(.init))</CODE> or 
+<CODE>KEEP(SORT(*)(.ctors))</CODE>. <BR><FONT color=blue>링크 시 가비지 컬랙션을 
+(<SAMP>`--gc-sections'</SAMP>) (역주; 참조되지 않는 섹션을 자동으로 출력파일에서 제거) 한다면, 제거되면 안되는 
+섹션을 표시하는 것이 필요할 수 있다. <CODE>KEEP(*(.init))</CODE>나 
+<CODE>KEEP(SORT(*)(.ctors))</CODE>와 같이 입력 섹션의 와일드카드를 <CODE>KEEP()</CODE>으로 둘러싸면 
+된다. </FONT><!-- <H4><A NAME="SEC27" HREF="ld_toc.html#TOC27">Input section example</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC27" 
+name=SEC27>입력 섹션 예</A></H4></FONT>
+<P>The following example is a complete linker script. It tells the linker to 
+read all of the sections from file <TT>`all.o'</TT> and place them at the start 
+of output section <SAMP>`outputa'</SAMP> which starts at location 
+<SAMP>`0x10000'</SAMP>. All of section <SAMP>`.input1'</SAMP> from file 
+<TT>`foo.o'</TT> follows immediately, in the same output section. All of section 
+<SAMP>`.input2'</SAMP> from <TT>`foo.o'</TT> goes into output section 
+<SAMP>`outputb'</SAMP>, followed by section <SAMP>`.input1'</SAMP> from 
+<TT>`foo1.o'</TT>. All of the remaining <SAMP>`.input1'</SAMP> and 
+<SAMP>`.input2'</SAMP> sections from any files are written to output section 
+<SAMP>`outputc'</SAMP>. <BR><FONT color=blue>
+<P>다음은 완전한 링커 스크립트 예이다. 이 스크립트는 <TT>`all.o'</TT>에서 모든 섹션을 읽어서 
+<SAMP>`0x10000'</SAMP>에서 시작하는 출력 섹션 <SAMP>`outputa'</SAMP>의 시작에 둔다. 
+<TT>`foo.o'</TT>의 섹션 <SAMP>`.input1'</SAMP>이 다음에 온다. <TT>`foo.o'</TT>의 섹션 
+<SAMP>`.input2'</SAMP>은 출력 섹션 <SAMP>`outputb'</SAMP>에 오고, 다음에 <TT>`foo1.o'</TT>의 
+섹션 <SAMP>`.input1'</SAMP>이 나온다. 다른 파일의 남은 <SAMP>`.input1'</SAMP>과 
+<SAMP>`.input2'</SAMP> 섹션은 출력 섹션 <SAMP>`outputc'</SAMP>에 쓰여진다. <PRE>SECTIONS {
+  outputa 0x10000 :
+    {
+    all.o
+    foo.o (.input1)
+    }
+  outputb :
+    {
+    foo.o (.input2)
+    foo1.o (.input1)
+    }
+  outputc :
+    {
+    *(.input1)
+    *(.input2)
+    }
+}
+</PRE></FONT><!-- <H3><A NAME="SEC28" HREF="ld_toc.html#TOC28">Output section data</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC28" 
+name=SEC28>출력 섹션 자료</A></H3></FONT>
+<P><A name=IDX312></A><A name=IDX313></A><A name=IDX314></A><A 
+name=IDX315></A><A name=IDX316></A><A name=IDX317></A><A name=IDX318></A><A 
+name=IDX319></A>You can include explicit bytes of data in an output section by 
+using <CODE>BYTE</CODE>, <CODE>SHORT</CODE>, <CODE>LONG</CODE>, 
+<CODE>QUAD</CODE>, or <CODE>SQUAD</CODE> as an output section command. Each 
+keyword is followed by an expression in parentheses providing the value to store 
+(see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>). The value of the expression is stored at the current 
+value of the location counter. 
+<P>The <CODE>BYTE</CODE>, <CODE>SHORT</CODE>, <CODE>LONG</CODE>, and 
+<CODE>QUAD</CODE> commands store one, two, four, and eight bytes (respectively). 
+After storing the bytes, the location counter is incremented by the number of 
+bytes stored. <BR><FONT color=blue>
+<P>출력 섹션 명령어인 <CODE>BYTE</CODE>, <CODE>SHORT</CODE>, <CODE>LONG</CODE>, 
+<CODE>QUAD</CODE>, <CODE>SQUAD</CODE>를 사용하여 출력 섹션에 직접 자료를 쓸 수 있다. 각 키워드 다음에 저장될 
+값을 나타내는 표현식을 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A> 참고) 괄호안에 적어준다. 표현식의 값은 현재 위치 카운터에 저장된다. 
+<P><CODE>BYTE</CODE>, <CODE>SHORT</CODE>, <CODE>LONG</CODE>, <CODE>QUAD</CODE> 
+명령어는 각각 1, 2, 4, 8 바이트를 저장한다. 바이트를 저장한 후 위치 카운터가 그 만큼 증가한다. </FONT>
+<P>For example, this will store the byte 1 followed by the four byte value of 
+the symbol <SAMP>`addr'</SAMP>: <BR><FONT color=blue>예를 들어 아래는 1을 한 바이트에 저장하고, 그 
+뒤에 심볼 <SAMP>`addr'</SAMP>의 세 바이트를 저장한다. <PRE>BYTE(1)
+LONG(addr)
+</PRE></FONT>
+<P>When using a 64 bit host or target, <CODE>QUAD</CODE> and <CODE>SQUAD</CODE> 
+are the same; they both store an 8 byte, or 64 bit, value. When both host and 
+target are 32 bits, an expression is computed as 32 bits. In this case 
+<CODE>QUAD</CODE> stores a 32 bit value zero extended to 64 bits, and 
+<CODE>SQUAD</CODE> stores a 32 bit value sign extended to 64 bits. 
+<P>If the object file format of the output file has an explicit endianness, 
+which is the normal case, the value will be stored in that endianness. When the 
+object file format does not have an explicit endianness, as is true of, for 
+example, S-records, the value will be stored in the endianness of the first 
+input object file. <BR><FONT color=blue>
+<P>64 비트 호스트에서 <CODE>QUAD</CODE>와 <CODE>SQUAD</CODE>는 동일하게 8 바이트(= 32 비트)로 저장한다. 
+호스트가 32 비트이면 표현식을 32 비트로 계산된다. 이 경우 <CODE>QUAD</CODE>는 32 비트 값을 64 비트로 확장해서 
+저장하고, <CODE>SQUAD</CODE>는 32 비트 값을 64 비트로 부호확장하여 저장한다. 
+<P>보통 경우처럼 출력파일의 오브젝트 파일 형식이 명시적인 endian을 가지고 있다면, 값은 그 endian으로 저장된다. S-record와 
+같이 오브젝트 파일 형식이 명시적인 endian을 가지고 있지 않다면 첫 입력파일의 endian을 사용한다. </FONT>
+<P>Note - these commands only work inside a section description and not between 
+them, so the following will produce an error from the linker: <BR><FONT 
+color=blue>주의! 이 명령어는 섹션 기술 안에서만 가능하다. 다음과 같이 섹션 기술 사이에서 사용하면 오류이다. <PRE>SECTIONS { .text : { *(.text) } LONG(1) .data : { *(.data) } }
+</PRE></FONT>
+<P>whereas this will work: <BR><FONT color=blue>대신 이렇게 해야 한다. <PRE>SECTIONS { .text : { *(.text) ; LONG(1) } .data : { *(.data) } }
+</PRE></FONT>
+<P><A name=IDX320></A><A name=IDX321></A><A name=IDX322></A>You may use the 
+<CODE>FILL</CODE> command to set the fill pattern for the current section. It is 
+followed by an expression in parentheses. Any otherwise unspecified regions of 
+memory within the section (for example, gaps left due to the required alignment 
+of input sections) are filled with the two least significant bytes of the 
+expression, repeated as necessary. A <CODE>FILL</CODE> statement covers memory 
+locations after the point at which it occurs in the section definition; by 
+including more than one <CODE>FILL</CODE> statement, you can have different fill 
+patterns in different parts of an output section. 
+<P>This example shows how to fill unspecified regions of memory with the value 
+<SAMP>`0x9090'</SAMP>: <BR><FONT color=blue>
+<P>현재 섹션을 패턴으로 채우려면 <CODE>FILL</CODE> 명령어를 사용하면 된다. 명령어 뒤에 표현식이 괄호 안에 나온다. 섹션에서 
+(입력 섹션의 정렬 필요 때문에 남겨진 공간과 같은) 지정되지 않은 메모리는 표현식 값의 마지막 2 바이트로 반복해서 채워진다. 
+<CODE>FILL</CODE> 명령어는 섹션 정의에 나온 다음부터 메모리를 채우는데 사용된다. 여러 <CODE>FILL</CODE> 명령어로 
+출력 섹션의 다른 지점을 다른 패턴으로 채울 수 있다. 
+<P>예를 들어 지정하지 않은 메모리 영역을 <SAMP>`0x9090'</SAMP>으로 채우려면, <PRE>FILL(0x9090)
+</PRE></FONT>
+<P>The <CODE>FILL</CODE> command is similar to the 
+<SAMP>`=<VAR>fillexp</VAR>'</SAMP> output section attribute (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC36">Output 
+section fill</A>), but it only affects the part of the section following the 
+<CODE>FILL</CODE> command, rather than the entire section. If both are used, the 
+<CODE>FILL</CODE> command takes precedence. <BR><FONT 
+color=blue><CODE>FILL</CODE> 명령어는 출력 섹션 속성 <SAMP>`=<VAR>fillexp</VAR>'</SAMP>과 
+(<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC36">Output 
+section fill</A> 참고) 유사하지만 전체 섹션이 아니라 <CODE>FILL</CODE> 뒤의 섹션에만 영향을 준다. 둘 다 사용하면 
+<CODE>FILL</CODE> 명령어가 우선순위를 가진다. </FONT><!-- <H3><A NAME="SEC29" HREF="ld_toc.html#TOC29">Output section keywords</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC29" 
+name=SEC29>출력 섹션 키워드</A></H3></FONT>
+<P>There are a couple of keywords which can appear as output section commands. 
+<BR><FONT color=blue>출력 섹션 명령어에 다음 두 키워드를 사용할 수 있다. </FONT>
+<DL compact>
+  <DT><CODE>CREATE_OBJECT_SYMBOLS</CODE> 
+  <DD><A name=IDX323></A><A name=IDX324></A><A name=IDX325></A>The command tells 
+  the linker to create a symbol for each input file. The name of each symbol 
+  will be the name of the corresponding input file. The section of each symbol 
+  will be the output section in which the <CODE>CREATE_OBJECT_SYMBOLS</CODE> 
+  command appears. This is conventional for the a.out object file format. It is 
+  not normally used for any other object file format. <BR><FONT color=blue>이 
+  명령어는 각 입력파일 마다 심볼을 만들게 한다. 각 심볼의 이름은 대응하는 입력파일의 이름이다. 각 심볼은 
+  <CODE>CREATE_OBJECT_SYMBOLS</CODE>가 나온 출력 섹션에 저장된다. 이 명령어는 a.out 오브젝트 파일 형식에서 
+  주로 사용된다. 다른 형식에는 보통 사용되지 않는다. </FONT><A name=IDX326></A><A name=IDX327></A><A 
+  name=IDX328></A>
+  <DT><CODE>CONSTRUCTORS</CODE> 
+  <DD>When linking using the a.out object file format, the linker uses an 
+  unusual set construct to support C++ global constructors and destructors. When 
+  linking object file formats which do not support arbitrary sections, such as 
+  ECOFF and XCOFF, the linker will automatically recognize C++ global 
+  constructors and destructors by name. For these object file formats, the 
+  <CODE>CONSTRUCTORS</CODE> command tells the linker to place constructor 
+  information in the output section where the <CODE>CONSTRUCTORS</CODE> command 
+  appears. The <CODE>CONSTRUCTORS</CODE> command is ignored for other object 
+  file formats. The symbol <CODE>__CTOR_LIST__</CODE> marks the start of the 
+  global constructors, and the symbol <CODE>__DTOR_LIST</CODE> marks the end. 
+  The first word in the list is the number of entries, followed by the address 
+  of each constructor or destructor, followed by a zero word. The compiler must 
+  arrange to actually run the code. For these object file formats GNU C++ 
+  normally calls constructors from a subroutine <CODE>__main</CODE>; a call to 
+  <CODE>__main</CODE> is automatically inserted into the startup code for 
+  <CODE>main</CODE>. GNU C++ normally runs destructors either by using 
+  <CODE>atexit</CODE>, or directly from the function <CODE>exit</CODE>. For 
+  object file formats such as <CODE>COFF</CODE> or <CODE>ELF</CODE> which 
+  support arbitrary section names, GNU C++ will normally arrange to put the 
+  addresses of global constructors and destructors into the <CODE>.ctors</CODE> 
+  and <CODE>.dtors</CODE> sections. Placing the following sequence into your 
+  linker script will build the sort of table which the GNU C++ runtime code 
+  expects to see. <BR><FONT color=blue>a.out 오브젝트 파일 형식으로 링크할 때 링커는 C++ 전역 생성자와 
+  파괴자를 지원하기 위해서 특별한 구성을 사용한다. ECOFF나 XCOFF와 같이 임의의 섹션을 지원하지 않는 형식에서 링커는 자동으로 C++ 
+  전역 생성자와 파괴자를 이름을 구별한다. 이 형식에서 <CODE>CONSTRUCTORS</CODE> 명령어는 이 명령어가 있는 출력 섹션에 
+  생성자 정보를 저장하게 한다. 다른 오브젝트 파일 형식에서 <CODE>CONSTRUCTORS</CODE> 명령어는 무시한다. 심볼 
+  <CODE>__CTOR_LIST__</CODE>는 전역 생성자의 시작을 표시하고, 심볼 <CODE>__DTOR_LIST</CODE>는 끝을 
+  표시한다. 목록의 첫 워드는 항목의 수이고 다음에 각 생성자와 파괴자의 주소가 나온 후, 마지막에 0 워드가 온다. 컴파일러는 이를 실행할 
+  준비를 해야 한다. 이 오브젝트 파일 형식에서 GNU C++은 보통 함수 <CODE>__main</CODE>에서 생성자를 호출한다. 
+  <CODE>__main</CODE> 호출은 <CODE>main</CODE>을 위한 시작코드에 자동으로 삽입된다. GNU C++은 보통 
+  <CODE>atexit</CODE>이나 직접 함수 <CODE>exit</CODE>를 사용하여 파괴자를 호출한다. 
+  <CODE>COFF</CODE>나 <CODE>ELF</CODE>와 같이 임의의 섹션 이름을 지원하는 형식에서 GNU C++은 전역 생성자와 
+  파괴자 주소를 <CODE>.ctors</CODE>와 <CODE>.dtors</CODE> 섹션에 저장한다. 다음 스크립트는 GNU C++이 
+  실행 중에 요구하는 정렬표를 생성한다. <PRE>      __CTOR_LIST__ = .;
+      LONG((__CTOR_END__ - __CTOR_LIST__) / 4 - 2)
+      *(.ctors)
+      LONG(0)
+      __CTOR_END__ = .;
+      __DTOR_LIST__ = .;
+      LONG((__DTOR_END__ - __DTOR_LIST__) / 4 - 2)
+      *(.dtors)
+      LONG(0)
+      __DTOR_END__ = .;
+</PRE></FONT>If you are using the GNU C++ support for initialization priority, 
+  which provides some control over the order in which global constructors are 
+  run, you must sort the constructors at link time to ensure that they are 
+  executed in the correct order. When using the <CODE>CONSTRUCTORS</CODE> 
+  command, use <SAMP>`SORT(CONSTRUCTORS)'</SAMP> instead. When using the 
+  <CODE>.ctors</CODE> and <CODE>.dtors</CODE> sections, use 
+  <SAMP>`*(SORT(.ctors))'</SAMP> and <SAMP>`*(SORT(.dtors))'</SAMP> instead of 
+  just <SAMP>`*(.ctors)'</SAMP> and <SAMP>`*(.dtors)'</SAMP>. Normally the 
+  compiler and linker will handle these issues automatically, and you will not 
+  need to concern yourself with them. However, you may need to consider this if 
+  you are using C++ and writing your own linker scripts. <BR><FONT 
+  color=blue>GNU C++에서 전역 생성자가 불릴 순서를 조정하는 초기화 우선순위를 사용하면 링크 시 생성자가 정확한 순서로 실행도록 
+  생성자를 정렬해야 한다. 이는 <CODE>CONSTRUCTORS</CODE> 명령어 대신 
+  <SAMP>`SORT(CONSTRUCTORS)'</SAMP>를 사용하면 된다. <CODE>.ctors</CODE>과 
+  <CODE>.dtors</CODE> 섹션을 사용한다면 <SAMP>`*(.ctors)'</SAMP>와 
+  <SAMP>`*(.dtors)'</SAMP> 대신 <SAMP>`*(SORT(.ctors))'</SAMP>와 
+  <SAMP>`*(SORT(.dtors))'</SAMP>를 사용하라. 보통 컴파일러와 링커는 이를 자동으로 처리하기 때문에 직접 신경쓸 필요는 
+  없다. 그러나 C++을 사용하고 집접 링커 스크립트를 작성한다면 이를 고려해야 한다. </FONT></DD></DL><!-- <H3><A NAME="SEC30" HREF="ld_toc.html#TOC30">Output section discarding</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC30" 
+name=SEC30>출력 섹션 버리기</A></H3></FONT>
+<P><A name=IDX329></A><A name=IDX330></A><A name=IDX331></A>The linker will not 
+create output section which do not have any contents. This is for convenience 
+when referring to input sections that may or may not be present in any of the 
+input files. For example: <BR><FONT color=blue>
+<P>링커는 내용이 없는 출력 섹션을 만들지 않는다. 이는 입력파일에 있거나 없거나 상관없이 입력 섹션을 참조할 때 유용하다. 예를 들면, <PRE>.foo { *(.foo) }
+</PRE></FONT>
+<P>will only create a <SAMP>`.foo'</SAMP> section in the output file if there is 
+a <SAMP>`.foo'</SAMP> section in at least one input file. 
+<P>If you use anything other than an input section description as an output 
+section command, such as a symbol assignment, then the output section will 
+always be created, even if there are no matching input sections. 
+<P><A name=IDX332></A>The special output section name <SAMP>`/DISCARD/'</SAMP> 
+may be used to discard input sections. Any input sections which are assigned to 
+an output section named <SAMP>`/DISCARD/'</SAMP> are not included in the output 
+file. <BR><FONT color=blue>
+<P>는 최소한 한 입력파일에 <SAMP>`.foo'</SAMP> 섹션이 있을 때만 출력파일에 <SAMP>`.foo'</SAMP> 섹션을 
+만든다. 
+<P>심볼 대입과 같은 입력 섹션 기술 외의 출력 섹션 명령어를 사용하면, 대응하는 입력 섹션이 없어도 출력 섹션은 생성된다. 
+<P>특별한 출력 섹션 이름인 <SAMP>`/DISCARD/'</SAMP>는 입력 섹션을 버리기 위해 사용한다. 이름이 
+<SAMP>`/DISCARD/'</SAMP>인 출력 섹션에 입력 섹션을 대입하면 출력파일에 포함되지 않는다. </FONT><!-- <H3><A NAME="SEC31" HREF="ld_toc.html#TOC31">Output section attributes</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC31" 
+name=SEC31>출력 섹션 속성</A></H3></FONT>
+<P><A name=IDX333></A>We showed above that the full description of an output 
+section looked like this: <BR><FONT color=blue>
+<P>위에서 출력 섹션 기술이 다음과 같았다. <PRE><VAR>section</VAR> [<VAR>address</VAR>] [(<VAR>type</VAR>)] : [AT(<VAR>lma</VAR>)]
+  {
+    <VAR>output-section-command</VAR>
+    <VAR>output-section-command</VAR>
+    ...
+  } [&gt;<VAR>region</VAR>] [AT&gt;<VAR>lma_region</VAR>] [:<VAR>phdr</VAR> :<VAR>phdr</VAR> ...] [=<VAR>fillexp</VAR>]
+</PRE></FONT>
+<P>We've already described <VAR>section</VAR>, <VAR>address</VAR>, and 
+<VAR>output-section-command</VAR>. In this section we will describe the 
+remaining section attributes. <BR><FONT color=blue>이미 <VAR>section</VAR>, 
+<VAR>address</VAR>, <VAR>output-section-command</VAR>는 설명했다. 이제 나머지 섹션 속성을 설명한다. 
+</FONT><!-- <H4><A NAME="SEC32" HREF="ld_toc.html#TOC32">Output section type</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC32" 
+name=SEC32>출력 섹션 타입</A></H4></FONT>
+<P>Each output section may have a type. The type is a keyword in parentheses. 
+The following types are defined: <BR><FONT color=blue>
+<P>각 출력 섹션을 타입을 가진다. 타입은 괄호 안에 키워드로 다음과 같다. </FONT>
+<DL compact>
+  <DT><CODE>NOLOAD</CODE> 
+  <DD>The section should be marked as not loadable, so that it will not be 
+  loaded into memory when the program is run. 
+  <DT><CODE>DSECT</CODE> 
+  <DD>
+  <DT><CODE>COPY</CODE> 
+  <DD>
+  <DT><CODE>INFO</CODE> 
+  <DD>
+  <DT><CODE>OVERLAY</CODE> 
+  <DD>These type names are supported for backward compatibility, and are rarely 
+  used. They all have the same effect: the section should be marked as not 
+  allocatable, so that no memory is allocated for the section when the program 
+  is run. </DD></DL><BR><FONT color=blue>
+<DL compact>
+  <DT><CODE>NOLOAD</CODE> 
+  <DD>이 섹션을 로드가능하지 않게 한다. 그래서 프로그램이 실행될 때 메모리로 읽어들이지 않는다. 
+  <DT><CODE>DSECT</CODE> 
+  <DD>
+  <DT><CODE>COPY</CODE> 
+  <DD>
+  <DT><CODE>INFO</CODE> 
+  <DD>
+  <DT><CODE>OVERLAY</CODE> 
+  <DD>이 타입은 호환성을 위해 지원되며 거의 사용되지 않는다. 이들은 모두 섹션을 할당하지 않게 하여, 프로그램 실행 시 섹션에 대한 
+  메모리가 할당되지 않게 한다. </DD></DL></FONT>
+<P><A name=IDX334></A><A name=IDX335></A><A name=IDX336></A>The linker normally 
+sets the attributes of an output section based on the input sections which map 
+into it. You can override this by using the section type. For example, in the 
+script sample below, the <SAMP>`ROM'</SAMP> section is addressed at memory 
+location <SAMP>`0'</SAMP> and does not need to be loaded when the program is 
+run. The contents of the <SAMP>`ROM'</SAMP> section will appear in the linker 
+output file as usual. <BR><FONT color=blue>링커는 보통 대응하는 입력 섹션에 기반하여 출력 섹션의 속성을 
+정한다. 이를 섹션 타입으로 대체할 수 있다. 예로 아래 스크립트에서 주소가 0인 <SAMP>`ROM'</SAMP> 섹션은 프로그램 실행 시 
+로드할 필요가 앖다. <SAMP>`ROM'</SAMP> 섹션 내용은 보통과 같이 링커 출력파일에 나타난다. <PRE>SECTIONS {
+  ROM 0 (NOLOAD) : { ... }
+  ...
+}
+</PRE></FONT><!-- <H4><A NAME="SEC33" HREF="ld_toc.html#TOC33">Output section LMA</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC33" 
+name=SEC33>출력 섹션 LMA</A></H4></FONT>
+<P><A name=IDX337></A><A name=IDX338></A><A name=IDX339></A><A 
+name=IDX340></A>Every section has a virtual address (VMA) and a load address 
+(LMA); see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC7">Basic 
+Linker Script Concepts</A>. The address expression which may appear in an output 
+section description sets the VMA (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC21">Output 
+section address</A>). 
+<P>The linker will normally set the LMA equal to the VMA. You can change that by 
+using the <CODE>AT</CODE> keyword. The expression <VAR>lma</VAR> that follows 
+the <CODE>AT</CODE> keyword specifies the load address of the section. 
+Alternatively, with <SAMP>`AT&gt;<VAR>lma_region</VAR>'</SAMP> expression, you 
+may specify a memory region for the section's load address. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC38">MEMORY 
+command</A>. <BR><FONT color=blue>
+<P>모든 섹션은 가상 주소(VMA)와 로드 주소(LMA)를 가진다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC7">Basic 
+Linker Script Concepts</A>를 참고하라. 출력 섹션 기술에 나오는 주소 표현식은 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC21">Output 
+section address</A>를 참고) VMA를 정한다. 
+<P>링커는 보통 LMA를 VMA와 같게 한다. 그러나 <CODE>AT</CODE> 키워드로 LMA를 변경할 수 있다. 
+<CODE>AT</CODE> 다음에 나오는 표현식 <VAR>lma</VAR>은 섹션의 로드 주소를 정한다. 이 외에 
+<SAMP>`AT&gt;<VAR>lma_region</VAR>'</SAMP>으로 섹션 로드 주소를 위한 메모리 영역을 지정할 수 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC38">MEMORY 
+command</A>를 참고하라. </FONT>
+<P><A name=IDX341></A><A name=IDX342></A>This feature is designed to make it 
+easy to build a ROM image. For example, the following linker script creates 
+three output sections: one called <SAMP>`.text'</SAMP>, which starts at 
+<CODE>0x1000</CODE>, one called <SAMP>`.mdata'</SAMP>, which is loaded at the 
+end of the <SAMP>`.text'</SAMP> section even though its VMA is 
+<CODE>0x2000</CODE>, and one called <SAMP>`.bss'</SAMP> to hold uninitialized 
+data at address <CODE>0x3000</CODE>. The symbol <CODE>_data</CODE> is defined 
+with the value <CODE>0x2000</CODE>, which shows that the location counter holds 
+the VMA value, not the LMA value. <BR><FONT color=blue>이 기능은 ROM 이미지를 만들기 쉽게하기 
+위해서 만들어졌다. 예로 다음 스크립트는 세 섹션을 만든다. <SAMP>`.text'</SAMP>는 <CODE>0x1000</CODE>에서 
+시작한다. <SAMP>`.mdata'</SAMP>는 <SAMP>`.text'</SAMP> 섹션 뒤에서 로드되나 VMA는 
+<CODE>0x2000</CODE>이다. <SAMP>`.bss'</SAMP> 섹션은 <CODE>0x3000</CODE>에서 초기화안된 자료를 
+저장한다. 위치 카운터는 LMA가 아니라 VMA 값을 저장하기 때문에 심볼 <CODE>_data</CODE>는 값 
+<CODE>0x2000</CODE>으로 정의된다. <PRE>SECTIONS
+  {
+  .text 0x1000 : { *(.text) _etext = . ; }
+  .mdata 0x2000 :
+    AT ( ADDR (.text) + SIZEOF (.text) )
+    { _data = . ; *(.data); _edata = . ;  }
+  .bss 0x3000 :
+    { _bstart = . ;  *(.bss) *(COMMON) ; _bend = . ;}
+}
+</PRE></FONT>
+<P>The run-time initialization code for use with a program generated with this 
+linker script would include something like the following, to copy the 
+initialized data from the ROM image to its runtime address. Notice how this code 
+takes advantage of the symbols defined by the linker script. <BR><FONT 
+color=blue>이 스크립트로 생성한 프로그램의 초기화 코드는 다음과 같이 초기화된 자료를 ROM에서 실행 주소로 복사하는 코드를 포함한다. 
+코드가 링커 스크립트가 정의한 심볼을 어떻게 이용하는지 살펴봐라. <PRE>extern char _etext, _data, _edata, _bstart, _bend;
+char *src = &amp;_etext;
+char *dst = &amp;_data;
+
+/* ROM has data at end of text; copy it. */
+while (dst &lt; &amp;_edata) {
+  *dst++ = *src++;
+}
+
+/* Zero bss */
+for (dst = &amp;_bstart; dst&lt; &amp;_bend; dst++)
+  *dst = 0;
+</PRE></FONT><!-- <H4><A NAME="SEC34" HREF="ld_toc.html#TOC34">Output section region</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC34" 
+name=SEC34>출력 섹션 영역</A></H4></FONT>
+<P><A name=IDX343></A><A name=IDX344></A><A name=IDX345></A>You can assign a 
+section to a previously defined region of memory by using 
+<SAMP>`&gt;<VAR>region</VAR>'</SAMP>. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC38">MEMORY 
+command</A>. 
+<P>Here is a simple example: <BR><FONT color=blue>
+<P>섹션을 전에 정의한 메모리 영역에 <SAMP>`&gt;<VAR>region</VAR>'</SAMP>으로 할당할 수 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC38">MEMORY 
+command</A>를 참고하라. 
+<P>간단한 예로, <PRE>MEMORY { rom : ORIGIN = 0x1000, LENGTH = 0x1000 }
+SECTIONS { ROM : { *(.text) } &gt;rom }
+</PRE></FONT><!-- <H4><A NAME="SEC35" HREF="ld_toc.html#TOC35">Output section phdr</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC35" 
+name=SEC35>출력 섹션 phdr</A></H4></FONT>
+<P><A name=IDX346></A><A name=IDX347></A><A name=IDX348></A>You can assign a 
+section to a previously defined program segment by using 
+<SAMP>`:<VAR>phdr</VAR>'</SAMP>. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC39">PHDRS 
+Command</A>. If a section is assigned to one or more segments, then all 
+subsequent allocated sections will be assigned to those segments as well, unless 
+they use an explicitly <CODE>:<VAR>phdr</VAR></CODE> modifier. You can use 
+<CODE>:NONE</CODE> to tell the linker to not put the section in any segment at 
+all. 
+<P>Here is a simple example: <BR><FONT color=blue>
+<P>(역주, phdr는 프로그램 헤더의 준말이다.) 섹션을 전에 <SAMP>`:<VAR>phdr</VAR>'</SAMP>로 정의한 세그먼트에 
+할당할 수 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC39">PHDRS 
+Command</A>를 참고하라. 섹션이 여러 세그먼트에 할당되면 <SAMP>`:<VAR>phdr</VAR>'</SAMP>이 없어도 다음으로 
+할당된 모든 섹션들은 같은 세그먼트들에 할당된다. 섹션을 어떤 세그먼트에도 집어넣지 않기 위해서는 <CODE>:NONE</CODE>을 사용해야 
+한다. 
+<P>다음은 간단한 예다. <PRE>PHDRS { text PT_LOAD ; }
+SECTIONS { .text : { *(.text) } :text }
+</PRE></FONT><!-- <H4><A NAME="SEC36" HREF="ld_toc.html#TOC36">Output section fill</A></H4> --><BR><FONT 
+color=blue>
+<H4><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC36" 
+name=SEC36>출력 섹션 채우기</A></H4></FONT>
+<P><A name=IDX349></A><A name=IDX350></A><A name=IDX351></A>You can set the fill 
+pattern for an entire section by using <SAMP>`=<VAR>fillexp</VAR>'</SAMP>. 
+<VAR>fillexp</VAR> is an expression (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A>). Any otherwise unspecified regions of memory within the 
+output section (for example, gaps left due to the required alignment of input 
+sections) will be filled with the two least significant bytes of the value, 
+repeated as necessary. 
+<P>You can also change the fill value with a <CODE>FILL</CODE> command in the 
+output section commands; see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC28">Output 
+section data</A>. 
+<P>Here is a simple example: <BR><FONT color=blue>
+<P><SAMP>`=<VAR>fillexp</VAR>'</SAMP>로 전체 섹션에 대한 채우기 패턴을 지정할 수 있다. 
+<VAR>fillexp</VAR>는 표현식이다. (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC41">Expressions 
+in Linker Scripts</A> 참고) 출력 섹션에서 (입력 섹션에 정렬 필요로 남겨진 공간과 같은) 메모리의 지정하지 않은 부분은 값의 
+마지막 2 바이트로 반복해서 채워진다. 
+<P>출력 섹션 명령어 <CODE>FILL</CODE>로 채우기 값을 변경 할 수 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC28">Output 
+section data</A>를 참고하라. 
+<P>다음은 간단한 예이다. <PRE>SECTIONS { .text : { *(.text) } =0x9090 }
+</PRE></FONT><!-- <H3><A NAME="SEC37" HREF="ld_toc.html#TOC37">Overlay description</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC37" 
+name=SEC37>오버레이 기술</A></H3></FONT>
+<P><A name=IDX352></A><A name=IDX353></A>An overlay description provides an easy 
+way to describe sections which are to be loaded as part of a single memory image 
+but are to be run at the same memory address. At run time, some sort of overlay 
+manager will copy the overlaid sections in and out of the runtime memory address 
+as required, perhaps by simply manipulating addressing bits. This approach can 
+be useful, for example, when a certain region of memory is faster than another. 
+<P>Overlays are described using the <CODE>OVERLAY</CODE> command. The 
+<CODE>OVERLAY</CODE> command is used within a <CODE>SECTIONS</CODE> command, 
+like an output section description. The full syntax of the <CODE>OVERLAY</CODE> 
+command is as follows: <BR><FONT color=blue>
+<P>오버레이 기술은 쉽게 같은 메모리 주소에 로드되야 하는 섹션들을 지시하는 방법이다. 실행 중에 일종의 오버레이 매니저가 필요하면 주소를 
+조정하여 섹션을 메모리에 복사한다. 이 방식은 메모리의 어떤 영역이 다른 곳보다 빠르다면 유용하다. 
+<P><CODE>OVERLAY</CODE> 명령어를 사용하여 오버레이를 기술한다. <CODE>OVERLAY</CODE> 명령어는 출력 섹션 
+기술과 같이 <CODE>SECTIONS</CODE> 명령어 안에서 쓰인다. 명령어의 문법은 다음과 같다. <PRE>OVERLAY [<VAR>start</VAR>] : [NOCROSSREFS] [AT ( <VAR>ldaddr</VAR> )]
+  {
+    <VAR>secname1</VAR>
+      {
+        <VAR>output-section-command</VAR>
+        <VAR>output-section-command</VAR>
+        ...
+      } [:<VAR>phdr</VAR>...] [=<VAR>fill</VAR>]
+    <VAR>secname2</VAR>
+      {
+        <VAR>output-section-command</VAR>
+        <VAR>output-section-command</VAR>
+        ...
+      } [:<VAR>phdr</VAR>...] [=<VAR>fill</VAR>]
+    ...
+  } [&gt;<VAR>region</VAR>] [:<VAR>phdr</VAR>...] [=<VAR>fill</VAR>]
+</PRE></FONT>
+<P>Everything is optional except <CODE>OVERLAY</CODE> (a keyword), and each 
+section must have a name (<VAR>secname1</VAR> and <VAR>secname2</VAR> above). 
+The section definitions within the <CODE>OVERLAY</CODE> construct are identical 
+to those within the general <CODE>SECTIONS</CODE> contruct (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC18">SECTIONS 
+command</A>), except that no addresses and no memory regions may be defined for 
+sections within an <CODE>OVERLAY</CODE>. 
+<P>The sections are all defined with the same starting address. The load 
+addresses of the sections are arranged such that they are consecutive in memory 
+starting at the load address used for the <CODE>OVERLAY</CODE> as a whole (as 
+with normal section definitions, the load address is optional, and defaults to 
+the start address; the start address is also optional, and defaults to the 
+current value of the location counter). <BR><FONT color=blue>
+<P><CODE>OVERLAY</CODE> 키워드를 제외하고 모두 선택적이고, 각 섹션은 (위에서 <VAR>secname1</VAR>과 
+<VAR>secname2</VAR>) 이름을 가져야 한다. <CODE>OVERLAY</CODE>에서 섹션 정의는 섹션을 위해 어떤 주소나 메모리 
+영역이 정의될 수 없다는 것을 제외하고는 일반 <CODE>SECTIONS</CODE>과 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC18">SECTIONS 
+command</A> 참고) 동일하다. 
+<P>섹션은 모두 같은 시작 주소를 가진다. 섹션의 로드 주소는 <CODE>OVERLAY</CODE>의 로드 주소부터 연속적으로 배치된다. 
+(보통 섹션 정의와 같이 로드 주소는 선택적으로, 기본값은 start 주소이다. start 주소도 선택적으로, 기본값은 현재 위치 카운터이다.) 
+</FONT>
+<P>If the <CODE>NOCROSSREFS</CODE> keyword is used, and there any references 
+among the sections, the linker will report an error. Since the sections all run 
+at the same address, it normally does not make sense for one section to refer 
+directly to another. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC14">Other 
+linker script commands</A>. 
+<P>For each section within the <CODE>OVERLAY</CODE>, the linker automatically 
+defines two symbols. The symbol <CODE>__load_start_<VAR>secname</VAR></CODE> is 
+defined as the starting load address of the section. The symbol 
+<CODE>__load_stop_<VAR>secname</VAR></CODE> is defined as the final load address 
+of the section. Any characters within <VAR>secname</VAR> which are not legal 
+within C identifiers are removed. C (or assembler) code may use these symbols to 
+move the overlaid sections around as necessary. <BR><FONT color=blue>
+<P><CODE>NOCROSSREFS</CODE> 키워드를 사용하고 섹션들 사이에 참조가 있다면 링커는 오류를 출력한다. 섹션이 모두 동일한 
+주소에서 실행되기 때문에 한 섹션이 다른 섹션을 직접 참조하는 것은 불가능하다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC14">Other 
+linker script commands</A>를 참고하라. 
+<P><CODE>OVERLAY</CODE>의 각 섹션 마다 링커는 자동으로 두 심볼을 정의한다. 심볼 
+<CODE>__load_start_<VAR>secname</VAR></CODE>은 섹션의 시작 로드 주소로 정의된다. 심볼 
+<CODE>__load_stop_<VAR>secname</VAR></CODE>은 로드 주소 끝으로 정의된다. <VAR>secname</VAR> 
+이름에서 C 인식자로 허용되지 않은 문자는 제거된다. 필요하다면 C (혹은 어셈블러) 코드는 섹션을 옮기기 위해서 이 심볼을 사용할 수 있다. 
+</FONT>
+<P>At the end of the overlay, the value of the location counter is set to the 
+start address of the overlay plus the size of the largest section. 
+<P>Here is an example. Remember that this would appear inside a 
+<CODE>SECTIONS</CODE> construct. <BR><FONT color=blue>
+<P>오버레이 후에 위치 카운터 값은 오버레이 시작 주소와 가장 큰 섹션의 크기의 합으로 설정된다. 
+<P>다음은 예이다. 이것이 <CODE>SECTIONS</CODE> 안에 나올 수 있다는 것을 기억하자. <PRE>  OVERLAY 0x1000 : AT (0x4000)
+   {
+     .text0 { o1/*.o(.text) }
+     .text1 { o2/*.o(.text) }
+   }
+</PRE></FONT>
+<P>This will define both <SAMP>`.text0'</SAMP> and <SAMP>`.text1'</SAMP> to 
+start at address 0x1000. <SAMP>`.text0'</SAMP> will be loaded at address 0x4000, 
+and <SAMP>`.text1'</SAMP> will be loaded immediately after 
+<SAMP>`.text0'</SAMP>. The following symbols will be defined: 
+<CODE>__load_start_text0</CODE>, <CODE>__load_stop_text0</CODE>, 
+<CODE>__load_start_text1</CODE>, <CODE>__load_stop_text1</CODE>. 
+<P>C code to copy overlay <CODE>.text1</CODE> into the overlay area might look 
+like the following. <BR><FONT color=blue>
+<P>이는 주소 0x1000에서 시작하는 <SAMP>`.text0'</SAMP>과 <SAMP>`.text1'</SAMP>을 정의한다. 
+<SAMP>`.text0'</SAMP>은 주소 0x4000에서 읽어들이고, <SAMP>`.text1'</SAMP>은 
+<SAMP>`.text0'</SAMP> 바로 뒤에서 읽어들일 수 있다. 심볼 <CODE>__load_start_text0</CODE>, 
+<CODE>__load_stop_text0</CODE>, <CODE>__load_start_text1</CODE>, 
+<CODE>__load_stop_text1</CODE>이 정의된다. 
+<P><CODE>.text1</CODE>를 오버레이 영역에 복사하는 C 코드는 다음과 같다. <PRE>  extern char __load_start_text1, __load_stop_text1;
+  memcpy ((char *) 0x1000, &amp;__load_start_text1,
+          &amp;__load_stop_text1 - &amp;__load_start_text1);
+</PRE></FONT>
+<P>Note that the <CODE>OVERLAY</CODE> command is just syntactic sugar, since 
+everything it does can be done using the more basic commands. The above example 
+could have been written identically as follows. <BR><FONT color=blue>모든 것이 기본적인 
+명령어로도 가능하므로 <CODE>OVERLAY</CODE> 명령어는 단지 오버레이를 편리하게 사용하기 위한 것이다. 위의 예는 다음과 정확히 
+일치한다. <PRE>  .text0 0x1000 : AT (0x4000) { o1/*.o(.text) }
+  __load_start_text0 = LOADADDR (.text0);
+  __load_stop_text0 = LOADADDR (.text0) + SIZEOF (.text0);
+  .text1 0x1000 : AT (0x4000 + SIZEOF (.text0)) { o2/*.o(.text) }
+  __load_start_text1 = LOADADDR (.text1);
+  __load_stop_text1 = LOADADDR (.text1) + SIZEOF (.text1);
+  . = 0x1000 + MAX (SIZEOF (.text0), SIZEOF (.text1));
+</PRE></FONT><!-- <H2><A NAME="SEC38" HREF="ld_toc.html#TOC38">MEMORY command</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC38" 
+name=SEC38>MEMORY 명령어</A></H2></FONT>
+<P><A name=IDX354></A><A name=IDX355></A><A name=IDX356></A><A 
+name=IDX357></A><A name=IDX358></A>The linker's default configuration permits 
+allocation of all available memory. You can override this by using the 
+<CODE>MEMORY</CODE> command. 
+<P>The <CODE>MEMORY</CODE> command describes the location and size of blocks of 
+memory in the target. You can use it to describe which memory regions may be 
+used by the linker, and which memory regions it must avoid. You can then assign 
+sections to particular memory regions. The linker will set section addresses 
+based on the memory regions, and will warn about regions that become too full. 
+The linker will not shuffle sections around to fit into the available regions. 
+<BR><FONT color=blue>
+<P>링커의 기본 설정은 가능한 어떤 메모리도 사용할 수 있다. 이를 <CODE>MEMORY</CODE>로 제한할 수 있다. 
+<P><CODE>MEMORY</CODE> 명령어는 플래폼에서 메모리 블록의 위치와 크기를 알려준다. 그래서 링커가 사용거나 피해야하는 메모리 
+영역을 지정할 수 있다. 또 섹션을 특정 메모리 영역에 할당할 수 있다. 링커는 메모리 영역에 기반하여 섹션 주소를 정하고 영역이 다 차면 
+경고를 한다. 링커는 주어진 크기에 적합하게 섹션을 재배치하지 못한다. </FONT>
+<P>A linker script may contain at most one use of the <CODE>MEMORY</CODE> 
+command. However, you can define as many blocks of memory within it as you wish. 
+The syntax is: <BR><FONT color=blue>
+<P>링커 스크립트는 <CODE>MEMORY</CODE> 명령어를 최대 한번 사용할 수 있다. 그러나 그 안에 원하는 만큼 블록을 정의할 수 
+있다. 문법은 다음과 같다. <PRE>MEMORY
+  {
+    <VAR>name</VAR> [(<VAR>attr</VAR>)] : ORIGIN = <VAR>origin</VAR>, LENGTH = <VAR>len</VAR>
+    ...
+  }
+</PRE></FONT>
+<P>The <VAR>name</VAR> is a name used in the linker script to refer to the 
+region. The region name has no meaning outside of the linker script. Region 
+names are stored in a separate name space, and will not conflict with symbol 
+names, file names, or section names. Each memory region must have a distinct 
+name. 
+<P><A name=IDX359></A>The <VAR>attr</VAR> string is an optional list of 
+attributes that specify whether to use a particular memory region for an input 
+section which is not explicitly mapped in the linker script. As described in 
+section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC18">SECTIONS 
+command</A>, if you do not specify an output section for some input section, the 
+linker will create an output section with the same name as the input section. If 
+you define region attributes, the linker will use them to select the memory 
+region for the output section that it creates. <BR><FONT color=blue>
+<P><VAR>name</VAR>는 링커 스크립트가 영역을 지칭하는 이름이다. 영역 이름은 스크립트 밖에서는 아무 의미가 없다. 영역 이름은 
+독립된 네임스페이스에 저장되기 때문에 심볼 이름, 파일명, 섹션 이름과 같은 이름을 사용해도 된다. 각 메모리 영역끼리는 서로 다른 이름을 
+가져야한다. 
+<P><VAR>attr</VAR>은 스크립트에서 명시적으로 대응하지 않는 입력 섹션의 메모리 영역을 지정하기위한 선택적인 속성들이다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC18">SECTIONS 
+command</A>에서 설명한대로 입력 섹션에 대한 출력 섹션을 지정하지 않으면 입력 섹션과 같은 이름의 출력 섹션을 만든다. 이 경우 링커는 
+출력 섹션의 메모리 영역을 선택하기 위해서 영역 속성을 사용한다. </FONT>
+<P>The <VAR>attr</VAR> string must consist only of the following characters: 
+<DL compact>
+  <DT><SAMP>`R'</SAMP> 
+  <DD>Read-only section 
+  <DT><SAMP>`W'</SAMP> 
+  <DD>Read/write section 
+  <DT><SAMP>`X'</SAMP> 
+  <DD>Executable section 
+  <DT><SAMP>`A'</SAMP> 
+  <DD>Allocatable section 
+  <DT><SAMP>`I'</SAMP> 
+  <DD>Initialized section 
+  <DT><SAMP>`L'</SAMP> 
+  <DD>Same as <SAMP>`I'</SAMP> 
+  <DT><SAMP>`!'</SAMP> 
+  <DD>Invert the sense of any of the preceding attributes </DD></DL><BR><FONT 
+color=blue>
+<P><VAR>attr</VAR>은 다음 문자들로 구성된다. 
+<DL compact>
+  <DT><SAMP>`R'</SAMP> 
+  <DD>읽기전용 섹션 
+  <DT><SAMP>`W'</SAMP> 
+  <DD>읽기쓰기 섹션 
+  <DT><SAMP>`X'</SAMP> 
+  <DD>실행가능 섹션 
+  <DT><SAMP>`A'</SAMP> 
+  <DD>할당가능 섹션 
+  <DT><SAMP>`I'</SAMP> 
+  <DD>초기화된 섹션 
+  <DT><SAMP>`L'</SAMP> 
+  <DD><SAMP>`I'</SAMP>와 동일 
+  <DT><SAMP>`!'</SAMP> 
+  <DD>위의 속성들의 의미를 역으로 함 </DD></DL></FONT>
+<P>If a unmapped section matches any of the listed attributes other than 
+<SAMP>`!'</SAMP>, it will be placed in the memory region. The <SAMP>`!'</SAMP> 
+attribute reverses this test, so that an unmapped section will be placed in the 
+memory region only if it does not match any of the listed attributes. 
+<P><A name=IDX360></A><A name=IDX361></A><A name=IDX362></A>The 
+<VAR>origin</VAR> is an expression for the start address of the memory region. 
+The expression must evaluate to a constant before memory allocation is 
+performed, which means that you may not use any section relative symbols. The 
+keyword <CODE>ORIGIN</CODE> may be abbreviated to <CODE>org</CODE> or 
+<CODE>o</CODE> (but not, for example, <CODE>ORG</CODE>). <BR><FONT color=blue>
+<P>대응시키지 않은 섹션이 <SAMP>`!'</SAMP>를 제외한 위의 속성과 일치하면 그 메모리 영역에 위치한다. 
+<SAMP>`!'</SAMP>은 이 검사를 역으로 하여 어떤 속성과도 일치하지 않으면 메모리 영역에 할당한다. 
+<P><VAR>origin</VAR>은 메모리 영역의 시작주소를 나타내는 표현식이다. 표현식은 메모리 할당 전에 상수로 알 수 있어야 하므로 
+어느 섹션에 상대적인 심볼을 사용할 수 없다. <CODE>ORIGIN</CODE> 키워드는 <CODE>org</CODE>나 
+<CODE>o</CODE>로 줄여쓸 수 있다. (그러나 <CODE>ORG</CODE>은 안된다.) </FONT>
+<P><A name=IDX363></A><A name=IDX364></A><A name=IDX365></A>The <VAR>len</VAR> 
+is an expression for the size in bytes of the memory region. As with the 
+<VAR>origin</VAR> expression, the expression must evaluate to a constant before 
+memory allocation is performed. The keyword <CODE>LENGTH</CODE> may be 
+abbreviated to <CODE>len</CODE> or <CODE>l</CODE>. 
+<P>In the following example, we specify that there are two memory regions 
+available for allocation: one starting at <SAMP>`0'</SAMP> for 256 kilobytes, 
+and the other starting at <SAMP>`0x40000000'</SAMP> for four megabytes. The 
+linker will place into the <SAMP>`rom'</SAMP> memory region every section which 
+is not explicitly mapped into a memory region, and is either read-only or 
+executable. The linker will place other sections which are not explicitly mapped 
+into a memory region into the <SAMP>`ram'</SAMP> memory region. <BR><FONT 
+color=blue>
+<P><VAR>len</VAR>은 바이트로 메모리 영역의 크기를 나타내는 표현식이다. <VAR>origin</VAR> 표현식과 같이 메모리 할당 
+전에 값을 알 수 있어야 한다. <CODE>LENGTH</CODE> 키워드는 <CODE>len</CODE>나 <CODE>l</CODE>로 줄여 
+사용할 수 있다. 
+<P>아래 예에서 할당을 위해 두 메모리 영역을 지정한다. 하나는 <SAMP>`0'</SAMP>에서 256 kb 만큼이고, 다른 하나는 
+<SAMP>`0x40000000'</SAMP>에서 4 mb 만큼이다. 링커는 일기전용이거나 실행가능한 명시적으로 대응시키지 않은 섹션을 
+<SAMP>`rom'</SAMP> 메모리 영역에 위치시킨다. 다른 명시적으로 대응시키지 않은 섹션은 <SAMP>`ram'</SAMP> 메모리 
+영역에 위치시킨다. <PRE>MEMORY
+  {
+    rom (rx)  : ORIGIN = 0, LENGTH = 256K
+    ram (!rx) : org = 0x40000000, l = 4M
+  }
+</PRE></FONT>
+<P>Once you define a memory region, you can direct the linker to place specific 
+output sections into that memory region by using the 
+<SAMP>`&gt;<VAR>region</VAR>'</SAMP> output section attribute. For example, if 
+you have a memory region named <SAMP>`mem'</SAMP>, you would use 
+<SAMP>`&gt;mem'</SAMP> in the output section definition. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC34">Output 
+section region</A>. If no address was specified for the output section, the 
+linker will set the address to the next available address within the memory 
+region. If the combined output sections directed to a memory region are too 
+large for the region, the linker will issue an error message. <BR><FONT 
+color=blue>
+<P>메모리 영역을 정의하였으면 출력 섹션 속성 <SAMP>`&gt;<VAR>region</VAR>'</SAMP>을 사용하여 특정 출력 섹션을 
+메모리 영역으로 위치시킬 수 있다. 예를 들어 <SAMP>`mem'</SAMP>이라는 메모리 영역이 있다면 출력 섹션 정의에서 
+<SAMP>`&gt;mem'</SAMP>을 사용할 수 있다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC34">Output 
+section region</A>를 참고하라. 출력 섹션에 주소가 지정되지 않으면 링커는 메모리 영역에서 남은 주소를 사용한다. 메모리 영역에 
+위치할 출력 섹션들이 영역 보다 크다면 링커는 오류를 낸다. </FONT><!-- <H2><A NAME="SEC39" HREF="ld_toc.html#TOC39">PHDRS Command</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC39" 
+name=SEC39>PHDRS 명령어</A></H2></FONT>
+<P><A name=IDX366></A><A name=IDX367></A><A name=IDX368></A><A 
+name=IDX369></A><A name=IDX370></A>The ELF object file format uses <EM>program 
+headers</EM>, also knows as <EM>segments</EM>. The program headers describe how 
+the program should be loaded into memory. You can print them out by using the 
+<CODE>objdump</CODE> program with the <SAMP>`-p'</SAMP> option. 
+<P>When you run an ELF program on a native ELF system, the system loader reads 
+the program headers in order to figure out how to load the program. This will 
+only work if the program headers are set correctly. This manual does not 
+describe the details of how the system loader interprets program headers; for 
+more information, see the ELF ABI. <BR><FONT color=blue>
+<P>ELF 오브젝트 파일 형식은 <EM>세그먼트</EM>로도 불리는 <EM>프로그램 헤더</EM>를 가진다. 프로그램 헤더는 프로그램이 어떻게 
+메모리에 로드될지를 지시한다. <CODE>objdump</CODE> 프로그램의 <SAMP>`-p'</SAMP> 옵션으로 확인할 수 있다. 
+<P>ELF 시스템에서 ELF 프로그램을 수행하면 시스템 로더가 어떻게 프로그램을 로드할지 알기 위해서 프로그램 헤더를 읽는다. 이는 프로그램 
+헤더가 올바로 있어야만 가능하다. 이 글은 시스템 로더가 정확히 어떻게 프로그램 헤더를 해석하는지를 다루지 않는다. 자세한 정보는 ELF 
+ABI를 참고하라. </FONT>
+<P>The linker will create reasonable program headers by default. However, in 
+some cases, you may need to specify the program headers more precisely. You may 
+use the <CODE>PHDRS</CODE> command for this purpose. When the linker sees the 
+<CODE>PHDRS</CODE> command in the linker script, it will not create any program 
+headers other than the ones specified. 
+<P>The linker only pays attention to the <CODE>PHDRS</CODE> command when 
+generating an ELF output file. In other cases, the linker will simply ignore 
+<CODE>PHDRS</CODE>. <BR><FONT color=blue>
+<P>링커는 기본적으로 올바른 프로그램 헤더를 만든다. 그러나 어떤 경우에 프로그램 헤더를 더 자세히 작성할 필요가 있다. 이 경우 
+<CODE>PHDRS</CODE> 명령어를 사용한다. 링커는 스크립트에 <CODE>PHDRS</CODE> 명령어가 있다면 지시한 프로그램 헤더 
+외에는 만들지 않는다. 
+<P>링커는 ELF 출력파일을 만들 때만 <CODE>PHDRS</CODE> 명령어를 사용한다. 다른 경우 <CODE>PHDRS</CODE>를 
+무시한다. </FONT>
+<P>This is the syntax of the <CODE>PHDRS</CODE> command. The words 
+<CODE>PHDRS</CODE>, <CODE>FILEHDR</CODE>, <CODE>AT</CODE>, and 
+<CODE>FLAGS</CODE> are keywords. <BR><FONT color=blue>
+<P><CODE>PHDRS</CODE> 명령어 문법은 다음과 같다. <CODE>PHDRS</CODE>, <CODE>FILEHDR</CODE>, 
+<CODE>AT</CODE>, <CODE>FLAGS</CODE>는 모두 키워드이다. <PRE>PHDRS
+{
+  <VAR>name</VAR> <VAR>type</VAR> [ FILEHDR ] [ PHDRS ] [ AT ( <VAR>address</VAR> ) ]
+        [ FLAGS ( <VAR>flags</VAR> ) ] ;
+}
+</PRE></FONT>
+<P>The <VAR>name</VAR> is used only for reference in the <CODE>SECTIONS</CODE> 
+command of the linker script. It is not put into the output file. Program header 
+names are stored in a separate name space, and will not conflict with symbol 
+names, file names, or section names. Each program header must have a distinct 
+name. 
+<P>Certain program header types describe segments of memory which the system 
+loader will load from the file. In the linker script, you specify the contents 
+of these segments by placing allocatable output sections in the segments. You 
+use the <SAMP>`:<VAR>phdr</VAR>'</SAMP> output section attribute to place a 
+section in a particular segment. See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC35">Output 
+section phdr</A>. <BR><FONT color=blue>
+<P><VAR>name</VAR>은 <CODE>SECTIONS</CODE> 명령어에서 참조로만 쓰인다. 이는 출력파일에 포함되지 않는다. 
+프로그램 헤더는 별로의 네임스페이스에 저장되기 때문에 심볼 이름, 파일명, 섹션 이름과 겹쳐도 된다. 각 프로그램 헤더는 서로 다른 이름을 
+가져야한다. 
+<P>어떤 프로그램 헤더는 시스템 로더가 파일에서 로드할 메모리 세그먼트를 기술한다. 스크립트에서 할당가능한 출력 섹션을 세그먼트에 위치하여 각 
+세그먼트의 내용을 정한다. 섹션을 특정 세그먼트에 위치하기 위해서 출력 섹션 속성 <SAMP>`:<VAR>phdr</VAR>'</SAMP>를 
+사용한다. <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC35">Output 
+section phdr</A>를 참고하라. </FONT>
+<P>It is normal to put certain sections in more than one segment. This merely 
+implies that one segment of memory contains another. You may repeat 
+<SAMP>`:<VAR>phdr</VAR>'</SAMP>, using it once for each segment which should 
+contain the section. 
+<P>If you place a section in one or more segments using 
+<SAMP>`:<VAR>phdr</VAR>'</SAMP>, then the linker will place all subsequent 
+allocatable sections which do not specify <SAMP>`:<VAR>phdr</VAR>'</SAMP> in the 
+same segments. This is for convenience, since generally a whole set of 
+contiguous sections will be placed in a single segment. You can use 
+<CODE>:NONE</CODE> to override the default segment and tell the linker to not 
+put the section in any segment at all. <BR><FONT color=blue>
+<P>여러 세그먼트에 섹션을 두는 것은 흔하다. 이는 단지 메모리 세그먼트가 다른 메모리 세그먼트를 포함할 수 있다는 것을 뜻한다. 섹션을 
+포함할 각 세그먼트에 한번씩 <SAMP>`:<VAR>phdr</VAR>'</SAMP>을 반복할 수 있다. 
+<P><SAMP>`:<VAR>phdr</VAR>'</SAMP>를 사용하여 섹션을 여러 세그먼트에 위치한 후 
+<SAMP>`:<VAR>phdr</VAR>'</SAMP>를 사용하지 않으면 다음 할당가능한 섹션도 같은 세그먼트에 위치한다. 이는 편리하게 
+일반적으로 연속된 섹션을 같은 세그먼트에 저장하기 위한 것이다. <CODE>:NONE</CODE>로 이를 무시하고 섹션을 세그먼트에 저장하지 
+않을 수 있다. </FONT>
+<P><A name=IDX371></A><A name=IDX372></A>You may use the <CODE>FILEHDR</CODE> 
+and <CODE>PHDRS</CODE> keywords appear after the program header type to further 
+describe the contents of the segment. The <CODE>FILEHDR</CODE> keyword means 
+that the segment should include the ELF file header. The <CODE>PHDRS</CODE> 
+keyword means that the segment should include the ELF program headers 
+themselves. 
+<P>The <VAR>type</VAR> may be one of the following. The numbers indicate the 
+value of the keyword. <BR><FONT color=blue>
+<P>세그먼트 내용을 더 설명하기 위해 프로그램 헤더 타입 뒤에 <CODE>FILEHDR</CODE>나 <CODE>PHDRS</CODE> 
+키워드를 사용할 수 있다. <CODE>FILEHDR</CODE> 키워드는 세그먼트가 ELF 파일 헤더를 포함하게 한다. 
+<CODE>PHDRS</CODE> 키워드는 세그먼트가 ELF 프로그램 헤더 자체를 포함하게 한다. 
+<P><VAR>type</VAR>는 다음 중 하나이다. 숫자는 키워드의 값을 나타낸다. </FONT>
+<DL compact>
+  <DT><CODE>PT_NULL</CODE> (0) 
+  <DD>Indicates an unused program header. 
+  <DT><CODE>PT_LOAD</CODE> (1) 
+  <DD>Indicates that this program header describes a segment to be loaded from 
+  the file. 
+  <DT><CODE>PT_DYNAMIC</CODE> (2) 
+  <DD>Indicates a segment where dynamic linking information can be found. 
+  <DT><CODE>PT_INTERP</CODE> (3) 
+  <DD>Indicates a segment where the name of the program interpreter may be 
+  found. 
+  <DT><CODE>PT_NOTE</CODE> (4) 
+  <DD>Indicates a segment holding note information. 
+  <DT><CODE>PT_SHLIB</CODE> (5) 
+  <DD>A reserved program header type, defined but not specified by the ELF ABI. 
+  <DT><CODE>PT_PHDR</CODE> (6) 
+  <DD>Indicates a segment where the program headers may be found. 
+  <DT><VAR>expression</VAR> 
+  <DD>An expression giving the numeric type of the program header. This may be 
+  used for types not defined above. </DD></DL><BR><FONT color=blue>
+<DL compact>
+  <DT><CODE>PT_NULL</CODE> (0) 
+  <DD>사용되지 않는 프로그램 헤더를 나타낸다. 
+  <DT><CODE>PT_LOAD</CODE> (1) 
+  <DD>이 프로그램 헤더는 파일에서 로드되는 세그먼트를 나타낸다. 
+  <DT><CODE>PT_DYNAMIC</CODE> (2) 
+  <DD>동적 링크 자료를 포함한 세그먼트를 나타낸다. 
+  <DT><CODE>PT_INTERP</CODE> (3) 
+  <DD>프로그램 해석기 이름을 포함한 세그먼트를 나타낸다. 
+  <DT><CODE>PT_NOTE</CODE> (4) 
+  <DD>note 정보를 포함한 세그먼트를 나타낸다. 
+  <DT><CODE>PT_SHLIB</CODE> (5) 
+  <DD>예약된 프로그램 헤더 타입으로, 정의는 되었지만 ELF ABI에서 사용하지는 않는다. 
+  <DT><CODE>PT_PHDR</CODE> (6) 
+  <DD>프로그램 헤더를 포함한 세그먼트를 나타낸다. 
+  <DT><VAR>expression</VAR> 
+  <DD>표현식이 프로그램 헤더 타입을 나타낸다. 이는 위에 해당하지 않는 타입의 경우 사용한다. </DD></DL></FONT>
+<P>You can specify that a segment should be loaded at a particular address in 
+memory by using an <CODE>AT</CODE> expression. This is identical to the 
+<CODE>AT</CODE> command used as an output section attribute (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC33">Output 
+section LMA</A>). The <CODE>AT</CODE> command for a program header overrides the 
+output section attribute. 
+<P>The linker will normally set the segment flags based on the sections which 
+comprise the segment. You may use the <CODE>FLAGS</CODE> keyword to explicitly 
+specify the segment flags. The value of <VAR>flags</VAR> must be an integer. It 
+is used to set the <CODE>p_flags</CODE> field of the program header. <BR><FONT 
+color=blue>
+<P><CODE>AT</CODE> 키워드로 세그먼트가 특정 주소에 로드하게 할 수 있다. 이는 출력 섹션 속성 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC33">Output 
+section LMA</A> 참고) <CODE>AT</CODE>과 동일하다. 프로그램 헤더에 대한 <CODE>AT</CODE> 명령어는 출력 
+섹션 속성보다 우선순위를 가진다. </FONT>
+<P>Here is an example of <CODE>PHDRS</CODE>. This shows a typical set of program 
+headers used on a native ELF system. <BR><FONT color=blue>아래는 
+<CODE>PHDRS</CODE>의 예이다. ELF 시스템에서 사용하는 전형적인 경우이다. <PRE>PHDRS
+{
+  headers PT_PHDR PHDRS ;
+  interp PT_INTERP ;
+  text PT_LOAD FILEHDR PHDRS ;
+  data PT_LOAD ;
+  dynamic PT_DYNAMIC ;
+}
+
+SECTIONS
+{
+  . = SIZEOF_HEADERS;
+  .interp : { *(.interp) } :text :interp
+  .text : { *(.text) } :text
+  .rodata : { *(.rodata) } /* defaults to :text */
+  ...
+  . = . + 0x1000; /* move to a new page in memory */
+  .data : { *(.data) } :data
+  .dynamic : { *(.dynamic) } :data :dynamic
+  ...
+}
+</PRE></FONT><!-- <H2><A NAME="SEC40" HREF="ld_toc.html#TOC40">VERSION Command</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC40" 
+name=SEC40>VERSION 명령어</A></H2></FONT>
+<P><A name=IDX373></A><A name=IDX374></A><A name=IDX375></A><A 
+name=IDX376></A>The linker supports symbol versions when using ELF. Symbol 
+versions are only useful when using shared libraries. The dynamic linker can use 
+symbol versions to select a specific version of a function when it runs a 
+program that may have been linked against an earlier version of the shared 
+library. 
+<P>You can include a version script directly in the main linker script, or you 
+can supply the version script as an implicit linker script. You can also use the 
+<SAMP>`--version-script'</SAMP> linker option. 
+<P>The syntax of the <CODE>VERSION</CODE> command is simply <BR><FONT 
+color=blue>
+<P>ELF에서 링커는 심볼 버전을 지원한다. 심볼 버전은 공유 라이브러리를 사용할 때만 유용하다. 동적 링커는 프로그램이 이전 버전의 공유 
+라이브러리에 링크된 경우 심볼 버전으로 함수의 버전을 선택한다. 
+<P>심볼 버전을 스크립트에 직접 포함하거나 암묵적인 스크립트로 버전을 지정할 수 있다. (역주, 암묵적인 스크립트는 아래에서 설명된다.) 또 
+<SAMP>`--version-script'</SAMP> 옵션을 사용할 수도 있다. 
+<P>아래는 <CODE>VERSION</CODE> 명령어 문법이다. <PRE>VERSION { version-script-commands } DEPENDENCY_VERSION
+</PRE></FONT>
+<P>The format of the version script commands is identical to that used by Sun's 
+linker in Solaris 2.5. The version script defines a tree of version nodes. You 
+specify the node names and interdependencies in the version script. You can 
+specify which symbols are bound to which version nodes, and you can reduce a 
+specified set of symbols to local scope so that they are not globally visible 
+outside of the shared library. 
+<P>The easiest way to demonstrate the version script language is with a few 
+examples. <BR><FONT color=blue>
+<P>버전 스크립트 명령어 문법은 Sun Solaris 2.5 링커와 동일하다. 이 명령어는 버전 트리를 정의한다. 버전 스크립트에서 노드 
+이름과 서로 연관관계를 설정한다. 어떤 심볼을 어떤 버전에 포함시키고, 어떤 심볼은 지역 영역으로 설정하여 공유 라이브러리 외부에서 볼 수 없게 
+할 수 있다. <PRE>VERS_1.1 {
+	 global:
+		 foo1;
+	 local:
+		 old*;
+		 original*;
+		 new*;
+};
+
+VERS_1.2 {
+		 foo2;
+} VERS_1.1;
+
+VERS_2.0 {
+		 bar1; bar2;
+} VERS_1.2;
+</PRE></FONT>
+<P>This example version script defines three version nodes. The first version 
+node defined is <SAMP>`VERS_1.1'</SAMP>; it has no other dependencies. The 
+script binds the symbol <SAMP>`foo1'</SAMP> to <SAMP>`VERS_1.1'</SAMP>. It 
+reduces a number of symbols to local scope so that they are not visible outside 
+of the shared library. 
+<P>Next, the version script defines node <SAMP>`VERS_1.2'</SAMP>. This node 
+depends upon <SAMP>`VERS_1.1'</SAMP>. The script binds the symbol 
+<SAMP>`foo2'</SAMP> to the version node <SAMP>`VERS_1.2'</SAMP>. 
+<P>Finally, the version script defines node <SAMP>`VERS_2.0'</SAMP>. This node 
+depends upon <SAMP>`VERS_1.2'</SAMP>. The scripts binds the symbols 
+<SAMP>`bar1'</SAMP> and <SAMP>`bar2'</SAMP> are bound to the version node 
+<SAMP>`VERS_2.0'</SAMP>. <BR><FONT color=blue>
+<P>이 버전 스크립트 예는 세 버전 노드를 정의한다. 첫번째 노드는 <SAMP>`VERS_1.1'</SAMP>로 다른 의존관계가 없다. 
+스크립트는 심볼 <SAMP>`foo1'</SAMP>을 <SAMP>`VERS_1.1'</SAMP>에 포함한다. 또 많은 심볼을 지역 영역으로 하여 
+공유 라이브러리 외부에서 볼 수 없게 한다. 
+<P>다음은 <SAMP>`VERS_1.2'</SAMP> 노드이다. 이 노드는 <SAMP>`VERS_1.1'</SAMP>에 의존한다. 스크립트는 
+심볼 <SAMP>`foo2'</SAMP>을 <SAMP>`VERS_1.2'</SAMP>에 포함한다. 
+<P>마지막으로 버전 스크립트는 <SAMP>`VERS_2.0'</SAMP>를 정의한다. 이 노드는 <SAMP>`VERS_1.2'</SAMP>에 
+의존한다. 스크립트는 심볼 <SAMP>`bar1'</SAMP>과 <SAMP>`bar2'</SAMP>를 노드 
+<SAMP>`VERS_2.0'</SAMP>에 포함한다. </FONT>
+<P>When the linker finds a symbol defined in a library which is not specifically 
+bound to a version node, it will effectively bind it to an unspecified base 
+version of the library. You can bind all otherwise unspecified symbols to a 
+given version node by using <SAMP>`global: *'</SAMP> somewhere in the version 
+script. 
+<P>The names of the version nodes have no specific meaning other than what they 
+might suggest to the person reading them. The <SAMP>`2.0'</SAMP> version could 
+just as well have appeared in between <SAMP>`1.1'</SAMP> and <SAMP>`1.2'</SAMP>. 
+However, this would be a confusing way to write a version script. <BR><FONT 
+color=blue>
+<P>링커는 라이브러리에 정의되었지만 버전 노드에 포함되지 않은 심볼을 라이브러리의 명시하지 않은 기본 버전에 포함한다. 모든 심볼을 특정 버전 
+노드에 포함하려면 <SAMP>`global: *'</SAMP>를 사용한다. 
+<P>버전 노드 이름은 사람에게만 의미가 있다. 버전 <SAMP>`2.0'</SAMP>이 <SAMP>`1.1'</SAMP>과 
+<SAMP>`1.2'</SAMP> 사이에도 나올 수 있다. 그러나 그러면 버전 스크립트를 작성하기 힘들어진다. </FONT>
+<P>When you link an application against a shared library that has versioned 
+symbols, the application itself knows which version of each symbol it requires, 
+and it also knows which version nodes it needs from each shared library it is 
+linked against. Thus at runtime, the dynamic loader can make a quick check to 
+make sure that the libraries you have linked against do in fact supply all of 
+the version nodes that the application will need to resolve all of the dynamic 
+symbols. In this way it is possible for the dynamic linker to know with 
+certainty that all external symbols that it needs will be resolvable without 
+having to search for each symbol reference. 
+<P>The symbol versioning is in effect a much more sophisticated way of doing 
+minor version checking that SunOS does. The fundamental problem that is being 
+addressed here is that typically references to external functions are bound on 
+an as-needed basis, and are not all bound when the application starts up. If a 
+shared library is out of date, a required interface may be missing; when the 
+application tries to use that interface, it may suddenly and unexpectedly fail. 
+With symbol versioning, the user will get a warning when they start their 
+program if the libraries being used with the application are too old. <BR><FONT 
+color=blue>
+<P>프로그램을 버전 심볼이 있는 공유 라이브러리에 링크하면, 프로그램은 필요한 심볼의 버전을 알고 링크하는 각 공유 라이브러리에서 필요한 버전 
+노드를 안다. 그래서 실행 중에 동적 링커는 프로그램이 동적 심볼을 리졸브하는데 필요한 버전 노드를 라이브러리가 제공하는지 빨리 확인할 수 
+있다. 이 경우 동적 링커가 각 심볼 참조를 검색하지 않고 필요한 외부 심볼을 확신할 수 있다. 
+<P>심볼 버전은 사실 SunOS의 하위 버전 검사보다 훨씬 더 복잡하다. 중요한 점은 전형적으로 외부 함수의 참조를 프로그램이 시작할 때가 
+아니라 필요할 때마다 찾는 것이다. 공유 라이브러리가 오래되었다면 필요한 인터페이스가 없을 수 있다. 그래서 프로그램이 인터페이스를 찾다가 
+의도하지 않게 갑자기 실패할 수 있다. 프로그램이 사용하는 라이브러리가 너무 오래되었다면 버전 심볼을 이용하여 프로그램을 실행할 때 미리 경고를 
+받을 수 있다. </FONT>
+<P>There are several GNU extensions to Sun's versioning approach. The first of 
+these is the ability to bind a symbol to a version node in the source file where 
+the symbol is defined instead of in the versioning script. This was done mainly 
+to reduce the burden on the library maintainer. You can do this by putting 
+something like: <BR><FONT color=blue>
+<P>GNU는 Sun 버전 방식에 몇몇 확장을 했다. 첫째는 버전 스크립트을 사용하지 않고 심볼을 정의한 소스파일에서 심볼을 버전 노드에 
+포함하는 것이다. 이는 주로 라이브러리 개발자를 편하게 하기 위해서이다. 아래과 같은 것을, <PRE>__asm__(".symver original_foo,foo@VERS_1.1");
+</PRE></FONT>
+<P>in the C source file. This renames the function <SAMP>`original_foo'</SAMP> 
+to be an alias for <SAMP>`foo'</SAMP> bound to the version node 
+<SAMP>`VERS_1.1'</SAMP>. The <SAMP>`local:'</SAMP> directive can be used to 
+prevent the symbol <SAMP>`original_foo'</SAMP> from being exported. <BR><FONT 
+color=blue>
+<P>C 소스코드에 포함하면 된다. 이는 함수 <SAMP>`original_foo'</SAMP>를 버전 노드 
+<SAMP>`VERS_1.1'</SAMP>의 <SAMP>`foo'</SAMP>으로 이름을 바꾼다. 심볼 
+<SAMP>`original_foo'</SAMP>이 익스포트되지 않게 하기 위해서 <SAMP>`local:'</SAMP> 지시어를 사용한다. 
+</FONT>
+<P>The second GNU extension is to allow multiple versions of the same function 
+to appear in a given shared library. In this way you can make an incompatible 
+change to an interface without increasing the major version number of the shared 
+library, while still allowing applications linked against the old interface to 
+continue to function. 
+<P>To do this, you must use multiple <SAMP>`.symver'</SAMP> directives in the 
+source file. Here is an example: <BR><FONT color=blue>
+<P>두번째 GNU 확장은 공유 라이브러리에 같은 함수를 여러 버전에 포함시키는 것이다. 이 경우 오래된 인터페이스와 링크된 프로그램을 계속 
+실행가능하게 하면서 공유 라이브러리의 주 버전을 증가하지 않고 인터페이스에 호환이 안되는 변화를 줄 수 있다. 
+<P>이를 위해 다음과 같이 소스코드에서 여러 <SAMP>`.symver'</SAMP> 지시어를 사용한다. <PRE>__asm__(".symver original_foo,foo@");
+__asm__(".symver old_foo,foo@VERS_1.1");
+__asm__(".symver old_foo1,foo@VERS_1.2");
+__asm__(".symver new_foo,foo@@VERS_2.0");
+</PRE></FONT>
+<P>In this example, <SAMP>`foo@'</SAMP> represents the symbol <SAMP>`foo'</SAMP> 
+bound to the unspecified base version of the symbol. The source file that 
+contains this example would define 4 C functions: <SAMP>`original_foo'</SAMP>, 
+<SAMP>`old_foo'</SAMP>, <SAMP>`old_foo1'</SAMP>, and <SAMP>`new_foo'</SAMP>. 
+<P>When you have multiple definitions of a given symbol, there needs to be some 
+way to specify a default version to which external references to this symbol 
+will be bound. You can do this with the <SAMP>`foo@@VERS_2.0'</SAMP> type of 
+<SAMP>`.symver'</SAMP> directive. You can only declare one version of a symbol 
+as the default in this manner; otherwise you would effectively have multiple 
+definitions of the same symbol. <BR><FONT color=blue>
+<P>위에서 <SAMP>`foo@'</SAMP>는 명시하지 않은 기본 버전에 포함된 심볼 <SAMP>`foo'</SAMP>을 의미한다. 이 예를 
+포함한 소스코드는 다음 네 C 함수를 정의한다. <SAMP>`original_foo'</SAMP>, <SAMP>`old_foo'</SAMP>, 
+<SAMP>`old_foo1'</SAMP>, <SAMP>`new_foo'</SAMP>. 
+<P>주어진 심볼이 여러 정의를 가지면 심볼의 외부 참조가 어떤 버전을 가리키는지 결정해야 한다. 이는 <SAMP>`.symver'</SAMP> 
+지시어의 <SAMP>`foo@@VERS_2.0'</SAMP>과 같이 가능하다. 이런 식으로 기본으로 쓰일 심볼의 버전을 선언가능하다. 그렇지 
+않으면 같은 심볼의 여러 정의가 모두 유효하다. </FONT>
+<P>If you wish to bind a reference to a specific version of the symbol within 
+the shared library, you can use the aliases of convenience (i.e. 
+<SAMP>`old_foo'</SAMP>), or you can use the <SAMP>`.symver'</SAMP> directive to 
+specifically bind to an external version of the function in question. <BR><FONT 
+color=blue>
+<P>공유 라이브러리에서 심볼의 버전에 참조를 하려면 (<SAMP>`old_foo'</SAMP> 같은) 별칭을 사용하거나 외부 버전을 명시적으로 
+지정하기 위해서 <SAMP>`.symver'</SAMP> 지시어를 사용한다. </FONT><!-- <H2><A NAME="SEC41" HREF="ld_toc.html#TOC41">Expressions in Linker Scripts</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC41" 
+name=SEC41>링커 스크립트의 표현식</A></H2></FONT>
+<P><A name=IDX377></A><A name=IDX378></A>The syntax for expressions in the 
+linker script language is identical to that of C expressions. All expressions 
+are evaluated as integers. All expressions are evaluated in the same size, which 
+is 32 bits if both the host and target are 32 bits, and is otherwise 64 bits. 
+<P>You can use and set symbol values in expressions. 
+<P>The linker defines several special purpose builtin functions for use in 
+expressions. <BR><FONT color=blue>
+<P>링커 스크립트 언어의 표현식은 C의 표현식과 동일하다. 모든 표현식은 정수로 취급된다. 표현식은 모두 같은 크기로, 호스트와 대상이 모두 
+32 비트이면 32 비트이고 그렇지 않다면 64 비트이다. 
+<P>표현식에서 심볼값을 사용하거나, 표현식을 심볼값에 대입할 수 있다. 
+<P>링커는 표현식에서 사용할 수 있는 특별한 목적의 기본 함수를 정의한다. </FONT><!-- <H3><A NAME="SEC42" HREF="ld_toc.html#TOC42">Constants</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC42" 
+name=SEC42>상수</A></H3></FONT>
+<P><A name=IDX379></A><A name=IDX380></A>All constants are integers. 
+<P>As in C, the linker considers an integer beginning with <SAMP>`0'</SAMP> to 
+be octal, and an integer beginning with <SAMP>`0x'</SAMP> or <SAMP>`0X'</SAMP> 
+to be hexadecimal. The linker considers other integers to be decimal. 
+<P><A name=IDX381></A><A name=IDX382></A><A name=IDX383></A><A 
+name=IDX384></A><A name=IDX385></A>In addition, you can use the suffixes 
+<CODE>K</CODE> and <CODE>M</CODE> to scale a constant by respectively. For 
+example, the following all refer to the same quantity: <BR><FONT color=blue>
+<P>모든 상수는 정수이다. 
+<P>C와 같이 <SAMP>`0'</SAMP>으로 시작하는 정수는 8 진수, <SAMP>`0x'</SAMP>나 <SAMP>`0X'</SAMP>로 
+시작하는 정수는 16 진수이다. 다른 정수는 10 진수로 취급한다. 
+<P>추가로 접미사 <CODE>K</CODE>와 <CODE>M</CODE>를 사용할 수 있다. 예로 다음 모두 같은 값을 가진다. <PRE>  _fourk_1 = 4K;
+  _fourk_2 = 4096;
+  _fourk_3 = 0x1000;
+</PRE></FONT><!-- <H3><A NAME="SEC43" HREF="ld_toc.html#TOC43">Symbol Names</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC43" 
+name=SEC43>심볼 이름</A></H3></FONT>
+<P><A name=IDX386></A><A name=IDX387></A><A name=IDX388></A><A 
+name=IDX389></A>Unless quoted, symbol names start with a letter, underscore, or 
+period and may include letters, digits, underscores, periods, and hyphens. 
+Unquoted symbol names must not conflict with any keywords. You can specify a 
+symbol which contains odd characters or has the same name as a keyword by 
+surrounding the symbol name in double quotes: <BR><FONT color=blue>
+<P>따옴표하지 않으면 심볼 이름은 문자, `_', `.'로 시작하여 문자, 숫자, `_', `.', `-'을 포함한다. 따옴표하지 않은 심볼은 
+어떤 키워드와도 같은 이름을 하면 안된다. 심볼 이름에 쌍따옴표를 하여 이상한 문자를 포함한 이름이나 키워드와 같은 이름을 사용할 수 있다. <PRE>  "SECTION" = 9;
+  "with a space" = "also with a space" + 10;
+</PRE></FONT>
+<P>Since symbols can contain many non-alphabetic characters, it is safest to 
+delimit symbols with spaces. For example, <SAMP>`A-B'</SAMP> is one symbol, 
+whereas <SAMP>`A - B'</SAMP> is an expression involving subtraction. <BR><FONT 
+color=blue>
+<P>심볼 이름은 알파벳 외의 문자도 포함할 수 있기 때문에 공백으로 심볼을 구분하는 것이 안전하다. 예로 <SAMP>`A-B'</SAMP>는 
+한 심볼이지만 <SAMP>`A - B'</SAMP>는 빼기를 포함한 표현식이다. </FONT><!-- <H3><A NAME="SEC44" HREF="ld_toc.html#TOC44">The Location Counter</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC44" 
+name=SEC44>위치 카운터</A></H3></FONT>
+<P><A name=IDX390></A><A name=IDX391></A><A name=IDX392></A><A 
+name=IDX393></A>The special linker variable <EM>dot</EM> <SAMP>`.'</SAMP> always 
+contains the current output location counter. Since the <CODE>.</CODE> always 
+refers to a location in an output section, it may only appear in an expression 
+within a <CODE>SECTIONS</CODE> command. The <CODE>.</CODE> symbol may appear 
+anywhere that an ordinary symbol is allowed in an expression. 
+<P><A name=IDX394></A>Assigning a value to <CODE>.</CODE> will cause the 
+location counter to be moved. This may be used to create holes in the output 
+section. The location counter may never be moved backwards. <BR><FONT 
+color=blue>
+<P>특별한 변수인 <SAMP>`.'</SAMP>는 항상 현재 위치 카운터를 저장한다. <CODE>.</CODE>가 항상 출력 섹션의 장소를 
+참조하기 때문에 <CODE>SECTIONS</CODE> 명령어 안의 표현식에서만 사용할 수 있다. <CODE>.</CODE>는 표현식에서 보통 
+심볼이 가능한 어떤 곳이라도 나올 수 있다. 
+<P>값을 <CODE>.</CODE>에 대입하면 위치 카운터가 변경한다. 그래서 출력 섹션에 공백을 만들 수 있다. 위치 카운터는 절대로 뒤로 
+움직이지 않는다. <PRE>SECTIONS
+{
+  output :
+    {
+      file1(.text)
+      . = . + 1000;
+      file2(.text)
+      . += 1000;
+      file3(.text)
+    } = 0x1234;
+}
+</PRE></FONT>
+<P>In the previous example, the <SAMP>`.text'</SAMP> section from 
+<TT>`file1'</TT> is located at the beginning of the output section 
+<SAMP>`output'</SAMP>. It is followed by a 1000 byte gap. Then the 
+<SAMP>`.text'</SAMP> section from <TT>`file2'</TT> appears, also with a 1000 
+byte gap following before the <SAMP>`.text'</SAMP> section from 
+<TT>`file3'</TT>. The notation <SAMP>`= 0x1234'</SAMP> specifies what data to 
+write in the gaps (see section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC36">Output 
+section fill</A>). 
+<P><A name=IDX395></A>Note: <CODE>.</CODE> actually refers to the byte offset 
+from the start of the current containing object. Normally this is the 
+<CODE>SECTIONS</CODE> statement, whoes start address is 0, hence <CODE>.</CODE> 
+can be used as an absolute address. If <CODE>.</CODE> is used inside a section 
+description however, it refers to the byte offset from the start of that 
+section, not an absolute address. Thus in a script like this: <BR><FONT 
+color=blue>
+<P>위에서 <TT>`file1'</TT>의 섹션 <SAMP>`.text'</SAMP>은 출력 섹션 <SAMP>`output'</SAMP>의 
+시작에 위치한다. 그 후 1000 바이트 빈공간이 온다. 그리고 <TT>`file2'</TT>의 섹션 <SAMP>`.text'</SAMP>이 
+나오고, <TT>`file3'</TT>의 섹션 <SAMP>`.text'</SAMP>과 사이에 1000 바이트 빈공간이 온다. <SAMP>`= 
+0x1234'</SAMP>는 빈공간에 쓰여질 자료를 (<A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC36">Output 
+section fill</A> 참고) 지정한다. 
+<P>주의! <CODE>.</CODE>눈 항상 현재 객체 시작에서 바이트 옵셋을 지칭한다. 보통 이는 시작 주소가 0인 
+<CODE>SECTIONS</CODE>이므로 <CODE>.</CODE>은 절대 주소로 쓰인다. 그러나 <CODE>.</CODE>을 섹션 기술 
+안에서 사용하면 절대 주소가 아니라 그 섹션 시작에서 (바이트 단위) 옵셋을 지칭한다. 그래서 다음 스크립트에서, <PRE>SECTIONS
+{
+    . = 0x100
+    .text: {
+      *(.text)
+      . = 0x200
+    }
+    . = 0x500
+    .data: {
+      *(.data)
+      . += 0x600
+    }
+}
+</PRE></FONT>
+<P>The <SAMP>`.text'</SAMP> section will be assigned a starting address of 0x100 
+and a size of exactly 0x200 bytes, even if there is not enough data in the 
+<SAMP>`.text'</SAMP> input sections to fill this area. (If there is too much 
+data, an error will be produced because this would be an attempt to move 
+<CODE>.</CODE> backwards). The <SAMP>`.data'</SAMP> section will start at 0x500 
+and it will have an extra 0x600 bytes worth of space after the end of the values 
+from the <SAMP>`.data'</SAMP> input sections and before the end of the 
+<SAMP>`.data'</SAMP> output section itself. <BR><FONT color=blue>
+<P><SAMP>`.text'</SAMP> 섹션은 0x100에서 시작하고 입력 섹션 <SAMP>`.text'</SAMP>에 이 크기를 채우기 
+충분한 자료가 없더라도 크기는 정확히 0x200 바이트이다. (너무 많은 자료가 있다면 <CODE>.</CODE>을 뒤로 이동하려하기 때문에 
+오류가 발생한다.) <SAMP>`.data'</SAMP> 섹션은 0x500에서 시작하고, 입력 섹션 <SAMP>`.data'</SAMP>의 내용 
+끝과 출력 섹션 <SAMP>`.data'</SAMP> 끝 사이에 0x600 바이트 추가 공간을 가진다. </FONT><!-- <H3><A NAME="SEC45" HREF="ld_toc.html#TOC45">Operators</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC45" 
+name=SEC45>연산자</A></H3></FONT>
+<P><A name=IDX396></A><A name=IDX397></A><A name=IDX398></A>The linker 
+recognizes the standard C set of arithmetic operators, with the standard 
+bindings and precedence levels: { @obeylines@parskip=0pt@parindent=0pt @dag@quad 
+Prefix operators. @ddag@quad See section <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+Values to Symbols</A>. } <BR><FONT color=blue>
+<P>링커는 표준 C의 산술 연산자를 같은 우선순위로 인식한다. <!-- texi2html은 다음에 나올 표를 변환하지 못한다 -->
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>우선순위</TH>
+    <TH>순서</TH>
+    <TH>연산자</TH></TR>
+  <TR>
+    <TD>1</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>!</CODE> <CODE>-</CODE> <CODE>~</CODE></TD>(선행 연산자)</TR>
+  <TR>
+    <TD>2</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>*</CODE> <CODE>/</CODE> <CODE>%</CODE></TD></TR>
+  <TR>
+    <TD>3</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>+</CODE> <CODE>-</CODE></TD></TR>
+  <TR>
+    <TD>4</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>&gt;&gt;</CODE> <CODE>&lt;&lt;</CODE></TD></TR>
+  <TR>
+    <TD>5</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>==</CODE> <CODE>!=</CODE> <CODE>&gt;</CODE> <CODE>&lt;</CODE> 
+      <CODE>&lt;=</CODE> <CODE>&gt;=</CODE></TD></TR>
+  <TR>
+    <TD>6</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>&amp;</CODE></TD></TR>
+  <TR>
+    <TD>7</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>|</CODE></TD></TR>
+  <TR>
+    <TD>8</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>&amp;&amp;</CODE></TD></TR>
+  <TR>
+    <TD>9</TD>
+    <TD>왼쪽에서</TD>
+    <TD><CODE>||</CODE></TD></TR>
+  <TR>
+    <TD>10</TD>
+    <TD>오른쪽에서</TD>
+    <TD><CODE>? :</CODE></TD></TR>
+  <TR>
+    <TD>11</TD>
+    <TD>오른쪽에서</TD>
+    <TD><CODE>&amp;=</CODE> <CODE>+=</CODE> <CODE>-=</CODE> <CODE>*=</CODE> 
+      <CODE>/=</CODE> (<A 
+      href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC15">Assigning 
+      Values to Symbols</A> 참고)</TD></TR></TBODY></TABLE></FONT><!-- <H3><A NAME="SEC46" HREF="ld_toc.html#TOC46">Evaluation</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC46" 
+name=SEC46>값 평가</A></H3></FONT>
+<P><A name=IDX399></A><A name=IDX400></A>The linker evaluates expressions 
+lazily. It only computes the value of an expression when absolutely necessary. 
+<P>The linker needs some information, such as the value of the start address of 
+the first section, and the origins and lengths of memory regions, in order to do 
+any linking at all. These values are computed as soon as possible when the 
+linker reads in the linker script. 
+<P>However, other values (such as symbol values) are not known or needed until 
+after storage allocation. Such values are evaluated later, when other 
+information (such as the sizes of output sections) is available for use in the 
+symbol assignment expression. <BR><FONT color=blue>
+<P>링커는 값 평가를 게으르게 한다. 즉, 표현식 값이 필요할 때에 계산한다. 
+<P>링커는 링크를 하기 위해서 첫번째 섹션의 시작 주소나 메모리 영역의 시작과 크기와 같은 정보를 필요로 한다. 이 값은 링커가 스크립트에서 
+읽는 즉시 계산된다. 
+<P>그러나 (심볼값과 같은) 다른 값은 공간 할당 후에도 모르거나 필요하지 않을 수 있다. 이런 값은 나중에 심볼 대입 표현식에서 (출력 
+섹션의 크기와 같은) 다른 정보가 필요할 때 계산된다. </FONT>
+<P>The sizes of sections cannot be known until after allocation, so assignments 
+dependent upon these are not performed until after allocation. 
+<P>Some expressions, such as those depending upon the location counter 
+<SAMP>`.'</SAMP>, must be evaluated during section allocation. 
+<P>If the result of an expression is required, but the value is not available, 
+then an error results. For example, a script like the following <BR><FONT 
+color=blue>
+<P>섹션의 크기는 할당이 끝날 때까지 알 수 없다. 그래서 이에 의존하는 대입은 할당이 끝날 때까지 수행할 수 없다. 
+<P>위치 카운터 <SAMP>`.'</SAMP>에 의존하는 등의 표현식은 섹션 할당 중에 계산되야 한다. 
+<P>표현식의 결과가 필요하지만 계산에 필요한 값을 구할 수 없다면 오류가 발생한다. 예를 들어 다음 스크립트는, <PRE>SECTIONS
+  {
+    .text 9+this_isnt_constant :
+      { *(.text) }
+  }
+</PRE></FONT>
+<P>will cause the error message <SAMP>`non constant expression for initial 
+address'</SAMP>. <BR><FONT color=blue>
+<P>는 <SAMP>`non constant expression for initial address'</SAMP>라는 오류문을 출력한다. 
+</FONT><!-- <H3><A NAME="SEC47" HREF="ld_toc.html#TOC47">The Section of an Expression</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC47" 
+name=SEC47>섹션의 표현</A></H3></FONT>
+<P><A name=IDX401></A><A name=IDX402></A><A name=IDX403></A><A 
+name=IDX404></A><A name=IDX405></A><A name=IDX406></A>When the linker evaluates 
+an expression, the result is either absolute or relative to some section. A 
+relative expression is expressed as a fixed offset from the base of a section. 
+<P>The position of the expression within the linker script determines whether it 
+is absolute or relative. An expression which appears within an output section 
+definition is relative to the base of the output section. An expression which 
+appears elsewhere will be absolute. 
+<P>A symbol set to a relative expression will be relocatable if you request 
+relocatable output using the <SAMP>`-r'</SAMP> option. That means that a further 
+link operation may change the value of the symbol. The symbol's section will be 
+the section of the relative expression. <BR><FONT color=blue>
+<P>링커가 표현식을 계산할 때 결과는 섹션에 절대적이거나 상대적이다. 상대 표현은 섹션의 시작에서 변하지 않는 옵셋이다. 
+<P>절대적인지 상대적인지는 스크립트에서 표현식의 위치가 결정한다. 출력 섹션 정의 안의 표현식은 출력 섹션에 상대적이다. 그외의 표현식은 
+절대적이다. 
+<P>상대 표현의 심볼은 <SAMP>`-r'</SAMP> 옵션으로 재배치가능한 출력을 요구하면 재배치가능하게 된다. 즉 다음 링크에서도 심볼값을 
+변경할 수 있다. 심볼이 위치하는 섹션은 상대 표현의 기준이다. </FONT>
+<P>A symbol set to an absolute expression will retain the same value through any 
+further link operation. The symbol will be absolute, and will not have any 
+particular associated section. 
+<P>You can use the builtin function <CODE>ABSOLUTE</CODE> to force an expression 
+to be absolute when it would otherwise be relative. For example, to create an 
+absolute symbol set to the address of the end of the output section 
+<SAMP>`.data'</SAMP>: <BR><FONT color=blue>
+<P>절대 표현의 심볼은 링크를 더해도 값이 변하지 않는다. 심볼은 절대 심볼이고 연관된 섹션이 없다. 
+<P>기본 함수 <CODE>ABSOLUTE</CODE>은 표현식을 절대 표현으로 변경한다. 예를 들어 출력 섹션 
+<SAMP>`.data'</SAMP> 끝에 절대 심볼을 만드려면, <PRE>SECTIONS
+  {
+    .data : { *(.data) _edata = ABSOLUTE(.); }
+  }
+</PRE></FONT>
+<P>If <SAMP>`ABSOLUTE'</SAMP> were not used, <SAMP>`_edata'</SAMP> would be 
+relative to the <SAMP>`.data'</SAMP> section. <BR><FONT color=blue>
+<P><SAMP>`ABSOLUTE'</SAMP>이 없다면 <SAMP>`_edata'</SAMP>은 섹션 <SAMP>`.data'</SAMP>에 
+상대적이다. </FONT><!-- <H3><A NAME="SEC48" HREF="ld_toc.html#TOC48">Builtin Functions</A></H3> --><BR><FONT 
+color=blue>
+<H3><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC48" 
+name=SEC48>기본 함수</A></H3></FONT>
+<P><A name=IDX407></A>The linker script language includes a number of builtin 
+functions for use in linker script expressions. <BR><FONT color=blue>링커 스크립트 
+표현식에 사용할 수 있는 기본 함수들은 다음과 같다. </FONT>
+<DL compact>
+  <DT><CODE>ABSOLUTE(<VAR>exp</VAR>)</CODE> 
+  <DD><A name=IDX408></A><A name=IDX409></A>Return the absolute 
+  (non-relocatable, as opposed to non-negative) value of the expression 
+  <VAR>exp</VAR>. Primarily useful to assign an absolute value to a symbol 
+  within a section definition, where symbol values are normally section 
+  relative. See section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC47">The 
+  Section of an Expression</A>. <BR><FONT color=blue>표현식 <VAR>exp</VAR>의 
+  (재배치가능하지 않은) 절대값을 반환한다. 심볼값이 섹션에 상대적인, 섹션 정의에 나오는 심볼에 절대값을 대입하는데 유용하다. <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC47">The 
+  Section of an Expression</A>를 참고하라. </FONT>
+  <DT><CODE>ADDR(<VAR>section</VAR>)</CODE> 
+  <DD><A name=IDX410></A><A name=IDX411></A>Return the absolute address (the 
+  VMA) of the named <VAR>section</VAR>. Your script must previously have defined 
+  the location of that section. In the following example, <CODE>symbol_1</CODE> 
+  and <CODE>symbol_2</CODE> are assigned identical values: <BR><FONT 
+  color=blue><VAR>section</VAR>의 절대 주소를 (VMA) 반환한다. 스크립트는 이 섹션의 주소를 전에 정의해야 한다. 
+  다음 예에서 <CODE>symbol_1</CODE>과 <CODE>symbol_2</CODE>에는 같은 값이 대입된다. <PRE>SECTIONS { ...
+  .output1 :
+    {
+    start_of_output_1 = ABSOLUTE(.);
+    ...
+    }
+  .output :
+    {
+    symbol_1 = ADDR(.output1);
+    symbol_2 = start_of_output_1;
+    }
+... }
+</PRE></FONT>
+  <DT><CODE>ALIGN(<VAR>exp</VAR>)</CODE> 
+  <DD><A name=IDX412></A><A name=IDX413></A><A name=IDX414></A>Return the 
+  location counter (<CODE>.</CODE>) aligned to the next <VAR>exp</VAR> boundary. 
+  <VAR>exp</VAR> must be an expression whose value is a power of two. This is 
+  equivalent to <BR><FONT color=blue>다음 <VAR>exp</VAR> 경계에 정렬한 위치 카운터를 
+  (<CODE>.</CODE>) 반환한다. <VAR>exp</VAR>는 2의 제곱수이어야 한다. 이 함수는 아래와 같다. <PRE>(. + <VAR>exp</VAR> - 1) &amp; ~(<VAR>exp</VAR> - 1)
+</PRE></FONT><CODE>ALIGN</CODE> doesn't change the value of the location 
+  counter--it just does arithmetic on it. Here is an example which aligns the 
+  output <CODE>.data</CODE> section to the next <CODE>0x2000</CODE> byte 
+  boundary after the preceding section and sets a variable within the section to 
+  the next <CODE>0x8000</CODE> boundary after the input sections: <BR><FONT 
+  color=blue><CODE>ALIGN</CODE>는 위치 카운터 값을 변경하지 않고 단지 계산만 한다. 아래 예는 출력 섹션 
+  <CODE>.data</CODE>을 바로 전 섹션 다음에 <CODE>0x2000</CODE> 바이트 경계로 정렬하고, 섹션 안에 
+  variable를 입력 섹션 다음 <CODE>0x8000</CODE> 경계로 설정한다. <PRE>SECTIONS { ...
+  .data ALIGN(0x2000): {
+    *(.data)
+    variable = ALIGN(0x8000);
+  }
+... }
+</PRE></FONT>The first use of <CODE>ALIGN</CODE> in this example specifies the 
+  location of a section because it is used as the optional <VAR>address</VAR> 
+  attribute of a section definition (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC21">Output 
+  section address</A>). The second use of <CODE>ALIGN</CODE> is used to defines 
+  the value of a symbol. The builtin function <CODE>NEXT</CODE> is closely 
+  related to <CODE>ALIGN</CODE>. <BR><FONT color=blue>위의 첫 <CODE>ALIGN</CODE>는 
+  섹션 정의의 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC21">Output 
+  section address</A> 참고) 선택적인 <VAR>address</VAR> 속성으로 사용하여 섹션의 주소를 지정한다. 두번째는 
+  심볼값을 정의한다. 기본 함수 <CODE>NEXT</CODE>는 <CODE>ALIGN</CODE>과 연관이 있다. </FONT>
+  <DT><CODE>BLOCK(<VAR>exp</VAR>)</CODE> 
+  <DD><A name=IDX415></A>This is a synonym for <CODE>ALIGN</CODE>, for 
+  compatibility with older linker scripts. It is most often seen when setting 
+  the address of an output section. <BR><FONT color=blue>이는 오래된 링커 스크립트와 호환을 위한 
+  것으로 <CODE>ALIGN</CODE>과 동일하다. 출력 섹션 주소를 설정할 때 주로 사용한다. </FONT>
+  <DT><CODE>DEFINED(<VAR>symbol</VAR>)</CODE> 
+  <DD><A name=IDX416></A><A name=IDX417></A>Return 1 if <VAR>symbol</VAR> is in 
+  the linker global symbol table and is defined, otherwise return 0. You can use 
+  this function to provide default values for symbols. For example, the 
+  following script fragment shows how to set a global symbol 
+  <SAMP>`begin'</SAMP> to the first location in the <SAMP>`.text'</SAMP> 
+  section--but if a symbol called <SAMP>`begin'</SAMP> already existed, its 
+  value is preserved: <BR><FONT color=blue><VAR>symbol</VAR>이 전역 심볼표에 있고 정의되있다면 
+  1을 반환하고, 아니라면 0을 반환한다. 이 함수는 심볼의 기본값을 주는데 사용한다. 아래는 전역 심볼 
+  <SAMP>`begin'</SAMP>이 이미 정의되있다면 그 값을 유지하고, 정의되있지 않다면 섹션 <SAMP>`.text'</SAMP>의 
+  처음으로 설정하는 예이다. <PRE>SECTIONS { ...
+  .text : {
+    begin = DEFINED(begin) ? begin : . ;
+    ...
+  }
+  ...
+}
+</PRE></FONT>
+  <DT><CODE>LOADADDR(<VAR>section</VAR>)</CODE> 
+  <DD><A name=IDX418></A><A name=IDX419></A>Return the absolute LMA of the named 
+  <VAR>section</VAR>. This is normally the same as <CODE>ADDR</CODE>, but it may 
+  be different if the <CODE>AT</CODE> attribute is used in the output section 
+  definition (see section <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC33">Output 
+  section LMA</A>). <BR><FONT color=blue>섹션 <VAR>section</VAR>의 절대 LMA를 반환한다. 이는 
+  보통 <CODE>ADDR</CODE>과 같지만, 출력 섹션 정의에 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC33">Output 
+  section LMA</A> 참고) <CODE>AT</CODE> 속성을 사용한다면 다르다. </FONT><A name=IDX420></A>
+  <DT><CODE>MAX(<VAR>exp1</VAR>, <VAR>exp2</VAR>)</CODE> 
+  <DD>Returns the maximum of <VAR>exp1</VAR> and <VAR>exp2</VAR>. <BR><FONT 
+  color=blue><VAR>exp1</VAR>와 <VAR>exp2</VAR> 중 큰 값을 반환한다. </FONT><A 
+  name=IDX421></A>
+  <DT><CODE>MIN(<VAR>exp1</VAR>, <VAR>exp2</VAR>)</CODE> 
+  <DD>Returns the minimum of <VAR>exp1</VAR> and <VAR>exp2</VAR>. <BR><FONT 
+  color=blue><VAR>exp1</VAR>와 <VAR>exp2</VAR> 중 작은 값을 반환한다. </FONT>
+  <DT><CODE>NEXT(<VAR>exp</VAR>)</CODE> 
+  <DD><A name=IDX422></A><A name=IDX423></A>Return the next unallocated address 
+  that is a multiple of <VAR>exp</VAR>. This function is closely related to 
+  <CODE>ALIGN(<VAR>exp</VAR>)</CODE>; unless you use the <CODE>MEMORY</CODE> 
+  command to define discontinuous memory for the output file, the two functions 
+  are equivalent. <BR><FONT color=blue><VAR>exp</VAR>의 배수인 할당되지 않은 다음 주소를 반환한다. 
+  이 함수는 <CODE>ALIGN(<VAR>exp</VAR>)</CODE>과 연관이 있다. 출력 파일에 <CODE>MEMORY</CODE>로 
+  불연속적인 메모리를 정의하지 않다면 두 함수는 동일하다. </FONT>
+  <DT><CODE>SIZEOF(<VAR>section</VAR>)</CODE> 
+  <DD><A name=IDX424></A><A name=IDX425></A>Return the size in bytes of the 
+  named <VAR>section</VAR>, if that section has been allocated. If the section 
+  has not been allocated when this is evaluated, the linker will report an 
+  error. In the following example, <CODE>symbol_1</CODE> and 
+  <CODE>symbol_2</CODE> are assigned identical values: <BR><FONT color=blue>섹션 
+  <VAR>section</VAR>이 정의되었다면 그 크기를 바이트 단위로 반환한다. 값을 계산할 때 섹션이 할당되지 않았다면 오류를 
+  발생한다. 다음 예에서 <CODE>symbol_1</CODE>과 <CODE>symbol_2</CODE>에 같은 값이 대입된다. <PRE>SECTIONS{ ...
+  .output {
+    .start = . ;
+    ...
+    .end = . ;
+    }
+  symbol_1 = .end - .start ;
+  symbol_2 = SIZEOF(.output);
+... }
+</PRE></FONT>
+  <DT><CODE>SIZEOF_HEADERS</CODE> 
+  <DD>
+  <DT><CODE>sizeof_headers</CODE> 
+  <DD><A name=IDX426></A><A name=IDX427></A>Return the size in bytes of the 
+  output file's headers. This is information which appears at the start of the 
+  output file. You can use this number when setting the start address of the 
+  first section, if you choose, to facilitate paging. <A name=IDX428></A><A 
+  name=IDX429></A>When producing an ELF output file, if the linker script uses 
+  the <CODE>SIZEOF_HEADERS</CODE> builtin function, the linker must compute the 
+  number of program headers before it has determined all the section addresses 
+  and sizes. If the linker later discovers that it needs additional program 
+  headers, it will report an error <SAMP>`not enough room for program 
+  headers'</SAMP>. To avoid this error, you must avoid using the 
+  <CODE>SIZEOF_HEADERS</CODE> function, or you must rework your linker script to 
+  avoid forcing the linker to use additional program headers, or you must define 
+  the program headers yourself using the <CODE>PHDRS</CODE> command (see section 
+  <A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC39">PHDRS 
+  Command</A>). <BR><FONT color=blue>출력파일 헤더의 크기를 바이트 단위로 반환한다. 헤더는 출력파일 시작 부분에 
+  나오는 정보이다. 페이징을 돕기 위해 첫 섹션의 시작 주소를 이 값으로 할 수 있다. ELF 출력파일을 만들 때 링커 스크립트가 함수 
+  <CODE>SIZEOF_HEADERS</CODE>를 사용하면 링커는 모든 섹션의 주소와 크기를 알기 전에 프로그램 헤더의 크기를 계산해야 
+  한다. 링커가 나중에 추가로 프로그램 헤더가 필요하면 <SAMP>`not enough room for program 
+  headers'</SAMP>을 오류문으로 출력한다. 이를 피하기 위해서 <CODE>SIZEOF_HEADERS</CODE> 함수를 사용하지 
+  않거나, 추가로 프로그램 헤더를 사용하지 않게 링커 스크립트를 재작성하거나, <CODE>PHDRS</CODE> 명령어로 (<A 
+  href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_3.html#SEC39">PHDRS 
+  Command</A> 참고) 직접 프로그램 헤더를 정의해야 한다. </FONT></DD></DL><!-- <H2><A NAME="SEC49" HREF="ld_toc.html#TOC49">Implicit Linker Scripts</A></H2> --><BR><FONT 
+color=blue>
+<H2><A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html#TOC49" 
+name=SEC49>암묵 링커 스크립트</A></H2></FONT>
+<P><A name=IDX430></A>If you specify a linker input file which the linker can 
+not recognize as an object file or an archive file, it will try to read the file 
+as a linker script. If the file can not be parsed as a linker script, the linker 
+will report an error. 
+<P>An implicit linker script will not replace the default linker script. 
+<BR><FONT color=blue>
+<P>링커는 오브젝트 파일이나 아카이브 파일로 인식되지 않는 입력파일을 링커 스크립트로 간주한다. 이 파일이 링커 스크립트로 인식되지 않으면 
+오류가 발생한다. 
+<P>이 암묵 링커 스크립트는 기본 링커 스크립트를 대체하지 않는다. </FONT>
+<P>Typically an implicit linker script would contain only symbol assignments, or 
+the <CODE>INPUT</CODE>, <CODE>GROUP</CODE>, or <CODE>VERSION</CODE> commands. 
+<P>Any input files read because of an implicit linker script will be read at the 
+position in the command line where the implicit linker script was read. This can 
+affect archive searching. <BR><FONT color=blue>
+<P>전형적으로 암묵 링커 스크립트는 심볼 대입이나 <CODE>INPUT</CODE>, <CODE>GROUP</CODE>, 
+<CODE>VERSION</CODE> 명령어들 만을 포함한다. 
+<P>암묵 스크립트가 요구하는 입력파일은 명령행에서 암묵 링커 스크립트의 자리에서 읽힌다. 이는 아카이브 검색에 영향을 준다. </FONT>
+<P>
+<HR>
+
+<P>Go to the <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_1.html">first</A>, <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_2.html">previous</A>, 
+<A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_4.html">next</A>, 
+<A href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_9.html">last</A> 
+section, <A 
+href="http://korea.gnu.org/manual/release/ld/ld-mahajjh/ld_toc.html">table of 
+contents</A>. </P></BODY></HTML>

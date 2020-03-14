@@ -1,0 +1,69 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+CODE             0x30000000         0x04000000         rw
+_ISR_START       0x33ffff00         0x00000100         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000       0xd8
+ *s3c2450_startup.o(.text)
+ .text          0x30000000       0xd8 s3c2450_startup.o
+                0x30000000                _start
+ *(.text)
+                0x300000d8                . = ALIGN (0x4)
+
+.glue_7         0x300000d8        0x0
+
+.glue_7t        0x300000d8        0x0
+
+.rodata         0x00000000        0x0
+                0x00000000                rodata_start_addr = .
+ *(.rodata)
+ *(.rodata.*)
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                rodata_end_addr = .
+
+.data           0x300000d8        0x0
+                0x300000d8                data_start_addr = .
+                0x300000d8                __DATA_START__ = .
+ *(.data)
+ *(.data.*)
+                0x300000d8                . = ALIGN (0x8)
+                0x300000d8                data_end_addr = .
+                0x300000d8                __DATA_END__ = .
+
+.bss            0x300000d8        0x0
+                0x300000d8                bss_start_addr = .
+                0x300000d8                __BSS_START__ = .
+ *(.bss)
+ *(.bss.*)
+ *(COMMON)
+                0x300000d8                . = ALIGN (0x8)
+                0x300000d8                bss_end_addr = .
+                0x300000d8                __BSS_END__ = .
+                0x300000d8                end = .
+                0x300000d8                PROVIDE (end, .)
+
+.int_vec
+ s3c2450_startup.o(int_vect)
+LOAD s3c2450_startup.o
+LOAD C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a
+LOAD C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a
+OUTPUT(MDS2450 elf32-littlearm)
+
+.debug_line     0x00000000       0x68
+ .debug_line    0x00000000       0x68 s3c2450_startup.o
+
+.debug_info     0x00000000       0x60
+ .debug_info    0x00000000       0x60 s3c2450_startup.o
+
+.debug_abbrev   0x00000000       0x14
+ .debug_abbrev  0x00000000       0x14 s3c2450_startup.o
+
+.debug_aranges  0x00000000       0x20
+ .debug_aranges
+                0x00000000       0x20 s3c2450_startup.o

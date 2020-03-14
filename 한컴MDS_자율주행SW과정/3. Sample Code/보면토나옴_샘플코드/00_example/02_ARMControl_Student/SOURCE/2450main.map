@@ -1,0 +1,1132 @@
+Archive member included because of file (symbol)
+
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+                              Uart.o (atoi)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+                              Uart.o (strlen)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o) (_strtol_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+                              Uart.o (vsprintf)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o) (__ctype_ptr)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o) (_impure_ptr)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o) (_vfprintf_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (_wcrtomb_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (_wcsrtombs_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o) (_wctomb_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (__swsetup)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (_dtoa_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (fflush)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (__sinit)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (_free_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (__sfvwrite)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o) (_fwalk)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (localeconv)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o) (__smakebuf)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (_malloc_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (memchr)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (memcpy)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o) (memmove)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (memset)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o) (__malloc_lock)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (_Bfree)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o) (_realloc_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (isinf)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o) (isnan)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o) (_sbrk_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o) (__sclose)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o) (strcmp)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o) (isatty)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o) (_write_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o) (_calloc_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o) (_close_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o) (__errno)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o) (fclose)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o) (_fstat_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o) (_lseek_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o) (_read_r)
+C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o) (errno)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o) (__udivsi3)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o) (__umodsi3)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+                              C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o) (__div0)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (__subdf3)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (__muldf3)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (__gtdf2)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+                              C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o) (__fixdfsi)
+C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+                              Uart.o (__fixunsdfsi)
+
+Allocating common symbols
+Common symbol       size              file
+
+errno               0x4               C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+CODE             0x30000000         0x04000000         rw
+_ISR_START       0x33ffff00         0x00000100         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000     0x9a44
+ *s3c2450_startup.o(.text)
+ .text          0x30000000      0x2c0 s3c2450_startup.o
+                0x300000b0                ResetHandler
+                0x3000019c                IsrIRQ
+                0x30000000                _start
+ *(.text)
+ .text          0x300002c0      0x338 Lcd.o
+                0x3000031c                Lcd_Port_Init
+                0x30000494                Graphic_Init
+                0x30000434                Lcd_Set_Address
+                0x300004bc                Lcd_Put_Pixel
+                0x300003a0                Lcd_Init
+                0x300002c0                Lcd_Envid_On_Off
+                0x30000514                Lcd_Draw_BMP
+ .text          0x300005f8      0x5bc libc.o
+                0x300007dc                MMU_SetMTT
+                0x300008f4                malloc
+                0x3000082c                ChangeRomCacheStatus
+                0x30000a78                MemFill
+                0x30000a50                time
+                0x30000ae4                MemDump
+                0x300005f8                MMU_Init
+                0x30000a30                stop_timer0
+                0x300009e4                start_timer0
+                0x300009bc                free
+ .text          0x30000bb4      0x240 libs.o
+                0x30000d18                MMU_SetFastBusMode
+                0x30000d04                MMU_EnableMMU
+                0x30000d08                MMU_DisableMMU
+                0x30000d4c                MMU_InvalidateIDCache
+                0x30000c20                MEMCPY_SINGLE
+                0x30000cc0                MMU_DisableICache
+                0x30000d54                MMU_InvalidateICache
+                0x30000dbc                MMU_InvalidateDTLB
+                0x30000c38                MEMCPY_MULTIPLE
+                0x30000d5c                MMU_InvalidateICacheMVA
+                0x30000cac                CLR_IF
+                0x30000d2c                MMU_SetAsyncBusMode
+                0x30000bf0                SUM_OF_DEC
+                0x30000cf4                MMU_DisableAlignFault
+                0x30000dc4                MMU_InvalidateDTLBMVA
+                0x30000d9c                MMU_WaitForInterrupt
+                0x30000c90                SET_IF
+                0x30000dcc                MMU_SetDCacheLockdownBase
+                0x30000cd4                MMU_DisableDCache
+                0x30000d74                MMU_InvalidateDCacheMVA
+                0x30000ce4                MMU_EnableAlignFault
+                0x30000d64                MMU_PrefetchICacheMVA
+                0x30000c0c                GRT_COM_MES
+                0x30000d44                MMU_SetDomain
+                0x30000db4                MMU_InvalidateITLBMVA
+                0x30000be0                DATA_PROCESS2
+                0x30000ddc                MMU_SetDTLBLockdown
+                0x30000bd0                DATA_PROCESS1
+                0x30000d94                MMU_CleanInvalidateDCacheIndex
+                0x30000dec                MMU_SetProcessId
+                0x30000dd4                MMU_SetICacheLockdownBase
+                0x30000bbc                CONDITIONAL_EXECUTE
+                0x30000da4                MMU_InvalidateTLB
+                0x30000d8c                MMU_CleanDCacheIndex
+                0x30000dac                MMU_InvalidateITLB
+                0x30000c50                MEMCPY
+                0x30000d7c                MMU_CleanDCacheMVA
+                0x30000cd0                MMU_EnableDCache
+                0x30000ca4                WR_IF
+                0x30000d40                MMU_SetTTBase
+                0x30000d84                MMU_CleanInvalidateDCacheMVA
+                0x30000bb4                HOW_TO_RETURN
+                0x30000de4                MMU_SetITLBLockdown
+                0x30000cbc                MMU_EnableICache
+                0x30000d6c                MMU_InvalidateDCache
+ .text          0x30000df4       0xe4 Main.o
+                0x30000df4                Main
+ .text          0x30000ed8      0x6f0 Uart.o
+                0x300012d8                Uart_GetIntNum
+                0x30000fe0                Uart_Printf
+                0x30001074                Uart_Send_Byte
+                0x300010e4                Uart_GetChar
+                0x30001120                Uart_GetCh
+                0x30001144                Uart_TxEmpty
+                0x3000102c                Uart_Send_String
+                0x30000ed8                Uart_Init
+                0x300011cc                Uart_GetString
+                0x30001174                Uart_GetKey
+ .text          0x300015c8       0x18 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+                0x300015c8                _atoi_r
+                0x300015d4                atoi
+ .text          0x300015e0       0x90 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+                0x300015e0                strlen
+ .text          0x30001670      0x1ec C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+                0x30001830                strtol
+                0x30001670                _strtol_r
+ .text          0x3000185c       0xac C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+                0x300018a8                vsprintf
+                0x3000185c                _vsprintf_r
+ .text          0x30001908     0x1f20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+                0x30001948                _vfprintf_r
+                0x300037fc                vfprintf
+ .text          0x30003828       0x80 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+                0x30003828                _wcrtomb_r
+                0x3000387c                wcrtomb
+ .text          0x300038a8      0x178 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+                0x300038a8                _wcsrtombs_r
+                0x300039e0                wcsrtombs
+ .text          0x30003a20      0x420 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+                0x30003a20                _wctomb_r
+ .text          0x30003e40       0xfc C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+                0x30003e40                __swsetup
+ .text          0x30003f3c     0x164c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+                0x30004140                _dtoa_r
+ .text          0x30005588       0xe0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+                0x30005588                fflush
+ .text          0x30005668      0x27c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+                0x300056d4                __sinit
+                0x300057a8                __sfmoreglue
+                0x30005798                _cleanup
+                0x3000578c                _cleanup_r
+                0x30005774                __fp_lock_all
+                0x300056c4                __sfp_lock_acquire
+                0x300057f8                __sfp
+                0x300056d0                __sinit_lock_release
+                0x3000575c                __fp_unlock_all
+                0x300056c8                __sfp_lock_release
+                0x300056cc                __sinit_lock_acquire
+ .text          0x300058e4      0x39c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+                0x300059e0                _free_r
+                0x300058e4                _malloc_trim_r
+ .text          0x30005c80      0x3f8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+                0x30005c80                __sfvwrite
+ .text          0x30006078      0x10c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+                0x30006100                _fwalk
+                0x30006078                _fwalk_reent
+ .text          0x30006184       0xac C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                0x300061b0                _setlocale_r
+                0x30006184                __locale_charset
+                0x30006194                _localeconv_r
+                0x30006214                setlocale
+                0x300061a0                localeconv
+ .text          0x30006230      0x154 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+                0x30006230                __smakebuf
+ .text          0x30006384      0x770 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+                0x30006384                _malloc_r
+ .text          0x30006af4      0x104 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+                0x30006af4                memchr
+ .text          0x30006bf8       0xa0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+                0x30006bf8                memcpy
+ .text          0x30006c98       0xfc C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+                0x30006c98                memmove
+ .text          0x30006d94       0x98 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+                0x30006d94                memset
+ .text          0x30006e2c        0x8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+                0x30006e30                __malloc_unlock
+                0x30006e2c                __malloc_lock
+ .text          0x30006e34      0xbb0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+                0x30007128                _mprec_log10
+                0x30006e50                _hi0bits
+                0x30007174                _Balloc
+                0x3000720c                _d2b
+                0x30007568                _multiply
+                0x300070b0                _ratio
+                0x30007904                _s2b
+                0x30007728                _i2b
+                0x30006ea8                _lo0bits
+                0x30006f3c                __mcmp
+                0x30007810                _pow5mult
+                0x30006f9c                _ulp
+                0x30006ffc                _b2d
+                0x30007748                _multadd
+                0x30007340                __mdiff
+                0x30007474                _lshift
+                0x30006e34                _Bfree
+ .text          0x300079e4      0x638 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+                0x300079e4                _realloc_r
+ .text          0x3000801c       0x3c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+                0x3000801c                isinf
+ .text          0x30008058       0x30 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+                0x30008058                isnan
+ .text          0x30008088       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+                0x30008088                _sbrk_r
+ .text          0x300080c0      0x100 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+                0x300080d4                __sseek
+                0x3000817c                __sread
+                0x300080c0                __sclose
+                0x3000811c                __swrite
+ .text          0x300081c0       0xd0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+                0x300081c0                strcmp
+ .text          0x30008290      0x708 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+                0x300082c0                _getpid
+                0x3000841c                initialise_monitor_handles
+                0x300082dc                isatty
+                0x30008370                _fstat
+                0x30008874                _open
+                0x3000831c                _sbrk
+                0x300082d8                _raise
+                0x300084d8                _times
+                0x30008894                _stat
+                0x300088e4                _lseek
+                0x300082c8                _link
+                0x300085f0                _swiwrite
+                0x300082e4                _rename
+                0x3000862c                _swilseek
+                0x300085a4                _swiclose
+                0x30008740                _swiopen
+                0x300082d0                _unlink
+                0x300087e8                _write
+                0x3000855c                _kill
+                0x30008514                _gettimeofday
+                0x30008930                _read
+                0x30008584                _exit
+                0x300082fc                _system
+                0x300088f4                _swiread
+                0x30008864                _close
+ .text          0x30008998       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+                0x30008998                _write_r
+ .text          0x300089d8       0xa0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+                0x300089d8                _calloc_r
+ .text          0x30008a78       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+                0x30008a78                _close_r
+ .text          0x30008ab0       0x10 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+                0x30008ab0                __errno
+ .text          0x30008ac0      0x128 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+                0x30008ac0                _fclose_r
+                0x30008bd4                fclose
+ .text          0x30008be8       0x3c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+                0x30008be8                _fstat_r
+ .text          0x30008c24       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+                0x30008c24                _lseek_r
+ .text          0x30008c64       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+                0x30008c64                _read_r
+ .text          0x30008ca4      0x178 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+                0x30008d1c                cleanup_glue
+                0x30008d44                _reclaim_reent
+                0x30008ca4                _wrapup_reent
+ .text          0x30008e1c      0x110 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+                0x30008e1c                __udivsi3
+                0x30008e1c                __aeabi_uidiv
+                0x30008f14                __aeabi_uidivmod
+ .text          0x30008f2c       0xcc C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+                0x30008f2c                __umodsi3
+ .text          0x30008ff8        0x4 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+                0x30008ff8                __aeabi_ldiv0
+                0x30008ff8                __div0
+                0x30008ff8                __aeabi_idiv0
+ .text          0x30008ffc      0x400 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+                0x30009390                __floatdidf
+                0x30009310                __floatsidf
+                0x300092e8                __aeabi_ui2d
+                0x30008ffc                __aeabi_drsub
+                0x3000933c                __extendsfdf2
+                0x30009008                __adddf3
+                0x300092e8                __floatunsidf
+                0x30009008                __aeabi_dadd
+                0x3000937c                __aeabi_ul2d
+                0x30009004                __aeabi_dsub
+                0x3000937c                __floatundidf
+                0x30009310                __aeabi_i2d
+                0x30009390                __aeabi_l2d
+                0x3000933c                __aeabi_f2d
+                0x30009004                __subdf3
+ .text          0x300093fc      0x470 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+                0x30009668                __aeabi_ddiv
+                0x300093fc                __aeabi_dmul
+                0x30009668                __divdf3
+                0x300093fc                __muldf3
+ .text          0x3000986c      0x128 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+                0x30009958                __aeabi_dcmple
+                0x3000987c                __cmpdf2
+                0x3000987c                __eqdf2
+                0x3000986c                __gtdf2
+                0x3000991c                __aeabi_cdcmple
+                0x30009900                __aeabi_cdrcmple
+                0x30009874                __ltdf2
+                0x30009944                __aeabi_dcmplt
+                0x30009874                __ledf2
+                0x30009980                __aeabi_dcmpgt
+                0x3000996c                __aeabi_dcmpge
+                0x3000987c                __nedf2
+                0x30009930                __aeabi_dcmpeq
+                0x3000991c                __aeabi_cdcmpeq
+                0x3000986c                __gedf2
+ .text          0x30009994       0x5c C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+                0x30009994                __fixdfsi
+                0x30009994                __aeabi_d2iz
+ .text          0x300099f0       0x54 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+                0x300099f0                __fixunsdfsi
+                0x300099f0                __aeabi_d2uiz
+                0x30009a44                . = ALIGN (0x4)
+
+.glue_7         0x30009a44        0x0
+
+.glue_7t        0x30009a44        0x0
+
+.rodata         0x30009a44    0x40004
+                0x30009a44                rodata_start_addr = .
+ *(.rodata)
+ .rodata        0x30009a44       0x4c libc.o
+ .rodata        0x30009a90    0x3fc68 Main.o
+                0x30009a90                bicycle
+ .rodata        0x300496f8       0x28 Uart.o
+ .rodata        0x30049720      0x101 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+                0x30049720                _ctype_
+ *fill*         0x30049821        0x3 00
+ .rodata        0x30049824        0x4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+                0x30049824                _global_impure_ptr
+ .rodata        0x30049828       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .rodata        0x30049848       0x34 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .rodata        0x3004987c      0x124 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+                0x3004996c                __mprec_tinytens
+                0x3004987c                __mprec_tens
+                0x30049944                __mprec_bigtens
+ *(.rodata.*)
+ .rodata.str1.4
+                0x300499a0        0x2 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+                                  0x4 (size before relaxing)
+ *fill*         0x300499a2        0x2 00
+ .rodata.str1.4
+                0x300499a4       0x63 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+                                 0x64 (size before relaxing)
+ *fill*         0x30049a07        0x1 00
+ .rodata.str1.4
+                0x30049a08       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+                                 0x20 (size before relaxing)
+ *fill*         0x30049a26        0x2 00
+ .rodata.str1.4
+                0x30049a28       0x10 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+                                 0x14 (size before relaxing)
+ .rodata.str1.4
+                0x30049a38        0xb C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x30049a43        0x1 00
+ .rodata.str1.4
+                0x30049a44        0x4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+                0x30049a48                . = ALIGN (0x4)
+                0x30049a48                rodata_end_addr = .
+
+.data           0x30049a48      0x830
+                0x30049a48                data_start_addr = .
+                0x30049a48                __DATA_START__ = .
+ *(.data)
+ .data          0x30049a48        0x4 libc.o
+                0x30049a48                mallocPt
+ .data          0x30049a4c        0x4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+                0x30049a4c                __ctype_ptr
+ .data          0x30049a50      0x404 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+                0x30049a50                _impure_ptr
+ .data          0x30049e54       0x10 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                0x30049e54                __mb_cur_max
+                0x30049e58                __lc_ctype
+ .data          0x30049e64      0x410 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+                0x3004a270                __malloc_sbrk_base
+                0x30049e64                __malloc_av_
+                0x3004a26c                __malloc_trim_threshold
+ *(.data.*)
+                0x3004a278                . = ALIGN (0x8)
+ *fill*         0x3004a274        0x4 00
+                0x3004a278                data_end_addr = .
+                0x3004a278                __DATA_END__ = .
+
+.bss            0x3004a278       0xf8
+                0x3004a278                bss_start_addr = .
+                0x3004a278                __BSS_START__ = .
+ *(.bss)
+ .bss           0x3004a278        0xc C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                0x3004a278                __nlocale_changed
+                0x3004a27c                __mlocale_changed
+                0x3004a280                _PathLocale
+ .bss           0x3004a284       0x34 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+                0x3004a284                __malloc_top_pad
+                0x3004a288                __malloc_max_sbrked_mem
+                0x3004a290                __malloc_current_mallinfo
+                0x3004a28c                __malloc_max_total_mem
+ .bss           0x3004a2b8       0xb0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ *(.bss.*)
+ *(COMMON)
+ COMMON         0x3004a368        0x4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+                0x3004a368                errno
+                0x3004a370                . = ALIGN (0x8)
+ *fill*         0x3004a36c        0x4 00
+                0x3004a370                bss_end_addr = .
+                0x3004a370                __BSS_END__ = .
+                0x3004a370                end = .
+                0x3004a370                PROVIDE (end, .)
+
+.int_vec        0x33ffff00       0x24
+ s3c2450_startup.o(int_vect)
+ int_vect       0x33ffff00       0x24 s3c2450_startup.o
+LOAD s3c2450_startup.o
+LOAD Lcd.o
+LOAD libc.o
+LOAD libs.o
+LOAD Main.o
+LOAD Uart.o
+LOAD C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a
+LOAD C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a
+OUTPUT(MDS2450 elf32-littlearm)
+
+.debug_line     0x00000000     0x46de
+ .debug_line    0x00000000       0xae s3c2450_startup.o
+ .debug_line    0x000000ae       0x62 Lcd.o
+ .debug_line    0x00000110       0x9b libc.o
+ .debug_line    0x000001ab      0x106 libs.o
+ .debug_line    0x000002b1       0x5a Main.o
+ .debug_line    0x0000030b       0xb9 Uart.o
+ .debug_line    0x000003c4       0xf1 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_line    0x000004b5       0xa9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_line    0x0000055e      0x16d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_line    0x000006cb      0x151 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_line    0x0000081c       0x55 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+ .debug_line    0x00000871       0xdd C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+ .debug_line    0x0000094e      0x529 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_line    0x00000e77      0x144 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_line    0x00000fbb      0x16a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_line    0x00001125      0x1f4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_line    0x00001319      0x142 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_line    0x0000145b      0x446 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_line    0x000018a1      0x145 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_line    0x000019e6      0x1be C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_line    0x00001ba4      0x1a5 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_line    0x00001d49      0x1dd C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_line    0x00001f26      0x145 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_line    0x0000206b      0x147 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_line    0x000021b2      0x16f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_line    0x00002321      0x226 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_line    0x00002547       0xda C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_line    0x00002621       0xc5 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_line    0x000026e6       0xd5 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_line    0x000027bb       0xcd C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_line    0x00002888       0xef C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_line    0x00002977      0x3e1 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_line    0x00002d58      0x1be C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_line    0x00002f16       0xed C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_line    0x00003003       0xea C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_line    0x000030ed       0xf2 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_line    0x000031df      0x163 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_line    0x00003342       0x7e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_line    0x000033c0      0x2da C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_line    0x0000369a       0xf3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_line    0x0000378d       0xfb C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_line    0x00003888       0xf3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_line    0x0000397b       0xec C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_line    0x00003a67      0x144 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_line    0x00003bab      0x13c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_line    0x00003ce7       0xf3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_line    0x00003dda       0xf2 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_line    0x00003ecc      0x120 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+ .debug_line    0x00003fec       0x86 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+ .debug_line    0x00004072       0x6f C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+ .debug_line    0x000040e1       0x5a C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000413b      0x1e5 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+ .debug_line    0x00004320      0x1f6 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+ .debug_line    0x00004516       0xec C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+ .debug_line    0x00004602       0x6f C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+ .debug_line    0x00004671       0x6d C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+
+.debug_info     0x00000000    0x18491
+ .debug_info    0x00000000       0x63 s3c2450_startup.o
+ .debug_info    0x00000063      0x21d Lcd.o
+ .debug_info    0x00000280      0x348 libc.o
+ .debug_info    0x000005c8       0x58 libs.o
+ .debug_info    0x00000620       0xfb Main.o
+ .debug_info    0x0000071b      0x336 Uart.o
+ .debug_info    0x00000a51      0x945 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_info    0x00001396       0xd4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_info    0x0000146a      0xa0f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_info    0x00001e79      0x9f3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_info    0x0000286c       0x79 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+ .debug_info    0x000028e5      0x922 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+ .debug_info    0x00003207     0x10ee C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_info    0x000042f5      0x9ef C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_info    0x00004ce4      0xa84 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_info    0x00005768      0x9f7 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_info    0x0000615f      0x93a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_info    0x00006a99      0xd61 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_info    0x000077fa      0x974 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_info    0x0000816e      0xb61 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_info    0x00008ccf      0xbb1 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_info    0x00009880      0xa5f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_info    0x0000a2df      0xad9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_info    0x0000adb8      0xb7e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_info    0x0000b936      0xad9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_info    0x0000c40f      0xcba C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_info    0x0000d0c9      0x133 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_info    0x0000d1fc      0x10a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_info    0x0000d306      0x13f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_info    0x0000d445      0x10e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_info    0x0000d553      0x93c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_info    0x0000de8f     0x1319 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_info    0x0000f1a8      0xbc7 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_info    0x0000fd6f      0x153 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_info    0x0000fec2      0x151 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_info    0x00010013      0x94e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_info    0x00010961      0xa70 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_info    0x000113d1       0xd8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_info    0x000114a9     0x159c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_info    0x00012a45      0x981 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_info    0x000133c6      0xa01 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_info    0x00013dc7      0x946 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_info    0x0001470d      0x913 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_info    0x00015020      0x980 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_info    0x000159a0      0xabe C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_info    0x0001645e      0x96b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_info    0x00016dc9      0x97a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_info    0x00017743      0xa03 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+ .debug_info    0x00018146       0x6a C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+ .debug_info    0x000181b0       0x6a C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+ .debug_info    0x0001821a       0x6a C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00018284       0x69 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+ .debug_info    0x000182ed       0x69 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+ .debug_info    0x00018356       0x69 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+ .debug_info    0x000183bf       0x69 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+ .debug_info    0x00018428       0x69 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+
+.debug_abbrev   0x00000000     0x4537
+ .debug_abbrev  0x00000000       0x14 s3c2450_startup.o
+ .debug_abbrev  0x00000014       0x79 Lcd.o
+ .debug_abbrev  0x0000008d       0xc9 libc.o
+ .debug_abbrev  0x00000156       0x14 libs.o
+ .debug_abbrev  0x0000016a       0x93 Main.o
+ .debug_abbrev  0x000001fd       0xdd Uart.o
+ .debug_abbrev  0x000002da      0x176 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_abbrev  0x00000450       0x8b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_abbrev  0x000004db      0x1bd C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_abbrev  0x00000698      0x18c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_abbrev  0x00000824       0x52 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+ .debug_abbrev  0x00000876      0x157 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+ .debug_abbrev  0x000009cd      0x367 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_abbrev  0x00000d34      0x18e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_abbrev  0x00000ec2      0x1a4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_abbrev  0x00001066      0x1ab C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_abbrev  0x00001211      0x170 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_abbrev  0x00001381      0x223 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_abbrev  0x000015a4      0x17f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_abbrev  0x00001723      0x24c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_abbrev  0x0000196f      0x1e8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_abbrev  0x00001b57      0x1b4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_abbrev  0x00001d0b      0x1ee C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_abbrev  0x00001ef9      0x1de C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_abbrev  0x000020d7      0x1a8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_abbrev  0x0000227f      0x225 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_abbrev  0x000024a4       0xb5 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_abbrev  0x00002559       0xa6 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_abbrev  0x000025ff       0x99 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_abbrev  0x00002698       0xa9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_abbrev  0x00002741      0x16a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_abbrev  0x000028ab      0x280 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_abbrev  0x00002b2b      0x1c3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_abbrev  0x00002cee       0xd4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_abbrev  0x00002dc2       0xd4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_abbrev  0x00002e96      0x18c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_abbrev  0x00003022      0x1b4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_abbrev  0x000031d6       0x71 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_abbrev  0x00003247      0x407 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_abbrev  0x0000364e      0x184 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_abbrev  0x000037d2      0x1be C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_abbrev  0x00003990      0x17f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_abbrev  0x00003b0f      0x15f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_abbrev  0x00003c6e      0x1a7 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_abbrev  0x00003e15      0x18e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_abbrev  0x00003fa3      0x18c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_abbrev  0x0000412f      0x17f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_abbrev  0x000042ae      0x1e9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+ .debug_abbrev  0x00004497       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x000044ab       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x000044bf       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x000044d3       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+ .debug_abbrev  0x000044e7       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+ .debug_abbrev  0x000044fb       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+ .debug_abbrev  0x0000450f       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+ .debug_abbrev  0x00004523       0x14 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+
+.debug_aranges  0x00000000      0x6c0
+ .debug_aranges
+                0x00000000       0x20 s3c2450_startup.o
+ .debug_aranges
+                0x00000020       0x20 Lcd.o
+ .debug_aranges
+                0x00000040       0x20 libc.o
+ .debug_aranges
+                0x00000060       0x20 libs.o
+ .debug_aranges
+                0x00000080       0x20 Main.o
+ .debug_aranges
+                0x000000a0       0x20 Uart.o
+ .debug_aranges
+                0x000000c0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_aranges
+                0x000000e0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_aranges
+                0x00000100       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_aranges
+                0x00000120       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_aranges
+                0x00000140       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_aranges
+                0x00000160       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_aranges
+                0x00000180       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_aranges
+                0x000001a0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_aranges
+                0x000001c0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_aranges
+                0x000001e0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_aranges
+                0x00000200       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_aranges
+                0x00000220       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_aranges
+                0x00000240       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_aranges
+                0x00000260       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_aranges
+                0x00000280       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_aranges
+                0x000002a0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_aranges
+                0x000002c0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_aranges
+                0x000002e0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_aranges
+                0x00000300       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_aranges
+                0x00000320       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_aranges
+                0x00000340       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_aranges
+                0x00000360       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_aranges
+                0x00000380       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_aranges
+                0x000003a0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_aranges
+                0x000003c0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_aranges
+                0x000003e0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_aranges
+                0x00000400       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_aranges
+                0x00000420       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_aranges
+                0x00000440       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_aranges
+                0x00000460       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_aranges
+                0x00000480       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_aranges
+                0x000004a0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_aranges
+                0x000004c0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_aranges
+                0x000004e0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_aranges
+                0x00000500       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_aranges
+                0x00000520       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_aranges
+                0x00000540       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_aranges
+                0x00000560       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_aranges
+                0x00000580       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_aranges
+                0x000005a0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+ .debug_aranges
+                0x000005c0       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x000005e0       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x00000600       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000620       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_addsubdf3.o)
+ .debug_aranges
+                0x00000640       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_muldivdf3.o)
+ .debug_aranges
+                0x00000660       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_cmpdf2.o)
+ .debug_aranges
+                0x00000680       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixdfsi.o)
+ .debug_aranges
+                0x000006a0       0x20 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_fixunsdfsi.o)
+
+.debug_frame    0x00000000     0x1268
+ .debug_frame   0x00000000       0xf0 Lcd.o
+ .debug_frame   0x000000f0      0x150 libc.o
+ .debug_frame   0x00000240       0x30 Main.o
+ .debug_frame   0x00000270      0x15c Uart.o
+ .debug_frame   0x000003cc       0x30 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_frame   0x000003fc       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_frame   0x0000041c       0x50 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_frame   0x0000046c       0x48 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_frame   0x000004b4       0x6c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_frame   0x00000520       0x44 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_frame   0x00000564       0x54 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_frame   0x000005b8       0x30 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_frame   0x000005e8       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_frame   0x00000614       0x60 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_frame   0x00000674       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_frame   0x000006a0      0x114 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_frame   0x000007b4       0x54 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_frame   0x00000808       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_frame   0x00000840       0x58 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_frame   0x00000898       0x6c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_frame   0x00000904       0x30 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_frame   0x00000934       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_frame   0x0000096c       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_frame   0x00000994       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_frame   0x000009bc       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_frame   0x000009e4       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_frame   0x00000a04       0x30 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_frame   0x00000a34      0x1f0 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_frame   0x00000c24       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_frame   0x00000c5c       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_frame   0x00000c84       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_frame   0x00000cac       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_frame   0x00000cd8       0x70 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_frame   0x00000d48       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_frame   0x00000d68      0x2e8 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_frame   0x00001050       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_frame   0x0000107c       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_frame   0x000010a4       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_frame   0x000010d0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_frame   0x000010f0       0x3c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_frame   0x0000112c       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_frame   0x00001158       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_frame   0x00001184       0x2c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_frame   0x000011b0       0x68 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+ .debug_frame   0x00001218       0x28 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001240       0x28 C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a(_umodsi3.o)
+
+.debug_loc      0x00000000     0x83b2
+ .debug_loc     0x00000000      0x126 Lcd.o
+ .debug_loc     0x00000126      0x1a4 libc.o
+ .debug_loc     0x000002ca       0x2a Main.o
+ .debug_loc     0x000002f4      0x1a4 Uart.o
+ .debug_loc     0x00000498       0x39 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_loc     0x000004d1       0x47 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_loc     0x00000518      0x20b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_loc     0x00000723      0x109 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_loc     0x0000082c     0x1b8d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_loc     0x000023b9      0x145 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_loc     0x000024fe      0x2b2 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_loc     0x000027b0      0x248 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_loc     0x000029f8       0x3d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_loc     0x00002a35     0x1665 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_loc     0x0000409a       0xad C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_loc     0x00004147      0x20c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_loc     0x00004353      0x38f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_loc     0x000046e2      0x328 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_loc     0x00004a0a      0x17b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_loc     0x00004b85       0xe9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_loc     0x00004c6e       0xa7 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_loc     0x00004d15      0x795 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_loc     0x000054aa      0x193 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_loc     0x0000563d       0xdb C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_loc     0x00005718      0x151 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_loc     0x00005869       0xa9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_loc     0x00005912      0xffc C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_loc     0x0000690e      0x922 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_loc     0x00007230       0x6d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_loc     0x0000729d       0x4f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_loc     0x000072ec       0x50 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_loc     0x0000733c      0x1a4 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_loc     0x000074e0       0xaf C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_loc     0x0000758f      0x894 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_loc     0x00007e23       0xaa C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_loc     0x00007ecd       0xd6 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_loc     0x00007fa3       0x63 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_loc     0x00008006       0xa2 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_loc     0x000080a8       0x81 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_loc     0x00008129       0x97 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_loc     0x000081c0       0xaa C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_loc     0x0000826a      0x148 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+
+.debug_pubnames
+                0x00000000      0xc7c
+ .debug_pubnames
+                0x00000000       0x8e Lcd.o
+ .debug_pubnames
+                0x0000008e       0xaa libc.o
+ .debug_pubnames
+                0x00000138       0x27 Main.o
+ .debug_pubnames
+                0x0000015f       0xbf Uart.o
+ .debug_pubnames
+                0x0000021e       0x27 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .debug_pubnames
+                0x00000245       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .debug_pubnames
+                0x00000262       0x2b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .debug_pubnames
+                0x0000028d       0x2f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .debug_pubnames
+                0x000002bc       0x2e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+ .debug_pubnames
+                0x000002ea       0x39 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+ .debug_pubnames
+                0x00000323       0x2f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_pubnames
+                0x00000352       0x2d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .debug_pubnames
+                0x0000037f       0x31 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_pubnames
+                0x000003b0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_pubnames
+                0x000003d0       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .debug_pubnames
+                0x000003f0       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .debug_pubnames
+                0x0000040e       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .debug_pubnames
+                0x0000042b       0xdb C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .debug_pubnames
+                0x00000506       0x31 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .debug_pubnames
+                0x00000537       0x21 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_pubnames
+                0x00000558       0x2e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_pubnames
+                0x00000586       0xc3 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .debug_pubnames
+                0x00000649       0x21 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .debug_pubnames
+                0x0000066a       0xce C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_pubnames
+                0x00000738       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .debug_pubnames
+                0x00000755       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .debug_pubnames
+                0x00000772       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .debug_pubnames
+                0x00000790       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .debug_pubnames
+                0x000007ad       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .debug_pubnames
+                0x000007e5      0x112 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .debug_pubnames
+                0x000008f7       0x21 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_pubnames
+                0x00000918       0x1c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_pubnames
+                0x00000934       0x1c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_pubnames
+                0x00000950       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .debug_pubnames
+                0x0000096e       0x44 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .debug_pubnames
+                0x000009b2       0x1d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .debug_pubnames
+                0x000009cf      0x158 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_pubnames
+                0x00000b27       0x1f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .debug_pubnames
+                0x00000b46       0x20 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .debug_pubnames
+                0x00000b66       0x1f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .debug_pubnames
+                0x00000b85       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .debug_pubnames
+                0x00000ba3       0x2b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .debug_pubnames
+                0x00000bce       0x1f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .debug_pubnames
+                0x00000bed       0x1f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .debug_pubnames
+                0x00000c0c       0x1e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .debug_pubnames
+                0x00000c2a       0x52 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+
+.comment        0x00000000      0x33c
+ .comment       0x00000000       0x12 Lcd.o
+ .comment       0x00000012       0x12 libc.o
+ .comment       0x00000024       0x12 Main.o
+ .comment       0x00000036       0x12 Uart.o
+ .comment       0x00000048       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+ .comment       0x0000005a       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+ .comment       0x0000006c       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+ .comment       0x0000007e       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+ .comment       0x00000090       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+ .comment       0x000000a2       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+ .comment       0x000000b4       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .comment       0x000000c6       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+ .comment       0x000000d8       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .comment       0x000000ea       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .comment       0x000000fc       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+ .comment       0x0000010e       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+ .comment       0x00000120       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+ .comment       0x00000132       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+ .comment       0x00000144       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+ .comment       0x00000156       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .comment       0x00000168       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .comment       0x0000017a       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+ .comment       0x0000018c       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+ .comment       0x0000019e       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .comment       0x000001b0       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+ .comment       0x000001c2       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+ .comment       0x000001d4       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+ .comment       0x000001e6       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+ .comment       0x000001f8       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+ .comment       0x0000020a       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+ .comment       0x0000021c       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .comment       0x0000022e       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+ .comment       0x00000240       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+ .comment       0x00000252       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+ .comment       0x00000264       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+ .comment       0x00000276       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+ .comment       0x00000288       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .comment       0x0000029a       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+ .comment       0x000002ac       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+ .comment       0x000002be       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+ .comment       0x000002d0       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+ .comment       0x000002e2       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+ .comment       0x000002f4       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+ .comment       0x00000306       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+ .comment       0x00000318       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+ .comment       0x0000032a       0x12 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+
+.debug_str      0x00000000     0x1b4c
+ .debug_str     0x00000000       0x12 Main.o
+ .debug_str     0x00000012        0x7 Uart.o
+ .debug_str     0x00000019      0x40c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(atoi.o)
+                                0x491 (size before relaxing)
+ .debug_str     0x00000425       0x82 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strlen.o)
+                                0x112 (size before relaxing)
+ .debug_str     0x000004a7       0x70 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strtol.o)
+                                0x4d3 (size before relaxing)
+ .debug_str     0x00000517       0x8c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vsprintf.o)
+                                0x4cf (size before relaxing)
+ .debug_str     0x000005a3       0x6e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(ctype_.o)
+                                 0x9d (size before relaxing)
+ .debug_str     0x00000611       0x85 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(impure.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x00000696      0x1ba C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+                                0x69d (size before relaxing)
+ .debug_str     0x00000850       0x54 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcrtomb.o)
+                                0x4d2 (size before relaxing)
+ .debug_str     0x000008a4       0x63 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+                                0x4e7 (size before relaxing)
+ .debug_str     0x00000907       0x62 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+                                0x4c7 (size before relaxing)
+ .debug_str     0x00000969       0x42 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wsetup.o)
+                                0x4ab (size before relaxing)
+ .debug_str     0x000009ab      0x100 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(dtoa.o)
+                                0x5a2 (size before relaxing)
+ .debug_str     0x00000aab       0x3f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fflush.o)
+                                0x4bb (size before relaxing)
+ .debug_str     0x00000aea      0x100 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(findfp.o)
+                                0x595 (size before relaxing)
+ .debug_str     0x00000bea      0x159 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(freer.o)
+                                0x5e4 (size before relaxing)
+ .debug_str     0x00000d43       0x5a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+                                0x506 (size before relaxing)
+ .debug_str     0x00000d9d       0x5c C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+                                0x4d6 (size before relaxing)
+ .debug_str     0x00000df9      0x1bb C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(locale.o)
+                                0x63e (size before relaxing)
+ .debug_str     0x00000fb4      0x112 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(makebuf.o)
+                                0x592 (size before relaxing)
+ .debug_str     0x000010c6       0xe9 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+                                0x692 (size before relaxing)
+ .debug_str     0x000011af       0x5a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memchr.o)
+                                0x120 (size before relaxing)
+ .debug_str     0x00001209       0x67 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memcpy.o)
+                                 0xc9 (size before relaxing)
+ .debug_str     0x00001270       0x4b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memmove.o)
+                                0x132 (size before relaxing)
+ .debug_str     0x000012bb       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(memset.o)
+                                0x113 (size before relaxing)
+ .debug_str     0x000012fb       0x6b C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mlock.o)
+                                0x4b8 (size before relaxing)
+ .debug_str     0x00001366       0xd1 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mprec.o)
+                                0x58a (size before relaxing)
+ .debug_str     0x00001437       0x61 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+                                0x564 (size before relaxing)
+ .debug_str     0x00001498       0x97 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isinf.o)
+                                0x156 (size before relaxing)
+ .debug_str     0x0000152f       0x3e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(s_isnan.o)
+                                0x156 (size before relaxing)
+ .debug_str     0x0000156d       0x4e C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(sbrkr.o)
+                                0x4ac (size before relaxing)
+ .debug_str     0x000015bb       0x67 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(stdio.o)
+                                0x4de (size before relaxing)
+ .debug_str     0x00001622       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(strcmp.o)
+                                 0xf8 (size before relaxing)
+ .debug_str     0x00001662      0x258 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+                                0x79f (size before relaxing)
+ .debug_str     0x000018ba       0x4a C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(writer.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x00001904       0x19 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)
+                                0x4e3 (size before relaxing)
+ .debug_str     0x0000191d       0x41 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(closer.o)
+                                0x49f (size before relaxing)
+ .debug_str     0x0000195e       0x6d C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(errno.o)
+                                0x497 (size before relaxing)
+ .debug_str     0x000019cb       0x49 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fclose.o)
+                                0x4b7 (size before relaxing)
+ .debug_str     0x00001a14       0x47 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fstatr.o)
+                                0x573 (size before relaxing)
+ .debug_str     0x00001a5b       0x41 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(lseekr.o)
+                                0x4ad (size before relaxing)
+ .debug_str     0x00001a9c       0x3f C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(readr.o)
+                                0x4ad (size before relaxing)
+ .debug_str     0x00001adb       0x71 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reent.o)
+                                0x4d4 (size before relaxing)
+
+.debug_ranges   0x00000000      0x4d0
+ .debug_ranges  0x00000000      0x150 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(vfprintf.o)
+ .debug_ranges  0x00000150       0x28 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wcsrtombs.o)
+ .debug_ranges  0x00000178       0x48 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(wctomb_r.o)
+ .debug_ranges  0x000001c0       0x18 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_ranges  0x000001d8       0x40 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(fwalk.o)
+ .debug_ranges  0x00000218       0x50 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(mallocr.o)
+ .debug_ranges  0x00000268      0x118 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(reallocr.o)
+ .debug_ranges  0x00000380      0x118 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(syscalls.o)
+ .debug_ranges  0x00000498       0x38 C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a(callocr.o)

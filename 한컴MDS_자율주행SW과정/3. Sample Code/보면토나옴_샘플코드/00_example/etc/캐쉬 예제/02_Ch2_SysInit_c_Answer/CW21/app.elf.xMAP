@@ -1,0 +1,43 @@
+# Link map of _start
+  1] _start (notype,global) found in crt0.s 
+   2] Main (func,global) found in Main.c 
+   2] @EX@LED_Port_Init (object,local) found in Main.c 
+   2] @EX@LED_ON_Off (object,local) found in Main.c 
+   2] @EX@Main (object,local) found in Main.c 
+
+# Unreferenced symbols:
+
+
+
+# .app_text
+  30000000 00000000 Init    $a	(crt0.s)
+  30000000 00000148 Init    Init	(crt0.s)
+  30000000 00000000 Init    _start	(crt0.s)
+  300000DC 00000000 Init    $d	(crt0.s)
+  30000148 00000024 .text   LED_Port_Init	(Main.c)
+  30000148 00000000 .text   .text	(Main.c)
+  30000148 00000000 .text   $a	(Main.c)
+  3000016C 00000060 .text   LED_ON_Off	(Main.c)
+  3000016C 00000000 .text   $a	(Main.c)
+  300001CC 00000000 .text   $a	(Main.c)
+  300001CC 00000024 .text   Main	(Main.c)
+  300001E4 00000000 .text   $d	(Main.c)
+#>300001F0          Image$$RO$$Limit (linker command file)
+
+# .app_data
+#>300001F0          Image$$RW$$Base (linker command file)
+#>300001F0          __exception_table_start__ (linker command file)
+# Exception index
+  300001F0 00000024         Exception Table Index	()
+#>30000214          __exception_table_end__ (linker command file)
+#>30000214          Image$$ZI$$Base (linker command file)
+#>30000214          Image$$ZI$$Limit (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  30000000 30000000 000001F0 text
+  300001F0 300001F0 00000028 data
+
+# Link start time: Thu Jan 08 16:23:27 2009
+# Link end time: Thu Jan 08 16:23:27 2009

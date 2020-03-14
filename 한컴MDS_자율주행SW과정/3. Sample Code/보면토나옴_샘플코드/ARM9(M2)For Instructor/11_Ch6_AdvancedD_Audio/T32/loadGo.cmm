@@ -1,0 +1,24 @@
+b::
+
+;reset and system configuration
+reset
+sys.cpu arm920t
+sys.up
+
+;samsung s3c2440x chip configuration
+do .\T32\2440cfg.cmm
+
+d.load.binary .\sound_data\sample.wav 0x31000000
+
+;elf file download(must be have debug infomation-dwarf2)
+data.load.elf .\CW21\MAKE_RAM_Data\ARM9_RAM_Debug\ARM920T_RAM_Debug.elf
+
+;window configuration(private)
+do .\T32\mywin.cmm
+
+;this is not needed for RAM download
+;map.bonchip 0x0--0xfffff
+
+go 
+
+enddo

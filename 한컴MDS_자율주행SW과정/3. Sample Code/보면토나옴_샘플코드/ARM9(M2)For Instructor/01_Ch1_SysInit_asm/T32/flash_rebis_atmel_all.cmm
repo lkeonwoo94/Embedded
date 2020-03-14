@@ -1,0 +1,80 @@
+;
+; MDS Technology S3C2440 Evaluation Board NOR Flash Programming
+;
+;
+;Atmel AT49BV322A 4Mbyte flash Memory
+;
+;	ERASE NOR FLASH MEMORY
+;	0x--0x3FFFFF (4 MB)
+;	8kByte 8 sectors
+;	64kByte 63 sectors
+;	total 71 sectors
+;2005-01-25 first write
+;Please do Init target board cmm here
+
+system.down
+system.reset
+system.option.turbo off
+system.option.bigendian off
+system.option.resbreak on
+system.option.showerror on
+system.option.enreset on
+system.option.trst on
+system.option.cflush on
+system.option.intdis on
+system.option.dismode auto
+system.cpu arm920t
+system.JTAGCLOCK 10000000.
+system.up
+
+B::Data.dump (0x0) /DIALOG 
+
+d.s 0x48000000 %l 0x2222D222
+d.s 0x48000004 %l 0x00000700
+d.s 0x48000008 %l 0x00007ff0
+d.s 0x4800000C %l 0x00000700
+d.s 0x48000010 %l 0x00001F4C
+d.s 0x48000014 %l 0x00000700
+d.s 0x48000018 %l 0x00000700
+d.s 0x4800001C %l 0x00018005
+d.s 0x48000020 %l 0x00018005
+d.s 0x48000024 %l 0x008e0459
+d.s 0x48000028 %l 0x00000032
+d.s 0x4800002C %l 0x00000030
+d.s 0x48000030 %l 0x00000030
+;disable watch dog timer
+D.S 0x53000000 %l 0x0 
+
+b.res
+flash.res
+flash.create 0x00000000--0x0000FFFF 0x00002000 target word	;8kByte 8 sectors total 64kByte
+flash.create 0x00010000--0x003FFFFF 0x00010000 target word	;64kByte 63 sectors 
+	    
+Flash.target 0x30000000 0x30008000 0x1000 ~~/demo/arm/flash/word/am29f100.bin	;target Memory config
+;flash.target  0x00300000 0x00301000 0x1000 ~~/demo/arm/FLASH/WORD/AT49F100.BIN	;target Memory config 
+
+;FLASH.ERASE 0x0--0x10000		;특정섹터를 지울때 영역을 지정한다.
+FLASH.ERASE ALL						;when you want chip erase. 칩전체를 지운다.
+
+FLASH.PROGRAM ALL
+d.load.auto .\CW21\MAKE_ROM_Data\ARM9_ROM_Debug\*.* 0 /word				;플래시할 파일을 지정하고 시작번지를 지정한다.
+
+
+print "Finish...."	
+FLASH.PROGRAM OFF
+
+enddo
+
+
+
+
+
+
+
+
+
+
+
+
+
+

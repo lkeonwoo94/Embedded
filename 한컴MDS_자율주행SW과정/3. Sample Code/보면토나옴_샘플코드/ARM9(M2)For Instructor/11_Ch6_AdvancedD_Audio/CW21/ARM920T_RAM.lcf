@@ -1,0 +1,56 @@
+# Linker Command File
+
+# For SDRAM Download @0x300000a0
+# EXCEPTION & IRQ Vectors => 0x30000000 ~ 0x3000009c
+
+MEMORY 
+{
+	text (RX) : ORIGIN = 0x30000000, LENGTH = 0
+	data (RW) : ORIGIN = AFTER(text), LENGTH = 0
+}
+
+SECTIONS 
+{
+	.app_text :	
+	{
+		*(Init)
+		*(.text)
+		*(.init)
+		*(C$$code)
+		.= ALIGN(0x8);
+
+		Image$$RO$$Limit = .;
+	} > text
+
+    	.app_data :	
+    	{
+	    	Image$$RW$$Base = .;
+
+		*(.rodata)		
+		*(.sdata)
+		*(.data)
+		. = ALIGN(0x4);
+
+		*(.exception)
+		. = ALIGN(0x4);
+
+		__exception_table_start__ = .;
+		EXCEPTION
+		__exception_table_end__ = .;
+		. = ALIGN(0x4);
+
+		__sinit__ = .;
+	    	STATICINIT
+		. = ALIGN(0x4);
+		
+		__START_BSS = .;
+		Image$$ZI$$Base = .;
+		
+		*(.bss)
+		. = ALIGN(0x8);
+		
+		__END_BSS = .;	
+		Image$$ZI$$Limit = .;
+
+	} > data
+}

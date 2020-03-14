@@ -1,0 +1,19 @@
+ 
+; Environment variables
+OS=
+ID=T32
+TMP=C:\WINDOWS\TEMP
+SYS=C:\T32\
+
+
+PBI=
+USB
+
+; Printer settings 
+PRINTER=WINDOWS
+
+
+; Screen fonts
+SCREEN=
+FONT=SMALL
+

@@ -1,0 +1,44 @@
+----------------------------------------------------------  case 1
+
+MDS2450# loadb 0x30000000
+## Ready for binary (kermit) download to 0x30000000 at 115200 bps...
+## Total Size      = 0x0004a2e8 = 303848 Bytes
+## Start Addr      = 0x30000000
+MDS2450# go 0x30000000
+## Starting application at 0x30000000 ...
+                                         3
+Initialize MMU..
+Performance test start ..
+Time spend for testing 0xffff.
+MMU Test End
+
+
+----------------------------------------------------------  case 2
+
+MDS2450# loadb 0x30000000
+## Ready for binary (kermit) download to 0x30000000 at 115200 bps...
+## Total Size      = 0x0004a2e8 = 303848 Bytes
+## Start Addr      = 0x30000000
+MDS2450# go 0x30000000
+## Starting application at 0x30000000 ...
+                                         3
+Initialize MMU..
+Performance test start ..
+Time spend for testing 0x3731.
+MMU Test End
+
+
+----------------------------------------------------------  case 3
+
+MDS2450# loadb 0x30000000
+## Ready for binary (kermit) download to 0x30000000 at 115200 bps...
+## Total Size      = 0x0004a300 = 303872 Bytes
+## Start Addr      = 0x30000000
+MDS2450# go 0x30000000
+## Starting application at 0x30000000 ...
+                                         3
+Initialize MMU..
+Performance test start ..
+Time spend for testing 0x5f0.
+MMU Test End
+

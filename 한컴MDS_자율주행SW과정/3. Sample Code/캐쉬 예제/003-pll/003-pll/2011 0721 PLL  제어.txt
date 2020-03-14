@@ -1,0 +1,50 @@
+    	Uart_Getch();
+	Uart_Printf(" MPLL Change Starting...\n");	
+	// Change clock frequency ratio as 1:4:8	
+	ChangeClockDivider(2,1);				// 1:4:8    			  
+	while(1)
+	{  
+	ChangeMPllValue(60,4,1);	
+	c=0 ;
+	while(c < 10)
+	{ 	  
+	    Led_Display(i++);
+	    Delay(500000);
+		c++;
+	}
+	ChangeMPllValue(110,3,1);	
+	c=0 ;
+	while(c < 10)
+	{ 	  
+	    Led_Display(i++);
+	    Delay(500000);
+		c++;
+	}
+	}
+	    							
+													
+
+
+													
+													
+			
+}
+    
+
+void Led_Toggle_Test()
+{
+	int j,k,l;
+
+	Led_Display(6);
+
+	for(j=0;j<500;j++)   {
+      for(k=0;k<500;k++)
+       l++;
+    }
+
+	Led_Display(9);		
+	for(j=0;j<500;j++)  {
+      for(k=0;k<500;k++)
+       l++;
+    }		
+}

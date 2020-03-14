@@ -1,0 +1,96 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+CODE             0x30000000         0x04000000         rw
+_ISR_START       0x33ffff00         0x00000100         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000      0x3e0
+ *s3c2450_startup.o(.text)
+ .text          0x30000000      0x2e0 s3c2450_startup.o
+                0x300000b0                ResetHandler
+                0x300001c0                IsrIRQ
+                0x30000000                _start
+ *(.text)
+ .text          0x300002e0      0x100 Main.o
+                0x300002e0                Main
+                0x3000034c                LED_ON_Off
+                0x30000310                LED_Port_Init
+                0x300003e0                . = ALIGN (0x4)
+
+.glue_7         0x300003e0        0x0
+
+.glue_7t        0x300003e0        0x0
+
+.rodata         0x00000000        0x0
+                0x00000000                rodata_start_addr = .
+ *(.rodata)
+ *(.rodata.*)
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                rodata_end_addr = .
+
+.data           0x300003e0        0x0
+                0x300003e0                data_start_addr = .
+                0x300003e0                __DATA_START__ = .
+ *(.data)
+ *(.data.*)
+                0x300003e0                . = ALIGN (0x8)
+                0x300003e0                data_end_addr = .
+                0x300003e0                __DATA_END__ = .
+
+.bss            0x300003e0        0x0
+                0x300003e0                bss_start_addr = .
+                0x300003e0                __BSS_START__ = .
+ *(.bss)
+ *(.bss.*)
+ *(COMMON)
+                0x300003e0                . = ALIGN (0x8)
+                0x300003e0                bss_end_addr = .
+                0x300003e0                __BSS_END__ = .
+                0x300003e0                end = .
+                0x300003e0                PROVIDE (end, .)
+
+.int_vec        0x33ffff00       0x24
+ s3c2450_startup.o(int_vect)
+ int_vect       0x33ffff00       0x24 s3c2450_startup.o
+LOAD Main.o
+LOAD s3c2450_startup.o
+LOAD C:/cygwin/GNUARM-4.1.0/arm-elf/lib/libc.a
+LOAD C:/cygwin/GNUARM-4.1.0/lib/gcc/arm-elf/4.1.0/libgcc.a
+OUTPUT(MDS2450 elf32-littlearm)
+
+.debug_line     0x00000000       0xfb
+ .debug_line    0x00000000       0xb3 s3c2450_startup.o
+ .debug_line    0x000000b3       0x48 Main.o
+
+.debug_info     0x00000000      0x124
+ .debug_info    0x00000000       0x5e s3c2450_startup.o
+ .debug_info    0x0000005e       0xc6 Main.o
+
+.debug_abbrev   0x00000000       0x81
+ .debug_abbrev  0x00000000       0x14 s3c2450_startup.o
+ .debug_abbrev  0x00000014       0x6d Main.o
+
+.debug_aranges  0x00000000       0x40
+ .debug_aranges
+                0x00000000       0x20 s3c2450_startup.o
+ .debug_aranges
+                0x00000020       0x20 Main.o
+
+.debug_frame    0x00000000       0x70
+ .debug_frame   0x00000000       0x70 Main.o
+
+.debug_loc      0x00000000       0x7e
+ .debug_loc     0x00000000       0x7e Main.o
+
+.debug_pubnames
+                0x00000000       0x3c
+ .debug_pubnames
+                0x00000000       0x3c Main.o
+
+.comment        0x00000000       0x12
+ .comment       0x00000000       0x12 Main.o

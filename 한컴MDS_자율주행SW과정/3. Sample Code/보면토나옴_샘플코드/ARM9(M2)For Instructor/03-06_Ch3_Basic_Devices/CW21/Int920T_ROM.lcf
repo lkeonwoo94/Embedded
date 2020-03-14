@@ -1,0 +1,65 @@
+# Sample Linker Command File
+# Use appropriate memory origin for ROM/Flash. 0x000000  is default.
+# Sample Linker Command File
+#0x000000
+MEMORY {
+	.text (RX) : ORIGIN = 0x24000000, LENGTH = 0
+	.rodata (RW) : ORIGIN = AFTER(.text), LENGTH = 0
+	.data (RW) : ORIGIN = 0x28000000, LENGTH = 0
+}
+
+SECTIONS {
+	.app_text :	{
+		*(.reset)
+		*(.text)
+		.= ALIGN(0x8);
+	} > .text
+	
+	.app_ro_data : {
+		*(.rodata)
+	  
+	 	. = ALIGN(0x4);
+	  	*(.exception)	  	
+	  	. = ALIGN(0x4);
+	  	__exception_table_start__ = .;
+	  	EXCEPTION
+	  	__exception_table_end__ = .;		
+	  	
+		. = ALIGN(0x4);
+		__sinit__ = .;	  
+		STATICINIT
+		
+		. = ALIGN(0x4);
+		__endrodata__ = .;		
+	} > .rodata
+	
+	.app_data : AT(__endrodata__) {
+		__data_start__ = .;
+		*(.sdata)
+		*(.data)	
+		. = ALIGN(0x4);
+		__data_end__ = .;
+		
+		__START_BSS = .;		
+		*(.bss)
+		*(.sbss)
+		. = ALIGN(0x8);		
+		__END_BSS = .;		
+		
+	} > .data
+	
+	# Set stacks for all CPU modes but SVC (each stack has 256 bytes)
+	__IRQ_Stack = . + 256;
+	__UNDEF_Stack = __IRQ_Stack + 256;
+	__FIQ_Stack = __UNDEF_Stack + 256;
+	__ABT_Stack = __FIQ_Stack + 256; 
+	__USR_Stack = __ABT_Stack + 256;
+		
+	# Set stack for SVC mode (the CPU mode used by the application)
+	__SP_INIT = __USR_Stack + 0x10000;
+	
+	# Setup heap
+	__heap_addr = __SP_INIT;		# heap grows in opposite direction of stack
+	__heap_size = 0x40000;			# heap size set to 0x40000 bytes (256KB)	
+	__S_romp = 0x0;     			# No ROM to RAM copy section
+}

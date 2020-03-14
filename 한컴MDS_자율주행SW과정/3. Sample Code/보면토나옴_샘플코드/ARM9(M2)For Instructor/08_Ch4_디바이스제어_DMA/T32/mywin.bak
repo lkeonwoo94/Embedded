@@ -1,0 +1,33 @@
+// T32 Mon Sep 11 11:35:17 2006
+
+ B::
+ 
+ TOOLBAR ON
+ STATUSBAR ON
+ WINPAGE.RESET
+ 
+ WINCLEAR
+ WINPOS 83.571 0.0 58. 15. 0. 1. W005
+ WINTABS 26. 26.
+ sYmbol.Browse
+ 
+ WINPOS 83.714 20.692 58. 8. 13. 1. W006
+ Data.dump (0x30000000) /DIALOG
+ 
+ WINPOS 0.0 34.385 42. 5. 0. 0. W004
+ Var.Watch
+ 
+ 
+ WINPOS 91.571 34.692 50. 9. 0. 0. W005
+ register / sl
+ 
+ WINPOS 46.429 34.538 40. 7. 0. 0. W003
+ Var.Ref
+ 
+ WINPOS 0.0 0.0 79. 29. 13. 1. W002
+ WINTABS 10. 10. 25. 62.
+ Data.List
+ 
+ WINPAGE.SELECT P000     
+ 
+ ENDDO

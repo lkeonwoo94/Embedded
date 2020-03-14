@@ -1,0 +1,21 @@
+# Link map of _start
+  1] _start (notype,global) found in crt0.s 
+
+# Unreferenced symbols:
+
+
+
+# .app_text
+  30000000 00000000 Init    $a	(crt0.s)
+  30000000 000000D4 Init    Init	(crt0.s)
+  30000000 00000000 Init    _start	(crt0.s)
+  3000007C 00000000 Init    $d	(crt0.s)
+#>300000D8          Image$$RO$$Limit (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  30000000 30000000 000000D8 text
+
+# Link start time: Thu Jan 08 16:20:43 2009
+# Link end time: Thu Jan 08 16:20:43 2009

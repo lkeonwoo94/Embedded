@@ -1,0 +1,50 @@
+# Linker Comand File 
+
+MEMORY
+{
+	text(RX):ORIGIN = 0x30000000, LENGTH = 0
+	data(RW):ORIGIN = AFTER(text), LENGTH = 0
+	
+}
+
+SECTIONS
+{
+	.app_text:
+	{
+		*(Init)
+		*(.text)
+		*(.Init)
+		*(C$$code)
+		.=ALIGN(0x8);
+		
+		Image$$RO$$Limit=.;
+		
+	}>text
+	
+	.app_data:
+	{
+		Image$$RW$$Base=.;
+		
+		*(.rodata)
+		*(.sdata)
+		*(.data)
+		.=ALIGN(0x4);
+		
+		*(.exception)
+		.=ALIGN(0x4);
+		
+		__exception_table_start__=.;
+		EXCEPTION
+		__exception_table_end__=.;
+		.=ALIGN(0x4);
+		
+
+		Image$$ZI$$Base=.;		
+		*(.bss)
+		
+		Image$$ZI$$Limit=.;
+		.=ALIGN(0x8);
+		
+	}>data
+	
+}

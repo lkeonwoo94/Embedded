@@ -1,0 +1,12 @@
+; 터미널 창을 열어 통신을 할 수 있게 합니다.
+; 통신속도등 다른 옵션을 수정 할 수 있습니다.
+
+term.protocol  COM com1 115200. 8. NONE 1STOP NONE 
+;통신포트 com1
+;통신속도 115200
+;Data bit 8
+;stop bit 1
+;흐름제어 없음
+
+term.gate
+;연결
