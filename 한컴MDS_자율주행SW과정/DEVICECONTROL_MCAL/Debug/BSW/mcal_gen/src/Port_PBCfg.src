@@ -1,0 +1,1826 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc3600a -c90 --dep-file=BSW\\mcal_gen\\src\\.Port_PBCfg.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_gen\\src\\Port_PBCfg.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_gen\\src\\Port_PBCfg.src ..\\BSW\\mcal_gen\\src\\Port_PBCfg.c"
+	.compiler_name		"ctc"
+	.name	"Port_PBCfg"
+
+	
+$TC16X
+	
+	.sdecl	'.rodata.Shared.CONFIGURATION_PB',data,rom,cluster('Port_kConfiguration0')
+	.sect	'.rodata.Shared.CONFIGURATION_PB'
+	.align	4
+Port_kConfiguration0:	.type	object
+	.size	Port_kConfiguration0,392
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.byte	16,16,16,16,16,16,16,16
+	.byte	16,16,16,16,16,16,16,16
+	.space	12
+	.sdecl	'.zrodata.Port_PBCfg.Port_DiscSet0',data,rom,cluster('Port_DiscSet0')
+	.sect	'.zrodata.Port_PBCfg.Port_DiscSet0'
+	.align	2
+Port_DiscSet0:	.type	object
+	.size	Port_DiscSet0,2
+	.space	2
+	.sdecl	'.rodata.Shared.CONFIGURATION_PB',data,rom,cluster('Port_kLVDSConfig0')
+	.sect	'.rodata.Shared.CONFIGURATION_PB'
+	.align	4
+Port_kLVDSConfig0:	.type	object
+	.size	Port_kLVDSConfig0,36
+	.space	8
+	.word	-65536,-65536,70,24576
+	.space	8
+	.word	-65536
+	.sdecl	'.rodata.Shared.CONFIGURATION_PB',data,rom,cluster('Port_kPCSRConfig0')
+	.sect	'.rodata.Shared.CONFIGURATION_PB'
+	.align	2
+Port_kPCSRConfig0:	.type	object
+	.size	Port_kPCSRConfig0,12
+	.space	12
+	.sdecl	'.rodata.Shared.CONFIGURATION_PB',data,rom,cluster('Port_ConfigRoot')
+	.sect	'.rodata.Shared.CONFIGURATION_PB'
+	.global	Port_ConfigRoot
+	.align	4
+Port_ConfigRoot:	.type	object
+	.size	Port_ConfigRoot,16
+	.word	Port_kConfiguration0,Port_DiscSet0,Port_kLVDSConfig0,Port_kPCSRConfig0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	1461
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L5
+	.byte	2
+	.byte	'void',0,3
+	.word	139
+	.byte	4
+	.byte	'__prof_adm',0,1,1,1
+	.word	145
+	.byte	5,1,3
+	.word	169
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	171
+	.byte	6
+	.byte	'unsigned char',0,1,8,4
+	.byte	'uint8',0,2,90,29
+	.word	194
+	.byte	6
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,92,29
+	.word	225
+	.byte	6
+	.byte	'unsigned long int',0,4,7,4
+	.byte	'uint32',0,2,94,29
+	.word	262
+	.byte	6
+	.byte	'unsigned int',0,4,7,4
+	.byte	'unsigned_int',0,3,115,22
+	.word	298
+	.byte	7
+	.byte	'Port_n_PinType',0,4,191,1,15,4,8,4,193,1,3,2,9
+	.byte	'P0',0,1
+	.word	194
+	.byte	1,7,2,35,0,9
+	.byte	'P1',0,1
+	.word	194
+	.byte	1,6,2,35,0,9
+	.byte	'P2',0,1
+	.word	194
+	.byte	1,5,2,35,0,9
+	.byte	'P3',0,1
+	.word	194
+	.byte	1,4,2,35,0,9
+	.byte	'P4',0,1
+	.word	194
+	.byte	1,3,2,35,0,9
+	.byte	'P5',0,1
+	.word	194
+	.byte	1,2,2,35,0,9
+	.byte	'P6',0,1
+	.word	194
+	.byte	1,1,2,35,0,9
+	.byte	'P7',0,1
+	.word	194
+	.byte	1,0,2,35,0,9
+	.byte	'P8',0,1
+	.word	194
+	.byte	1,7,2,35,1,9
+	.byte	'P9',0,1
+	.word	194
+	.byte	1,6,2,35,1,9
+	.byte	'P10',0,1
+	.word	194
+	.byte	1,5,2,35,1,9
+	.byte	'P11',0,1
+	.word	194
+	.byte	1,4,2,35,1,9
+	.byte	'P12',0,1
+	.word	194
+	.byte	1,3,2,35,1,9
+	.byte	'P13',0,1
+	.word	194
+	.byte	1,2,2,35,1,9
+	.byte	'P14',0,1
+	.word	194
+	.byte	1,1,2,35,1,9
+	.byte	'P15',0,1
+	.word	194
+	.byte	1,0,2,35,1,0,10
+	.byte	'B',0,2
+	.word	356
+	.byte	2,35,0,10
+	.byte	'U',0,4
+	.word	262
+	.byte	2,35,0,0,4
+	.byte	'Port_n_PinType',0,4,218,1,3
+	.word	335
+	.byte	7
+	.byte	'Port_n_ControlType',0,4,221,1,15,16,8,4,223,1,3,16,10
+	.byte	'PC0',0,1
+	.word	194
+	.byte	2,35,0,10
+	.byte	'PC1',0,1
+	.word	194
+	.byte	2,35,1,10
+	.byte	'PC2',0,1
+	.word	194
+	.byte	2,35,2,10
+	.byte	'PC3',0,1
+	.word	194
+	.byte	2,35,3,10
+	.byte	'PC4',0,1
+	.word	194
+	.byte	2,35,4,10
+	.byte	'PC5',0,1
+	.word	194
+	.byte	2,35,5,10
+	.byte	'PC6',0,1
+	.word	194
+	.byte	2,35,6,10
+	.byte	'PC7',0,1
+	.word	194
+	.byte	2,35,7,10
+	.byte	'PC8',0,1
+	.word	194
+	.byte	2,35,8,10
+	.byte	'PC9',0,1
+	.word	194
+	.byte	2,35,9,10
+	.byte	'PC10',0,1
+	.word	194
+	.byte	2,35,10,10
+	.byte	'PC11',0,1
+	.word	194
+	.byte	2,35,11,10
+	.byte	'PC12',0,1
+	.word	194
+	.byte	2,35,12,10
+	.byte	'PC13',0,1
+	.word	194
+	.byte	2,35,13,10
+	.byte	'PC14',0,1
+	.word	194
+	.byte	2,35,14,10
+	.byte	'PC15',0,1
+	.word	194
+	.byte	2,35,15,0,10
+	.byte	'B',0,16
+	.word	665
+	.byte	2,35,0,11,16
+	.word	262
+	.byte	12,3,0,10
+	.byte	'U',0,16
+	.word	897
+	.byte	2,35,0,0,4
+	.byte	'Port_n_ControlType',0,4,248,1,2
+	.word	640
+	.byte	13
+	.byte	'Port_n_ConfigType',0,4,155,2,16,28,10
+	.byte	'PinControl',0,16
+	.word	640
+	.byte	2,35,0,10
+	.byte	'PinLevel',0,4
+	.word	335
+	.byte	2,35,16,10
+	.byte	'DriverStrength0',0,4
+	.word	262
+	.byte	2,35,20,10
+	.byte	'DriverStrength1',0,4
+	.word	262
+	.byte	2,35,24,0,4
+	.byte	'Port_n_ConfigType',0,4,179,2,2
+	.word	946
+	.byte	13
+	.byte	'Port_n_LVDSConfigType',0,4,182,2,16,12,10
+	.byte	'LPCR0',0,4
+	.word	262
+	.byte	2,35,0,10
+	.byte	'LPCR1',0,4
+	.word	262
+	.byte	2,35,4,10
+	.byte	'LPCR2',0,4
+	.word	262
+	.byte	2,35,8,0,4
+	.byte	'Port_n_LVDSConfigType',0,4,206,2,2
+	.word	1086
+	.byte	4
+	.byte	'Port_n_PCSRConfigType',0,4,209,2,16
+	.word	262
+	.byte	13
+	.byte	'Port_ConfigType',0,4,218,2,16,16,14
+	.word	946
+	.byte	3
+	.word	1244
+	.byte	10
+	.byte	'PortConfigSetPtr',0,4
+	.word	1249
+	.byte	2,35,0,14
+	.word	225
+	.byte	3
+	.word	1280
+	.byte	10
+	.byte	'PDiscSet',0,4
+	.word	1285
+	.byte	2,35,4,14
+	.word	1086
+	.byte	3
+	.word	1308
+	.byte	10
+	.byte	'Port_LVDSConfigTypePtr',0,4
+	.word	1313
+	.byte	2,35,8,14
+	.word	262
+	.byte	3
+	.word	1350
+	.byte	10
+	.byte	'Port_PCSRConfigTypePtr',0,4
+	.word	1355
+	.byte	2,35,12,0,11,16
+	.word	1222
+	.byte	12,0,0
+.L16:
+	.byte	14
+	.word	1393
+	.byte	11,136,3
+	.word	946
+	.byte	12,13,0
+.L17:
+	.byte	14
+	.word	1407
+	.byte	11,2
+	.word	225
+	.byte	12,0,0
+.L18:
+	.byte	14
+	.word	1422
+	.byte	11,36
+	.word	1086
+	.byte	12,2,0
+.L19:
+	.byte	14
+	.word	1436
+	.byte	11,12
+	.word	262
+	.byte	12,2,0
+.L20:
+	.byte	14
+	.word	1450
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,5,21,0,54,15,0,0,6,36,0,3,8,11,15,62,15,0,0,7,23,1,3,8,58,15,59,15,57,15,11,15,0,0,8,19,1
+	.byte	58,15,59,15,57,15,11,15,0,0,9,13,0,3,8,11,15,73,19,13,15,12,15,56,9,0,0,10,13,0,3,8,11,15,73,19,56,9,0
+	.byte	0,11,1,1,11,15,73,19,0,0,12,33,0,47,15,0,0,13,19,1,3,8,58,15,59,15,57,15,11,15,0,0,14,38,0,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L22-.L21
+.L21:
+	.half	3
+	.word	.L24-.L23
+.L23:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc',0,0
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'Mcal_TcLib.h',0,2,0,0
+	.byte	'Port.h',0,3,0,0,0
+.L24:
+.L22:
+	.sdecl	'.debug_info',debug,cluster('Port_ConfigRoot')
+	.sect	'.debug_info'
+.L6:
+	.word	169
+	.half	3
+	.word	.L7
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L2
+	.byte	3
+	.byte	'Port_ConfigRoot',0,1,168,10,23
+	.word	.L16
+	.byte	1,5,3
+	.word	Port_ConfigRoot
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Port_ConfigRoot')
+	.sect	'.debug_abbrev'
+.L7:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('Port_kConfiguration0')
+	.sect	'.debug_info'
+.L8:
+	.word	173
+	.half	3
+	.word	.L9
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L2
+	.byte	3
+	.byte	'Port_kConfiguration0',0,1,236,1,32
+	.word	.L17
+	.byte	5,3
+	.word	Port_kConfiguration0
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Port_kConfiguration0')
+	.sect	'.debug_abbrev'
+.L9:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('Port_DiscSet0')
+	.sect	'.debug_info'
+.L10:
+	.word	166
+	.half	3
+	.word	.L11
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L2
+	.byte	3
+	.byte	'Port_DiscSet0',0,1,154,9,21
+	.word	.L18
+	.byte	5,3
+	.word	Port_DiscSet0
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Port_DiscSet0')
+	.sect	'.debug_abbrev'
+.L11:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('Port_kLVDSConfig0')
+	.sect	'.debug_info'
+.L12:
+	.word	170
+	.half	3
+	.word	.L13
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L2
+	.byte	3
+	.byte	'Port_kLVDSConfig0',0,1,178,9,36
+	.word	.L19
+	.byte	5,3
+	.word	Port_kLVDSConfig0
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Port_kLVDSConfig0')
+	.sect	'.debug_abbrev'
+.L13:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('Port_kPCSRConfig0')
+	.sect	'.debug_info'
+.L14:
+	.word	170
+	.half	3
+	.word	.L15
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_gen\\src\\Port_PBCfg.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L2
+	.byte	3
+	.byte	'Port_kPCSRConfig0',0,1,229,9,36
+	.word	.L20
+	.byte	5,3
+	.word	Port_kPCSRConfig0
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Port_kPCSRConfig0')
+	.sect	'.debug_abbrev'
+.L15:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     1  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     2  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     3  ** Copyright (C) Infineon Technologies (2013)                                 **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     4  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     5  ** All rights reserved.                                                       **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     6  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     7  ** This document contains proprietary information belonging to Infineon       **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     8  ** Technologies. Passing on and copying of this document, and communication   **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	     9  ** of its contents is not permitted without prior written authorization.      **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    10  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    11  ********************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    12  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    13  **  FILENAME  : Port_PBCfg.c                                                  **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    14  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    15  **  $CC VERSION : \main\39 $                                                 **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    16  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    17  **  DATE, TIME: 2016-05-14, 11:31:12                                      **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    18  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    19  **  GENERATOR : Build b120625-0327                                          **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    20  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    21  **  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    22  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    23  **  VENDOR    : Infineon Technologies                                         **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    24  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    25  **  DESCRIPTION  : Port configuration generated from ECU 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    26                     configuration file ( Port.bmd)                             **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    27  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    28  **  MAY BE CHANGED BY USER [yes/no]: No                                       **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    29  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    30  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    31  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    32   
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    33  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    34  **                      Includes                                              **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    35  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    36  /* Inclusion of Port Header file */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    37  #include "Port.h"
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    38  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    39  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    40  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    41  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    42  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    43  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    44  ** Name             : Portx_lPdrConfig                                        **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    45  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    46  ** Description      : Macro to configure Portx Pdr register parameters        **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    47  **                                                                            **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    48  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    49  /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    50          configuration generation and increase the readability of config file*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    51  /* Macro definition for PORT pad drive control register Pn_PDR0 */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    52  #define  Portx_lPdrConfig1(Pd0,Pd1,Pd2,Pd3,Pd4,Pd5,Pd6,Pd7)                    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    53           ( ((uint32)(Pd7) << (uint32)28) | ((uint32)(Pd6) << (uint32)24) |     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    54             ((uint32)(Pd5) << (uint32)20) | ((uint32)(Pd4) << (uint32)16) |     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    55             ((uint32)(Pd3) << (uint32)12) |  ((uint32)(Pd2) << (uint32)8)  |     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    56             ((uint32)(Pd1) << (uint32)4)  | (uint32)(Pd0)                        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    57           )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    58  /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    59          configuration generation and increase the readability of config file*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    60  /* Macro definition for PORT pad drive control register Pn_PDR1 */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    61  #define  Portx_lPdrConfig2(Pd8,Pd9,Pd10,Pd11,Pd12,Pd13,Pd14,Pd15)              \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    62           ( ((uint32)(Pd15) << (uint32)28) | ((uint32)(Pd14) << (uint32)24) |   \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    63             ((uint32)(Pd13) << (uint32)20) | ((uint32)(Pd12) << (uint32)16) |   \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    64             ((uint32)(Pd11) << (uint32)12)|  ((uint32)(Pd10) << (uint32)8)  |   \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    65             ((uint32)(Pd9) << (uint32)4) | (uint32)(Pd8)                        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    66           )                  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    67   /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    68          configuration generation and increase the readability of config file*/        
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    69  /* Macro definition for PORT Pad Disable Control Register */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    70  #define Port_lDiscSet(b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15)   \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    71    ((uint16)(                                                                    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    72              (uint32)(b0) | ((uint32)(b1) << (uint32)1) |                       \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    73              ((uint32)(b2) << (uint32)2) | ((uint32)(b3) << (uint32)3) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    74              ((uint32)(b4) << (uint32)4) | ((uint32)(b5) << (uint32)5) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    75              ((uint32)(b6) << (uint32)6) | ((uint32)(b7) << (uint32)7) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    76              ((uint32)(b8) << (uint32)8) | ((uint32)(b9) << (uint32)9) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    77              ((uint32)(b10) << (uint32)10) | ((uint32)(b11) << (uint32)11) |    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    78              ((uint32)(b12) << (uint32)12) | ((uint32)(b13)<< (uint32)13) |     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    79              ((uint32)(b14) << (uint32)14) | ((uint32)(b15) << (uint32)15)      \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    80             ))
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    81  /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    82          configuration generation and increase the readability of config file*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    83  /* Macro definition for PORT LPCR register for LVDSH */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    84  #define Port_lLvdsh(RDISCL,RDIS,TERM,LRTERM,Reduced_IEEE,TDISCL,TDIS,TPD,TPWD) \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    85    ((uint32)(                                                                    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    86              ((uint32)(RDISCL)) | ((uint32)(RDIS) << (uint32)1) |               \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    87              ((uint32)(TERM) << (uint32)2) | ((uint32)(LRTERM) << (uint32)3) |  \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    88              ((uint32)(Reduced_IEEE) << (uint32)8) |                            \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    89              ((uint32)(TDISCL) << (uint32)12) | ((uint32)(TDIS) << (uint32)13)| \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    90              ((uint32)(TPD) << (uint32)14) | ((uint32)(TPWD) << (uint32)15)     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    91             ))
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    92  /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    93          configuration generation and increase the readability of config file*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    94  /* Macro definition for PORT LPCR register for LVDSM */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    95  #define Port_lLvdsm(PS1)                                                       \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    96    ((uint32)(                                                                    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    97              ((uint32)(PS1) << (uint32)1)                                       \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    98             ))
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	    99  /*IFX_MISRA_RULE_19_07_STATUS=Function like macros used for simplification  of 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   100          configuration generation and increase the readability of config file*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   101  /* Macro definition for PORT PCSR register */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   102  #define Port_lPcsr(b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15)      \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   103    ((uint32)(                                                                    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   104              ((uint32)(b0)) | ((uint32)(b1) << (uint32)1) |                     \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   105              ((uint32)(b2) << (uint32)2) | ((uint32)(b3) << (uint32)3) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   106              ((uint32)(b4) << (uint32)4) | ((uint32)(b5) << (uint32)5) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   107              ((uint32)(b6) << (uint32)6) | ((uint32)(b7) << (uint32)7) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   108              ((uint32)(b8) << (uint32)8) | ((uint32)(b9) << (uint32)9) |        \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   109              ((uint32)(b10) << (uint32)10) | ((uint32)(b11) << (uint32)11) |    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   110              ((uint32)(b12) << (uint32)12) | ((uint32)(b13) << (uint32)13) |    \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   111              ((uint32)(b14) << (uint32)14) | ((uint32)(b15) << (uint32)15)      \ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   112             ))
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   113  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   114  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   115  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   116  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   117  /* MISRA RULE 87 VIOLATION: Inclusion of MemMap.h in between the code can't 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   118     be avoided as it is required for mapping global variables, constants 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   119     and code
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   120  */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   121  /*lint -esym( 960, 87 ) Note 960: Violates MISRA Required Rule 87, 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   122                         only preprocessor statements and comments before 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   123                         '#include MemMap.h'
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   124  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   125  /*lint -e537 Warning 537: Repeated include file MemMap.h */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   126  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   127  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   128  #define PORT_START_SEC_POSTBUILDCFG
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   129  #include "MemMap.h"
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   130  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   131  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   132  **                      Configuration Options                                 **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   133  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   134  /*
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   135                       Container : PortPinConfiguration
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   136  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   137  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   138  /* 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   139  Configuration Options: Physical pin level
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   140  -LOW  (Low Volatage Level)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   141  -HIGH (High Voltage Level) 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   142  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   143  #define  PORT_PIN_LOW                       (0x00U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   144  #define  PORT_PIN_HIGH                      (0x01U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   145  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   146  /* Macros to define pin Default Input Output control value */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   147  #define  PORT_PIN_DEFAULT                   (0x10U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   148  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   149  /* 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   150  Configuration Options: Pin input characteristics 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   151  -NO PULL
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   152  -PULL DOWN
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   153  -PULL UP
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   154  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   155  #define  PORT_PIN_IN_NO_PULL                (0x00U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   156  #define  PORT_PIN_IN_PULL_DOWN              (0x08U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   157  #define  PORT_PIN_IN_PULL_UP                (0x10U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   158  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   159  /* 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   160  Configuration Options: Pin output characteristics 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   161  -PUSHPULL
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   162  -OPENDRAIN
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   163  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   164  #define  PORT_PIN_OUT_PUSHPULL              (0x00U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   165  #define  PORT_PIN_OUT_OPENDRAIN             (0x40U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   166  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   167  /*
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   168  Configuration Options: Pin Pad Level  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   169  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   170  #define  PORT_PDR_CMOS_AUTOMOTIVE_LEVEL     (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   171  #define  PORT_PDR_TTL_LEVEL                 (0x8U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   172  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   173  /*
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   174  Configuration Options: Pin driver strength
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   175  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   176  #define  PORT_CMOS_SPEED_GRADE1             (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   177  #define  PORT_CMOS_SPEED_GRADE2             (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   178  #define  PORT_CMOS_SPEED_GRADE3             (0x2U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   179  #define  PORT_CMOS_SPEED_GRADE4             (0x3U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   180  #define  PORT_LVDS_SPEED_GRADE1             (0x4U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   181  #define  PORT_LVDS_SPEED_GRADE2             (0x5U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   182  #define  PORT_LVDS_SPEED_GRADE3             (0x6U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   183  #define  PORT_LVDS_SPEED_GRADE4             (0x7U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   184  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   185  /* Hysteresis enable for input pin */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   186  #define  PORT_HYSTERESIS_ENABLE             (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   187  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   188  /* Hysteresis disable for input pin */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   189  #define  PORT_HYSTERESIS_DISABLE            (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   190  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   191  /* Pin driver strength value for the non available pins*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   192  #define  PORT_PIN_PAD_LEVEL_DEFAULT         (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   193  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   194  /* Configuration Options: Pin drive strength, for class Adc type pad    */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   195  #define  PORT_PDR_ADC                       (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   196  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   197  /*
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   198    Some of the Pins doesn't have driver strength, To access the same
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   199    pin this null value macro is introduced.
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   200  */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   201  #define  PORT_PDR_ZERO                      (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   202  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   203  /* For the Px_DISC register value set */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   204  #define  PORT_PIN_ANALOG_INPUT_ENABLE       (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   205  #define  PORT_PIN_ANALOG_INPUT_DISABLE      (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   206  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   207  /* For Pn_LPCR registers wrt LVDSH pads */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   208  #define Port_LVDS_PAD_SUPPLY_3_3_VOLT    (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   209  #define Port_LVDS_PAD_SUPPLY_5_VOLT      (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   210  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   211  /* For Pn_LPCR registers wrt LVDSH pads */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   212  #define PORT_LVDS_PORT_CONTROLLED           (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   213  #define PORT_LVDS_HSCT_CONTROLLED           (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   214  #define PORT_LVDS_ENABLE                    (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   215  #define PORT_LVDS_DISABLE                   (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   216  #define PORT_LVDS_INTERNAML_TERMINATION     (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   217  #define PORT_LVDS_EXTERNAL_TERMINATION      (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   218  #define PORT_LVDS_POLY_RESISTOR_TERM        (0x8U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   219  #define PORT_LVDS_IEEE_GEN_PURPOSE_LINK     (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   220  #define PORT_LVDS_IEEE_REDUCED_LINK         (0x2U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   221  #define PORT_LVDS_SPECIAL_REDUCED_LINK      (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   222  #define PORT_LVDS_POWER_DOWN                (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   223  #define PORT_LVDS_POWER_ON                  (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   224  #define PORT_LVDS_POWDOWN_PULDOWN_EN        (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   225  #define PORT_LVDS_POWDOWN_PULDOWN_DIS       (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   226  #define PORT_LVDS_DEFAULT                   (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   227  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   228  /* For PCSR register */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   229  #define PORT_PCSR_DEFAULT                   (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   230  #define PORT_PCSR_ENABLE                    (0x1U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   231  #define PORT_PCSR_DISABLE                   (0x0U)
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   232  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   233  /******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   234  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   235  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   236  static const Port_n_ConfigType Port_kConfiguration0[] = 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   237  {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   238  /*                              Port0                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   239    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   240      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   241        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   242        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   243           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   244           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   245           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   246           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   247           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   248           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   249           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   250           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   251           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   252           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   253           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   254           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   255           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   256           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   257           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   258           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   259        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   260      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   261      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   262        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   263        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   264           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   265           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   266           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   267           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   268           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   269           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   270           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   271           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   272           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   273           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   274           PORT_PIN_LOW,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   275           PORT_PIN_LOW,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   276           PORT_PIN_LOW,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   277           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   278           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   279           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   280        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   281      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   282      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   283      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   284           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   285           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   286           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   287           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   288           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   289           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   290           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   291           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   292                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   293      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   294      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   295           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   296           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   297           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   298           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   299           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   300           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   301           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   302           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   303                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   304     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   305  /*                              Port2                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   306    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   307      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   308        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   309        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   310           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   311           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   312           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   313           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   314           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   315           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   316           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   317           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   318           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   319           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   320           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   321           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   322           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   323           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   324           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   325           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   326        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   327      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   328      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   329        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   330        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   331           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   332           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   333           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   334           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   335           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   336           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   337           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   338           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   339           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   340           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   341           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   342           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   343           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   344           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   345           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   346           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   347        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   348      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   349      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   350      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   351           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   352           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   353           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   354           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   355           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   356           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   357           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   358           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   359                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   360      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   361      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   362           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   363           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   364           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   365           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   366           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   367           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   368           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   369           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   370                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   371     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   372  /*                              Port10                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   373    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   374      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   375        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   376        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   377           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   378           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   379           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   380           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   381           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   382           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   383           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   384           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   385           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   386           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   387           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   388           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   389           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   390           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   391           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   392           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   393        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   394      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   395      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   396        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   397        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   398           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   399           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   400           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   401           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   402           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   403           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   404           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   405           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   406           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   407           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   408           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   409           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   410           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   411           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   412           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   413           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   414        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   415      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   416      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   417      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   418           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   419           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   420           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   421           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   422           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   423           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   424           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   425           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   426                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   427      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   428      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   429           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   430           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   431           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   432           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   433           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   434           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   435           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   436           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   437                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   438     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   439  /*                              Port11                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   440    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   441      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   442        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   443        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   444           (PORT_PIN_DEFAULT),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   445           (PORT_PIN_DEFAULT),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   446           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   447           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   448           (PORT_PIN_DEFAULT),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   449           (PORT_PIN_DEFAULT),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   450           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   451           (PORT_PIN_DEFAULT),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   452           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   453           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   454           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   455           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   456           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   457           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   458           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   459           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   460        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   461      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   462      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   463        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   464        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   465           0U,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   466           0U,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   467           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   468           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   469           0U,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   470           0U,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   471           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   472           0U,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   473           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   474           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   475           PORT_PIN_LOW,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   476           PORT_PIN_LOW,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   477           PORT_PIN_LOW,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   478           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   479           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   480           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   481        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   482      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   483      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   484      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   485           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   486           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   487           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   488           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   489           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   490           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   491           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   492           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   493                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   494      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   495      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   496           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   497           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   498           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   499           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   500           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   501           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   502           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   503           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   504                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   505     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   506  /*                              Port13                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   507    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   508      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   509        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   510        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   511           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   512           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   513           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   514           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   515           (PORT_PIN_DEFAULT),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   516           (PORT_PIN_DEFAULT),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   517           (PORT_PIN_DEFAULT),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   518           (PORT_PIN_DEFAULT),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   519           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   520           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   521           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   522           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   523           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   524           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   525           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   526           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   527        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   528      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   529      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   530        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   531        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   532           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   533           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   534           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   535           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   536           0U,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   537           0U,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   538           0U,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   539           0U,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   540           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   541           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   542           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   543           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   544           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   545           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   546           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   547           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   548        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   549      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   550      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   551      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   552           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   553           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   554           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   555           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   556           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   557           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   558           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   559           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   560                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   561      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   562      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   563           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   564           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   565           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   566           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   567           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   568           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   569           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   570           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   571                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   572     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   573  /*                              Port14                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   574    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   575      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   576        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   577        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   578           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   579           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   580           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   581           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   582           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   583           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   584           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   585           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   586           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   587           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   588           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   589           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   590           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   591           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   592           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   593           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   594        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   595      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   596      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   597        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   598        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   599           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   600           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   601           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   602           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   603           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   604           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   605           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   606           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   607           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   608           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   609           PORT_PIN_LOW,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   610           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   611           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   612           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   613           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   614           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   615        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   616      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   617      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   618      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   619           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   620           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   621           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   622           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   623           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   624           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   625           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   626           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   627                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   628      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   629      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   630           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   631           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   632           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   633           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   634           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   635           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   636           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   637           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   638                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   639     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   640  /*                              Port15                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   641    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   642      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   643        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   644        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   645           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   646           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   647           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   648           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   649           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   650           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   651           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   652           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   653           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   654           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   655           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   656           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   657           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   658           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   659           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   660           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   661        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   662      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   663      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   664        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   665        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   666           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   667           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   668           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   669           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   670           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   671           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   672           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   673           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   674           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   675           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   676           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   677           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   678           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   679           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   680           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   681           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   682        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   683      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   684      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   685      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   686           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   687           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   688           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   689           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   690           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   691           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   692           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   693           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   694                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   695      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   696      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   697           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   698           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   699           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   700           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   701           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   702           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   703           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   704           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   705                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   706     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   707  /*                              Port20                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   708    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   709      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   710        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   711        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   712           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   713           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   714           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   715           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   716           (PORT_PIN_DEFAULT),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   717           (PORT_PIN_DEFAULT),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   718           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   719           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   720           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   721           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   722           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   723           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   724           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   725           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   726           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   727           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   728        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   729      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   730      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   731        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   732        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   733           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   734           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   735           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   736           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   737           0U,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   738           0U,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   739           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   740           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   741           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   742           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   743           PORT_PIN_LOW,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   744           PORT_PIN_LOW,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   745           PORT_PIN_LOW,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   746           PORT_PIN_LOW,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   747           PORT_PIN_LOW,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   748           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   749        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   750      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   751      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   752      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   753           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   754           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   755           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   756           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   757           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   758           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   759           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   760           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   761                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   762      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   763      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   764           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   765           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   766           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   767           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   768           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   769           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   770           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   771           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   772                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   773     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   774  /*                              Port21                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   775    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   776      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   777        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   778        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   779           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   780           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   781           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   782           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   783           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   784           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   785           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   786           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   787           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   788           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   789           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   790           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   791           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   792           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   793           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   794           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   795        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   796      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   797      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   798        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   799        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   800           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   801           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   802           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   803           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   804           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   805           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   806           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   807           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   808           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   809           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   810           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   811           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   812           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   813           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   814           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   815           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   816        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   817      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   818      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   819      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   820           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   821           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   822           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   823           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   824           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   825           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   826           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   827           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   828                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   829      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   830      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   831           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   832           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   833           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   834           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   835           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   836           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   837           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   838           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   839                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   840     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   841  /*                              Port22                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   842    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   843      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   844        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   845        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   846           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   847           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   848           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   849           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   850           (PORT_PIN_DEFAULT),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   851           (PORT_PIN_DEFAULT),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   852           (PORT_PIN_DEFAULT),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   853           (PORT_PIN_DEFAULT),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   854           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   855           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   856           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   857           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   858           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   859           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   860           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   861           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   862        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   863      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   864      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   865        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   866        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   867           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   868           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   869           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   870           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   871           0U,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   872           0U,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   873           0U,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   874           0U,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   875           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   876           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   877           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   878           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   879           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   880           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   881           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   882           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   883        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   884      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   885      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   886      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   887           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   888           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   889           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   890           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   891           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   892           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   893           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   894           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   895                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   896      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   897      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   898           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   899           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   900           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   901           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   902           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   903           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   904           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   905           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   906                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   907     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   908  /*                              Port23                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   909    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   910      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   911        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   912        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   913           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   914           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   915           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   916           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   917           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   918           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   919           (PORT_PIN_DEFAULT),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   920           (PORT_PIN_DEFAULT),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   921           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   922           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   923           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   924           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   925           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   926           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   927           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   928           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   929        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   930      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   931      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   932        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   933        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   934           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   935           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   936           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   937           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   938           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   939           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   940           0U,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   941           0U,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   942           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   943           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   944           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   945           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   946           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   947           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   948           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   949           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   950        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   951      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   952      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   953      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   954           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   955           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   956           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   957           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   958           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   959           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   960           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   961           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   962                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   963      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   964      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   965           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   966           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   967           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   968           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   969           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   970           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   971           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   972           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   973                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   974     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   975  /*                              Port32                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   976    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   977      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   978        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   979        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   980           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   981           (PORT_PIN_DEFAULT),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   982           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   983           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   984           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   985           (PORT_PIN_DEFAULT),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   986           (PORT_PIN_DEFAULT),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   987           (PORT_PIN_DEFAULT),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   988           (PORT_PIN_DEFAULT),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   989           (PORT_PIN_DEFAULT),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   990           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   991           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   992           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   993           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   994           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   995           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   996        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   997      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   998      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	   999        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1000        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1001           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1002           0U,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1003           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1004           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1005           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1006           0U,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1007           0U,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1008           0U,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1009           0U,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1010           0U,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1011           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1012           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1013           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1014           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1015           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1016           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1017        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1018      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1019      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1020      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1021           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1022           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1023           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1024           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1025           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1026           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1027           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1028           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1029                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1030      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1031      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1032           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1033           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1034           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1035           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1036           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1037           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1038           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1039           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1040                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1041     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1042  /*                              Port33                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1043    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1044      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1045        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1046        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1047           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1048           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1049           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1050           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1051           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1052           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1053           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1054           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1055           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1056           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1057           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1058           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1059           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1060           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1061           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1062           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1063        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1064      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1065      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1066        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1067        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1068           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1069           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1070           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1071           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1072           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1073           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1074           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1075           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1076           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1077           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1078           PORT_PIN_LOW,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1079           PORT_PIN_LOW,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1080           PORT_PIN_LOW,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1081           PORT_PIN_LOW,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1082           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1083           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1084        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1085      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1086      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1087      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1088           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1089           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1090           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1091           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1092           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1093           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1094           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1095           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1096                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1097      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1098      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1099           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1100           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1101           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1102           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1103           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1104           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1105           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1106           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1107                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1108     },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1109  /*                              Port40                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1110    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1111      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1112        /* Port pins direction, characteristics and mode configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1113        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1114           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1115           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1116           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1117           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1118           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1119           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1120           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1121           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1122           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1123           ((uint8)PORT_PIN_IN | PORT_PIN_IN_PULL_UP | PORT_PIN_MODE_GPIO),/*Pin 9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1124           (PORT_PIN_DEFAULT),/*Pin 10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1125           (PORT_PIN_DEFAULT),/*Pin 11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1126           (PORT_PIN_DEFAULT),/*Pin 12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1127           (PORT_PIN_DEFAULT),/*Pin 13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1128           (PORT_PIN_DEFAULT),/*Pin 14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1129           (PORT_PIN_DEFAULT) /*Pin 15*/ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1130        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1131      },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1132      {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1133        /* Port pins initial level configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1134        {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1135           PORT_PIN_LOW,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1136           PORT_PIN_LOW,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1137           PORT_PIN_LOW,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1138           PORT_PIN_LOW,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1139           PORT_PIN_LOW,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1140           PORT_PIN_LOW,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1141           PORT_PIN_LOW,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1142           PORT_PIN_LOW,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1143           PORT_PIN_LOW,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1144           PORT_PIN_LOW,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1145           0U,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1146           0U,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1147           0U,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1148           0U,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1149           0U,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1150           0U /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1151        }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1152      },      
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1153      /* Port pins drive strength1 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1154      Portx_lPdrConfig1(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1155           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1156           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1157           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1158           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1159           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1160           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1161           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1162           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ) /* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1163                       ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1164      /* Port pins drive strength2 configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1165      Portx_lPdrConfig2(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1166           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1167           (PORT_PDR_CMOS_AUTOMOTIVE_LEVEL | PORT_HYSTERESIS_DISABLE ),/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1168           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1169           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1170           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1171           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1172           (PORT_PIN_PAD_LEVEL_DEFAULT),/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1173           (PORT_PIN_PAD_LEVEL_DEFAULT) /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1174                       )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1175     }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1176  };
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1177  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1178  static const uint16 Port_DiscSet0[] = 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1179  {     
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1180  /*                              Port40                       */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1181     Port_lDiscSet(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1182                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 0 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1183                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 1 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1184                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 2 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1185                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 3 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1186                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 4 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1187                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 5 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1188                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 6 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1189                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 7 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1190                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 8 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1191                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 9 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1192                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 10 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1193                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 11 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1194                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 12 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1195                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 13 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1196                   PORT_PIN_ANALOG_INPUT_DISABLE,/* Pin 14 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1197                   PORT_PIN_ANALOG_INPUT_DISABLE /* Pin 15 */ 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1198                  )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1199  };
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1200  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1201  /* LVDS configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1202  static const Port_n_LVDSConfigType Port_kLVDSConfig0[] = 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1203  {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1204  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1205    { /*             Port13            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1206      Port_lLvdsm(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1207                    Port_LVDS_PAD_SUPPLY_5_VOLT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1208                  ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1209      Port_lLvdsm(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1210                    Port_LVDS_PAD_SUPPLY_5_VOLT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1211                  ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1212                    PORT_LVDSM_DEFAULT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1213    },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1214  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1215    { /*             Port21            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1216                    PORT_LVDSH_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1217       Port_lLvdsh(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1218                    PORT_LVDS_PORT_CONTROLLED,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1219                    PORT_LVDS_DISABLE,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1220                    PORT_LVDS_INTERNAML_TERMINATION,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1221                    PORT_LVDS_POLY_RESISTOR_TERM,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1222                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1223                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1224                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1225                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1226                    PORT_LVDS_DEFAULT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1227                   ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1228       Port_lLvdsh(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1229                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1230                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1231                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1232                    PORT_LVDS_DEFAULT,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1233                    PORT_LVDS_IEEE_GEN_PURPOSE_LINK,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1234                    PORT_LVDS_PORT_CONTROLLED,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1235                    PORT_LVDS_DISABLE,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1236                    PORT_LVDS_POWER_DOWN,
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1237                    PORT_LVDS_POWDOWN_PULDOWN_DIS
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1238                   )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1239    },
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1240  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1241    { /*             Port22            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1242      Port_lLvdsm(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1243                    Port_LVDS_PAD_SUPPLY_5_VOLT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1244                  ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1245      Port_lLvdsm(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1246                    Port_LVDS_PAD_SUPPLY_5_VOLT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1247                  ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1248                    PORT_LVDSM_DEFAULT
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1249    }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1250  };
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1251  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1252  /* PCSR configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1253  static const Port_n_PCSRConfigType Port_kPCSRConfig0[] = 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1254  {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1255  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1256                 /*           Port0            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1257     Port_lPcsr(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1258                 PORT_PCSR_DEFAULT,  /*Pin0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1259                 PORT_PCSR_DEFAULT,  /*Pin1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1260                 PORT_PCSR_DEFAULT,  /*Pin2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1261                 PORT_PCSR_DEFAULT,  /*Pin3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1262                 PORT_PCSR_DISABLE,  /*Pin4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1263                 PORT_PCSR_DISABLE,  /*Pin5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1264                 PORT_PCSR_DEFAULT,  /*Pin6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1265                 PORT_PCSR_DEFAULT,  /*Pin7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1266                 PORT_PCSR_DEFAULT,  /*Pin8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1267                 PORT_PCSR_DEFAULT,  /*Pin9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1268                 PORT_PCSR_DISABLE,  /*Pin10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1269                 PORT_PCSR_DISABLE,  /*Pin11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1270                 PORT_PCSR_DEFAULT,  /*Pin12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1271                 PORT_PCSR_DEFAULT,  /*Pin13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1272                 PORT_PCSR_DEFAULT,  /*Pin14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1273                 PORT_PCSR_DEFAULT   /*Pin15*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1274                ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1275  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1276                 /*           Port11            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1277     Port_lPcsr(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1278                 PORT_PCSR_DEFAULT,  /*Pin0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1279                 PORT_PCSR_DEFAULT,  /*Pin1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1280                 PORT_PCSR_DISABLE,  /*Pin2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1281                 PORT_PCSR_DISABLE,  /*Pin3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1282                 PORT_PCSR_DEFAULT,  /*Pin4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1283                 PORT_PCSR_DEFAULT,  /*Pin5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1284                 PORT_PCSR_DISABLE,  /*Pin6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1285                 PORT_PCSR_DEFAULT,  /*Pin7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1286                 PORT_PCSR_DEFAULT,  /*Pin8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1287                 PORT_PCSR_DEFAULT,  /*Pin9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1288                 PORT_PCSR_DEFAULT,  /*Pin10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1289                 PORT_PCSR_DEFAULT,  /*Pin11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1290                 PORT_PCSR_DEFAULT,  /*Pin12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1291                 PORT_PCSR_DEFAULT,  /*Pin13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1292                 PORT_PCSR_DEFAULT,  /*Pin14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1293                 PORT_PCSR_DEFAULT   /*Pin15*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1294                ),
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1295  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1296                 /*           Port40            */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1297     Port_lPcsr(
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1298                 PORT_PCSR_DEFAULT,  /*Pin0*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1299                 PORT_PCSR_DISABLE,  /*Pin1*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1300                 PORT_PCSR_DISABLE,  /*Pin2*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1301                 PORT_PCSR_DISABLE,  /*Pin3*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1302                 PORT_PCSR_DEFAULT,  /*Pin4*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1303                 PORT_PCSR_DISABLE,  /*Pin5*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1304                 PORT_PCSR_DEFAULT,  /*Pin6*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1305                 PORT_PCSR_DEFAULT,  /*Pin7*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1306                 PORT_PCSR_DEFAULT,  /*Pin8*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1307                 PORT_PCSR_DEFAULT,  /*Pin9*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1308                 PORT_PCSR_DEFAULT,  /*Pin10*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1309                 PORT_PCSR_DEFAULT,  /*Pin11*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1310                 PORT_PCSR_DEFAULT,  /*Pin12*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1311                 PORT_PCSR_DEFAULT,  /*Pin13*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1312                 PORT_PCSR_DEFAULT,  /*Pin14*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1313                 PORT_PCSR_DEFAULT   /*Pin15*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1314                )
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1315  };
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1316  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1317  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1318  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1319  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1320  const Port_ConfigType Port_ConfigRoot[1] =
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1321  {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1322  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1323    {
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1324          /* Port Configuration set 0 */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1325      &Port_kConfiguration0[0],
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1326      /* Port 40-th Disc configuration set 0 */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1327      &Port_DiscSet0[0],
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1328  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1329      /* LVDS configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1330      &Port_kLVDSConfig0[0],
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1331      /* PCSR Configuration */
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1332      &Port_kPCSRConfig0[0]
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1333    }
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1334  };
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1335  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1336  #define PORT_STOP_SEC_POSTBUILDCFG
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1337  /*IFX_MISRA_RULE_19_01_STATUS=File inclusion after pre-processor directives is 
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1338   allowed only for MemMap.h*/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1339  #include "MemMap.h"
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1340  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1341  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1342  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1343  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1344  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1345  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1346  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1347  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1348  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1349  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1350  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1351  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1352  **                      Global Function Definitions                           **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1353  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1354  /*******************************************************************************
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1355  **                      Private Function Definitions                          **
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1356  *******************************************************************************/
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1357  
+; ..\BSW\mcal_gen\src\Port_PBCfg.c	  1358  
+
+	; Module end

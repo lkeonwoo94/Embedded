@@ -1,0 +1,57 @@
+
+**** Build of configuration Debug for project DEVICECONTROL_MCAL ****
+
+"C:\\Program Files (x86)\\TASKING\\TriCore v4.2r2\\ctc\\bin\\amk" -j4 all -a 
+Compiling core0_main.c
+Compiling EcuM.c
+Compiling EcuM_Callout_Stubs.c
+Compiling CanIf.c
+Compiling CanIf_Cbk.c
+Compiling Dem.c
+Compiling Det.c
+Compiling Os.c
+Compiling SafetyReport.c
+Compiling SchM.c
+Compiling Test_Print.c
+Compiling Test_Setup.c
+Compiling Test_Time.c
+Compiling AscLin_Irq.c
+ctc W560: ["..\BSW\mcal_base\integration_general\src\Test_Setup.c" 123/14] possible truncation at implicit conversion to type "char"
+ctc W512: ["..\BSW\mcal_base\integration_general\src\Test_Setup.c" 155/5] mixed declarations and code
+ctc W512: ["..\BSW\mcal_base\integration_general\src\Test_Setup.c" 252/5] mixed declarations and code
+0 errors, 3 warnings
+Compiling Dma_Irq.c
+Compiling Gtm_Irq.c
+Compiling Hsm_Irq.c
+Compiling Irq.c
+Compiling Mcal_Trap.c
+Compiling Stm_Irq.c
+Compiling Gtm.c
+Compiling Gtm_Platform.c
+Compiling Mcu.c
+Compiling Mcu_Crc.c
+Compiling Mcu_Dma.c
+Compiling Mcu_Platform.c
+Compiling Mcu_Ver.c
+Compiling Port.c
+Compiling Mcal.c
+Compiling Mcal_DmaLib.c
+Compiling Mcal_TcLib.c
+Compiling Mcal_WdgLib.c
+Compiling EcuM_LCfg.c
+Compiling EcuM_PBCfg.c
+Compiling Gtm_LCfg.c
+Compiling Gtm_PBCfg.c
+Compiling Mcu_PBCfg.c
+Compiling Port_PBCfg.c
+Linking to DEVICECONTROL_MCAL.elf
+
+Time consumed: 27066 ms
+**** End of build ****
+
+Tool info: 
+TASKING VX-toolset for TriCore: assembler v4.2r2 Build 339.1.1
+TASKING VX-toolset for TriCore: control program v4.2r2 Build 199.1.1
+TASKING VX-toolset for TriCore: object linker v4.2r2 Build 238.1.1
+TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1
+TASKING program builder v4.2r2 Build 078

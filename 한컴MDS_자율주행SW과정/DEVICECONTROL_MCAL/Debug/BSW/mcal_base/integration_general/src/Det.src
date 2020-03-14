@@ -1,0 +1,366 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc2052a -c90 --dep-file=BSW\\mcal_base\\integration_general\\src\\.Det.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\integration_general\\src\\Det.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\integration_general\\src\\Det.src ..\\BSW\\mcal_base\\integration_general\\src\\Det.c"
+	.compiler_name		"ctc"
+	.name	"Det"
+
+	
+$TC16X
+	
+	.sdecl	'.text.Det.Det_ReportError',code,cluster('Det_ReportError')
+	.sect	'.text.Det.Det_ReportError'
+	.align	2
+	
+	.global	Det_ReportError
+
+; ..\BSW\mcal_base\integration_general\src\Det.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	     2  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     4  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     6  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\integration_general\src\Det.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    10  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    12  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    13  **  $FILENAME   : Det.c $                                                    **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    14  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    15  **  $CC VERSION : \main\3 $                                                  **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    16  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    17  **  $DATE       : 2013-06-20 $                                               **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    18  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    20  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    22  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    23  **  DESCRIPTION : This file contains stub for Det_ReportError                **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    24  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    25  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    26  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    27  ******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    28  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    29  **                      Includes                                              **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    30  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    31  
+; ..\BSW\mcal_base\integration_general\src\Det.c	    32  /* Inclusion of Platform_Types.h and Compiler.h */
+; ..\BSW\mcal_base\integration_general\src\Det.c	    33  #include "Std_Types.h"
+; ..\BSW\mcal_base\integration_general\src\Det.c	    34  #include "Mcal.h"
+; ..\BSW\mcal_base\integration_general\src\Det.c	    35  #include "Test_Print.h"
+; ..\BSW\mcal_base\integration_general\src\Det.c	    36  #include "Det.h"
+; ..\BSW\mcal_base\integration_general\src\Det.c	    37  
+; ..\BSW\mcal_base\integration_general\src\Det.c	    38  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    39  **                      Imported Compiler Switch Check                        **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    40  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    41  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    42  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    43  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    44  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    45  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    46  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    47  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    48  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    49  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    50  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    51  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    52  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    53  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    54  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    55  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    56  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    57  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    58  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    59  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    60  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    61  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    62  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    63  **                      Global Function Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    64  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    65  /* Test Stub for Det_ReportError */ 
+; ..\BSW\mcal_base\integration_general\src\Det.c	    66  void Det_ReportError(uint16 ModuleId,uint8 InstanceId,uint8 ApiId,uint8 ErrorId) 
+; Function Det_ReportError
+.L3:
+Det_ReportError:	.type	func
+	sub.a	a10,#16
+.L20:
+	mov	d8,d4
+.L22:
+	mov	d15,d5
+.L23:
+	mov	d9,d6
+.L24:
+	mov	d10,d7
+.L25:
+
+; ..\BSW\mcal_base\integration_general\src\Det.c	    67  {
+; ..\BSW\mcal_base\integration_general\src\Det.c	    68    print_f("\n DET OCCURED \n ");
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
+	call	print_f
+.L21:
+
+; ..\BSW\mcal_base\integration_general\src\Det.c	    69    print_f("ModuleId:%d, InstanceId: %d, ApiId:%d, ErrorId:%d"
+; ..\BSW\mcal_base\integration_general\src\Det.c	    70             ,ModuleId, InstanceId, ApiId, ErrorId);
+	st.w	[a10],d8
+.L34:
+	st.w	[a10]4,d15
+.L35:
+	st.w	[a10]8,d9
+.L36:
+	st.w	[a10]12,d10
+.L37:
+	movh.a	a4,#@his(.2.str)
+	lea	a4,[a4]@los(.2.str)
+	call	print_f
+.L38:
+
+; ..\BSW\mcal_base\integration_general\src\Det.c	    71  
+; ..\BSW\mcal_base\integration_general\src\Det.c	    72  }
+	ret
+.L13:
+	
+__Det_ReportError_function_end:
+	.size	Det_ReportError,__Det_ReportError_function_end-Det_ReportError
+.L12:
+	; End of function
+	
+	.sdecl	'.rodata.Det..1.str',data,rom
+	.sect	'.rodata.Det..1.str'
+.1.str:	.type	object
+	.size	.1.str,17
+	.byte	10,32,68,69,84,32,79,67
+	.byte	67,85,82,69,68,32,10,32
+	.space	1
+	.sdecl	'.rodata.Det..2.str',data,rom
+	.sect	'.rodata.Det..2.str'
+.2.str:	.type	object
+	.size	.2.str,50
+	.byte	77,111,100,117,108,101,73,100
+	.byte	58,37,100,44,32,73,110,115
+	.byte	116,97,110,99,101,73,100,58
+	.byte	32,37,100,44,32,65,112,105
+	.byte	73,100,58,37,100,44,32,69
+	.byte	114,114,111,114,73,100,58,37
+	.byte	100
+	.space	1
+	.calls	'Det_ReportError','print_f'
+	.extern	print_f
+	.calls	'Det_ReportError','',16
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L5:
+	.word	394
+	.half	3
+	.word	.L6
+	.byte	4
+.L4:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L7
+	.byte	2
+	.byte	'print_f',0,1,166,1,13,1,1,1,1,3
+	.byte	'unsigned char',0,1,8,4
+	.word	170
+	.byte	5
+	.word	187
+	.byte	6
+	.byte	'p_frm',0,1,166,1,33
+	.word	192
+	.byte	7,1,166,1,40,0
+.L14:
+	.byte	3
+	.byte	'unsigned short int',0,2,7
+.L16:
+	.byte	3
+	.byte	'unsigned char',0,1,8,8
+	.byte	'void',0,5
+	.word	257
+	.byte	9
+	.byte	'__prof_adm',0,2,1,1
+	.word	263
+	.byte	10,1,5
+	.word	287
+	.byte	9
+	.byte	'__codeptr',0,2,1,1
+	.word	289
+	.byte	9
+	.byte	'uint8',0,3,90,29
+	.word	240
+	.byte	9
+	.byte	'uint16',0,3,92,29
+	.word	218
+	.byte	3
+	.byte	'unsigned long int',0,4,7,9
+	.byte	'uint32',0,3,94,29
+	.word	341
+	.byte	9
+	.byte	'_iob_flag_t',0,4,75,25
+	.word	218
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L6:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0
+	.byte	3,36,0,3,8,11,15,62,15,0,0,4,38,0,73,19,0,0,5,15,0,73,19,0,0,6,5,0,3,8,58,15,59,15,57,15,73,19,0,0,7,24
+	.byte	0,58,15,59,15,57,15,0,0,8,59,0,3,8,0,0,9,22,0,3,8,58,15,59,15,57,15,73,19,0,0,10,21,0,54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L7:
+	.word	.L27-.L26
+.L26:
+	.half	3
+	.word	.L29-.L28
+.L28:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Program Files (x86)\\TASKING\\TriCore v4.2r2\\ctc\\include\\',0,0
+	.byte	'Test_Print.h',0,1,0,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Det.c',0,0,0,0
+	.byte	'Platform_Types.h',0,2,0,0
+	.byte	'stdio.h',0,3,0,0,0
+.L29:
+.L27:
+	.sdecl	'.debug_info',debug,cluster('Det_ReportError')
+	.sect	'.debug_info'
+.L8:
+	.word	286
+	.half	3
+	.word	.L9
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L11,.L10
+	.byte	2
+	.word	.L4
+	.byte	3
+	.byte	'Det_ReportError',0,1,66,6,1,1,1
+	.word	.L3,.L13,.L2
+	.byte	4
+	.byte	'ModuleId',0,1,66,29
+	.word	.L14,.L15
+	.byte	4
+	.byte	'InstanceId',0,1,66,44
+	.word	.L16,.L17
+	.byte	4
+	.byte	'ApiId',0,1,66,61
+	.word	.L16,.L18
+	.byte	4
+	.byte	'ErrorId',0,1,66,73
+	.word	.L16,.L19
+	.byte	5
+	.word	.L3,.L13
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_ReportError')
+	.sect	'.debug_abbrev'
+.L9:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_ReportError')
+	.sect	'.debug_line'
+.L10:
+	.word	.L31-.L30
+.L30:
+	.half	3
+	.word	.L33-.L32
+.L32:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Det.c',0,0,0,0,0
+.L33:
+	.byte	5,6,7,0,5,2
+	.word	.L3
+	.byte	3,193,0,1,5,11,9
+	.half	.L25-.L3
+	.byte	3,2,1,5,13,9
+	.half	.L21-.L25
+	.byte	3,2,1,5,23,9
+	.half	.L34-.L21
+	.byte	1,5,35,9
+	.half	.L35-.L34
+	.byte	1,5,42,9
+	.half	.L36-.L35
+	.byte	1,5,11,9
+	.half	.L37-.L36
+	.byte	3,127,1,5,1,9
+	.half	.L38-.L37
+	.byte	3,3,1,7,9
+	.half	.L12-.L38
+	.byte	0,1,1
+.L31:
+	.sdecl	'.debug_ranges',debug,cluster('Det_ReportError')
+	.sect	'.debug_ranges'
+.L11:
+	.word	-1,.L3,0,.L12-.L3,0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_ReportError')
+	.sect	'.debug_loc'
+.L18:
+	.word	-1,.L3,0,.L21-.L3
+	.half	5
+	.byte	144,35,157,32,0
+	.word	.L24-.L3,.L13-.L3
+	.half	5
+	.byte	144,36,157,32,32
+	.word	0,0
+.L2:
+	.word	-1,.L3,0,.L20-.L3
+	.half	2
+	.byte	138,0
+	.word	.L20-.L3,.L13-.L3
+	.half	2
+	.byte	138,16
+	.word	.L13-.L3,.L13-.L3
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L19:
+	.word	-1,.L3,0,.L21-.L3
+	.half	5
+	.byte	144,35,157,32,32
+	.word	.L25-.L3,.L13-.L3
+	.half	5
+	.byte	144,37,157,32,0
+	.word	0,0
+.L17:
+	.word	-1,.L3,0,.L21-.L3
+	.half	5
+	.byte	144,34,157,32,32
+	.word	.L23-.L3,.L13-.L3
+	.half	5
+	.byte	144,39,157,32,32
+	.word	0,0
+.L15:
+	.word	-1,.L3,0,.L21-.L3
+	.half	5
+	.byte	144,34,157,32,0
+	.word	.L22-.L3,.L13-.L3
+	.half	5
+	.byte	144,36,157,32,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L39:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Det_ReportError')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L39,.L3,.L13-.L3
+	.byte	4
+	.word	(.L20-.L3)/2
+	.byte	19,16,22,26,3,19,138,16,4
+	.word	(.L13-.L20)/2
+	.byte	19,0,8,26,0,0
+
+; ..\BSW\mcal_base\integration_general\src\Det.c	    73  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Det.c	    74  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Det.c	    75  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Det.c	    76  
+; ..\BSW\mcal_base\integration_general\src\Det.c	    77  
+
+	; Module end

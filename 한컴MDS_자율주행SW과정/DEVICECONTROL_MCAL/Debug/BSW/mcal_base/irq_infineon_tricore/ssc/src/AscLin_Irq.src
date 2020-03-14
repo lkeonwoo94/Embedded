@@ -1,0 +1,709 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc180a -c90 --dep-file=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\.AscLin_Irq.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\AscLin_Irq.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\AscLin_Irq.src ..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\AscLin_Irq.c"
+	.compiler_name		"ctc"
+	.name	"AscLin_Irq"
+
+	
+$TC16X
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	285
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\AscLin_Irq.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L5
+	.byte	2
+	.byte	'void',0,3
+	.word	165
+	.byte	4
+	.byte	'__prof_adm',0,1,1,1
+	.word	171
+	.byte	5,1,3
+	.word	195
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	197
+	.byte	6
+	.byte	'unsigned char',0,1,8,4
+	.byte	'uint8',0,2,90,29
+	.word	220
+	.byte	6
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,92,29
+	.word	251
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,5,21,0,54,15,0,0,6,36,0,3,8,11,15,62,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0,0
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\AscLin_Irq.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0,0
+.L9:
+.L7:
+
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     2  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     3  ** Copyright (C) Infineon Technologies (2014)                                **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     4  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     6  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    10  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    12  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    13  **  $FILENAME   : AscLin_Irq.c $                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    14  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    15  **  $CC VERSION : \main\13 $                                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    16  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    17  **  $DATE       : 2014-11-14 $                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    18  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    20  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    22  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    23  **  DESCRIPTION : This file contains the ISRs for ASCLIN MCAL drivers        **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    24  **                This file is given for evaluation purpose only             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    25  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    26  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    27  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    28  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    29  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    30  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    31  **                      Includes                                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    32  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    33  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    34  /* Inclusion of Platform_Types.h and Compiler.h */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    35  #include "Std_Types.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    36  /* Inclusion of Tasking sfr file */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    37  /* MCAL driver utility functions for setting interrupt priority initialization 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    38      and interrupt category */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    39  #include "Irq.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    40  /* Global functions like Set/Reset END INIT protection bit, 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    41    Enable/Disable interrupts, Automic write function */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    42  #include "Mcal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    43  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    44  #if (IFX_SAFETLIB_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    45  #include "SafeWdgIf_Cfg.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    46  #ifdef SWDG_EXT_CIC_WDG_ONLY
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    47  /* Call IsrRx when CIC receive interrupt occurs  */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    48  extern void   SafeWdgAscLin_IsrRx         (void);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    49  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    50  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    51  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    52  #if ((defined(IRQ_ASCLIN3_EXIST)) &&(IRQ_ASCLIN3_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    53  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    54       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    55       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    56       (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALSTDLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    57  #include "StdLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    58  #include "StdLin_Hal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    59  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    60  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    61       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    62       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    63       (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    64  #include "Lin_17_AscLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    65  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    66  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    67       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    68       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    69       (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALUART))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    70  #include "Uart.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    71  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    72  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    73  #elif ((defined(IRQ_ASCLIN2_EXIST)) &&(IRQ_ASCLIN2_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    74  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    75       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    76       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALSTDLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    77  #include "StdLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    78  #include "StdLin_Hal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    79  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    80  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    81       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    82       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    83  #include "Lin_17_AscLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    84  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    85  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    86       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    87       (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALUART))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    88  #include "Uart.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    89  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    90  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    91  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    92  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    93       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    94  #include "StdLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    95  #include "StdLin_Hal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    96  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    97  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    98       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	    99  #include "Lin_17_AscLin.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   100  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   101  #if ((IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART) || \ 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   102       (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   103  #include "Uart.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   104  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   105  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   106  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   107  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   108  **                      Imported Compiler Switch Checks                       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   109  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   110  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   111  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   112  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   113  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   114  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   115  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   116  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   117  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   118  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   119  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   120  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   121  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   122  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   123  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   124  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   125  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   126  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   127  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   128  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   129  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   130  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   131  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   132  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   133  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   134  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   135  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   136  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   137  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   138  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   139  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   140  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   141  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   142  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   143  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   144  **                      Global Function Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   145  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   146  #if (IFX_MCAL_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   147  #define IRQ_START_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   148  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   149  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   150  #define IFX_IRQ_START_SEC_CODE_ASIL_B
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   151  #include "Ifx_MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   152  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   153  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   154  ** Syntax : void ASCLINxTX_ISR(void)                                        **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   155  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   156  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   157  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   158  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   159  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   160  ** Reentrancy:       reentrant                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   161  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   162  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   163  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   164  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   165  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   166  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   167  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   168  ** Description : Service for Transmit interrupt of ASCLINx                   **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   169  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   170  *****************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   171  /* This node is for ASCLINx_TX */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   172  #if((IRQ_ASCLIN0_TX_PRIO > 0) || (IRQ_ASCLIN0_TX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   173  #if((IRQ_ASCLIN0_TX_PRIO > 0) && (IRQ_ASCLIN0_TX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   174  IFX_INTERRUPT(ASCLIN0TX_ISR, 0, IRQ_ASCLIN0_TX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   175  #elif IRQ_ASCLIN0_TX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   176  ISR(ASCLIN0TX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   177  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   178  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   179  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   180    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   181    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   182  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   183  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   184  #if ((defined(LIN_ASCLIN0_USED)) && (LIN_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   185    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   186    Lin_17_AscLin_IsrTransmit(LIN_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   187  #endif/*(LIN_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   188  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   189  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   190  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   191  #if ((defined(UART_ASCLIN0_USED)) && (UART_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   192    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   193    Uart_IsrTransmit( UART_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   194  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   195  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   196  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   197    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   198    StdLin_IsrTransmit(0U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   199  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   200  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   201  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   202  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   203  #if((IRQ_ASCLIN1_TX_PRIO > 0) || (IRQ_ASCLIN1_TX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   204  #if((IRQ_ASCLIN1_TX_PRIO > 0) && (IRQ_ASCLIN1_TX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   205  IFX_INTERRUPT(ASCLIN1TX_ISR, 0, IRQ_ASCLIN1_TX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   206  #elif IRQ_ASCLIN1_TX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   207  ISR(ASCLIN1TX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   208  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   209  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   210    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   211    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   212    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   213  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   214  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   215  #if ((defined(LIN_ASCLIN1_USED)) && (LIN_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   216    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   217    Lin_17_AscLin_IsrTransmit(LIN_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   218  #endif/*(LIN_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   219  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   220  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   221  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   222  #if ((defined(UART_ASCLIN1_USED)) && (UART_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   223    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   224    Uart_IsrTransmit( UART_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   225  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   226  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   227  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   228    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   229    StdLin_IsrTransmit(1U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   230  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   231  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   232  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   233  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   234  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   235  #if ((defined(IRQ_ASCLIN2_EXIST)) &&(IRQ_ASCLIN2_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   236  #if((IRQ_ASCLIN2_TX_PRIO > 0) || (IRQ_ASCLIN2_TX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   237  #if((IRQ_ASCLIN2_TX_PRIO > 0) && (IRQ_ASCLIN2_TX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   238  IFX_INTERRUPT(ASCLIN2TX_ISR, 0, IRQ_ASCLIN2_TX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   239  #elif IRQ_ASCLIN2_TX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   240  ISR(ASCLIN2TX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   241  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   242  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   243    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   244    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   245    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   246  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   247  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   248  #if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   249    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   250    Lin_17_AscLin_IsrTransmit(LIN_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   251  #endif/*#if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   252  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   253  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   254  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   255  #if ((defined(UART_ASCLIN2_USED)) && (UART_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   256    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   257    Uart_IsrTransmit( UART_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   258  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   259  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   260  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   261    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   262    StdLin_IsrTransmit(2U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   263  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   264  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   265  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   266  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   267  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   268  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   269  #if ((defined(IRQ_ASCLIN3_EXIST)) &&(IRQ_ASCLIN3_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   270  #if((IRQ_ASCLIN3_TX_PRIO > 0) || (IRQ_ASCLIN3_TX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   271  #if((IRQ_ASCLIN3_TX_PRIO > 0) && (IRQ_ASCLIN3_TX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   272  IFX_INTERRUPT(ASCLIN3TX_ISR, 0, IRQ_ASCLIN3_TX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   273  #elif IRQ_ASCLIN3_TX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   274  ISR(ASCLIN3TX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   275  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   276  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   277    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   278    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   279    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   280  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   281  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   282  #if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   283    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   284    Lin_17_AscLin_IsrTransmit(LIN_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   285  #endif/*#if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   286  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   287  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   288  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   289  #if ((defined(UART_ASCLIN3_USED)) && (UART_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   290    /* Call TX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   291    Uart_IsrTransmit( UART_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   292  #endif/*( UART_ASCLIN3_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   293  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   294  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   295    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   296    StdLin_IsrTransmit(3U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   297  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   298  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   299  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   300  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   301  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   302  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   303  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   304  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   305  ** Syntax : void ASCLINxRX_ISR(void)                                        **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   306  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   307  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   308  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   309  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   310  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   311  ** Reentrancy:       reentrant                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   312  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   313  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   314  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   315  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   316  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   317  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   318  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   319  ** Description : Service for Receive interrupt of ASCLINx                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   320  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   321  *****************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   322  #if((IRQ_ASCLIN0_RX_PRIO > 0) || (IRQ_ASCLIN0_RX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   323  #if((IRQ_ASCLIN0_RX_PRIO > 0) && (IRQ_ASCLIN0_RX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   324  IFX_INTERRUPT(ASCLIN0RX_ISR, 0, IRQ_ASCLIN0_RX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   325  #elif IRQ_ASCLIN0_RX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   326  ISR(ASCLIN0RX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   327  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   328  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   329    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   330    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   331    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   332    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   333  #if (IFX_SAFETLIB_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   334  #ifdef SWDG_EXT_CIC_WDG_ONLY
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   335  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_AVAILABLE)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   336    /*call isr to read the received data from CIC */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   337    SafeWdgAscLin_IsrRx();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   338  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   339  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   340  #endif  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   341  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   342  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   343  #if ((defined(LIN_ASCLIN0_USED)) && (LIN_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   344    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   345    Lin_17_AscLin_IsrReceive(LIN_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   346  #endif/*(LIN_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   347  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   348  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   349  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   350  #if ((defined(UART_ASCLIN0_USED)) && (UART_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   351    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   352    Uart_IsrReceive(UART_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   353  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   354  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   355  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   356    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   357    StdLin_IsrReceive(0U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   358  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   359  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   360  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   361  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   362  #if((IRQ_ASCLIN1_RX_PRIO > 0) || (IRQ_ASCLIN1_RX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   363  #if((IRQ_ASCLIN1_RX_PRIO > 0) && (IRQ_ASCLIN1_RX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   364  IFX_INTERRUPT(ASCLIN1RX_ISR, 0, IRQ_ASCLIN1_RX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   365  #elif IRQ_ASCLIN1_RX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   366  ISR(ASCLIN1RX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   367  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   368  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   369    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   370    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   371    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   372  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   373  #if (IFX_SAFETLIB_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   374  #ifdef SWDG_EXT_CIC_WDG_ONLY
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   375  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_AVAILABLE)  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   376    /*call isr to read the received data from CIC */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   377    SafeWdgAscLin_IsrRx();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   378  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   379  #endif  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   380  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   381    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   382  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   383  #if ((defined(LIN_ASCLIN1_USED)) && (LIN_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   384    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   385    Lin_17_AscLin_IsrReceive(LIN_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   386  #endif/*(LIN_ASCLIN1_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   387  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   388  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   389  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   390  #if ((defined(UART_ASCLIN1_USED)) && (UART_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   391    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   392    Uart_IsrReceive(UART_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   393  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   394  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   395  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   396    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   397    StdLin_IsrReceive(1U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   398  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   399  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   400  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   401  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   402  #if ((defined(IRQ_ASCLIN2_EXIST)) &&(IRQ_ASCLIN2_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   403  #if((IRQ_ASCLIN2_RX_PRIO > 0) || (IRQ_ASCLIN2_RX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   404  #if((IRQ_ASCLIN2_RX_PRIO > 0) && (IRQ_ASCLIN2_RX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   405  IFX_INTERRUPT(ASCLIN2RX_ISR, 0, IRQ_ASCLIN2_RX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   406  #elif IRQ_ASCLIN2_RX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   407  ISR(ASCLIN2RX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   408  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   409  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   410    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   411    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   412    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   413    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   414  #if (IFX_SAFETLIB_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   415  #ifdef SWDG_EXT_CIC_WDG_ONLY
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   416  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_AVAILABLE)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   417    /*call isr to read the received data from CIC */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   418    SafeWdgAscLin_IsrRx();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   419  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   420  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   421  #endif 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   422  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   423  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   424  #if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   425    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   426    Lin_17_AscLin_IsrReceive(LIN_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   427  #endif/*#if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   428  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   429  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   430  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   431  #if ((defined(UART_ASCLIN2_USED)) && (UART_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   432    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   433    Uart_IsrReceive(UART_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   434  #endif/*( UART_ASCLIN2_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   435  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   436  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   437    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   438    StdLin_IsrReceive(2U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   439  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   440  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   441  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   442  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   443  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   444  #if ((defined(IRQ_ASCLIN3_EXIST)) &&(IRQ_ASCLIN3_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   445  #if((IRQ_ASCLIN3_RX_PRIO > 0) || (IRQ_ASCLIN3_RX_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   446  #if((IRQ_ASCLIN3_RX_PRIO > 0) && (IRQ_ASCLIN3_RX_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   447  IFX_INTERRUPT(ASCLIN3RX_ISR, 0, IRQ_ASCLIN3_RX_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   448  #elif IRQ_ASCLIN3_RX_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   449  ISR(ASCLIN3RX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   450  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   451  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   452    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   453    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   454    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   455  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   456  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   457  #if (IFX_SAFETLIB_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   458  #ifdef SWDG_EXT_CIC_WDG_ONLY
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   459  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_AVAILABLE)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   460    /*call isr to read the received data from CIC */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   461    SafeWdgAscLin_IsrRx();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   462  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   463  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   464  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   465  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   466  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   467  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   468  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   469  #if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   470    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   471    Lin_17_AscLin_IsrReceive(LIN_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   472  #endif/*#if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   473  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   474  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   475  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   476  #if ((defined(UART_ASCLIN3_USED)) && (UART_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   477    /* Call RX Interrupt funtion*/                                              
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   478    Uart_IsrReceive(UART_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   479  #endif/*( UART_ASCLIN3_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   480  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   481  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   482    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   483    StdLin_IsrReceive(3U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   484  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   485  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   486  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   487  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   488  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   489  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   490  ** Syntax : void ASCLINxEX_ISR(void)                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   491  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   492  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   493  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   494  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   495  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   496  ** Reentrancy:       reentrant                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   497  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   498  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   499  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   500  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   501  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   502  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   503  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   504  ** Description : Service for Error interrupt of ASCLINx                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   505  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   506  *****************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   507  #if((IRQ_ASCLIN0_ERR_PRIO > 0) || (IRQ_ASCLIN0_ERR_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   508  #if((IRQ_ASCLIN0_ERR_PRIO > 0) && (IRQ_ASCLIN0_ERR_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   509  IFX_INTERRUPT(ASCLIN0EX_ISR, 0, IRQ_ASCLIN0_ERR_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   510  #elif IRQ_ASCLIN0_ERR_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   511  ISR(ASCLIN0EX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   512  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   513  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   514    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   515    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   516    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   517  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   518  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   519  #if ((defined(LIN_ASCLIN0_USED)) && (LIN_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   520    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   521    Lin_17_AscLin_IsrError(LIN_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   522  #endif/*(LIN_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   523  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   524  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   525  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   526  #if ((defined(UART_ASCLIN0_USED)) && (UART_ASCLIN0_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   527    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   528    Uart_IsrError(UART_ASCLIN0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   529  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   530  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   531  #if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   532    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   533    StdLin_IsrError(0U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   534  #endif/*#if (IRQ_ASCLIN_CHANNEL0_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   535    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   536  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   537  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   538  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   539  #if((IRQ_ASCLIN1_ERR_PRIO > 0) || (IRQ_ASCLIN1_ERR_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   540  #if((IRQ_ASCLIN1_ERR_PRIO > 0) && (IRQ_ASCLIN1_ERR_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   541  IFX_INTERRUPT(ASCLIN1EX_ISR, 0, IRQ_ASCLIN1_ERR_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   542  #elif IRQ_ASCLIN1_ERR_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   543  ISR(ASCLIN1EX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   544  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   545  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   546    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   547    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   548    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   549  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   550  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   551  #if ((defined(LIN_ASCLIN1_USED)) && (LIN_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   552    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   553    Lin_17_AscLin_IsrError(LIN_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   554  #endif/*(LIN_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   555  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   556  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   557  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   558  #if ((defined(UART_ASCLIN1_USED)) && (UART_ASCLIN1_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   559    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   560    Uart_IsrError(UART_ASCLIN1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   561  #endif/*( UART_ASCLINx_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   562  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   563  #if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   564    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   565    StdLin_IsrError(1U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   566  #endif/*#if (IRQ_ASCLIN_CHANNEL1_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   567    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   568  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   569  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   570  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   571  #if ((defined(IRQ_ASCLIN2_EXIST)) &&(IRQ_ASCLIN2_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   572  #if((IRQ_ASCLIN2_ERR_PRIO > 0) || (IRQ_ASCLIN2_ERR_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   573  #if((IRQ_ASCLIN2_ERR_PRIO > 0) && (IRQ_ASCLIN2_ERR_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   574  IFX_INTERRUPT(ASCLIN2EX_ISR, 0, IRQ_ASCLIN2_ERR_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   575  #elif IRQ_ASCLIN2_ERR_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   576  ISR(ASCLIN2EX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   577  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   578  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   579    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   580    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   581    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   582  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   583  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   584  #if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   585    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   586    Lin_17_AscLin_IsrError(LIN_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   587  #endif/*#if ((defined(LIN_ASCLIN2_USED)) && (LIN_ASCLIN2_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   588  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   589  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   590  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   591  #if ((defined(UART_ASCLIN2_USED)) && (UART_ASCLIN2_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   592    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   593    Uart_IsrError(UART_ASCLIN2);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   594  #endif/*( UART_ASCLIN2_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   595  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   596  #if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   597    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   598    StdLin_IsrError(2U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   599  #endif/*#if (IRQ_ASCLIN_CHANNEL2_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   600    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   601  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   602  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   603  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   604  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   605  #if ((defined(IRQ_ASCLIN3_EXIST)) &&(IRQ_ASCLIN3_EXIST == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   606  #if((IRQ_ASCLIN3_ERR_PRIO > 0) || (IRQ_ASCLIN3_ERR_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   607  #if((IRQ_ASCLIN3_ERR_PRIO > 0) && (IRQ_ASCLIN3_ERR_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   608  IFX_INTERRUPT(ASCLIN3EX_ISR, 0, IRQ_ASCLIN3_ERR_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   609  #elif IRQ_ASCLIN3_ERR_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   610  ISR(ASCLIN3EX_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   611  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   612  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   613    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   614    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   615    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   616  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   617  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   618  #if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   619    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   620    Lin_17_AscLin_IsrError(LIN_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   621  #endif/*#if ((defined(LIN_ASCLIN3_USED)) && (LIN_ASCLIN3_USED == STD_ON))*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   622  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   623  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   624  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALUART)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   625  #if ((defined(UART_ASCLIN3_USED)) && (UART_ASCLIN3_USED == STD_ON))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   626    /* Call the Error ISR */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   627    Uart_IsrError(UART_ASCLIN3);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   628  #endif/*( UART_ASCLIN3_USED == STD_ON)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   629  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   630  #if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALSTDLIN)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   631    /* Complex STDLIN driver usage */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   632    StdLin_IsrError(3U);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   633  #endif/*#if (IRQ_ASCLIN_CHANNEL3_USED == IRQ_ASCLIN_USED_MCALLIN)*/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   634    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   635  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   636  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   637  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   638  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   639  #if (IFX_MCAL_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   640  #define IRQ_STOP_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   641  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   642  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   643  #define IFX_IRQ_STOP_SEC_CODE_ASIL_B
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   644  #include "Ifx_MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\AscLin_Irq.c	   645  #endif
+
+	; Module end

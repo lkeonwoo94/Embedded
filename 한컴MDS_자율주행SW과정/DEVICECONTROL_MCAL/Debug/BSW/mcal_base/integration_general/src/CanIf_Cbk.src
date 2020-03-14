@@ -1,0 +1,209 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc1600a -c90 --dep-file=BSW\\mcal_base\\integration_general\\src\\.CanIf_Cbk.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\integration_general\\src\\CanIf_Cbk.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\integration_general\\src\\CanIf_Cbk.src ..\\BSW\\mcal_base\\integration_general\\src\\CanIf_Cbk.c"
+	.compiler_name		"ctc"
+	.name	"CanIf_Cbk"
+
+	
+$TC16X
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	394
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf_Cbk.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L5
+	.byte	2
+	.byte	'void',0,3
+	.word	159
+	.byte	4
+	.byte	'__prof_adm',0,1,1,1
+	.word	165
+	.byte	5,1,3
+	.word	189
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	191
+	.byte	6
+	.byte	'unsigned char',0,1,8,4
+	.byte	'uint8',0,2,90,29
+	.word	214
+	.byte	6
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,92,29
+	.word	245
+	.byte	6
+	.byte	'unsigned long int',0,4,7,4
+	.byte	'uint32',0,2,94,29
+	.word	282
+	.byte	4
+	.byte	'PduIdType',0,3,72,22
+	.word	214
+	.byte	4
+	.byte	'PduLengthType',0,3,76,22
+	.word	245
+	.byte	4
+	.byte	'Can_IdType',0,4,45,16
+	.word	282
+	.byte	4
+	.byte	'_iob_flag_t',0,5,75,25
+	.word	245
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,5,21,0,54,15,0,0,6,36,0,3,8,11,15,62,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc',0
+	.byte	'C:\\Program Files (x86)\\TASKING\\TriCore v4.2r2\\ctc\\include\\',0,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf_Cbk.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'ComStack_Types.h',0,2,0,0
+	.byte	'Can_GeneralTypes.h',0,3,0,0
+	.byte	'stdio.h',0,4,0,0,0
+.L9:
+.L7:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     2  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     4  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     6  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    10  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    12  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    13  **  $FILENAME   : CanIf_Cbk.c $                                              **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    14  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    15  **  $CC VERSION : \main\9 $                                                  **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    16  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    17  **  $DATE       : 2013-06-20 $                                               **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    18  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    20  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    22  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    23  **  DESCRIPTION : Implementation of CAN interface callback functions for     **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    24  **                module testing                                             **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    25  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    26  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    27  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    28  ******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    29  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    30  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    31  **                      Includes                                              **
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    32  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    33  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    34  #include "Mcal.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    35  #include "CanIf_Cbk.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    36  #include "Test_Print.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    37  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    38  #ifdef ECUM_USES_CAN
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    39  /* Macro to set MSB for Extended messages */
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    40  #define CAN_EXTENDED_MSB_SET            (0x80000000U)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    41  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    42  extern uint8 Test_RxConfirmCount;
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    43  extern uint8 Test_TxConfirmCount;
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    44  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    45  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    46                        CanIf_RxIndication
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    47  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    48  void CanIf_RxIndication(Can_HwHandleType Hrh,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    49                          Can_IdType CanId,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    50                          uint8 CanDlc, 
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    51                          const uint8 *CanSduPtr)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    52  {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    53    uint8 i;
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    54  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    55    #if (CAN_STANDARD_ID_ONLY == STD_OFF) 
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    56    if(CanId & CAN_EXTENDED_MSB_SET)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    57    {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    58      print_f("\n Received a Extended Id Message! ");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    59      print_f(" Hrh = %d, ID = 0x%x, DLC = %d",Hrh,CanId&0x1FFFFFFF,CanDlc);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    60    }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    61    else
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    62    #endif
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    63    {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    64      print_f("\n Received a Standard Id Message! ");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    65      print_f("\n Hrh = %d, ID = 0x%x, DLC = %d", Hrh, CanId, CanDlc );
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    66    }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    67    
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    68    
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    69    print_f(" Msg = ");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    70    for (i=0; i < CanDlc ; i++)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    71    {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    72      print_f("%x ",CanSduPtr[i]);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    73    }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    74    print_f("\n");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    75  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    76    Test_RxConfirmCount++ ;
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    77  }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    78  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    79  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    80                        CanIf_TxConfirmation
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    81  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    82  void CanIf_TxConfirmation (PduIdType CanTxPduId)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    83  {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    84    print_f("\n Transmitted a message! CanTxPduId = %d", CanTxPduId);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    85    Test_TxConfirmCount++ ;
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    86  }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    87  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    88  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    89                        CanIf_ControllerBusOff
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    90  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    91  void CanIf_ControllerBusOff(uint8 ControllerId)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    92  {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    93    print_f("\n Callback function Can_ControllerBusOff is called!");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    94    print_f("ControllerId = %d", ControllerId);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    95  }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    96  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    97  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    98                      CanIf_ControllerModeIndication
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	    99  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   100  void CanIf_ControllerModeIndication( uint8 ControllerId,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   101                                       CanIf_ControllerModeType ControllerMode )
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   102  {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   103    print_f("\n Callback function CanIf_ControllerModeIndication is called!\n");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   104    print_f(" ControllerId = %d \n", ControllerId);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   105    print_f(" ControllerMode = %d \n", ControllerMode);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   106  }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   107  
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   108  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   109                    CAN L-PDU Rx Callout Function Definition
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   110  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   111  boolean Appl_LPduRxCalloutFunction(uint8 Hrh,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   112                                     Can_IdType CanId,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   113                                     uint8 CanDlc,
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   114                                     const uint8 *CanSduPtr)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   115  {
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   116    UNUSED_PARAMETER (Hrh)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   117    UNUSED_PARAMETER (CanId)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   118    UNUSED_PARAMETER (CanDlc)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   119    UNUSED_PARAMETER (CanSduPtr)
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   120    print_f("\n Callback function Appl_LPduRxCalloutFunction is called!");
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   121    return(TRUE);
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   122  }
+; ..\BSW\mcal_base\integration_general\src\CanIf_Cbk.c	   123  #endif
+
+	; Module end

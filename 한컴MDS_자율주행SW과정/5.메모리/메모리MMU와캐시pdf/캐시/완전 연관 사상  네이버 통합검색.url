@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://search.naver.com/search.naver?sm=tab_sug.top&where=nexearch&acq=%EC%97%B0%EA%B4%80%EC%82%AC%EC%83%81&acr=2&qdt=0&ie=utf8&query=%EC%99%84%EC%A0%84+%EC%97%B0%EA%B4%80+%EC%82%AC%EC%83%81
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2
+[InternetShortcut]
+URL=http://search.naver.com/search.naver?sm=tab_sug.top&where=nexearch&acq=%EC%97%B0%EA%B4%80%EC%82%AC%EC%83%81&acr=2&qdt=0&ie=utf8&query=%EC%99%84%EC%A0%84+%EC%97%B0%EA%B4%80+%EC%82%AC%EC%83%81
+IDList=
+IconFile=http://sstatic.naver.net/search/favicon/favicon_140327.ico
+IconIndex=1

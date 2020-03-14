@@ -1,0 +1,2134 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc1156a -c90 --dep-file=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\.Stm_Irq.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Stm_Irq.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Stm_Irq.src ..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Stm_Irq.c"
+	.compiler_name		"ctc"
+	.name	"Stm_Irq"
+
+	
+$TC16X
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	10940
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Stm_Irq.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L5
+	.byte	2
+	.byte	'void',0,3
+	.word	162
+	.byte	4
+	.byte	'__prof_adm',0,1,1,1
+	.word	168
+	.byte	5,1,3
+	.word	192
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	194
+	.byte	6
+	.byte	'unsigned char',0,1,8,4
+	.byte	'uint8',0,2,90,29
+	.word	217
+	.byte	6
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,92,29
+	.word	248
+	.byte	7
+	.byte	'_Ifx_STM_ACCEN0_Bits',0,3,45,16,4,8
+	.byte	'EN0',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'EN1',0,1
+	.word	217
+	.byte	1,6,2,35,0,8
+	.byte	'EN2',0,1
+	.word	217
+	.byte	1,5,2,35,0,8
+	.byte	'EN3',0,1
+	.word	217
+	.byte	1,4,2,35,0,8
+	.byte	'EN4',0,1
+	.word	217
+	.byte	1,3,2,35,0,8
+	.byte	'EN5',0,1
+	.word	217
+	.byte	1,2,2,35,0,8
+	.byte	'EN6',0,1
+	.word	217
+	.byte	1,1,2,35,0,8
+	.byte	'EN7',0,1
+	.word	217
+	.byte	1,0,2,35,0,8
+	.byte	'EN8',0,1
+	.word	217
+	.byte	1,7,2,35,1,8
+	.byte	'EN9',0,1
+	.word	217
+	.byte	1,6,2,35,1,8
+	.byte	'EN10',0,1
+	.word	217
+	.byte	1,5,2,35,1,8
+	.byte	'EN11',0,1
+	.word	217
+	.byte	1,4,2,35,1,8
+	.byte	'EN12',0,1
+	.word	217
+	.byte	1,3,2,35,1,8
+	.byte	'EN13',0,1
+	.word	217
+	.byte	1,2,2,35,1,8
+	.byte	'EN14',0,1
+	.word	217
+	.byte	1,1,2,35,1,8
+	.byte	'EN15',0,1
+	.word	217
+	.byte	1,0,2,35,1,8
+	.byte	'EN16',0,1
+	.word	217
+	.byte	1,7,2,35,2,8
+	.byte	'EN17',0,1
+	.word	217
+	.byte	1,6,2,35,2,8
+	.byte	'EN18',0,1
+	.word	217
+	.byte	1,5,2,35,2,8
+	.byte	'EN19',0,1
+	.word	217
+	.byte	1,4,2,35,2,8
+	.byte	'EN20',0,1
+	.word	217
+	.byte	1,3,2,35,2,8
+	.byte	'EN21',0,1
+	.word	217
+	.byte	1,2,2,35,2,8
+	.byte	'EN22',0,1
+	.word	217
+	.byte	1,1,2,35,2,8
+	.byte	'EN23',0,1
+	.word	217
+	.byte	1,0,2,35,2,8
+	.byte	'EN24',0,1
+	.word	217
+	.byte	1,7,2,35,3,8
+	.byte	'EN25',0,1
+	.word	217
+	.byte	1,6,2,35,3,8
+	.byte	'EN26',0,1
+	.word	217
+	.byte	1,5,2,35,3,8
+	.byte	'EN27',0,1
+	.word	217
+	.byte	1,4,2,35,3,8
+	.byte	'EN28',0,1
+	.word	217
+	.byte	1,3,2,35,3,8
+	.byte	'EN29',0,1
+	.word	217
+	.byte	1,2,2,35,3,8
+	.byte	'EN30',0,1
+	.word	217
+	.byte	1,1,2,35,3,8
+	.byte	'EN31',0,1
+	.word	217
+	.byte	1,0,2,35,3,0,4
+	.byte	'Ifx_STM_ACCEN0_Bits',0,3,79,3
+	.word	285
+	.byte	7
+	.byte	'_Ifx_STM_ACCEN1_Bits',0,3,82,16,4,6
+	.byte	'unsigned int',0,4,7,8
+	.byte	'reserved_0',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_ACCEN1_Bits',0,3,85,3
+	.word	842
+	.byte	7
+	.byte	'_Ifx_STM_CAP_Bits',0,3,88,16,4,8
+	.byte	'STMCAP63_32',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_CAP_Bits',0,3,91,3
+	.word	935
+	.byte	7
+	.byte	'_Ifx_STM_CAPSV_Bits',0,3,94,16,4,8
+	.byte	'STMCAP63_32',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_CAPSV_Bits',0,3,97,3
+	.word	1007
+	.byte	7
+	.byte	'_Ifx_STM_CLC_Bits',0,3,100,16,4,8
+	.byte	'DISR',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'DISS',0,1
+	.word	217
+	.byte	1,6,2,35,0,8
+	.byte	'reserved_2',0,1
+	.word	217
+	.byte	1,5,2,35,0,8
+	.byte	'EDIS',0,1
+	.word	217
+	.byte	1,4,2,35,0,8
+	.byte	'reserved_4',0,4
+	.word	868
+	.byte	28,0,2,35,2,0,4
+	.byte	'Ifx_STM_CLC_Bits',0,3,107,3
+	.word	1083
+	.byte	7
+	.byte	'_Ifx_STM_CMCON_Bits',0,3,110,16,4,8
+	.byte	'MSIZE0',0,1
+	.word	217
+	.byte	5,3,2,35,0,8
+	.byte	'reserved_5',0,1
+	.word	217
+	.byte	3,0,2,35,0,8
+	.byte	'MSTART0',0,1
+	.word	217
+	.byte	5,3,2,35,1,8
+	.byte	'reserved_13',0,1
+	.word	217
+	.byte	3,0,2,35,1,8
+	.byte	'MSIZE1',0,1
+	.word	217
+	.byte	5,3,2,35,2,8
+	.byte	'reserved_21',0,1
+	.word	217
+	.byte	3,0,2,35,2,8
+	.byte	'MSTART1',0,1
+	.word	217
+	.byte	5,3,2,35,3,8
+	.byte	'reserved_29',0,1
+	.word	217
+	.byte	3,0,2,35,3,0,4
+	.byte	'Ifx_STM_CMCON_Bits',0,3,120,3
+	.word	1224
+	.byte	7
+	.byte	'_Ifx_STM_CMP_Bits',0,3,123,16,4,8
+	.byte	'CMPVAL',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_CMP_Bits',0,3,126,3
+	.word	1442
+	.byte	7
+	.byte	'_Ifx_STM_ICR_Bits',0,3,129,1,16,4,8
+	.byte	'CMP0EN',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'CMP0IR',0,1
+	.word	217
+	.byte	1,6,2,35,0,8
+	.byte	'CMP0OS',0,1
+	.word	217
+	.byte	1,5,2,35,0,8
+	.byte	'reserved_3',0,1
+	.word	217
+	.byte	1,4,2,35,0,8
+	.byte	'CMP1EN',0,1
+	.word	217
+	.byte	1,3,2,35,0,8
+	.byte	'CMP1IR',0,1
+	.word	217
+	.byte	1,2,2,35,0,8
+	.byte	'CMP1OS',0,1
+	.word	217
+	.byte	1,1,2,35,0,8
+	.byte	'reserved_7',0,4
+	.word	868
+	.byte	25,0,2,35,2,0,4
+	.byte	'Ifx_STM_ICR_Bits',0,3,139,1,3
+	.word	1509
+	.byte	7
+	.byte	'_Ifx_STM_ID_Bits',0,3,142,1,16,4,8
+	.byte	'MODREV',0,1
+	.word	217
+	.byte	8,0,2,35,0,8
+	.byte	'MODTYPE',0,1
+	.word	217
+	.byte	8,0,2,35,1,8
+	.byte	'MODNUMBER',0,2
+	.word	248
+	.byte	16,0,2,35,2,0,4
+	.byte	'Ifx_STM_ID_Bits',0,3,147,1,3
+	.word	1712
+	.byte	7
+	.byte	'_Ifx_STM_ISCR_Bits',0,3,150,1,16,4,8
+	.byte	'CMP0IRR',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'CMP0IRS',0,1
+	.word	217
+	.byte	1,6,2,35,0,8
+	.byte	'CMP1IRR',0,1
+	.word	217
+	.byte	1,5,2,35,0,8
+	.byte	'CMP1IRS',0,1
+	.word	217
+	.byte	1,4,2,35,0,8
+	.byte	'reserved_4',0,4
+	.word	868
+	.byte	28,0,2,35,2,0,4
+	.byte	'Ifx_STM_ISCR_Bits',0,3,157,1,3
+	.word	1819
+	.byte	7
+	.byte	'_Ifx_STM_KRST0_Bits',0,3,160,1,16,4,8
+	.byte	'RST',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'RSTSTAT',0,1
+	.word	217
+	.byte	1,6,2,35,0,8
+	.byte	'reserved_2',0,4
+	.word	868
+	.byte	30,0,2,35,2,0,4
+	.byte	'Ifx_STM_KRST0_Bits',0,3,165,1,3
+	.word	1970
+	.byte	7
+	.byte	'_Ifx_STM_KRST1_Bits',0,3,168,1,16,4,8
+	.byte	'RST',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'reserved_1',0,4
+	.word	868
+	.byte	31,0,2,35,2,0,4
+	.byte	'Ifx_STM_KRST1_Bits',0,3,172,1,3
+	.word	2081
+	.byte	7
+	.byte	'_Ifx_STM_KRSTCLR_Bits',0,3,175,1,16,4,8
+	.byte	'CLR',0,1
+	.word	217
+	.byte	1,7,2,35,0,8
+	.byte	'reserved_1',0,4
+	.word	868
+	.byte	31,0,2,35,2,0,4
+	.byte	'Ifx_STM_KRSTCLR_Bits',0,3,179,1,3
+	.word	2173
+	.byte	7
+	.byte	'_Ifx_STM_OCS_Bits',0,3,182,1,16,4,8
+	.byte	'reserved_0',0,4
+	.word	868
+	.byte	24,8,2,35,2,8
+	.byte	'SUS',0,1
+	.word	217
+	.byte	4,4,2,35,3,8
+	.byte	'SUS_P',0,1
+	.word	217
+	.byte	1,3,2,35,3,8
+	.byte	'SUSSTA',0,1
+	.word	217
+	.byte	1,2,2,35,3,8
+	.byte	'reserved_30',0,1
+	.word	217
+	.byte	2,0,2,35,3,0,4
+	.byte	'Ifx_STM_OCS_Bits',0,3,189,1,3
+	.word	2269
+	.byte	7
+	.byte	'_Ifx_STM_TIM0_Bits',0,3,192,1,16,4,8
+	.byte	'STM31_0',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM0_Bits',0,3,195,1,3
+	.word	2415
+	.byte	7
+	.byte	'_Ifx_STM_TIM0SV_Bits',0,3,198,1,16,4,8
+	.byte	'STM31_0',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM0SV_Bits',0,3,201,1,3
+	.word	2487
+	.byte	7
+	.byte	'_Ifx_STM_TIM1_Bits',0,3,204,1,16,4,8
+	.byte	'STM35_4',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM1_Bits',0,3,207,1,3
+	.word	2563
+	.byte	7
+	.byte	'_Ifx_STM_TIM2_Bits',0,3,210,1,16,4,8
+	.byte	'STM39_8',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM2_Bits',0,3,213,1,3
+	.word	2635
+	.byte	7
+	.byte	'_Ifx_STM_TIM3_Bits',0,3,216,1,16,4,8
+	.byte	'STM43_12',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM3_Bits',0,3,219,1,3
+	.word	2707
+	.byte	7
+	.byte	'_Ifx_STM_TIM4_Bits',0,3,222,1,16,4,8
+	.byte	'STM47_16',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM4_Bits',0,3,225,1,3
+	.word	2780
+	.byte	7
+	.byte	'_Ifx_STM_TIM5_Bits',0,3,228,1,16,4,8
+	.byte	'STM51_20',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM5_Bits',0,3,231,1,3
+	.word	2853
+	.byte	7
+	.byte	'_Ifx_STM_TIM6_Bits',0,3,234,1,16,4,8
+	.byte	'STM63_32',0,4
+	.word	868
+	.byte	32,0,2,35,2,0,4
+	.byte	'Ifx_STM_TIM6_Bits',0,3,237,1,3
+	.word	2926
+	.byte	9,3,245,1,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,6
+	.byte	'int',0,4,5,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	285
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_ACCEN0',0,3,250,1,3
+	.word	2999
+	.byte	9,3,253,1,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	842
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_ACCEN1',0,3,130,2,3
+	.word	3070
+	.byte	9,3,133,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	935
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_CAP',0,3,138,2,3
+	.word	3134
+	.byte	9,3,141,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1007
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_CAPSV',0,3,146,2,3
+	.word	3195
+	.byte	9,3,149,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1083
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_CLC',0,3,154,2,3
+	.word	3258
+	.byte	9,3,157,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1224
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_CMCON',0,3,162,2,3
+	.word	3319
+	.byte	9,3,165,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1442
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_CMP',0,3,170,2,3
+	.word	3382
+	.byte	9,3,173,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1509
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_ICR',0,3,178,2,3
+	.word	3443
+	.byte	9,3,181,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1712
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_ID',0,3,186,2,3
+	.word	3504
+	.byte	9,3,189,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1819
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_ISCR',0,3,194,2,3
+	.word	3564
+	.byte	9,3,197,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	1970
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_KRST0',0,3,202,2,3
+	.word	3626
+	.byte	9,3,205,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2081
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_KRST1',0,3,210,2,3
+	.word	3689
+	.byte	9,3,213,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2173
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_KRSTCLR',0,3,218,2,3
+	.word	3752
+	.byte	9,3,221,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2269
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_OCS',0,3,226,2,3
+	.word	3817
+	.byte	9,3,229,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2415
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM0',0,3,234,2,3
+	.word	3878
+	.byte	9,3,237,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2487
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM0SV',0,3,242,2,3
+	.word	3940
+	.byte	9,3,245,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2563
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM1',0,3,250,2,3
+	.word	4004
+	.byte	9,3,253,2,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2635
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM2',0,3,130,3,3
+	.word	4066
+	.byte	9,3,133,3,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2707
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM3',0,3,138,3,3
+	.word	4128
+	.byte	9,3,141,3,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2780
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM4',0,3,146,3,3
+	.word	4190
+	.byte	9,3,149,3,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2853
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM5',0,3,154,3,3
+	.word	4252
+	.byte	9,3,157,3,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	2926
+	.byte	2,35,0,0,4
+	.byte	'Ifx_STM_TIM6',0,3,162,3,3
+	.word	4314
+	.byte	7
+	.byte	'_Ifx_SRC_SRCR_Bits',0,4,45,16,4,8
+	.byte	'SRPN',0,1
+	.word	217
+	.byte	8,0,2,35,0,8
+	.byte	'reserved_8',0,1
+	.word	217
+	.byte	2,6,2,35,1,8
+	.byte	'SRE',0,1
+	.word	217
+	.byte	1,5,2,35,1,8
+	.byte	'TOS',0,1
+	.word	217
+	.byte	2,3,2,35,1,8
+	.byte	'reserved_13',0,1
+	.word	217
+	.byte	3,0,2,35,1,8
+	.byte	'ECC',0,1
+	.word	217
+	.byte	6,2,2,35,2,8
+	.byte	'reserved_22',0,1
+	.word	217
+	.byte	2,0,2,35,2,8
+	.byte	'SRR',0,1
+	.word	217
+	.byte	1,7,2,35,3,8
+	.byte	'CLRR',0,1
+	.word	217
+	.byte	1,6,2,35,3,8
+	.byte	'SETR',0,1
+	.word	217
+	.byte	1,5,2,35,3,8
+	.byte	'IOV',0,1
+	.word	217
+	.byte	1,4,2,35,3,8
+	.byte	'IOVCLR',0,1
+	.word	217
+	.byte	1,3,2,35,3,8
+	.byte	'SWS',0,1
+	.word	217
+	.byte	1,2,2,35,3,8
+	.byte	'SWSCLR',0,1
+	.word	217
+	.byte	1,1,2,35,3,8
+	.byte	'reserved_31',0,1
+	.word	217
+	.byte	1,0,2,35,3,0,4
+	.byte	'Ifx_SRC_SRCR_Bits',0,4,62,3
+	.word	4376
+	.byte	9,4,70,9,4,10
+	.byte	'U',0,4
+	.word	868
+	.byte	2,35,0,10
+	.byte	'I',0,4
+	.word	3016
+	.byte	2,35,0,10
+	.byte	'B',0,4
+	.word	4376
+	.byte	2,35,0,0,4
+	.byte	'Ifx_SRC_SRCR',0,4,75,3
+	.word	4692
+	.byte	7
+	.byte	'_Ifx_SRC_AGBT',0,4,86,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	4752
+	.byte	4
+	.byte	'Ifx_SRC_AGBT',0,4,89,3
+	.word	4784
+	.byte	7
+	.byte	'_Ifx_SRC_ASCLIN',0,4,92,25,12,10
+	.byte	'TX',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'RX',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	2,35,8,0,11
+	.word	4810
+	.byte	4
+	.byte	'Ifx_SRC_ASCLIN',0,4,97,3
+	.word	4869
+	.byte	7
+	.byte	'_Ifx_SRC_BCUSPB',0,4,100,25,4,10
+	.byte	'SBSRC',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	4897
+	.byte	4
+	.byte	'Ifx_SRC_BCUSPB',0,4,103,3
+	.word	4934
+	.byte	7
+	.byte	'_Ifx_SRC_CAN',0,4,106,25,64,12,64
+	.word	4692
+	.byte	13,15,0,10
+	.byte	'INT',0,64
+	.word	4980
+	.byte	2,35,0,0,11
+	.word	4962
+	.byte	4
+	.byte	'Ifx_SRC_CAN',0,4,109,3
+	.word	5003
+	.byte	7
+	.byte	'_Ifx_SRC_CCU6',0,4,112,25,16,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SR2',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'SR3',0,4
+	.word	4692
+	.byte	2,35,12,0,11
+	.word	5028
+	.byte	4
+	.byte	'Ifx_SRC_CCU6',0,4,118,3
+	.word	5100
+	.byte	7
+	.byte	'_Ifx_SRC_CERBERUS',0,4,121,25,8,12,8
+	.word	4692
+	.byte	13,1,0,10
+	.byte	'SR',0,8
+	.word	5149
+	.byte	2,35,0,0,11
+	.word	5126
+	.byte	4
+	.byte	'Ifx_SRC_CERBERUS',0,4,124,3
+	.word	5171
+	.byte	7
+	.byte	'_Ifx_SRC_CIF',0,4,127,25,16,10
+	.byte	'MI',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'MIEP',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'ISP',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'MJPEG',0,4
+	.word	4692
+	.byte	2,35,12,0,11
+	.word	5201
+	.byte	4
+	.byte	'Ifx_SRC_CIF',0,4,133,1,3
+	.word	5274
+	.byte	7
+	.byte	'_Ifx_SRC_CPU',0,4,136,1,25,4,10
+	.byte	'SBSRC',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	5300
+	.byte	4
+	.byte	'Ifx_SRC_CPU',0,4,139,1,3
+	.word	5335
+	.byte	7
+	.byte	'_Ifx_SRC_DAM',0,4,142,1,25,24,12,24
+	.word	4692
+	.byte	13,5,0,10
+	.byte	'SR',0,24
+	.word	5380
+	.byte	2,35,0,0,11
+	.word	5361
+	.byte	4
+	.byte	'Ifx_SRC_DAM',0,4,145,1,3
+	.word	5402
+	.byte	7
+	.byte	'_Ifx_SRC_DMA',0,4,148,1,25,144,2,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	2,35,0,12,12
+	.word	217
+	.byte	13,11,0,10
+	.byte	'reserved_4',0,12
+	.word	5461
+	.byte	2,35,4,12,128,2
+	.word	4692
+	.byte	13,63,0,10
+	.byte	'CH',0,128,2
+	.word	5490
+	.byte	2,35,16,0,11
+	.word	5428
+	.byte	4
+	.byte	'Ifx_SRC_DMA',0,4,153,1,3
+	.word	5514
+	.byte	7
+	.byte	'_Ifx_SRC_DSADC',0,4,156,1,25,8,10
+	.byte	'SRM',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SRA',0,4
+	.word	4692
+	.byte	2,35,4,0,11
+	.word	5540
+	.byte	4
+	.byte	'Ifx_SRC_DSADC',0,4,160,1,3
+	.word	5588
+	.byte	7
+	.byte	'_Ifx_SRC_EMEM',0,4,163,1,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	5616
+	.byte	4
+	.byte	'Ifx_SRC_EMEM',0,4,166,1,3
+	.word	5649
+	.byte	7
+	.byte	'_Ifx_SRC_ERAY',0,4,169,1,25,80,10
+	.byte	'INT',0,8
+	.word	5149
+	.byte	2,35,0,10
+	.byte	'TINT',0,8
+	.word	5149
+	.byte	2,35,8,10
+	.byte	'NDAT',0,8
+	.word	5149
+	.byte	2,35,16,10
+	.byte	'MBSC',0,8
+	.word	5149
+	.byte	2,35,24,10
+	.byte	'OBUSY',0,4
+	.word	4692
+	.byte	2,35,32,10
+	.byte	'IBUSY',0,4
+	.word	4692
+	.byte	2,35,36,12,40
+	.word	217
+	.byte	13,39,0,10
+	.byte	'reserved_28',0,40
+	.word	5781
+	.byte	2,35,40,0,11
+	.word	5676
+	.byte	4
+	.byte	'Ifx_SRC_ERAY',0,4,178,1,3
+	.word	5812
+	.byte	7
+	.byte	'_Ifx_SRC_ETH',0,4,181,1,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	5839
+	.byte	4
+	.byte	'Ifx_SRC_ETH',0,4,184,1,3
+	.word	5871
+	.byte	7
+	.byte	'_Ifx_SRC_FCE',0,4,187,1,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	5897
+	.byte	4
+	.byte	'Ifx_SRC_FCE',0,4,190,1,3
+	.word	5929
+	.byte	7
+	.byte	'_Ifx_SRC_GPSR',0,4,193,1,25,32,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SR2',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'SR3',0,4
+	.word	4692
+	.byte	2,35,12,12,16
+	.word	217
+	.byte	13,15,0,10
+	.byte	'reserved_10',0,16
+	.word	6027
+	.byte	2,35,16,0,11
+	.word	5955
+	.byte	4
+	.byte	'Ifx_SRC_GPSR',0,4,200,1,3
+	.word	6058
+	.byte	7
+	.byte	'_Ifx_SRC_GPT12',0,4,203,1,25,48,10
+	.byte	'CIRQ',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'T2',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'T3',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'T4',0,4
+	.word	4692
+	.byte	2,35,12,10
+	.byte	'T5',0,4
+	.word	4692
+	.byte	2,35,16,10
+	.byte	'T6',0,4
+	.word	4692
+	.byte	2,35,20,12,24
+	.word	217
+	.byte	13,23,0,10
+	.byte	'reserved_18',0,24
+	.word	6180
+	.byte	2,35,24,0,11
+	.word	6085
+	.byte	4
+	.byte	'Ifx_SRC_GPT12',0,4,212,1,3
+	.word	6211
+	.byte	7
+	.byte	'_Ifx_SRC_GTM',0,4,215,1,25,208,18,10
+	.byte	'AEIIRQ',0,4
+	.word	4692
+	.byte	2,35,0,12,12
+	.word	4692
+	.byte	13,2,0,10
+	.byte	'ARUIRQ',0,12
+	.word	6275
+	.byte	2,35,4,12,4
+	.word	217
+	.byte	13,3,0,10
+	.byte	'reserved_10',0,4
+	.word	6300
+	.byte	2,35,16,10
+	.byte	'BRCIRQ',0,4
+	.word	4692
+	.byte	2,35,20,10
+	.byte	'CMPIRQ',0,4
+	.word	4692
+	.byte	2,35,24,10
+	.byte	'SPEIRQ',0,8
+	.word	5149
+	.byte	2,35,28,12,8
+	.word	217
+	.byte	13,7,0,10
+	.byte	'reserved_24',0,8
+	.word	6378
+	.byte	2,35,36,12,32
+	.word	4692
+	.byte	13,7,0,12,32
+	.word	6408
+	.byte	13,0,0,10
+	.byte	'PSM',0,32
+	.word	6417
+	.byte	2,35,44,12,88
+	.word	217
+	.byte	13,87,0,10
+	.byte	'reserved_4C',0,88
+	.word	6439
+	.byte	2,35,76,12,108
+	.word	4692
+	.byte	13,26,0,10
+	.byte	'DPLL',0,108
+	.word	6469
+	.byte	3,35,164,1,12,96
+	.word	217
+	.byte	13,95,0,10
+	.byte	'reserved_110',0,96
+	.word	6493
+	.byte	3,35,144,2,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	3,35,240,2,10
+	.byte	'reserved_174',0,12
+	.word	5461
+	.byte	3,35,244,2,12,128,1
+	.word	6408
+	.byte	13,3,0,10
+	.byte	'TIM',0,128,1
+	.word	6562
+	.byte	3,35,128,3,12,128,3
+	.word	217
+	.byte	13,255,2,0,10
+	.byte	'reserved_200',0,128,3
+	.word	6587
+	.byte	3,35,128,4,10
+	.byte	'MCS',0,128,1
+	.word	6562
+	.byte	3,35,128,7,10
+	.byte	'reserved_400',0,128,3
+	.word	6587
+	.byte	3,35,128,8,12,96
+	.word	6408
+	.byte	13,2,0,10
+	.byte	'TOM',0,96
+	.word	6661
+	.byte	3,35,128,11,12,160,3
+	.word	217
+	.byte	13,159,3,0,10
+	.byte	'reserved_5E0',0,160,3
+	.word	6684
+	.byte	3,35,224,11,12,16
+	.word	4692
+	.byte	13,3,0,12,80
+	.word	6719
+	.byte	13,4,0,10
+	.byte	'ATOM',0,80
+	.word	6728
+	.byte	3,35,128,15,12,176,2
+	.word	217
+	.byte	13,175,2,0,10
+	.byte	'reserved_7D0',0,176,2
+	.word	6752
+	.byte	3,35,208,15,10
+	.byte	'MCSW0',0,16
+	.word	6719
+	.byte	3,35,128,18,12,48
+	.word	217
+	.byte	13,47,0,10
+	.byte	'reserved_910',0,48
+	.word	6803
+	.byte	3,35,144,18,10
+	.byte	'MCSW1',0,16
+	.word	6719
+	.byte	3,35,192,18,0,11
+	.word	6239
+	.byte	4
+	.byte	'Ifx_SRC_GTM',0,4,241,1,3
+	.word	6852
+	.byte	7
+	.byte	'_Ifx_SRC_HSCT',0,4,244,1,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	6878
+	.byte	4
+	.byte	'Ifx_SRC_HSCT',0,4,247,1,3
+	.word	6911
+	.byte	7
+	.byte	'_Ifx_SRC_HSM',0,4,250,1,25,8,10
+	.byte	'HSM',0,8
+	.word	5149
+	.byte	2,35,0,0,11
+	.word	6938
+	.byte	4
+	.byte	'Ifx_SRC_HSM',0,4,253,1,3
+	.word	6971
+	.byte	7
+	.byte	'_Ifx_SRC_HSSL',0,4,128,2,25,16,10
+	.byte	'COK',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'RDI',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'TRG',0,4
+	.word	4692
+	.byte	2,35,12,0,11
+	.word	6997
+	.byte	4
+	.byte	'Ifx_SRC_HSSL',0,4,134,2,3
+	.word	7070
+	.byte	7
+	.byte	'_Ifx_SRC_I2C',0,4,137,2,25,80,10
+	.byte	'BREQ',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'LBREQ',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SREQ',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'LSREQ',0,4
+	.word	4692
+	.byte	2,35,12,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	2,35,16,10
+	.byte	'P',0,4
+	.word	4692
+	.byte	2,35,20,12,56
+	.word	217
+	.byte	13,55,0,10
+	.byte	'reserved_18',0,56
+	.word	7198
+	.byte	2,35,24,0,11
+	.word	7097
+	.byte	4
+	.byte	'Ifx_SRC_I2C',0,4,146,2,3
+	.word	7229
+	.byte	7
+	.byte	'_Ifx_SRC_LMU',0,4,149,2,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	7255
+	.byte	4
+	.byte	'Ifx_SRC_LMU',0,4,152,2,3
+	.word	7287
+	.byte	7
+	.byte	'_Ifx_SRC_MSC',0,4,155,2,25,20,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SR2',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'SR3',0,4
+	.word	4692
+	.byte	2,35,12,10
+	.byte	'SR4',0,4
+	.word	4692
+	.byte	2,35,16,0,11
+	.word	7313
+	.byte	4
+	.byte	'Ifx_SRC_MSC',0,4,162,2,3
+	.word	7398
+	.byte	7
+	.byte	'_Ifx_SRC_PMU',0,4,165,2,25,4,10
+	.byte	'SR',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	7424
+	.byte	4
+	.byte	'Ifx_SRC_PMU',0,4,168,2,3
+	.word	7456
+	.byte	7
+	.byte	'_Ifx_SRC_PSI5',0,4,171,2,25,32,10
+	.byte	'SR',0,32
+	.word	6408
+	.byte	2,35,0,0,11
+	.word	7482
+	.byte	4
+	.byte	'Ifx_SRC_PSI5',0,4,174,2,3
+	.word	7515
+	.byte	7
+	.byte	'_Ifx_SRC_PSI5S',0,4,177,2,25,32,10
+	.byte	'SR',0,32
+	.word	6408
+	.byte	2,35,0,0,11
+	.word	7542
+	.byte	4
+	.byte	'Ifx_SRC_PSI5S',0,4,180,2,3
+	.word	7576
+	.byte	7
+	.byte	'_Ifx_SRC_QSPI',0,4,183,2,25,24,10
+	.byte	'TX',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'RX',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'ERR',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'PT',0,4
+	.word	4692
+	.byte	2,35,12,10
+	.byte	'reserved_10',0,4
+	.word	6300
+	.byte	2,35,16,10
+	.byte	'U',0,4
+	.word	4692
+	.byte	2,35,20,0,11
+	.word	7604
+	.byte	4
+	.byte	'Ifx_SRC_QSPI',0,4,191,2,3
+	.word	7706
+	.byte	7
+	.byte	'_Ifx_SRC_SCU',0,4,194,2,25,20,10
+	.byte	'DTS',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'ERU',0,16
+	.word	6719
+	.byte	2,35,4,0,11
+	.word	7733
+	.byte	4
+	.byte	'Ifx_SRC_SCU',0,4,198,2,3
+	.word	7779
+	.byte	7
+	.byte	'_Ifx_SRC_SENT',0,4,201,2,25,40,12,40
+	.word	4692
+	.byte	13,9,0,10
+	.byte	'SR',0,40
+	.word	7825
+	.byte	2,35,0,0,11
+	.word	7805
+	.byte	4
+	.byte	'Ifx_SRC_SENT',0,4,204,2,3
+	.word	7847
+	.byte	7
+	.byte	'_Ifx_SRC_SMU',0,4,207,2,25,12,10
+	.byte	'SR',0,12
+	.word	6275
+	.byte	2,35,0,0,11
+	.word	7874
+	.byte	4
+	.byte	'Ifx_SRC_SMU',0,4,210,2,3
+	.word	7906
+	.byte	7
+	.byte	'_Ifx_SRC_STM',0,4,213,2,25,8,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,0,11
+	.word	7932
+	.byte	4
+	.byte	'Ifx_SRC_STM',0,4,217,2,3
+	.word	7978
+	.byte	7
+	.byte	'_Ifx_SRC_VADCCG',0,4,220,2,25,16,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SR2',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'SR3',0,4
+	.word	4692
+	.byte	2,35,12,0,11
+	.word	8004
+	.byte	4
+	.byte	'Ifx_SRC_VADCCG',0,4,226,2,3
+	.word	8079
+	.byte	7
+	.byte	'_Ifx_SRC_VADCG',0,4,229,2,25,16,10
+	.byte	'SR0',0,4
+	.word	4692
+	.byte	2,35,0,10
+	.byte	'SR1',0,4
+	.word	4692
+	.byte	2,35,4,10
+	.byte	'SR2',0,4
+	.word	4692
+	.byte	2,35,8,10
+	.byte	'SR3',0,4
+	.word	4692
+	.byte	2,35,12,0,11
+	.word	8108
+	.byte	4
+	.byte	'Ifx_SRC_VADCG',0,4,235,2,3
+	.word	8182
+	.byte	7
+	.byte	'_Ifx_SRC_XBAR',0,4,238,2,25,4,10
+	.byte	'SRC',0,4
+	.word	4692
+	.byte	2,35,0,0,11
+	.word	8210
+	.byte	4
+	.byte	'Ifx_SRC_XBAR',0,4,241,2,3
+	.word	8244
+	.byte	7
+	.byte	'_Ifx_SRC_GAGBT',0,4,254,2,25,4,12,4
+	.word	4752
+	.byte	13,0,0,11
+	.word	8292
+	.byte	10
+	.byte	'AGBT',0,4
+	.word	8301
+	.byte	2,35,0,0,11
+	.word	8271
+	.byte	4
+	.byte	'Ifx_SRC_GAGBT',0,4,129,3,3
+	.word	8321
+	.byte	7
+	.byte	'_Ifx_SRC_GASCLIN',0,4,132,3,25,48,12,48
+	.word	4810
+	.byte	13,3,0,11
+	.word	8372
+	.byte	10
+	.byte	'ASCLIN',0,48
+	.word	8381
+	.byte	2,35,0,0,11
+	.word	8349
+	.byte	4
+	.byte	'Ifx_SRC_GASCLIN',0,4,135,3,3
+	.word	8403
+	.byte	7
+	.byte	'_Ifx_SRC_GBCU',0,4,138,3,25,4,11
+	.word	4897
+	.byte	10
+	.byte	'SPB',0,4
+	.word	8453
+	.byte	2,35,0,0,11
+	.word	8433
+	.byte	4
+	.byte	'Ifx_SRC_GBCU',0,4,141,3,3
+	.word	8472
+	.byte	7
+	.byte	'_Ifx_SRC_GCAN',0,4,144,3,25,64,12,64
+	.word	4962
+	.byte	13,0,0,11
+	.word	8519
+	.byte	10
+	.byte	'CAN',0,64
+	.word	8528
+	.byte	2,35,0,0,11
+	.word	8499
+	.byte	4
+	.byte	'Ifx_SRC_GCAN',0,4,147,3,3
+	.word	8547
+	.byte	7
+	.byte	'_Ifx_SRC_GCCU6',0,4,150,3,25,32,12,32
+	.word	5028
+	.byte	13,1,0,11
+	.word	8595
+	.byte	10
+	.byte	'CCU6',0,32
+	.word	8604
+	.byte	2,35,0,0,11
+	.word	8574
+	.byte	4
+	.byte	'Ifx_SRC_GCCU6',0,4,153,3,3
+	.word	8624
+	.byte	7
+	.byte	'_Ifx_SRC_GCERBERUS',0,4,156,3,25,8,11
+	.word	5126
+	.byte	10
+	.byte	'CERBERUS',0,8
+	.word	8677
+	.byte	2,35,0,0,11
+	.word	8652
+	.byte	4
+	.byte	'Ifx_SRC_GCERBERUS',0,4,159,3,3
+	.word	8701
+	.byte	7
+	.byte	'_Ifx_SRC_GCIF',0,4,162,3,25,16,12,16
+	.word	5201
+	.byte	13,0,0,11
+	.word	8753
+	.byte	10
+	.byte	'CIF',0,16
+	.word	8762
+	.byte	2,35,0,0,11
+	.word	8733
+	.byte	4
+	.byte	'Ifx_SRC_GCIF',0,4,165,3,3
+	.word	8781
+	.byte	7
+	.byte	'_Ifx_SRC_GCPU',0,4,168,3,25,12,12,12
+	.word	5300
+	.byte	13,2,0,11
+	.word	8828
+	.byte	10
+	.byte	'CPU',0,12
+	.word	8837
+	.byte	2,35,0,0,11
+	.word	8808
+	.byte	4
+	.byte	'Ifx_SRC_GCPU',0,4,171,3,3
+	.word	8856
+	.byte	7
+	.byte	'_Ifx_SRC_GDAM',0,4,174,3,25,24,12,24
+	.word	5361
+	.byte	13,0,0,11
+	.word	8903
+	.byte	10
+	.byte	'DAM',0,24
+	.word	8912
+	.byte	2,35,0,0,11
+	.word	8883
+	.byte	4
+	.byte	'Ifx_SRC_GDAM',0,4,177,3,3
+	.word	8931
+	.byte	7
+	.byte	'_Ifx_SRC_GDMA',0,4,180,3,25,144,2,12,144,2
+	.word	5428
+	.byte	13,0,0,11
+	.word	8979
+	.byte	10
+	.byte	'DMA',0,144,2
+	.word	8989
+	.byte	2,35,0,0,11
+	.word	8958
+	.byte	4
+	.byte	'Ifx_SRC_GDMA',0,4,183,3,3
+	.word	9009
+	.byte	7
+	.byte	'_Ifx_SRC_GDSADC',0,4,186,3,25,48,12,48
+	.word	5540
+	.byte	13,5,0,11
+	.word	9058
+	.byte	10
+	.byte	'DSADC',0,48
+	.word	9067
+	.byte	2,35,0,0,11
+	.word	9036
+	.byte	4
+	.byte	'Ifx_SRC_GDSADC',0,4,189,3,3
+	.word	9088
+	.byte	7
+	.byte	'_Ifx_SRC_GEMEM',0,4,192,3,25,4,12,4
+	.word	5616
+	.byte	13,0,0,11
+	.word	9138
+	.byte	10
+	.byte	'EMEM',0,4
+	.word	9147
+	.byte	2,35,0,0,11
+	.word	9117
+	.byte	4
+	.byte	'Ifx_SRC_GEMEM',0,4,195,3,3
+	.word	9167
+	.byte	7
+	.byte	'_Ifx_SRC_GERAY',0,4,198,3,25,80,12,80
+	.word	5676
+	.byte	13,0,0,11
+	.word	9216
+	.byte	10
+	.byte	'ERAY',0,80
+	.word	9225
+	.byte	2,35,0,0,11
+	.word	9195
+	.byte	4
+	.byte	'Ifx_SRC_GERAY',0,4,201,3,3
+	.word	9245
+	.byte	7
+	.byte	'_Ifx_SRC_GETH',0,4,204,3,25,4,12,4
+	.word	5839
+	.byte	13,0,0,11
+	.word	9293
+	.byte	10
+	.byte	'ETH',0,4
+	.word	9302
+	.byte	2,35,0,0,11
+	.word	9273
+	.byte	4
+	.byte	'Ifx_SRC_GETH',0,4,207,3,3
+	.word	9321
+	.byte	7
+	.byte	'_Ifx_SRC_GFCE',0,4,210,3,25,4,12,4
+	.word	5897
+	.byte	13,0,0,11
+	.word	9368
+	.byte	10
+	.byte	'FCE',0,4
+	.word	9377
+	.byte	2,35,0,0,11
+	.word	9348
+	.byte	4
+	.byte	'Ifx_SRC_GFCE',0,4,213,3,3
+	.word	9396
+	.byte	7
+	.byte	'_Ifx_SRC_GGPSR',0,4,216,3,25,96,12,96
+	.word	5955
+	.byte	13,2,0,11
+	.word	9444
+	.byte	10
+	.byte	'GPSR',0,96
+	.word	9453
+	.byte	2,35,0,0,11
+	.word	9423
+	.byte	4
+	.byte	'Ifx_SRC_GGPSR',0,4,219,3,3
+	.word	9473
+	.byte	7
+	.byte	'_Ifx_SRC_GGPT12',0,4,222,3,25,48,12,48
+	.word	6085
+	.byte	13,0,0,11
+	.word	9523
+	.byte	10
+	.byte	'GPT12',0,48
+	.word	9532
+	.byte	2,35,0,0,11
+	.word	9501
+	.byte	4
+	.byte	'Ifx_SRC_GGPT12',0,4,225,3,3
+	.word	9553
+	.byte	7
+	.byte	'_Ifx_SRC_GGTM',0,4,228,3,25,208,18,12,208,18
+	.word	6239
+	.byte	13,0,0,11
+	.word	9603
+	.byte	10
+	.byte	'GTM',0,208,18
+	.word	9613
+	.byte	2,35,0,0,11
+	.word	9582
+	.byte	4
+	.byte	'Ifx_SRC_GGTM',0,4,231,3,3
+	.word	9633
+	.byte	7
+	.byte	'_Ifx_SRC_GHSCT',0,4,234,3,25,4,12,4
+	.word	6878
+	.byte	13,0,0,11
+	.word	9681
+	.byte	10
+	.byte	'HSCT',0,4
+	.word	9690
+	.byte	2,35,0,0,11
+	.word	9660
+	.byte	4
+	.byte	'Ifx_SRC_GHSCT',0,4,237,3,3
+	.word	9710
+	.byte	7
+	.byte	'_Ifx_SRC_GHSM',0,4,240,3,25,8,12,8
+	.word	6938
+	.byte	13,0,0,11
+	.word	9758
+	.byte	10
+	.byte	'HSM',0,8
+	.word	9767
+	.byte	2,35,0,0,11
+	.word	9738
+	.byte	4
+	.byte	'Ifx_SRC_GHSM',0,4,243,3,3
+	.word	9786
+	.byte	7
+	.byte	'_Ifx_SRC_GHSSL',0,4,246,3,25,68,12,64
+	.word	6997
+	.byte	13,3,0,11
+	.word	9834
+	.byte	10
+	.byte	'HSSL',0,64
+	.word	9843
+	.byte	2,35,0,10
+	.byte	'EXI',0,4
+	.word	4692
+	.byte	2,35,64,0,11
+	.word	9813
+	.byte	4
+	.byte	'Ifx_SRC_GHSSL',0,4,250,3,3
+	.word	9876
+	.byte	7
+	.byte	'_Ifx_SRC_GI2C',0,4,253,3,25,80,12,80
+	.word	7097
+	.byte	13,0,0,11
+	.word	9924
+	.byte	10
+	.byte	'I2C',0,80
+	.word	9933
+	.byte	2,35,0,0,11
+	.word	9904
+	.byte	4
+	.byte	'Ifx_SRC_GI2C',0,4,128,4,3
+	.word	9952
+	.byte	7
+	.byte	'_Ifx_SRC_GLMU',0,4,131,4,25,4,12,4
+	.word	7255
+	.byte	13,0,0,11
+	.word	9999
+	.byte	10
+	.byte	'LMU',0,4
+	.word	10008
+	.byte	2,35,0,0,11
+	.word	9979
+	.byte	4
+	.byte	'Ifx_SRC_GLMU',0,4,134,4,3
+	.word	10027
+	.byte	7
+	.byte	'_Ifx_SRC_GMSC',0,4,137,4,25,40,12,40
+	.word	7313
+	.byte	13,1,0,11
+	.word	10074
+	.byte	10
+	.byte	'MSC',0,40
+	.word	10083
+	.byte	2,35,0,0,11
+	.word	10054
+	.byte	4
+	.byte	'Ifx_SRC_GMSC',0,4,140,4,3
+	.word	10102
+	.byte	7
+	.byte	'_Ifx_SRC_GPMU',0,4,143,4,25,8,12,8
+	.word	7424
+	.byte	13,1,0,11
+	.word	10149
+	.byte	10
+	.byte	'PMU',0,8
+	.word	10158
+	.byte	2,35,0,0,11
+	.word	10129
+	.byte	4
+	.byte	'Ifx_SRC_GPMU',0,4,146,4,3
+	.word	10177
+	.byte	7
+	.byte	'_Ifx_SRC_GPSI5',0,4,149,4,25,32,12,32
+	.word	7482
+	.byte	13,0,0,11
+	.word	10225
+	.byte	10
+	.byte	'PSI5',0,32
+	.word	10234
+	.byte	2,35,0,0,11
+	.word	10204
+	.byte	4
+	.byte	'Ifx_SRC_GPSI5',0,4,152,4,3
+	.word	10254
+	.byte	7
+	.byte	'_Ifx_SRC_GPSI5S',0,4,155,4,25,32,12,32
+	.word	7542
+	.byte	13,0,0,11
+	.word	10304
+	.byte	10
+	.byte	'PSI5S',0,32
+	.word	10313
+	.byte	2,35,0,0,11
+	.word	10282
+	.byte	4
+	.byte	'Ifx_SRC_GPSI5S',0,4,158,4,3
+	.word	10334
+	.byte	7
+	.byte	'_Ifx_SRC_GQSPI',0,4,161,4,25,96,12,96
+	.word	7604
+	.byte	13,3,0,11
+	.word	10384
+	.byte	10
+	.byte	'QSPI',0,96
+	.word	10393
+	.byte	2,35,0,0,11
+	.word	10363
+	.byte	4
+	.byte	'Ifx_SRC_GQSPI',0,4,164,4,3
+	.word	10413
+	.byte	7
+	.byte	'_Ifx_SRC_GSCU',0,4,167,4,25,20,11
+	.word	7733
+	.byte	10
+	.byte	'SCU',0,20
+	.word	10461
+	.byte	2,35,0,0,11
+	.word	10441
+	.byte	4
+	.byte	'Ifx_SRC_GSCU',0,4,170,4,3
+	.word	10480
+	.byte	7
+	.byte	'_Ifx_SRC_GSENT',0,4,173,4,25,40,12,40
+	.word	7805
+	.byte	13,0,0,11
+	.word	10528
+	.byte	10
+	.byte	'SENT',0,40
+	.word	10537
+	.byte	2,35,0,0,11
+	.word	10507
+	.byte	4
+	.byte	'Ifx_SRC_GSENT',0,4,176,4,3
+	.word	10557
+	.byte	7
+	.byte	'_Ifx_SRC_GSMU',0,4,179,4,25,12,12,12
+	.word	7874
+	.byte	13,0,0,11
+	.word	10605
+	.byte	10
+	.byte	'SMU',0,12
+	.word	10614
+	.byte	2,35,0,0,11
+	.word	10585
+	.byte	4
+	.byte	'Ifx_SRC_GSMU',0,4,182,4,3
+	.word	10633
+	.byte	7
+	.byte	'_Ifx_SRC_GSTM',0,4,185,4,25,24,12,24
+	.word	7932
+	.byte	13,2,0,11
+	.word	10680
+	.byte	10
+	.byte	'STM',0,24
+	.word	10689
+	.byte	2,35,0,0,11
+	.word	10660
+	.byte	4
+	.byte	'Ifx_SRC_GSTM',0,4,188,4,3
+	.word	10708
+	.byte	7
+	.byte	'_Ifx_SRC_GVADC',0,4,191,4,25,192,2,12,128,1
+	.word	8108
+	.byte	13,7,0,11
+	.word	10757
+	.byte	10
+	.byte	'G',0,128,1
+	.word	10767
+	.byte	2,35,0,12,160,1
+	.word	217
+	.byte	13,159,1,0,10
+	.byte	'reserved_80',0,160,1
+	.word	10784
+	.byte	3,35,128,1,12,32
+	.word	8004
+	.byte	13,1,0,11
+	.word	10818
+	.byte	10
+	.byte	'CG',0,32
+	.word	10827
+	.byte	3,35,160,2,0,11
+	.word	10735
+	.byte	4
+	.byte	'Ifx_SRC_GVADC',0,4,196,4,3
+	.word	10846
+	.byte	7
+	.byte	'_Ifx_SRC_GXBAR',0,4,199,4,25,4,11
+	.word	8210
+	.byte	10
+	.byte	'XBAR',0,4
+	.word	10895
+	.byte	2,35,0,0,11
+	.word	10874
+	.byte	4
+	.byte	'Ifx_SRC_GXBAR',0,4,202,4,3
+	.word	10915
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,5,21,0,54,15,0,0,6,36,0,3,8,11,15,62,15,0,0,7,19,1,3,8,58,15,59,15,57,15,11,15,0,0,8,13,0
+	.byte	3,8,11,15,73,19,13,15,12,15,56,9,0,0,9,23,1,58,15,59,15,57,15,11,15,0,0,10,13,0,3,8,11,15,73,19,56,9,0
+	.byte	0,11,53,0,73,19,0,0,12,1,1,11,15,73,19,0,0,13,33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC',0,0
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Stm_Irq.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'IfxStm_regdef.h',0,2,0,0
+	.byte	'IfxSrc_regdef.h',0,2,0,0,0
+.L9:
+.L7:
+
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     2  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     4  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     6  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    10  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    12  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    13  **  $FILENAME   : Stm_Irq.c $                                                **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    14  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    15  **  $CC VERSION : \main\14 $                                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    16  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    17  **  $DATE       : 2014-06-25 $                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    18  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    20  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    22  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    23  **  DESCRIPTION : This file contains the interrupt frames for the STM Module.**
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    24  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    25  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    26  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    27  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    28  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    29  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    30  **                      Includes                                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    31  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    32  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    33  #include "Std_Types.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    34  #include "Irq.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    35  #include "Mcal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    36  #include "Mcal_Options.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    37  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    38  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    39  #ifdef STM_DEMO_ON 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    40  #include "Stm.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    41  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    42  #include "Test_Time.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    43  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    44  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    45  /* Inclusion of controller sfr file */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    46  #include "IfxStm_reg.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    47  /* Inclusion of controller sfr file */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    48  #include "IfxSrc_reg.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    49  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    50  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    51  **                      Private Macros Definitions                            **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    52  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    53  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    54  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    55  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    56  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    57  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    58  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    59  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    60  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    61  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    62  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    63  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    64  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    65  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    66  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    67  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    68  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    69  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    70  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    71  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    72  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    73  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    74  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    75  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    76  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    77  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    78  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    79  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    80  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    81  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    82  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    83  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    84  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    85  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    86  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    87  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    88  #if (IFX_MCAL_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    89  #define IRQ_START_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    90  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    91  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    92  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    93  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    94  #if (IRQ_STM0_EXIST == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    95  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    96  ** Syntax :          void STM0SRN0_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    97  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    98  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	    99  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   100  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   101  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   102  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   103  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   104  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   105  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   106  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   107  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   108  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   109  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   110  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   111  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   112  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   113  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   114  /* STM SRC0 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   115  #if((IRQ_STM0_SR0_PRIO > 0) || (IRQ_STM0_SR0_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   116  #if((IRQ_STM0_SR0_PRIO > 0) && (IRQ_STM0_SR0_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   117  IFX_INTERRUPT(STM0SRN0_ISR, 0, IRQ_STM0_SR0_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   118  #elif IRQ_STM0_SR0_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   119  ISR(STM0SRN0_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   120  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   121  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   122    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   123    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   124  #ifdef STM_DEMO_ON 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   125    Stm_Isr(0,0); 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   126    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   127  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   128     SRC_STM0SR0.B.CLRR = 1; 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   129    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   130    /* Test for the mode if one shot mode disable the SRN */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   131    if( ( TestTime_AlarmMode & 0x01U ) == 0 )  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   132    {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   133      /* Reload the compare register */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   134      STM0_CMP0.U  =  (Count_Timer[0] + STM0_TIM0.U) & (0xffffffff);  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   135    }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   136    else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   137    {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   138     SRC_STM0SR0.B.SRE = 0; /*  disable intr */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   139    }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   140  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   141    /* Call the Function */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   142    TestTime_ArrayFnp[0]();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   143   #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   144   
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   145  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   146  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   147   
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   148  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   149  ** Syntax :          void STM0SRN1_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   150  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   151  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   152  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   153  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   154  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   155  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   156  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   157  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   158  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   159  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   160  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   161  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   162  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   163  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   164  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   165  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   166  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   167  /* STM SRC1 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   168  #if((IRQ_STM0_SR1_PRIO > 0) || (IRQ_STM0_SR1_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   169  #if((IRQ_STM0_SR1_PRIO > 0) && (IRQ_STM0_SR1_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   170  IFX_INTERRUPT(STM0SRN1_ISR, 0, IRQ_STM0_SR1_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   171  #elif IRQ_STM0_SR1_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   172  ISR(STM0SRN1_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   173  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   174  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   175    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   176    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   177  #ifdef STM_DEMO_ON    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   178    Stm_Isr(0,1); 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   179  #else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   180    /* Clear the service request flag */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   181    SRC_STM0SR1.B.CLRR = 1U;
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   182    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   183    /* Test for the mode if one shot mode disable the SRN */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   184    if( ( TestTime_AlarmMode & 0x02U ) == 0 )  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   185    {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   186      /* Reload the compare register */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   187      STM0_CMP1.U  =  (Count_Timer[1] + STM0_TIM0.U) & (0xffffffff);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   188    }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   189    else
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   190    {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   191      SRC_STM0SR1.B.SRE = 0U;
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   192    }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   193    /* Call the Function */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   194    TestTime_ArrayFnp[1]();  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   195  #endif  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   196  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   197  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   198  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   199  #endif /* (IRQ_STM0_EXIST == STD_ON) */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   200  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   201  #if (IRQ_STM1_EXIST == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   202  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   203  ** Syntax :          void STM1SRN0_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   204  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   205  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   206  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   207  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   208  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   209  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   210  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   211  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   212  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   213  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   214  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   215  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   216  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   217  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   218  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   219  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   220  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   221  /* STM SRC0 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   222  #if((IRQ_STM1_SR0_PRIO > 0) || (IRQ_STM1_SR0_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   223  #if((IRQ_STM1_SR0_PRIO > 0) && (IRQ_STM1_SR0_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   224  IFX_INTERRUPT(STM1SRN0_ISR, 0, IRQ_STM1_SR0_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   225  #elif IRQ_STM1_SR0_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   226  ISR(STM1SRN0_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   227  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   228  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   229    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   230    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   231  #ifdef STM_DEMO_ON    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   232    Stm_Isr(1,0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   233  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   234  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   235  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   236   
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   237  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   238  ** Syntax :          void STM1SRN1_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   239  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   240  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   241  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   242  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   243  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   244  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   245  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   246  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   247  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   248  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   249  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   250  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   251  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   252  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   253  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   254  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   255  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   256  /* STM SRC1 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   257  #if((IRQ_STM1_SR1_PRIO > 0) || (IRQ_STM1_SR1_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   258  #if((IRQ_STM1_SR1_PRIO > 0) && (IRQ_STM1_SR1_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   259  IFX_INTERRUPT(STM1SRN1_ISR, 0, IRQ_STM1_SR1_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   260  #elif IRQ_STM1_SR1_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   261  ISR(STM1SRN1_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   262  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   263  { 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   264    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   265    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   266  #ifdef STM_DEMO_ON     
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   267      Stm_Isr(1,1);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   268  #endif    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   269  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   270  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   271  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   272  #endif /* (IRQ_STM1_EXIST == STD_ON) */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   273  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   274  #if (IRQ_STM2_EXIST == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   275  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   276  ** Syntax :          void STM2SRN0_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   277  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   278  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   279  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   280  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   281  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   282  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   283  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   284  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   285  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   286  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   287  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   288  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   289  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   290  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   291  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   292  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   293  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   294  /* STM SRC0 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   295  #if((IRQ_STM2_SR0_PRIO > 0) || (IRQ_STM2_SR0_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   296  #if((IRQ_STM2_SR0_PRIO > 0) && (IRQ_STM2_SR0_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   297  IFX_INTERRUPT(STM2SRN0_ISR, 0, IRQ_STM2_SR0_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   298  #elif IRQ_STM2_SR0_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   299  ISR(STM2SRN0_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   300  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   301  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   302    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   303    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   304  #ifdef STM_DEMO_ON    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   305    Stm_Isr(2,0);
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   306  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   307  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   308  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   309   
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   310  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   311  ** Syntax :          void STM2SRN1_ISR(void)                                 **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   312  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   313  ** Service ID:       NA                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   314  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   315  ** Sync/Async:       Synchronous                                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   316  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   317  ** Reentrancy:       non reentrant                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   318  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   319  ** Parameters (in):  none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   320  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   321  ** Parameters (out): none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   322  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   323  ** Return value:     none                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   324  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   325  ** Description :     Service on STM Request source conversion complete       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   326  **                   service request                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   327  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   328  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   329  /* STM SRC1 Interrupt routine */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   330  #if((IRQ_STM2_SR1_PRIO > 0) || (IRQ_STM2_SR1_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   331  #if((IRQ_STM2_SR1_PRIO > 0) && (IRQ_STM2_SR1_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   332  IFX_INTERRUPT(STM2SRN1_ISR, 0, IRQ_STM2_SR1_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   333  #elif IRQ_STM2_SR1_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   334  ISR(STM2SRN1_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   335  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   336  { 
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   337    /* Enable Global Interrupts */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   338    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   339  #ifdef STM_DEMO_ON    
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   340    Stm_Isr(2,1);  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   341  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   342  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   343  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   344  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   345  #endif /* (IRQ_STM2_EXIST == STD_ON) */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   346  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   347  #if (IFX_MCAL_USED == STD_ON)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   348  #define IRQ_STOP_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   349  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   350  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Stm_Irq.c	   351  
+
+	; Module end

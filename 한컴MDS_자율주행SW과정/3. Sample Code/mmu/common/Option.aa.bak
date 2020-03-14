@@ -1,0 +1,19 @@
+;===========================================
+; NAME: OPTION.A
+; DESC: Configuration options for .S files
+; HISTORY:
+; 02.28.2002: ver 0.0
+;===========================================
+
+;Start address of each stacks,
+_STACK_BASEADDRESS	EQU 0x33ff8000  
+_MMUTT_STARTADDRESS	EQU 0x33ff8000  
+_ISR_STARTADDRESS	EQU 0x33ffff00
+
+
+;	FCLK = 50000000	
+M_MDIV	EQU	12  ;0x5c	;Fin=12.0MHz Fout=50.0MHz  
+M_PDIV		EQU	0   ;0x4  ; 0
+M_SDIV		EQU	0 ;  0x2 ; 0
+
+	END

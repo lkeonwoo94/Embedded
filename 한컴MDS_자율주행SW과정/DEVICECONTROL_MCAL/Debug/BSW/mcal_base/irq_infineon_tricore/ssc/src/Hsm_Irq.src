@@ -1,0 +1,203 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc2296a -c90 --dep-file=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\.Hsm_Irq.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Hsm_Irq.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Hsm_Irq.src ..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Hsm_Irq.c"
+	.compiler_name		"ctc"
+	.name	"Hsm_Irq"
+
+	
+$TC16X
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	282
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Hsm_Irq.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L5
+	.byte	2
+	.byte	'void',0,3
+	.word	162
+	.byte	4
+	.byte	'__prof_adm',0,1,1,1
+	.word	168
+	.byte	5,1,3
+	.word	192
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	194
+	.byte	6
+	.byte	'unsigned char',0,1,8,4
+	.byte	'uint8',0,2,90,29
+	.word	217
+	.byte	6
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,92,29
+	.word	248
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,5,21,0,54,15,0,0,6,36,0,3,8,11,15,62,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0,0
+	.byte	'..\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\src\\Hsm_Irq.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0,0
+.L9:
+.L7:
+
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     2  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     4  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     6  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    10  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    12  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    13  **  $FILENAME   : Hsm_Irq.c $                                                **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    14  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    15  **  $CC VERSION : \main\3 $                                                  **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    16  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    17  **  $DATE       : 2014-06-25 $                                               **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    18  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    20  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    22  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    23  **  DESCRIPTION : This file contains CAN Module interrupt frames             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    24  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    25  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    26  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    27  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    28  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    29  **                      Includes                                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    30  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    31  #include "Std_Types.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    32  #include "Mcal.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    33  #include "Irq.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    34  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    35  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    36  **                      Imported Compiler Switch Checks                       **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    37  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    38  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    39  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    40  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    41  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    42  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    43  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    44  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    45  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    46  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    47  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    48  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    49  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    50  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    51  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    52  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    53  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    54  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    55  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    56  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    57  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    58  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    59  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    60  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    61  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    62  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    63  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    64  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    65  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    66  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    67  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    68  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    69  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    70  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    71  /*******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    72  **                      Global Function Definitions                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    73  *******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    74  #define IRQ_START_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    75  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    76  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    77  ** Syntax : void HSMSR0_ISR(void)                                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    78  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    79  ** Service ID: NA                                                            **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    80  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    81  ** Sync/Async: Synchronous                                                   **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    82  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    83  ** Reentrancy: Reentrant                                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    84  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    85  ** Parameters (in): None                                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    86  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    87  ** Parameters (out): None                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    88  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    89  ** Return value: None                                                        **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    90  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    91  ** Description : Service for HSM SR0                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    92  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    93  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    94  #if((IRQ_HSM_SR0_PRIO > 0) || (IRQ_HSM_SR0_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    95  #if((IRQ_HSM_SR0_PRIO > 0) && (IRQ_HSM_SR0_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    96  IFX_INTERRUPT(HSMSR0_ISR, 0, IRQ_HSM_SR0_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    97  #elif IRQ_HSM_SR0_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    98  ISR(HSMSR0_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	    99  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   100  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   101    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   102    /* User Code here */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   103  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   104  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   105  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   106  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   107  /******************************************************************************
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   108  ** Syntax : void HSMSR1_ISR(void)                                          **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   109  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   110  ** Service ID: NA                                                            **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   111  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   112  ** Sync/Async: Synchronous                                                   **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   113  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   114  ** Reentrancy: Reentrant                                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   115  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   116  ** Parameters (in): None                                                     **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   117  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   118  ** Parameters (out): None                                                    **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   119  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   120  ** Return value: None                                                        **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   121  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   122  ** Description : Service for HSM SR1                                         **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   123  **                                                                           **
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   124  ******************************************************************************/
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   125  #if((IRQ_HSM_SR1_PRIO > 0) || (IRQ_HSM_SR1_CAT == IRQ_CAT23))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   126  #if((IRQ_HSM_SR1_PRIO > 0) && (IRQ_HSM_SR1_CAT == IRQ_CAT1))
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   127  IFX_INTERRUPT(HSMSR1_ISR, 0, IRQ_HSM_SR1_PRIO)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   128  #elif IRQ_HSM_SR1_CAT == IRQ_CAT23
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   129  ISR(HSMSR1_ISR)
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   130  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   131  {
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   132    Mcal_EnableAllInterrupts();
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   133    /* User Code here */
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   134  }
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   135  #endif
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   136  
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   137  #define IRQ_STOP_SEC_CODE
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   138  #include "MemMap.h"
+; ..\BSW\mcal_base\irq_infineon_tricore\ssc\src\Hsm_Irq.c	   139  
+
+	; Module end

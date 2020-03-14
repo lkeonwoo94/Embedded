@@ -1,0 +1,762 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc2200a -c90 --dep-file=BSW\\mcal_base\\integration_general\\src\\.CanIf.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\integration_general\\src\\CanIf.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\integration_general\\src\\CanIf.src ..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c"
+	.compiler_name		"ctc"
+	.name	"CanIf"
+
+	
+$TC16X
+	
+	.sdecl	'.text.CanIf.CanIf_SetWakeupEvent',code,cluster('CanIf_SetWakeupEvent')
+	.sect	'.text.CanIf.CanIf_SetWakeupEvent'
+	.align	2
+	
+	.global	CanIf_SetWakeupEvent
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     2  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     4  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     6  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    10  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    12  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    13  **  $FILENAME   : CanIf.c $                                                  **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    14  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    15  **  $CC VERSION : \main\6 $                                                  **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    16  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    17  **  $DATE       : 2014-12-09 $                                               **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    18  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    20  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    22  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    23  **  DESCRIPTION : This file contains CAN interface (CanIf) function          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    24  **                definitions                                                **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    25  **                Note : This file is for Evaluation Purpose Only            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    26  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    27  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    28  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    29  ******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    30  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    31  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    32  **                      Includes                                              **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    33  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    34  /* Inclusion of CanIf module header file  */
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    35  #include "CanIf.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    36  #include "Mcal.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    37  #include "Test_Print.h"
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    38  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    39  **                      Imported Compiler Switch Check                        **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    40  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    41  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    42  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    43  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    44  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    45  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    46  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    47  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    48  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    49  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    50  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    51  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    52  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    53  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    54  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    55  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    56  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    57  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    58  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    59  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    60  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    61  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    62  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    63  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    64  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    65  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    66  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    67  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    68  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    69  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    70  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    71  **                      Global Function Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    72  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    73  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    74  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    75  ** Syntax : void CanIf_SetWakeupEvent(uint8 CanNetwork,                       **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    76  **                                    CanIf_WakeupSourceType WakeupSource )   **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    77  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    78  ** Service ID: none                                                           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    79  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    80  ** Sync/Async:  none                                                          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    81  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    82  ** Reentrancy:  none                                                          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    83  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    84  ** Parameters (in): none                                                      **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    85  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    86  ** Parameters (out):  none                                                    **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    87  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    88  ** Return value:  none                                                        **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    89  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    90  ** Description : This function is called in CanTrcv_MainFunction or           **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    91  **               CanTrcv_CB_WakeupByBus function.                             **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    92  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    93  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    94  void CanIf_SetWakeupEvent(uint8 CanNetwork,
+; Function CanIf_SetWakeupEvent
+.L9:
+CanIf_SetWakeupEvent:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    95                                     CanIf_WakeupSourceType WakeupSource )
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    96  {
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    97  	UNUSED_PARAMETER(CanNetwork)
+	jeq	d4,#0,.L2
+.L2:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    98  	UNUSED_PARAMETER(WakeupSource)
+	jeq	d5,#0,.L3
+.L3:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	    99  }
+	ret
+.L43:
+	
+__CanIf_SetWakeupEvent_function_end:
+	.size	CanIf_SetWakeupEvent,__CanIf_SetWakeupEvent_function_end-CanIf_SetWakeupEvent
+.L29:
+	; End of function
+	
+	.sdecl	'.text.CanIf.CanIf_CheckWakeup',code,cluster('CanIf_CheckWakeup')
+	.sect	'.text.CanIf.CanIf_CheckWakeup'
+	.align	2
+	
+	.global	CanIf_CheckWakeup
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   100  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   101  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   102  void CanIf_CheckWakeup(CanIf_WakeupSourceType WakeupSource )
+; Function CanIf_CheckWakeup
+.L11:
+CanIf_CheckWakeup:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   103  {
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   104  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   105  UNUSED_PARAMETER(WakeupSource)
+	jeq	d4,#0,.L4
+.L4:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   106  	
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   107  }
+	ret
+.L40:
+	
+__CanIf_CheckWakeup_function_end:
+	.size	CanIf_CheckWakeup,__CanIf_CheckWakeup_function_end-CanIf_CheckWakeup
+.L24:
+	; End of function
+	
+	.sdecl	'.text.CanIf.CanIf_TrcvModeIndication',code,cluster('CanIf_TrcvModeIndication')
+	.sect	'.text.CanIf.CanIf_TrcvModeIndication'
+	.align	2
+	
+	.global	CanIf_TrcvModeIndication
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   108  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   109  void CanIf_TrcvModeIndication(uint8 Transceiver,CanTrcv_TrcvModeType OpMode)
+; Function CanIf_TrcvModeIndication
+.L13:
+CanIf_TrcvModeIndication:	.type	func
+	sub.a	a10,#8
+.L52:
+	mov	d15,d4
+.L54:
+	mov	d8,d5
+.L55:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   110  {
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   111  	UNUSED_PARAMETER(Transceiver)
+	jeq	d15,#0,.L5
+.L5:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   112  	UNUSED_PARAMETER(OpMode)
+	jeq	d8,#0,.L6
+.L6:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   113    print_f("\n Callback function CanIf_TrcvModeIndication is called!\n");
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
+	call	print_f
+.L53:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   114    print_f(" Transceiver = %d \n", Transceiver);
+	st.w	[a10],d15
+.L75:
+	movh.a	a4,#@his(.2.str)
+	lea	a4,[a4]@los(.2.str)
+	call	print_f
+.L76:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   115    print_f(" OpMode = %d \n", OpMode);
+	st.w	[a10],d8
+.L77:
+	movh.a	a4,#@his(.3.str)
+	lea	a4,[a4]@los(.3.str)
+	call	print_f
+.L78:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   116  }
+	ret
+.L46:
+	
+__CanIf_TrcvModeIndication_function_end:
+	.size	CanIf_TrcvModeIndication,__CanIf_TrcvModeIndication_function_end-CanIf_TrcvModeIndication
+.L34:
+	; End of function
+	
+	.sdecl	'.text.CanIf.CanIf_CheckTrcvWakeFlagIndication',code,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.text.CanIf.CanIf_CheckTrcvWakeFlagIndication'
+	.align	2
+	
+	.global	CanIf_CheckTrcvWakeFlagIndication
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   117  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   118  void CanIf_CheckTrcvWakeFlagIndication(uint8 Transceiver)
+; Function CanIf_CheckTrcvWakeFlagIndication
+.L15:
+CanIf_CheckTrcvWakeFlagIndication:	.type	func
+	sub.a	a10,#8
+.L56:
+	mov	d15,d4
+.L58:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   119  {
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   120  		UNUSED_PARAMETER(Transceiver)
+	jeq	d15,#0,.L7
+.L7:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   121      print_f("\n Callback function CanIf_CheckTrcvWakeFlagIndication is called!\n");
+	movh.a	a4,#@his(.4.str)
+	lea	a4,[a4]@los(.4.str)
+	call	print_f
+.L57:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   122      print_f(" Transceiver = %d \n", Transceiver);
+	st.w	[a10],d15
+.L83:
+	movh.a	a4,#@his(.2.str)
+	lea	a4,[a4]@los(.2.str)
+	call	print_f
+.L84:
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   123  }
+	ret
+.L50:
+	
+__CanIf_CheckTrcvWakeFlagIndication_function_end:
+	.size	CanIf_CheckTrcvWakeFlagIndication,__CanIf_CheckTrcvWakeFlagIndication_function_end-CanIf_CheckTrcvWakeFlagIndication
+.L39:
+	; End of function
+	
+	.sdecl	'.rodata.CanIf..1.str',data,rom
+	.sect	'.rodata.CanIf..1.str'
+.1.str:	.type	object
+	.size	.1.str,57
+	.byte	10,32,67,97,108,108,98,97
+	.byte	99,107,32,102,117,110,99,116
+	.byte	105,111,110,32,67,97,110,73
+	.byte	102,95,84,114,99,118,77,111
+	.byte	100,101,73,110,100,105,99,97
+	.byte	116,105,111,110,32,105,115,32
+	.byte	99,97,108,108,101,100,33,10
+	.space	1
+	.sdecl	'.rodata.CanIf..2.str',data,rom
+	.sect	'.rodata.CanIf..2.str'
+.2.str:	.type	object
+	.size	.2.str,20
+	.byte	32,84,114,97,110,115,99,101
+	.byte	105,118,101,114,32,61,32,37
+	.byte	100,32,10
+	.space	1
+	.sdecl	'.rodata.CanIf..3.str',data,rom
+	.sect	'.rodata.CanIf..3.str'
+.3.str:	.type	object
+	.size	.3.str,15
+	.byte	32,79,112,77,111,100,101,32
+	.byte	61,32,37,100
+	.byte	32,10
+	.space	1
+	.sdecl	'.rodata.CanIf..4.str',data,rom
+	.sect	'.rodata.CanIf..4.str'
+.4.str:	.type	object
+	.size	.4.str,66
+	.byte	10,32,67,97,108,108,98,97
+	.byte	99,107,32,102,117,110,99,116
+	.byte	105,111,110,32,67,97,110,73
+	.byte	102,95,67,104,101,99,107,84
+	.byte	114,99,118,87,97,107,101,70
+	.byte	108,97,103,73,110,100,105,99
+	.byte	97,116,105,111,110,32,105,115
+	.byte	32,99,97,108,108,101,100,33
+	.byte	10
+	.space	1
+	.calls	'CanIf_TrcvModeIndication','print_f'
+	.calls	'CanIf_CheckTrcvWakeFlagIndication','print_f'
+	.calls	'CanIf_SetWakeupEvent','',0
+	.calls	'CanIf_CheckWakeup','',0
+	.calls	'CanIf_TrcvModeIndication','',8
+	.extern	print_f
+	.calls	'CanIf_CheckTrcvWakeFlagIndication','',8
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L17:
+	.word	599
+	.half	3
+	.word	.L18
+	.byte	4
+.L16:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L19
+.L41:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L48:
+	.byte	3,1,85,9,1,4
+	.byte	'CANTRCV_TRCVMODE_NORMAL',0,0,4
+	.byte	'CANTRCV_TRCVMODE_SLEEP',0,1,4
+	.byte	'CANTRCV_TRCVMODE_STANDBY',0,2,0,5
+	.byte	'print_f',0,2,166,1,13,1,1,1,1,2
+	.byte	'unsigned char',0,1,8,6
+	.word	273
+	.byte	7
+	.word	290
+	.byte	8
+	.byte	'p_frm',0,2,166,1,33
+	.word	295
+	.byte	9,2,166,1,40,0,10
+	.byte	'void',0,7
+	.word	321
+	.byte	11
+	.byte	'__prof_adm',0,3,1,1
+	.word	327
+	.byte	12,1,7
+	.word	351
+	.byte	11
+	.byte	'__codeptr',0,3,1,1
+	.word	353
+	.byte	11
+	.byte	'uint8',0,4,90,29
+	.word	155
+	.byte	2
+	.byte	'unsigned short int',0,2,7,11
+	.byte	'uint16',0,4,92,29
+	.word	390
+	.byte	2
+	.byte	'unsigned long int',0,4,7,11
+	.byte	'uint32',0,4,94,29
+	.word	427
+	.byte	11
+	.byte	'PduIdType',0,5,72,22
+	.word	155
+	.byte	11
+	.byte	'PduLengthType',0,5,76,22
+	.word	390
+	.byte	11
+	.byte	'Can_IdType',0,1,45,16
+	.word	427
+	.byte	11
+	.byte	'CanTrcv_TrcvModeType',0,1,90,3
+	.word	172
+	.byte	11
+	.byte	'CanIf_WakeupSourceType',0,6,56,15
+	.word	155
+	.byte	11
+	.byte	'_iob_flag_t',0,7,75,25
+	.word	390
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L18:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,4,1,58,15,59,15,57,15,11,15
+	.byte	0,0,4,40,0,3,8,28,13,0,0,5,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,6,38,0,73,19,0,0,7,15
+	.byte	0,73,19,0,0,8,5,0,3,8,58,15,59,15,57,15,73,19,0,0,9,24,0,58,15,59,15,57,15,0,0,10,59,0,3,8,0,0,11,22,0
+	.byte	3,8,58,15,59,15,57,15,73,19,0,0,12,21,0,54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L19:
+	.word	.L60-.L59
+.L59:
+	.half	3
+	.word	.L62-.L61
+.L61:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc',0
+	.byte	'C:\\Program Files (x86)\\TASKING\\TriCore v4.2r2\\ctc\\include\\',0,0
+	.byte	'Can_GeneralTypes.h',0,1,0,0
+	.byte	'Test_Print.h',0,1,0,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0,0,0,0
+	.byte	'Platform_Types.h',0,2,0,0
+	.byte	'ComStack_Types.h',0,3,0,0
+	.byte	'CanIf_Types.h',0,1,0,0
+	.byte	'stdio.h',0,4,0,0,0
+.L62:
+.L60:
+	.sdecl	'.debug_info',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_info'
+.L20:
+	.word	233
+	.half	3
+	.word	.L21
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L23,.L22
+	.byte	2
+	.word	.L16
+	.byte	3
+	.byte	'CanIf_CheckWakeup',0,1,102,6,1,1,1
+	.word	.L11,.L40,.L10
+	.byte	4
+	.byte	'WakeupSource',0,1,102,47
+	.word	.L41,.L42
+	.byte	5
+	.word	.L11,.L40
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_abbrev'
+.L21:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_line'
+.L22:
+	.word	.L64-.L63
+.L63:
+	.half	3
+	.word	.L66-.L65
+.L65:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0,0,0,0,0
+.L66:
+	.byte	5,1,7,0,5,2
+	.word	.L11
+	.byte	3,232,0,1,7,9
+	.half	.L4-.L11
+	.byte	3,2,1,7,9
+	.half	.L24-.L4
+	.byte	0,1,1
+.L64:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_ranges'
+.L23:
+	.word	-1,.L11,0,.L24-.L11,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_info'
+.L25:
+	.word	259
+	.half	3
+	.word	.L26
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L28,.L27
+	.byte	2
+	.word	.L16
+	.byte	3
+	.byte	'CanIf_SetWakeupEvent',0,1,94,6,1,1,1
+	.word	.L9,.L43,.L8
+	.byte	4
+	.byte	'CanNetwork',0,1,94,33
+	.word	.L41,.L44
+	.byte	4
+	.byte	'WakeupSource',0,1,95,59
+	.word	.L41,.L45
+	.byte	5
+	.word	.L9,.L43
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_abbrev'
+.L26:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_line'
+.L27:
+	.word	.L68-.L67
+.L67:
+	.half	3
+	.word	.L70-.L69
+.L69:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0,0,0,0,0
+.L70:
+	.byte	5,2,7,0,5,2
+	.word	.L9
+	.byte	3,224,0,1,7,9
+	.half	.L2-.L9
+	.byte	3,1,1,5,1,7,9
+	.half	.L3-.L2
+	.byte	3,1,1,7,9
+	.half	.L29-.L3
+	.byte	0,1,1
+.L68:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_ranges'
+.L28:
+	.word	-1,.L9,0,.L29-.L9,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_info'
+.L30:
+	.word	258
+	.half	3
+	.word	.L31
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L33,.L32
+	.byte	2
+	.word	.L16
+	.byte	3
+	.byte	'CanIf_TrcvModeIndication',0,1,109,6,1,1,1
+	.word	.L13,.L46,.L12
+	.byte	4
+	.byte	'Transceiver',0,1,109,37
+	.word	.L41,.L47
+	.byte	4
+	.byte	'OpMode',0,1,109,70
+	.word	.L48,.L49
+	.byte	5
+	.word	.L13,.L46
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_abbrev'
+.L31:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_line'
+.L32:
+	.word	.L72-.L71
+.L71:
+	.half	3
+	.word	.L74-.L73
+.L73:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0,0,0,0,0
+.L74:
+	.byte	5,6,7,0,5,2
+	.word	.L13
+	.byte	3,236,0,1,5,2,9
+	.half	.L55-.L13
+	.byte	3,2,1,7,9
+	.half	.L5-.L55
+	.byte	3,1,1,5,11,7,9
+	.half	.L6-.L5
+	.byte	3,1,1,5,35,9
+	.half	.L53-.L6
+	.byte	3,1,1,5,11,9
+	.half	.L75-.L53
+	.byte	1,5,30,9
+	.half	.L76-.L75
+	.byte	3,1,1,5,11,9
+	.half	.L77-.L76
+	.byte	1,5,1,9
+	.half	.L78-.L77
+	.byte	3,1,1,7,9
+	.half	.L34-.L78
+	.byte	0,1,1
+.L72:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_ranges'
+.L33:
+	.word	-1,.L13,0,.L34-.L13,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_info'
+.L35:
+	.word	248
+	.half	3
+	.word	.L36
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L38,.L37
+	.byte	2
+	.word	.L16
+	.byte	3
+	.byte	'CanIf_CheckTrcvWakeFlagIndication',0,1,118,6,1,1,1
+	.word	.L15,.L50,.L14
+	.byte	4
+	.byte	'Transceiver',0,1,118,46
+	.word	.L41,.L51
+	.byte	5
+	.word	.L15,.L50
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_abbrev'
+.L36:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_line'
+.L37:
+	.word	.L80-.L79
+.L79:
+	.half	3
+	.word	.L82-.L81
+.L81:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\CanIf.c',0,0,0,0,0
+.L82:
+	.byte	5,6,7,0,5,2
+	.word	.L15
+	.byte	3,245,0,1,5,3,9
+	.half	.L58-.L15
+	.byte	3,2,1,5,13,7,9
+	.half	.L7-.L58
+	.byte	3,1,1,5,37,9
+	.half	.L57-.L7
+	.byte	3,1,1,5,13,9
+	.half	.L83-.L57
+	.byte	1,5,1,9
+	.half	.L84-.L83
+	.byte	3,1,1,7,9
+	.half	.L39-.L84
+	.byte	0,1,1
+.L80:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_ranges'
+.L38:
+	.word	-1,.L15,0,.L39-.L15,0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_loc'
+.L14:
+	.word	-1,.L15,0,.L56-.L15
+	.half	2
+	.byte	138,0
+	.word	.L56-.L15,.L50-.L15
+	.half	2
+	.byte	138,8
+	.word	.L50-.L15,.L50-.L15
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L51:
+	.word	-1,.L15,0,.L57-.L15
+	.half	5
+	.byte	144,34,157,32,0
+	.word	.L58-.L15,.L50-.L15
+	.half	5
+	.byte	144,39,157,32,32
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_loc'
+.L10:
+	.word	-1,.L11,0,.L40-.L11
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L42:
+	.word	-1,.L11,0,.L40-.L11
+	.half	5
+	.byte	144,34,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_loc'
+.L8:
+	.word	-1,.L9,0,.L43-.L9
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L44:
+	.word	-1,.L9,0,.L43-.L9
+	.half	5
+	.byte	144,34,157,32,0
+	.word	0,0
+.L45:
+	.word	-1,.L9,0,.L43-.L9
+	.half	5
+	.byte	144,34,157,32,32
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_loc'
+.L12:
+	.word	-1,.L13,0,.L52-.L13
+	.half	2
+	.byte	138,0
+	.word	.L52-.L13,.L46-.L13
+	.half	2
+	.byte	138,8
+	.word	.L46-.L13,.L46-.L13
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L49:
+	.word	-1,.L13,0,.L53-.L13
+	.half	5
+	.byte	144,34,157,32,32
+	.word	.L55-.L13,.L46-.L13
+	.half	5
+	.byte	144,36,157,32,0
+	.word	0,0
+.L47:
+	.word	-1,.L13,0,.L53-.L13
+	.half	5
+	.byte	144,34,157,32,0
+	.word	.L54-.L13,.L46-.L13
+	.half	5
+	.byte	144,39,157,32,32
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L85:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('CanIf_SetWakeupEvent')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L85,.L9,.L43-.L9
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L85,.L11,.L40-.L11
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CanIf_TrcvModeIndication')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L85,.L13,.L46-.L13
+	.byte	4
+	.word	(.L52-.L13)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L46-.L52)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('CanIf_CheckTrcvWakeFlagIndication')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L85,.L15,.L50-.L15
+	.byte	4
+	.word	(.L56-.L15)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L50-.L56)/2
+	.byte	19,0,8,26,0,0
+
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   124  
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   125  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   126  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\CanIf.c	   127  *******************************************************************************/
+
+	; Module end

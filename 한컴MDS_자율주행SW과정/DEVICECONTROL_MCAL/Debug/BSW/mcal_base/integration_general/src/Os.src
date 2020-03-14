@@ -1,0 +1,3254 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v4.2r2 Build 744.1.1"
+	.compiler_invocation	"ctc -f cc2332a -c90 --dep-file=BSW\\mcal_base\\integration_general\\src\\.Os.o.d -D__CPU__=tc27x -D__CPU_TC27X__ --core=tc1.6.x -F --uchar -D_TASKING_C_TRICORE_ -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\ASW -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\ecum_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\compiler -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\integration_general\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\irq_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\mcu_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\port_infineon_tricore\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\Demo_Aurix -IC:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_gen\\inc -g --make-target=BSW\\mcal_base\\integration_general\\src\\Os.o -t4 --language=+comments,-gcc,-volatile,+strings --default-near-size=8 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto -o BSW\\mcal_base\\integration_general\\src\\Os.src ..\\BSW\\mcal_base\\integration_general\\src\\Os.c"
+	.compiler_name		"ctc"
+	.name	"Os"
+
+	
+$TC16X
+	
+	.sdecl	'.text.Os.OSEKMP_UserEnableAllInterrupts',code,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.text.Os.OSEKMP_UserEnableAllInterrupts'
+	.align	2
+	
+	.global	OSEKMP_UserEnableAllInterrupts
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	     1  /******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	     2  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     3  ** Copyright (C) Infineon Technologies (2013)                                **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     4  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     5  ** All rights reserved.                                                      **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     6  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     7  ** This document contains proprietary information belonging to Infineon      **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     8  ** Technologies. Passing on and copying of this document, and communication  **
+; ..\BSW\mcal_base\integration_general\src\Os.c	     9  ** of its contents is not permitted without prior written authorization.     **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    10  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    11  *******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    12  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    13  **  $FILENAME   : Os.c $                                                     **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    14  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    15  **  $CC VERSION : \main\13 $                                                 **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    16  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    17  **  $DATE       : 2015-10-15 $                                               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    18  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    19  **  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    20  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    21  **  VENDOR      : Infineon Technologies                                      **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    22  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    23  **  DESCRIPTION : This file contains                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    24  **                - stub for OS functionality.                               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    25  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    26  **  MAY BE CHANGED BY USER [yes/no]: Yes                                     **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    27  **                                                                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    28  ******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    29  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    30  **                      Includes                                              **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    31  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    32  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    33  /* Inclusion of Platform_Types.h and Compiler.h */
+; ..\BSW\mcal_base\integration_general\src\Os.c	    34  #include "Std_Types.h"
+; ..\BSW\mcal_base\integration_general\src\Os.c	    35  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    36  /* Inclusion of Tasking sfr file */
+; ..\BSW\mcal_base\integration_general\src\Os.c	    37  #include "IfxCpu_reg.h"
+; ..\BSW\mcal_base\integration_general\src\Os.c	    38  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    39  /* Include Mcal for Library */
+; ..\BSW\mcal_base\integration_general\src\Os.c	    40  #include "Mcal.h"
+; ..\BSW\mcal_base\integration_general\src\Os.c	    41  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    42  /* Include Os.h*/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    43  #include "Os.h"
+; ..\BSW\mcal_base\integration_general\src\Os.c	    44  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    45  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    46  **                      Imported Compiler Switch Checks                       **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    47  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    48  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    49  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    50  **                      Private Macro Definitions                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    51  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    52  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    53  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    54  **                      Private Type Definitions                              **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    55  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    56  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    57  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    58  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    59  **                      Private Function Declarations                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    60  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    61  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    62  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    63  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    64  **                      Global Constant Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    65  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    66  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    67  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    68  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    69  **                      Global Variable Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    70  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    71  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    72  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    73  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    74  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    75  **                      Private Constant Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    76  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    77  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    78  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    79  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    80  **                      Private Variable Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    81  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    82  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    83  static volatile uint8 Os_IntSaveDisableCounter[3];
+; ..\BSW\mcal_base\integration_general\src\Os.c	    84  static volatile sint32 Os_SavedIntLevelNested[3];
+; ..\BSW\mcal_base\integration_general\src\Os.c	    85  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    86  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    87  **                      Private Function Definitions                          **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    88  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    89  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    90  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    91  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    92  **                      Global Function Definitions                           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    93  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	    94  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    95  
+; ..\BSW\mcal_base\integration_general\src\Os.c	    96  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	    97  ** Syntax           : void OSEKMP_UserEnableAllInterrupts(void)               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    98  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	    99  ** Service ID       :  none                                                   **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   100  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   101  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   102  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   103  ** Reentrancy       : non - reentrant                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   104  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   105  ** Parameters(in)   : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   106  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   107  ** Parameters (out) : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   108  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   109  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   110  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   111  ** Description      : This function Enables all interrupts                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   112  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   113  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   114  void OSEKMP_UserEnableAllInterrupts(void)
+; Function OSEKMP_UserEnableAllInterrupts
+.L10:
+OSEKMP_UserEnableAllInterrupts:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   115  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   116    ENABLE();
+	enable
+.L93:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   117  }
+	ret
+.L59:
+	
+__OSEKMP_UserEnableAllInterrupts_function_end:
+	.size	OSEKMP_UserEnableAllInterrupts,__OSEKMP_UserEnableAllInterrupts_function_end-OSEKMP_UserEnableAllInterrupts
+.L29:
+	; End of function
+	
+	.sdecl	'.text.Os.OSEKMP_UserDisableAllInterrupts',code,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.text.Os.OSEKMP_UserDisableAllInterrupts'
+	.align	2
+	
+	.global	OSEKMP_UserDisableAllInterrupts
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   118  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   119  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	   120  ** Syntax           : void OSEKMP_UserDisableAllInterrupts(void)              **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   121  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   122  ** Service ID       : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   123  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   124  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   125  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   126  ** Reentrancy       : Reentrant                                               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   127  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   128  ** Parameters(in)   : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   129  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   130  ** Parameters (out) : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   131  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   132  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   133  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   134  ** Description      : This function Disables all interrupts                   **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   135  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   136  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   137  void OSEKMP_UserDisableAllInterrupts(void)
+; Function OSEKMP_UserDisableAllInterrupts
+.L12:
+OSEKMP_UserDisableAllInterrupts:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   138  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   139  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   140    DISABLE();
+	disable
+.L98:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   141  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   142  }
+	ret
+.L60:
+	
+__OSEKMP_UserDisableAllInterrupts_function_end:
+	.size	OSEKMP_UserDisableAllInterrupts,__OSEKMP_UserDisableAllInterrupts_function_end-OSEKMP_UserDisableAllInterrupts
+.L34:
+	; End of function
+	
+	.sdecl	'.text.Os.OSEKMP_UserSuspendAllInterrupts',code,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.text.Os.OSEKMP_UserSuspendAllInterrupts'
+	.align	2
+	
+	.global	OSEKMP_UserSuspendAllInterrupts
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   143  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   144  /******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   145  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   146  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   147  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	   148  ** Syntax           : void OSEKMP_UserSuspendAllInterrupts(void)              **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   149  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   150  ** Service ID       :  none                                                   **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   151  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   152  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   153  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   154  ** Reentrancy       : non - reentrant                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   155  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   156  ** Parameters(in)   : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   157  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   158  ** Parameters (out) : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   159  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   160  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   161  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   162  ** Description      : This function Suspends all interrupts, nested           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   163  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   164  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   165  void OSEKMP_UserSuspendAllInterrupts(void)
+; Function OSEKMP_UserSuspendAllInterrupts
+.L14:
+OSEKMP_UserSuspendAllInterrupts:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   166  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   167    uint8 CoreId;
+; ..\BSW\mcal_base\integration_general\src\Os.c	   168    
+; ..\BSW\mcal_base\integration_general\src\Os.c	   169    /* Get the current core id */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   170    CoreId = Mcal_GetCoreId();
+	call	Mcal_GetCoreId
+.L81:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   171  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   172    if(Os_IntSaveDisableCounter[CoreId] == 0)
+	lea	a15,Os_IntSaveDisableCounter
+.L103:
+	addsc.a	a15,a15,d2,#0
+	ld.bu	d15,[a15]
+.L104:
+	jne	d15,#0,.L2
+.L105:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   173    {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   174      
+; ..\BSW\mcal_base\integration_general\src\Os.c	   175      ISYNC();
+	isync
+.L106:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   176      Os_SavedIntLevelNested[CoreId] = MFCR(CPU_ICR);/* disable interrupts */
+	movh.a	a15,#@his(Os_SavedIntLevelNested)
+	lea	a15,[a15]@los(Os_SavedIntLevelNested)
+.L107:
+	addsc.a	a15,a15,d2,#2
+.L108:
+	mfcr	d15,#65068
+.L109:
+	st.w	[a15],d15
+.L110:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   177      DISABLE();
+	disable
+.L2:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   178    }
+; ..\BSW\mcal_base\integration_general\src\Os.c	   179    Os_IntSaveDisableCounter[CoreId]++;
+	lea	a15,Os_IntSaveDisableCounter
+.L111:
+	addsc.a	a15,a15,d2,#0
+.L112:
+	lea	a2,Os_IntSaveDisableCounter
+.L113:
+	addsc.a	a2,a2,d2,#0
+	ld.bu	d15,[a2]
+.L114:
+	add	d15,#1
+	st.b	[a15],d15
+.L115:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   180  }
+	ret
+.L61:
+	
+__OSEKMP_UserSuspendAllInterrupts_function_end:
+	.size	OSEKMP_UserSuspendAllInterrupts,__OSEKMP_UserSuspendAllInterrupts_function_end-OSEKMP_UserSuspendAllInterrupts
+.L39:
+	; End of function
+	
+	.sdecl	'.text.Os.OSEKMP_UserResumeAllInterrupts',code,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.text.Os.OSEKMP_UserResumeAllInterrupts'
+	.align	2
+	
+	.global	OSEKMP_UserResumeAllInterrupts
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   181  /******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   182  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   183  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   184  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	   185  ** Syntax           : void OSEKMP_UserResumeAllInterrupts(void)               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   186  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   187  ** Service ID       :  none                                                   **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   188  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   189  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   190  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   191  ** Reentrancy       : non - reentrant                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   192  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   193  ** Parameters(in)   : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   194  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   195  ** Parameters (out) : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   196  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   197  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   198  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   199  ** Description      : This function Resumes all interrupts, nested            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   200  **                                                                **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   201  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   202  void OSEKMP_UserResumeAllInterrupts(void)
+; Function OSEKMP_UserResumeAllInterrupts
+.L16:
+OSEKMP_UserResumeAllInterrupts:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   203  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   204    uint8 CoreId;
+; ..\BSW\mcal_base\integration_general\src\Os.c	   205    
+; ..\BSW\mcal_base\integration_general\src\Os.c	   206    /* Get the current core id */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   207    CoreId = Mcal_GetCoreId();
+	call	Mcal_GetCoreId
+.L82:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   208    
+; ..\BSW\mcal_base\integration_general\src\Os.c	   209    if (Os_IntSaveDisableCounter[CoreId] > 0)
+	lea	a15,Os_IntSaveDisableCounter
+.L120:
+	addsc.a	a15,a15,d2,#0
+	ld.bu	d15,[a15]
+.L121:
+	jeq	d15,#0,.L3
+.L122:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   210    {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   211      Os_IntSaveDisableCounter[CoreId]--;
+	lea	a15,Os_IntSaveDisableCounter
+.L123:
+	addsc.a	a15,a15,d2,#0
+.L124:
+	lea	a2,Os_IntSaveDisableCounter
+.L125:
+	addsc.a	a2,a2,d2,#0
+	ld.bu	d15,[a2]
+.L126:
+	add	d15,#-1
+	st.b	[a15],d15
+.L3:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   212    }
+; ..\BSW\mcal_base\integration_general\src\Os.c	   213    
+; ..\BSW\mcal_base\integration_general\src\Os.c	   214    if (Os_IntSaveDisableCounter[CoreId] == 0)
+	lea	a15,Os_IntSaveDisableCounter
+.L127:
+	addsc.a	a15,a15,d2,#0
+	ld.bu	d15,[a15]
+.L128:
+	jne	d15,#0,.L4
+.L129:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   215    {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   216      if (Os_SavedIntLevelNested[CoreId] & (0x00000001U << 15))
+	movh.a	a15,#@his(Os_SavedIntLevelNested)
+	lea	a15,[a15]@los(Os_SavedIntLevelNested)
+.L130:
+	addsc.a	a15,a15,d2,#2
+	ld.w	d15,[a15]
+.L131:
+	jz.t	d15:15,.L5
+.L132:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   217      {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   218        /* interrupts were enabled, enable again */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   219        ENABLE();
+	enable
+.L5:
+.L4:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   220      }
+; ..\BSW\mcal_base\integration_general\src\Os.c	   221    }
+; ..\BSW\mcal_base\integration_general\src\Os.c	   222  }
+	ret
+.L64:
+	
+__OSEKMP_UserResumeAllInterrupts_function_end:
+	.size	OSEKMP_UserResumeAllInterrupts,__OSEKMP_UserResumeAllInterrupts_function_end-OSEKMP_UserResumeAllInterrupts
+.L44:
+	; End of function
+	
+	.sdecl	'.text.Os.Os_GetCurrentStackArea',code,cluster('Os_GetCurrentStackArea')
+	.sect	'.text.Os.Os_GetCurrentStackArea'
+	.align	2
+	
+	.global	Os_GetCurrentStackArea
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   223  /******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   224  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   225  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	   226  ** Syntax           : void Os_GetCurrentStackArea(void  **start, void **end)  **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   227  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   228  ** Service ID       : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   229  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   230  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   231  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   232  ** Reentrancy       : non - reentrant                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   233  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   234  ** Parameters(in)   : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   235  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   236  ** Parameters (out) : start: Start address of Stack, end: Stack End address   **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   237  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   238  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   239  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   240  ** Description      : This function provides the stack's range                **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   241  **                                                                **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   242  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   243  void Os_GetCurrentStackArea(void  **start, void **end)
+; Function Os_GetCurrentStackArea
+.L18:
+Os_GetCurrentStackArea:	.type	func
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   244  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   245    /* Temporarily dummy */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   246    /* this line is provided to remove unused param warning in GNU */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   247    UNUSED_PARAMETER(start)
+	jz.a	a4,.L6
+.L6:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   248    /* this line is provided to remove unused param warning in GNU */
+; ..\BSW\mcal_base\integration_general\src\Os.c	   249    UNUSED_PARAMETER(end)
+	jz.a	a5,.L7
+.L7:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   250  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   251  }
+	ret
+.L66:
+	
+__Os_GetCurrentStackArea_function_end:
+	.size	Os_GetCurrentStackArea,__Os_GetCurrentStackArea_function_end-Os_GetCurrentStackArea
+.L49:
+	; End of function
+	
+	.sdecl	'.text.Os.Os_UpdateRegSV',code,cluster('Os_UpdateRegSV')
+	.sect	'.text.Os.Os_UpdateRegSV'
+	.align	2
+	
+	.global	Os_UpdateRegSV
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   252  /*******************************************************************************
+; ..\BSW\mcal_base\integration_general\src\Os.c	   253  ** Syntax           : void Os_UpdateRegSV(volatileuint32 * Address, uint32    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   254  **               SetMask, uint32 ClearMask, uint8 InitProtectionType,         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   255  **                        uint16 Area)                                        **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   256  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   257  ** Service ID       : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   258  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   259  ** Sync/Async       : Synchronous                                             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   260  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   261  ** Reentrancy       : non - reentrant                                         **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   262  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   263  ** Parameters (in) :  Address - Address of the SFR to be modified             **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   264  ** SetMask - Set mask to be ored with the value                               **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   265  ** ClearMask - Clear mask to be anded with the value                          **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   266  ** InitProtectionType - Type of the protection required for SFR update.       **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   267  **                      MCAL_NO_ENDINIT_PROTECTION (1U)                       **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   268  **                      MCAL_CPU_ENDINIT_PROTECTION  (2U)                     **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   269  **                      MCAL_SAFETY_ENDINIT_PROTECTION  (3U)                  **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   270  ** Area - To be used by OS                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   271  ** Parameters(out)   : Value referenced by Address will be modified           **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   272  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   273  ** Return value     : none                                                    **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   274  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   275  ** Description      : This function provides the OS interface                 **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   276  **                                                                            **
+; ..\BSW\mcal_base\integration_general\src\Os.c	   277  *******************************************************************************/
+; ..\BSW\mcal_base\integration_general\src\Os.c	   278  void Os_UpdateRegSV (volatile uint32 *Address,uint32 SetMask,uint32 ClearMask,\ 
+; Function Os_UpdateRegSV
+.L20:
+Os_UpdateRegSV:	.type	func
+	mov	d15,d7
+.L84:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   279                              uint8 InitProtectionType,uint16 Area)
+; ..\BSW\mcal_base\integration_general\src\Os.c	   280  {
+; ..\BSW\mcal_base\integration_general\src\Os.c	   281    Mcal_SetRegValSV (Address, SetMask, ClearMask, InitProtectionType);
+	call	Mcal_SetRegValSV
+.L83:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   282    UNUSED_PARAMETER(Area)
+	jeq	d15,#0,.L8
+.L8:
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   283  }
+	ret
+.L70:
+	
+__Os_UpdateRegSV_function_end:
+	.size	Os_UpdateRegSV,__Os_UpdateRegSV_function_end-Os_UpdateRegSV
+.L54:
+	; End of function
+	
+	.sdecl	'.zbss.Os.Os_IntSaveDisableCounter',data,cluster('Os_IntSaveDisableCounter')
+	.sect	'.zbss.Os.Os_IntSaveDisableCounter'
+Os_IntSaveDisableCounter:	.type	object
+	.size	Os_IntSaveDisableCounter,3
+	.space	3
+	.sdecl	'.bss.Os.Os_SavedIntLevelNested',data,cluster('Os_SavedIntLevelNested')
+	.sect	'.bss.Os.Os_SavedIntLevelNested'
+	.align	2
+Os_SavedIntLevelNested:	.type	object
+	.size	Os_SavedIntLevelNested,12
+	.space	12
+	.calls	'OSEKMP_UserSuspendAllInterrupts','Mcal_GetCoreId'
+	.calls	'OSEKMP_UserResumeAllInterrupts','Mcal_GetCoreId'
+	.calls	'Os_UpdateRegSV','Mcal_SetRegValSV'
+	.calls	'OSEKMP_UserEnableAllInterrupts','',0
+	.calls	'OSEKMP_UserDisableAllInterrupts','',0
+	.calls	'OSEKMP_UserSuspendAllInterrupts','',0
+	.calls	'OSEKMP_UserResumeAllInterrupts','',0
+	.calls	'Os_GetCurrentStackArea','',0
+	.extern	Mcal_GetCoreId
+	.extern	Mcal_SetRegValSV
+	.calls	'Os_UpdateRegSV','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L22:
+	.word	14666
+	.half	3
+	.word	.L23
+	.byte	4
+.L21:
+	.byte	1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L24
+	.byte	2
+	.byte	'int',0,4,5,3
+	.word	152
+	.byte	4
+	.byte	'__mfcr',0
+	.word	159
+	.byte	1,1,1,1,5
+	.word	152
+	.byte	0,6
+	.byte	'__isync',0,1,1,1,1,6
+	.byte	'__disable',0,1,1,1,1,6
+	.byte	'__enable',0,1,1,1,1
+.L62:
+	.byte	2
+	.byte	'unsigned char',0,1,8,7
+	.byte	'Mcal_GetCoreId',0,1,139,2,14
+	.word	228
+	.byte	1,1,1,1,8
+	.byte	'Mcal_SetRegValSV',0,1,247,3,27,1,1,1,1
+.L73:
+	.byte	2
+	.byte	'unsigned long int',0,4,7,3
+	.word	299
+.L71:
+	.byte	9
+	.word	320
+	.byte	10
+	.byte	'Address',0,1,247,3,62
+	.word	325
+	.byte	10
+	.byte	'SetMask',0,1,248,3,10
+	.word	299
+	.byte	10
+	.byte	'ClearMask',0,1,248,3,26
+	.word	299
+	.byte	10
+	.byte	'InitProtectionType',0,1,248,3,43
+	.word	228
+	.byte	0,11
+	.byte	'void',0,9
+	.word	412
+.L67:
+	.byte	9
+	.word	418
+.L77:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,12
+	.byte	'__prof_adm',0,2,1,1
+	.word	418
+	.byte	13,1,9
+	.word	469
+	.byte	12
+	.byte	'__codeptr',0,2,1,1
+	.word	471
+	.byte	12
+	.byte	'uint8',0,3,90,29
+	.word	228
+	.byte	12
+	.byte	'uint16',0,3,92,29
+	.word	428
+	.byte	2
+	.byte	'long int',0,4,5,12
+	.byte	'sint32',0,3,93,29
+	.word	523
+	.byte	12
+	.byte	'uint32',0,3,94,29
+	.word	299
+	.byte	14
+	.byte	'_Ifx_CPU_A_Bits',0,4,45,16,4,2
+	.byte	'unsigned int',0,4,7,15
+	.byte	'ADDR',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_A_Bits',0,4,48,3
+	.word	565
+	.byte	14
+	.byte	'_Ifx_CPU_BIV_Bits',0,4,51,16,4,15
+	.byte	'VSS',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'BIV',0,4
+	.word	586
+	.byte	31,0,2,35,0,0,12
+	.byte	'Ifx_CPU_BIV_Bits',0,4,55,3
+	.word	642
+	.byte	14
+	.byte	'_Ifx_CPU_BTV_Bits',0,4,58,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'BTV',0,4
+	.word	586
+	.byte	31,0,2,35,0,0,12
+	.byte	'Ifx_CPU_BTV_Bits',0,4,62,3
+	.word	721
+	.byte	14
+	.byte	'_Ifx_CPU_CCNT_Bits',0,4,65,16,4,15
+	.byte	'CountValue',0,4
+	.word	586
+	.byte	31,1,2,35,0,15
+	.byte	'SOvf',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CCNT_Bits',0,4,69,3
+	.word	807
+	.byte	14
+	.byte	'_Ifx_CPU_CCTRL_Bits',0,4,72,16,4,15
+	.byte	'CM',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'CE',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'M1',0,4
+	.word	586
+	.byte	3,27,2,35,0,15
+	.byte	'M2',0,4
+	.word	586
+	.byte	3,24,2,35,0,15
+	.byte	'M3',0,4
+	.word	586
+	.byte	3,21,2,35,0,15
+	.byte	'reserved_11',0,4
+	.word	586
+	.byte	21,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CCTRL_Bits',0,4,80,3
+	.word	896
+	.byte	14
+	.byte	'_Ifx_CPU_COMPAT_Bits',0,4,83,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'RM',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'SP',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'reserved_5',0,4
+	.word	586
+	.byte	27,0,2,35,0,0,12
+	.byte	'Ifx_CPU_COMPAT_Bits',0,4,89,3
+	.word	1042
+	.byte	14
+	.byte	'_Ifx_CPU_CORE_ID_Bits',0,4,92,16,4,15
+	.byte	'CORE_ID',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CORE_ID_Bits',0,4,96,3
+	.word	1169
+	.byte	14
+	.byte	'_Ifx_CPU_CPR_L_Bits',0,4,99,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'LOWBND',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CPR_L_Bits',0,4,103,3
+	.word	1267
+	.byte	14
+	.byte	'_Ifx_CPU_CPR_U_Bits',0,4,106,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'UPPBND',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CPR_U_Bits',0,4,110,3
+	.word	1360
+	.byte	14
+	.byte	'_Ifx_CPU_CPU_ID_Bits',0,4,113,16,4,15
+	.byte	'MOD_REV',0,4
+	.word	586
+	.byte	8,24,2,35,0,15
+	.byte	'MOD_32B',0,4
+	.word	586
+	.byte	8,16,2,35,0,15
+	.byte	'MOD',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CPU_ID_Bits',0,4,118,3
+	.word	1453
+	.byte	14
+	.byte	'_Ifx_CPU_CPXE_Bits',0,4,121,16,4,15
+	.byte	'XE',0,4
+	.word	586
+	.byte	8,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	24,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CPXE_Bits',0,4,125,3
+	.word	1561
+	.byte	14
+	.byte	'_Ifx_CPU_CREVT_Bits',0,4,128,1,16,4,15
+	.byte	'EVTA',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'BBM',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'BOD',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'SUSP',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'CNT',0,4
+	.word	586
+	.byte	2,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	24,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CREVT_Bits',0,4,136,1,3
+	.word	1648
+	.byte	14
+	.byte	'_Ifx_CPU_CUS_ID_Bits',0,4,139,1,16,4,15
+	.byte	'CID',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_CUS_ID_Bits',0,4,143,1,3
+	.word	1802
+	.byte	14
+	.byte	'_Ifx_CPU_D_Bits',0,4,146,1,16,4,15
+	.byte	'DATA',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_D_Bits',0,4,149,1,3
+	.word	1896
+	.byte	14
+	.byte	'_Ifx_CPU_DATR_Bits',0,4,152,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'SBE',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'reserved_4',0,4
+	.word	586
+	.byte	5,23,2,35,0,15
+	.byte	'CWE',0,4
+	.word	586
+	.byte	1,22,2,35,0,15
+	.byte	'CFE',0,4
+	.word	586
+	.byte	1,21,2,35,0,15
+	.byte	'reserved_11',0,4
+	.word	586
+	.byte	3,18,2,35,0,15
+	.byte	'SOE',0,4
+	.word	586
+	.byte	1,17,2,35,0,15
+	.byte	'SME',0,4
+	.word	586
+	.byte	1,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DATR_Bits',0,4,163,1,3
+	.word	1959
+	.byte	14
+	.byte	'_Ifx_CPU_DBGSR_Bits',0,4,166,1,16,4,15
+	.byte	'DE',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'HALT',0,4
+	.word	586
+	.byte	2,29,2,35,0,15
+	.byte	'SIH',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'SUSP',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'reserved_5',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'PREVSUSP',0,4
+	.word	586
+	.byte	1,25,2,35,0,15
+	.byte	'PEVT',0,4
+	.word	586
+	.byte	1,24,2,35,0,15
+	.byte	'EVTSRC',0,4
+	.word	586
+	.byte	5,19,2,35,0,15
+	.byte	'reserved_13',0,4
+	.word	586
+	.byte	19,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DBGSR_Bits',0,4,177,1,3
+	.word	2177
+	.byte	14
+	.byte	'_Ifx_CPU_DBGTCR_Bits',0,4,180,1,16,4,15
+	.byte	'DTA',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'reserved_1',0,4
+	.word	586
+	.byte	31,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DBGTCR_Bits',0,4,184,1,3
+	.word	2392
+	.byte	14
+	.byte	'_Ifx_CPU_DCON0_Bits',0,4,187,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'DCBYP',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'reserved_2',0,4
+	.word	586
+	.byte	30,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DCON0_Bits',0,4,192,1,3
+	.word	2486
+	.byte	14
+	.byte	'_Ifx_CPU_DCON2_Bits',0,4,195,1,16,4,15
+	.byte	'DCACHE_SZE',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'DSCRATCH_SZE',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DCON2_Bits',0,4,199,1,3
+	.word	2602
+	.byte	14
+	.byte	'_Ifx_CPU_DCX_Bits',0,4,202,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	6,26,2,35,0,15
+	.byte	'DCXValue',0,4
+	.word	586
+	.byte	26,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DCX_Bits',0,4,206,1,3
+	.word	2703
+	.byte	14
+	.byte	'_Ifx_CPU_DEADD_Bits',0,4,209,1,16,4,15
+	.byte	'ERROR_ADDRESS',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DEADD_Bits',0,4,212,1,3
+	.word	2796
+	.byte	14
+	.byte	'_Ifx_CPU_DIEAR_Bits',0,4,215,1,16,4,15
+	.byte	'TA',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DIEAR_Bits',0,4,218,1,3
+	.word	2876
+	.byte	14
+	.byte	'_Ifx_CPU_DIETR_Bits',0,4,221,1,16,4,15
+	.byte	'IED',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'IE_T',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'IE_C',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'IE_S',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'IE_BI',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'E_INFO',0,4
+	.word	586
+	.byte	6,21,2,35,0,15
+	.byte	'IE_DUAL',0,4
+	.word	586
+	.byte	1,20,2,35,0,15
+	.byte	'IE_SP',0,4
+	.word	586
+	.byte	1,19,2,35,0,15
+	.byte	'IE_BS',0,4
+	.word	586
+	.byte	1,18,2,35,0,15
+	.byte	'reserved_14',0,4
+	.word	586
+	.byte	18,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DIETR_Bits',0,4,233,1,3
+	.word	2945
+	.byte	14
+	.byte	'_Ifx_CPU_DMS_Bits',0,4,236,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'DMSValue',0,4
+	.word	586
+	.byte	31,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DMS_Bits',0,4,240,1,3
+	.word	3174
+	.byte	14
+	.byte	'_Ifx_CPU_DPR_L_Bits',0,4,243,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'LOWBND',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DPR_L_Bits',0,4,247,1,3
+	.word	3267
+	.byte	14
+	.byte	'_Ifx_CPU_DPR_U_Bits',0,4,250,1,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'UPPBND',0,4
+	.word	586
+	.byte	29,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DPR_U_Bits',0,4,254,1,3
+	.word	3362
+	.byte	14
+	.byte	'_Ifx_CPU_DPRE_Bits',0,4,129,2,16,4,15
+	.byte	'RE',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DPRE_Bits',0,4,133,2,3
+	.word	3457
+	.byte	14
+	.byte	'_Ifx_CPU_DPWE_Bits',0,4,136,2,16,4,15
+	.byte	'WE',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DPWE_Bits',0,4,140,2,3
+	.word	3547
+	.byte	14
+	.byte	'_Ifx_CPU_DSTR_Bits',0,4,143,2,16,4,15
+	.byte	'SRE',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'GAE',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'LBE',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	3,26,2,35,0,15
+	.byte	'CRE',0,4
+	.word	586
+	.byte	1,25,2,35,0,15
+	.byte	'reserved_7',0,4
+	.word	586
+	.byte	7,18,2,35,0,15
+	.byte	'DTME',0,4
+	.word	586
+	.byte	1,17,2,35,0,15
+	.byte	'LOE',0,4
+	.word	586
+	.byte	1,16,2,35,0,15
+	.byte	'SDE',0,4
+	.word	586
+	.byte	1,15,2,35,0,15
+	.byte	'SCE',0,4
+	.word	586
+	.byte	1,14,2,35,0,15
+	.byte	'CAC',0,4
+	.word	586
+	.byte	1,13,2,35,0,15
+	.byte	'MPE',0,4
+	.word	586
+	.byte	1,12,2,35,0,15
+	.byte	'CLE',0,4
+	.word	586
+	.byte	1,11,2,35,0,15
+	.byte	'reserved_21',0,4
+	.word	586
+	.byte	3,8,2,35,0,15
+	.byte	'ALN',0,4
+	.word	586
+	.byte	1,7,2,35,0,15
+	.byte	'reserved_25',0,4
+	.word	586
+	.byte	7,0,2,35,0,0,12
+	.byte	'Ifx_CPU_DSTR_Bits',0,4,161,2,3
+	.word	3637
+	.byte	14
+	.byte	'_Ifx_CPU_EXEVT_Bits',0,4,164,2,16,4,15
+	.byte	'EVTA',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'BBM',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'BOD',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'SUSP',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'CNT',0,4
+	.word	586
+	.byte	2,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	24,0,2,35,0,0,12
+	.byte	'Ifx_CPU_EXEVT_Bits',0,4,172,2,3
+	.word	3961
+	.byte	14
+	.byte	'_Ifx_CPU_FCX_Bits',0,4,175,2,16,4,15
+	.byte	'FCXO',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'FCXS',0,4
+	.word	586
+	.byte	4,12,2,35,0,15
+	.byte	'reserved_20',0,4
+	.word	586
+	.byte	12,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FCX_Bits',0,4,180,2,3
+	.word	4115
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_CON_Bits',0,4,183,2,16,4,15
+	.byte	'TST',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'TCL',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'reserved_2',0,4
+	.word	586
+	.byte	6,24,2,35,0,15
+	.byte	'RM',0,4
+	.word	586
+	.byte	2,22,2,35,0,15
+	.byte	'reserved_10',0,4
+	.word	586
+	.byte	8,14,2,35,0,15
+	.byte	'FXE',0,4
+	.word	586
+	.byte	1,13,2,35,0,15
+	.byte	'FUE',0,4
+	.word	586
+	.byte	1,12,2,35,0,15
+	.byte	'FZE',0,4
+	.word	586
+	.byte	1,11,2,35,0,15
+	.byte	'FVE',0,4
+	.word	586
+	.byte	1,10,2,35,0,15
+	.byte	'FIE',0,4
+	.word	586
+	.byte	1,9,2,35,0,15
+	.byte	'reserved_23',0,4
+	.word	586
+	.byte	3,6,2,35,0,15
+	.byte	'FX',0,4
+	.word	586
+	.byte	1,5,2,35,0,15
+	.byte	'FU',0,4
+	.word	586
+	.byte	1,4,2,35,0,15
+	.byte	'FZ',0,4
+	.word	586
+	.byte	1,3,2,35,0,15
+	.byte	'FV',0,4
+	.word	586
+	.byte	1,2,2,35,0,15
+	.byte	'FI',0,4
+	.word	586
+	.byte	1,1,2,35,0,15
+	.byte	'reserved_31',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_CON_Bits',0,4,202,2,3
+	.word	4221
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_OPC_Bits',0,4,205,2,16,4,15
+	.byte	'OPC',0,4
+	.word	586
+	.byte	8,24,2,35,0,15
+	.byte	'FMT',0,4
+	.word	586
+	.byte	1,23,2,35,0,15
+	.byte	'reserved_9',0,4
+	.word	586
+	.byte	7,16,2,35,0,15
+	.byte	'DREG',0,4
+	.word	586
+	.byte	4,12,2,35,0,15
+	.byte	'reserved_20',0,4
+	.word	586
+	.byte	12,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_OPC_Bits',0,4,212,2,3
+	.word	4570
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_PC_Bits',0,4,215,2,16,4,15
+	.byte	'PC',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_PC_Bits',0,4,218,2,3
+	.word	4730
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_SRC1_Bits',0,4,221,2,16,4,15
+	.byte	'SRC1',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC1_Bits',0,4,224,2,3
+	.word	4811
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_SRC2_Bits',0,4,227,2,16,4,15
+	.byte	'SRC2',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC2_Bits',0,4,230,2,3
+	.word	4898
+	.byte	14
+	.byte	'_Ifx_CPU_FPU_TRAP_SRC3_Bits',0,4,233,2,16,4,15
+	.byte	'SRC3',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC3_Bits',0,4,236,2,3
+	.word	4985
+	.byte	14
+	.byte	'_Ifx_CPU_ICNT_Bits',0,4,239,2,16,4,15
+	.byte	'CountValue',0,4
+	.word	586
+	.byte	31,1,2,35,0,15
+	.byte	'SOvf',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_ICNT_Bits',0,4,243,2,3
+	.word	5072
+	.byte	14
+	.byte	'_Ifx_CPU_ICR_Bits',0,4,246,2,16,4,15
+	.byte	'CCPN',0,4
+	.word	586
+	.byte	10,22,2,35,0,15
+	.byte	'reserved_10',0,4
+	.word	586
+	.byte	5,17,2,35,0,15
+	.byte	'IE',0,4
+	.word	586
+	.byte	1,16,2,35,0,15
+	.byte	'PIPN',0,4
+	.word	586
+	.byte	10,6,2,35,0,15
+	.byte	'reserved_26',0,4
+	.word	586
+	.byte	6,0,2,35,0,0,12
+	.byte	'Ifx_CPU_ICR_Bits',0,4,253,2,3
+	.word	5163
+	.byte	14
+	.byte	'_Ifx_CPU_ISP_Bits',0,4,128,3,16,4,15
+	.byte	'ISP',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_ISP_Bits',0,4,131,3,3
+	.word	5306
+	.byte	14
+	.byte	'_Ifx_CPU_LCX_Bits',0,4,134,3,16,4,15
+	.byte	'LCXO',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'LCXS',0,4
+	.word	586
+	.byte	4,12,2,35,0,15
+	.byte	'reserved_20',0,4
+	.word	586
+	.byte	12,0,2,35,0,0,12
+	.byte	'Ifx_CPU_LCX_Bits',0,4,139,3,3
+	.word	5372
+	.byte	14
+	.byte	'_Ifx_CPU_M1CNT_Bits',0,4,142,3,16,4,15
+	.byte	'CountValue',0,4
+	.word	586
+	.byte	31,1,2,35,0,15
+	.byte	'SOvf',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_M1CNT_Bits',0,4,146,3,3
+	.word	5478
+	.byte	14
+	.byte	'_Ifx_CPU_M2CNT_Bits',0,4,149,3,16,4,15
+	.byte	'CountValue',0,4
+	.word	586
+	.byte	31,1,2,35,0,15
+	.byte	'SOvf',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_M2CNT_Bits',0,4,153,3,3
+	.word	5571
+	.byte	14
+	.byte	'_Ifx_CPU_M3CNT_Bits',0,4,156,3,16,4,15
+	.byte	'CountValue',0,4
+	.word	586
+	.byte	31,1,2,35,0,15
+	.byte	'SOvf',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_M3CNT_Bits',0,4,160,3,3
+	.word	5664
+	.byte	14
+	.byte	'_Ifx_CPU_PC_Bits',0,4,163,3,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'PC',0,4
+	.word	586
+	.byte	31,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PC_Bits',0,4,167,3,3
+	.word	5757
+	.byte	14
+	.byte	'_Ifx_CPU_PCON0_Bits',0,4,170,3,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'PCBYP',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'reserved_2',0,4
+	.word	586
+	.byte	30,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PCON0_Bits',0,4,175,3,3
+	.word	5842
+	.byte	14
+	.byte	'_Ifx_CPU_PCON1_Bits',0,4,178,3,16,4,15
+	.byte	'PCINV',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'PBINV',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'reserved_2',0,4
+	.word	586
+	.byte	30,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PCON1_Bits',0,4,183,3,3
+	.word	5958
+	.byte	14
+	.byte	'_Ifx_CPU_PCON2_Bits',0,4,186,3,16,4,15
+	.byte	'PCACHE_SZE',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'PSCRATCH_SZE',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PCON2_Bits',0,4,190,3,3
+	.word	6069
+	.byte	14
+	.byte	'_Ifx_CPU_PCXI_Bits',0,4,193,3,16,4,15
+	.byte	'PCXO',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'PCXS',0,4
+	.word	586
+	.byte	4,12,2,35,0,15
+	.byte	'UL',0,4
+	.word	586
+	.byte	1,11,2,35,0,15
+	.byte	'PIE',0,4
+	.word	586
+	.byte	1,10,2,35,0,15
+	.byte	'PCPN',0,4
+	.word	586
+	.byte	10,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PCXI_Bits',0,4,200,3,3
+	.word	6170
+	.byte	14
+	.byte	'_Ifx_CPU_PIEAR_Bits',0,4,203,3,16,4,15
+	.byte	'TA',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PIEAR_Bits',0,4,206,3,3
+	.word	6300
+	.byte	14
+	.byte	'_Ifx_CPU_PIETR_Bits',0,4,209,3,16,4,15
+	.byte	'IED',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'IE_T',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'IE_C',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'IE_S',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'IE_BI',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'E_INFO',0,4
+	.word	586
+	.byte	6,21,2,35,0,15
+	.byte	'IE_DUAL',0,4
+	.word	586
+	.byte	1,20,2,35,0,15
+	.byte	'IE_SP',0,4
+	.word	586
+	.byte	1,19,2,35,0,15
+	.byte	'IE_BS',0,4
+	.word	586
+	.byte	1,18,2,35,0,15
+	.byte	'reserved_14',0,4
+	.word	586
+	.byte	18,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PIETR_Bits',0,4,221,3,3
+	.word	6369
+	.byte	14
+	.byte	'_Ifx_CPU_PMA0_Bits',0,4,224,3,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	13,19,2,35,0,15
+	.byte	'DAC',0,4
+	.word	586
+	.byte	3,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PMA0_Bits',0,4,229,3,3
+	.word	6598
+	.byte	14
+	.byte	'_Ifx_CPU_PMA1_Bits',0,4,232,3,16,4,15
+	.byte	'reserved_0',0,4
+	.word	586
+	.byte	14,18,2,35,0,15
+	.byte	'CAC',0,4
+	.word	586
+	.byte	2,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PMA1_Bits',0,4,237,3,3
+	.word	6711
+	.byte	14
+	.byte	'_Ifx_CPU_PMA2_Bits',0,4,240,3,16,4,15
+	.byte	'PSI',0,4
+	.word	586
+	.byte	16,16,2,35,0,15
+	.byte	'reserved_16',0,4
+	.word	586
+	.byte	16,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PMA2_Bits',0,4,244,3,3
+	.word	6824
+	.byte	14
+	.byte	'_Ifx_CPU_PSTR_Bits',0,4,247,3,16,4,15
+	.byte	'FRE',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'reserved_1',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'FBE',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	9,20,2,35,0,15
+	.byte	'FPE',0,4
+	.word	586
+	.byte	1,19,2,35,0,15
+	.byte	'reserved_13',0,4
+	.word	586
+	.byte	1,18,2,35,0,15
+	.byte	'FME',0,4
+	.word	586
+	.byte	1,17,2,35,0,15
+	.byte	'reserved_15',0,4
+	.word	586
+	.byte	17,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PSTR_Bits',0,4,129,4,3
+	.word	6915
+	.byte	14
+	.byte	'_Ifx_CPU_PSW_Bits',0,4,132,4,16,4,15
+	.byte	'CDC',0,4
+	.word	586
+	.byte	7,25,2,35,0,15
+	.byte	'CDE',0,4
+	.word	586
+	.byte	1,24,2,35,0,15
+	.byte	'GW',0,4
+	.word	586
+	.byte	1,23,2,35,0,15
+	.byte	'IS',0,4
+	.word	586
+	.byte	1,22,2,35,0,15
+	.byte	'IO',0,4
+	.word	586
+	.byte	2,20,2,35,0,15
+	.byte	'PRS',0,4
+	.word	586
+	.byte	2,18,2,35,0,15
+	.byte	'S',0,4
+	.word	586
+	.byte	1,17,2,35,0,15
+	.byte	'reserved_15',0,4
+	.word	586
+	.byte	12,5,2,35,0,15
+	.byte	'SAV',0,4
+	.word	586
+	.byte	1,4,2,35,0,15
+	.byte	'AV',0,4
+	.word	586
+	.byte	1,3,2,35,0,15
+	.byte	'SV',0,4
+	.word	586
+	.byte	1,2,2,35,0,15
+	.byte	'V',0,4
+	.word	586
+	.byte	1,1,2,35,0,15
+	.byte	'C',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_PSW_Bits',0,4,147,4,3
+	.word	7118
+	.byte	14
+	.byte	'_Ifx_CPU_SEGEN_Bits',0,4,150,4,16,4,15
+	.byte	'ADFLIP',0,4
+	.word	586
+	.byte	8,24,2,35,0,15
+	.byte	'ADTYPE',0,4
+	.word	586
+	.byte	2,22,2,35,0,15
+	.byte	'reserved_10',0,4
+	.word	586
+	.byte	21,1,2,35,0,15
+	.byte	'AE',0,4
+	.word	586
+	.byte	1,0,2,35,0,0,12
+	.byte	'Ifx_CPU_SEGEN_Bits',0,4,156,4,3
+	.word	7361
+	.byte	14
+	.byte	'_Ifx_CPU_SMACON_Bits',0,4,159,4,16,4,15
+	.byte	'PC',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'reserved_1',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'PT',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	5,24,2,35,0,15
+	.byte	'DC',0,4
+	.word	586
+	.byte	1,23,2,35,0,15
+	.byte	'reserved_9',0,4
+	.word	586
+	.byte	1,22,2,35,0,15
+	.byte	'DT',0,4
+	.word	586
+	.byte	1,21,2,35,0,15
+	.byte	'reserved_11',0,4
+	.word	586
+	.byte	13,8,2,35,0,15
+	.byte	'IODT',0,4
+	.word	586
+	.byte	1,7,2,35,0,15
+	.byte	'reserved_25',0,4
+	.word	586
+	.byte	7,0,2,35,0,0,12
+	.byte	'Ifx_CPU_SMACON_Bits',0,4,171,4,3
+	.word	7489
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_ACCENA_Bits',0,4,174,4,16,4,2
+	.byte	'unsigned int',0,4,7,15
+	.byte	'EN',0,4
+	.word	7763
+	.byte	32,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_ACCENA_Bits',0,4,177,4,3
+	.word	7730
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_ACCENB_Bits',0,4,180,4,16,4,15
+	.byte	'reserved_0',0,4
+	.word	7763
+	.byte	32,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_ACCENB_Bits',0,4,183,4,3
+	.word	7829
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_RGN_ACCENA_Bits',0,4,186,4,16,4,15
+	.byte	'EN',0,4
+	.word	7763
+	.byte	32,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_ACCENA_Bits',0,4,189,4,3
+	.word	7920
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_RGN_ACCENB_Bits',0,4,192,4,16,4,15
+	.byte	'reserved_0',0,4
+	.word	7763
+	.byte	32,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_ACCENB_Bits',0,4,195,4,3
+	.word	8011
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_RGN_LA_Bits',0,4,198,4,16,4,15
+	.byte	'reserved_0',0,1
+	.word	228
+	.byte	5,3,2,35,0,15
+	.byte	'ADDR',0,4
+	.word	7763
+	.byte	27,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_LA_Bits',0,4,202,4,3
+	.word	8110
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_RGN_UA_Bits',0,4,205,4,16,4,15
+	.byte	'reserved_0',0,1
+	.word	228
+	.byte	5,3,2,35,0,15
+	.byte	'ADDR',0,4
+	.word	7763
+	.byte	27,0,2,35,2,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_UA_Bits',0,4,209,4,3
+	.word	8217
+	.byte	14
+	.byte	'_Ifx_CPU_SWEVT_Bits',0,4,212,4,16,4,15
+	.byte	'EVTA',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'BBM',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'BOD',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'SUSP',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'CNT',0,4
+	.word	586
+	.byte	2,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	24,0,2,35,0,0,12
+	.byte	'Ifx_CPU_SWEVT_Bits',0,4,220,4,3
+	.word	8324
+	.byte	14
+	.byte	'_Ifx_CPU_SYSCON_Bits',0,4,223,4,16,4,15
+	.byte	'FCDSF',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'PROTEN',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'TPROTEN',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'IS',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'IT',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'RES',0,4
+	.word	586
+	.byte	11,16,2,35,0,15
+	.byte	'U1_IED',0,4
+	.word	586
+	.byte	1,15,2,35,0,15
+	.byte	'U1_IOS',0,4
+	.word	586
+	.byte	1,14,2,35,0,15
+	.byte	'reserved_18',0,4
+	.word	586
+	.byte	14,0,2,35,0,0,12
+	.byte	'Ifx_CPU_SYSCON_Bits',0,4,234,4,3
+	.word	8478
+	.byte	14
+	.byte	'_Ifx_CPU_TASK_ASI_Bits',0,4,237,4,16,4,15
+	.byte	'ASI',0,4
+	.word	586
+	.byte	5,27,2,35,0,15
+	.byte	'reserved_5',0,4
+	.word	586
+	.byte	27,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TASK_ASI_Bits',0,4,241,4,3
+	.word	8691
+	.byte	14
+	.byte	'_Ifx_CPU_TPS_CON_Bits',0,4,244,4,16,4,15
+	.byte	'TEXP0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'TEXP1',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'TEXP2',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'reserved_3',0,4
+	.word	586
+	.byte	13,16,2,35,0,15
+	.byte	'TTRAP',0,4
+	.word	586
+	.byte	1,15,2,35,0,15
+	.byte	'reserved_17',0,4
+	.word	586
+	.byte	15,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TPS_CON_Bits',0,4,252,4,3
+	.word	8789
+	.byte	14
+	.byte	'_Ifx_CPU_TPS_TIMER_Bits',0,4,255,4,16,4,15
+	.byte	'Timer',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TPS_TIMER_Bits',0,4,130,5,3
+	.word	8961
+	.byte	14
+	.byte	'_Ifx_CPU_TR_ADR_Bits',0,4,133,5,16,4,15
+	.byte	'ADDR',0,4
+	.word	586
+	.byte	32,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TR_ADR_Bits',0,4,136,5,3
+	.word	9041
+	.byte	14
+	.byte	'_Ifx_CPU_TR_EVT_Bits',0,4,139,5,16,4,15
+	.byte	'EVTA',0,4
+	.word	586
+	.byte	3,29,2,35,0,15
+	.byte	'BBM',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'BOD',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'SUSP',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'CNT',0,4
+	.word	586
+	.byte	2,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	4,20,2,35,0,15
+	.byte	'TYP',0,4
+	.word	586
+	.byte	1,19,2,35,0,15
+	.byte	'RNG',0,4
+	.word	586
+	.byte	1,18,2,35,0,15
+	.byte	'reserved_14',0,4
+	.word	586
+	.byte	1,17,2,35,0,15
+	.byte	'ASI_EN',0,4
+	.word	586
+	.byte	1,16,2,35,0,15
+	.byte	'ASI',0,4
+	.word	586
+	.byte	5,11,2,35,0,15
+	.byte	'reserved_21',0,4
+	.word	586
+	.byte	6,5,2,35,0,15
+	.byte	'AST',0,4
+	.word	586
+	.byte	1,4,2,35,0,15
+	.byte	'ALD',0,4
+	.word	586
+	.byte	1,3,2,35,0,15
+	.byte	'reserved_29',0,4
+	.word	586
+	.byte	3,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TR_EVT_Bits',0,4,156,5,3
+	.word	9114
+	.byte	14
+	.byte	'_Ifx_CPU_TRIG_ACC_Bits',0,4,159,5,16,4,15
+	.byte	'T0',0,4
+	.word	586
+	.byte	1,31,2,35,0,15
+	.byte	'T1',0,4
+	.word	586
+	.byte	1,30,2,35,0,15
+	.byte	'T2',0,4
+	.word	586
+	.byte	1,29,2,35,0,15
+	.byte	'T3',0,4
+	.word	586
+	.byte	1,28,2,35,0,15
+	.byte	'T4',0,4
+	.word	586
+	.byte	1,27,2,35,0,15
+	.byte	'T5',0,4
+	.word	586
+	.byte	1,26,2,35,0,15
+	.byte	'T6',0,4
+	.word	586
+	.byte	1,25,2,35,0,15
+	.byte	'T7',0,4
+	.word	586
+	.byte	1,24,2,35,0,15
+	.byte	'reserved_8',0,4
+	.word	586
+	.byte	24,0,2,35,0,0,12
+	.byte	'Ifx_CPU_TRIG_ACC_Bits',0,4,170,5,3
+	.word	9432
+	.byte	16,4,178,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	565
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_A',0,4,183,5,3
+	.word	9627
+	.byte	16,4,186,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	642
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_BIV',0,4,191,5,3
+	.word	9686
+	.byte	16,4,194,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	721
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_BTV',0,4,199,5,3
+	.word	9747
+	.byte	16,4,202,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	807
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CCNT',0,4,207,5,3
+	.word	9808
+	.byte	16,4,210,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	896
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CCTRL',0,4,215,5,3
+	.word	9870
+	.byte	16,4,218,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1042
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_COMPAT',0,4,223,5,3
+	.word	9933
+	.byte	16,4,226,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1169
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CORE_ID',0,4,231,5,3
+	.word	9997
+	.byte	16,4,234,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1267
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CPR_L',0,4,239,5,3
+	.word	10062
+	.byte	16,4,242,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1360
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CPR_U',0,4,247,5,3
+	.word	10125
+	.byte	16,4,250,5,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1453
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CPU_ID',0,4,255,5,3
+	.word	10188
+	.byte	16,4,130,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1561
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CPXE',0,4,135,6,3
+	.word	10252
+	.byte	16,4,138,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1648
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CREVT',0,4,143,6,3
+	.word	10314
+	.byte	16,4,146,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1802
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_CUS_ID',0,4,151,6,3
+	.word	10377
+	.byte	16,4,154,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1896
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_D',0,4,159,6,3
+	.word	10441
+	.byte	16,4,162,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	1959
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DATR',0,4,167,6,3
+	.word	10500
+	.byte	16,4,170,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2177
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DBGSR',0,4,175,6,3
+	.word	10562
+	.byte	16,4,178,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2392
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DBGTCR',0,4,183,6,3
+	.word	10625
+	.byte	16,4,186,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2486
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DCON0',0,4,191,6,3
+	.word	10689
+	.byte	16,4,194,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2602
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DCON2',0,4,199,6,3
+	.word	10752
+	.byte	16,4,202,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2703
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DCX',0,4,207,6,3
+	.word	10815
+	.byte	16,4,210,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2796
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DEADD',0,4,215,6,3
+	.word	10876
+	.byte	16,4,218,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2876
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DIEAR',0,4,223,6,3
+	.word	10939
+	.byte	16,4,226,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	2945
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DIETR',0,4,231,6,3
+	.word	11002
+	.byte	16,4,234,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3174
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DMS',0,4,239,6,3
+	.word	11065
+	.byte	16,4,242,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3267
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DPR_L',0,4,247,6,3
+	.word	11126
+	.byte	16,4,250,6,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3362
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DPR_U',0,4,255,6,3
+	.word	11189
+	.byte	16,4,130,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3457
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DPRE',0,4,135,7,3
+	.word	11252
+	.byte	16,4,138,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3547
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DPWE',0,4,143,7,3
+	.word	11314
+	.byte	16,4,146,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3637
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_DSTR',0,4,151,7,3
+	.word	11376
+	.byte	16,4,154,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	3961
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_EXEVT',0,4,159,7,3
+	.word	11438
+	.byte	16,4,162,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4115
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FCX',0,4,167,7,3
+	.word	11501
+	.byte	16,4,170,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4221
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_CON',0,4,175,7,3
+	.word	11562
+	.byte	16,4,178,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4570
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_OPC',0,4,183,7,3
+	.word	11632
+	.byte	16,4,186,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4730
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_PC',0,4,191,7,3
+	.word	11702
+	.byte	16,4,194,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4811
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC1',0,4,199,7,3
+	.word	11771
+	.byte	16,4,202,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4898
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC2',0,4,207,7,3
+	.word	11842
+	.byte	16,4,210,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	4985
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_FPU_TRAP_SRC3',0,4,215,7,3
+	.word	11913
+	.byte	16,4,218,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5072
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_ICNT',0,4,223,7,3
+	.word	11984
+	.byte	16,4,226,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5163
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_ICR',0,4,231,7,3
+	.word	12046
+	.byte	16,4,234,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5306
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_ISP',0,4,239,7,3
+	.word	12107
+	.byte	16,4,242,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5372
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_LCX',0,4,247,7,3
+	.word	12168
+	.byte	16,4,250,7,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5478
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_M1CNT',0,4,255,7,3
+	.word	12229
+	.byte	16,4,130,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5571
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_M2CNT',0,4,135,8,3
+	.word	12292
+	.byte	16,4,138,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5664
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_M3CNT',0,4,143,8,3
+	.word	12355
+	.byte	16,4,146,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5757
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PC',0,4,151,8,3
+	.word	12418
+	.byte	16,4,154,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5842
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PCON0',0,4,159,8,3
+	.word	12478
+	.byte	16,4,162,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	5958
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PCON1',0,4,167,8,3
+	.word	12541
+	.byte	16,4,170,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6069
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PCON2',0,4,175,8,3
+	.word	12604
+	.byte	16,4,178,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6170
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PCXI',0,4,183,8,3
+	.word	12667
+	.byte	16,4,186,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6300
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PIEAR',0,4,191,8,3
+	.word	12729
+	.byte	16,4,194,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6369
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PIETR',0,4,199,8,3
+	.word	12792
+	.byte	16,4,202,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6598
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PMA0',0,4,207,8,3
+	.word	12855
+	.byte	16,4,210,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6711
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PMA1',0,4,215,8,3
+	.word	12917
+	.byte	16,4,218,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6824
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PMA2',0,4,223,8,3
+	.word	12979
+	.byte	16,4,226,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	6915
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PSTR',0,4,231,8,3
+	.word	13041
+	.byte	16,4,234,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7118
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_PSW',0,4,239,8,3
+	.word	13103
+	.byte	16,4,242,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7361
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SEGEN',0,4,247,8,3
+	.word	13164
+	.byte	16,4,250,8,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7489
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SMACON',0,4,255,8,3
+	.word	13227
+	.byte	16,4,130,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7730
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_ACCENA',0,4,135,9,3
+	.word	13291
+	.byte	16,4,138,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7829
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_ACCENB',0,4,143,9,3
+	.word	13361
+	.byte	16,4,146,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	7920
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_ACCENA',0,4,151,9,3
+	.word	13431
+	.byte	16,4,154,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8011
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_ACCENB',0,4,159,9,3
+	.word	13505
+	.byte	16,4,162,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8110
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_LA',0,4,167,9,3
+	.word	13579
+	.byte	16,4,170,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8217
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SPROT_RGN_UA',0,4,175,9,3
+	.word	13649
+	.byte	16,4,178,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8324
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SWEVT',0,4,183,9,3
+	.word	13719
+	.byte	16,4,186,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8478
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_SYSCON',0,4,191,9,3
+	.word	13782
+	.byte	16,4,194,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8691
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TASK_ASI',0,4,199,9,3
+	.word	13846
+	.byte	16,4,202,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8789
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TPS_CON',0,4,207,9,3
+	.word	13912
+	.byte	16,4,210,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	8961
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TPS_TIMER',0,4,215,9,3
+	.word	13977
+	.byte	16,4,218,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	9041
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TR_ADR',0,4,223,9,3
+	.word	14044
+	.byte	16,4,226,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	9114
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TR_EVT',0,4,231,9,3
+	.word	14108
+	.byte	16,4,234,9,9,4,17
+	.byte	'U',0,4
+	.word	7763
+	.byte	2,35,0,17
+	.byte	'I',0,4
+	.word	152
+	.byte	2,35,0,17
+	.byte	'B',0,4
+	.word	9432
+	.byte	2,35,0,0,12
+	.byte	'Ifx_CPU_TRIG_ACC',0,4,239,9,3
+	.word	14172
+	.byte	14
+	.byte	'_Ifx_CPU_CPR',0,4,250,9,25,8,17
+	.byte	'L',0,4
+	.word	10062
+	.byte	2,35,0,17
+	.byte	'U',0,4
+	.word	10125
+	.byte	2,35,4,0,3
+	.word	14238
+	.byte	12
+	.byte	'Ifx_CPU_CPR',0,4,254,9,3
+	.word	14280
+	.byte	14
+	.byte	'_Ifx_CPU_DPR',0,4,129,10,25,8,17
+	.byte	'L',0,4
+	.word	11126
+	.byte	2,35,0,17
+	.byte	'U',0,4
+	.word	11189
+	.byte	2,35,4,0,3
+	.word	14306
+	.byte	12
+	.byte	'Ifx_CPU_DPR',0,4,133,10,3
+	.word	14348
+	.byte	14
+	.byte	'_Ifx_CPU_SPROT_RGN',0,4,136,10,25,16,17
+	.byte	'LA',0,4
+	.word	13579
+	.byte	2,35,0,17
+	.byte	'UA',0,4
+	.word	13649
+	.byte	2,35,4,17
+	.byte	'ACCENA',0,4
+	.word	13431
+	.byte	2,35,8,17
+	.byte	'ACCENB',0,4
+	.word	13505
+	.byte	2,35,12,0,3
+	.word	14374
+	.byte	12
+	.byte	'Ifx_CPU_SPROT_RGN',0,4,142,10,3
+	.word	14456
+	.byte	14
+	.byte	'_Ifx_CPU_TPS',0,4,145,10,25,16,17
+	.byte	'CON',0,4
+	.word	13912
+	.byte	2,35,0,18,12
+	.word	13977
+	.byte	19,2,0,17
+	.byte	'TIMER',0,12
+	.word	14520
+	.byte	2,35,4,0,3
+	.word	14488
+	.byte	12
+	.byte	'Ifx_CPU_TPS',0,4,149,10,3
+	.word	14545
+	.byte	14
+	.byte	'_Ifx_CPU_TR',0,4,152,10,25,8,17
+	.byte	'EVT',0,4
+	.word	14108
+	.byte	2,35,0,17
+	.byte	'ADR',0,4
+	.word	14044
+	.byte	2,35,4,0,3
+	.word	14571
+	.byte	12
+	.byte	'Ifx_CPU_TR',0,4,156,10,3
+	.word	14616
+	.byte	18,3
+	.word	228
+	.byte	19,2,0
+.L79:
+	.byte	3
+	.word	14641
+	.byte	18,12
+	.word	523
+	.byte	19,2,0
+.L80:
+	.byte	3
+	.word	14655
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L23:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,53,0,73,19,0,0,4,46,1,3,8,73
+	.byte	19,54,15,39,12,63,12,60,12,0,0,5,5,0,73,19,0,0,6,46,0,3,8,54,15,39,12,63,12,60,12,0,0,7,46,0,3,8,58,15
+	.byte	59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,8,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0
+	.byte	9,15,0,73,19,0,0,10,5,0,3,8,58,15,59,15,57,15,73,19,0,0,11,59,0,3,8,0,0,12,22,0,3,8,58,15,59,15,57,15
+	.byte	73,19,0,0,13,21,0,54,15,0,0,14,19,1,3,8,58,15,59,15,57,15,11,15,0,0,15,13,0,3,8,11,15,73,19,13,15,12,15
+	.byte	56,9,0,0,16,23,1,58,15,59,15,57,15,11,15,0,0,17,13,0,3,8,11,15,73,19,56,9,0,0,18,1,1,11,15,73,19,0,0,19
+	.byte	33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L24:
+	.word	.L86-.L85
+.L85:
+	.half	3
+	.word	.L88-.L87
+.L87:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\tricore_general\\ssc\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\BSW\\mcal_base\\general\\tricore\\inc\\TC27xC',0,0
+	.byte	'Mcal_TcLib.h',0,1,0,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0
+	.byte	'Platform_Types.h',0,2,0,0
+	.byte	'IfxCpu_regdef.h',0,3,0,0,0
+.L88:
+.L86:
+	.sdecl	'.debug_info',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_info'
+.L25:
+	.word	218
+	.half	3
+	.word	.L26
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L28,.L27
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'OSEKMP_UserEnableAllInterrupts',0,1,114,6,1,1,1
+	.word	.L10,.L59,.L9
+	.byte	4
+	.word	.L10,.L59
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_abbrev'
+.L26:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_line'
+.L27:
+	.word	.L90-.L89
+.L89:
+	.half	3
+	.word	.L92-.L91
+.L91:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L92:
+	.byte	5,3,7,0,5,2
+	.word	.L10
+	.byte	3,243,0,1,5,1,9
+	.half	.L93-.L10
+	.byte	3,1,1,7,9
+	.half	.L29-.L93
+	.byte	0,1,1
+.L90:
+	.sdecl	'.debug_ranges',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_ranges'
+.L28:
+	.word	-1,.L10,0,.L29-.L10,0,0
+	.sdecl	'.debug_info',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_info'
+.L30:
+	.word	220
+	.half	3
+	.word	.L31
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L33,.L32
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'OSEKMP_UserDisableAllInterrupts',0,1,137,1,6,1,1,1
+	.word	.L12,.L60,.L11
+	.byte	4
+	.word	.L12,.L60
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_abbrev'
+.L31:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_line'
+.L32:
+	.word	.L95-.L94
+.L94:
+	.half	3
+	.word	.L97-.L96
+.L96:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L97:
+	.byte	5,3,7,0,5,2
+	.word	.L12
+	.byte	3,139,1,1,5,1,9
+	.half	.L98-.L12
+	.byte	3,2,1,7,9
+	.half	.L34-.L98
+	.byte	0,1,1
+.L95:
+	.sdecl	'.debug_ranges',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_ranges'
+.L33:
+	.word	-1,.L12,0,.L34-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_info'
+.L35:
+	.word	241
+	.half	3
+	.word	.L36
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L38,.L37
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'OSEKMP_UserSuspendAllInterrupts',0,1,165,1,6,1,1,1
+	.word	.L14,.L61,.L13
+	.byte	4
+	.word	.L14,.L61
+	.byte	5
+	.byte	'CoreId',0,1,167,1,9
+	.word	.L62,.L63
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_abbrev'
+.L36:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_line'
+.L37:
+	.word	.L100-.L99
+.L99:
+	.half	3
+	.word	.L102-.L101
+.L101:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L102:
+	.byte	5,26,7,0,5,2
+	.word	.L14
+	.byte	3,169,1,1,5,6,9
+	.half	.L81-.L14
+	.byte	3,2,1,5,30,9
+	.half	.L103-.L81
+	.byte	1,5,3,9
+	.half	.L104-.L103
+	.byte	1,5,5,7,9
+	.half	.L105-.L104
+	.byte	3,3,1,9
+	.half	.L106-.L105
+	.byte	3,1,1,5,27,9
+	.half	.L107-.L106
+	.byte	1,5,38,9
+	.half	.L108-.L107
+	.byte	1,5,36,9
+	.half	.L109-.L108
+	.byte	1,5,5,9
+	.half	.L110-.L109
+	.byte	3,1,1,5,3,9
+	.half	.L2-.L110
+	.byte	3,2,1,5,27,9
+	.half	.L111-.L2
+	.byte	1,5,3,9
+	.half	.L112-.L111
+	.byte	1,5,27,9
+	.half	.L113-.L112
+	.byte	1,5,35,9
+	.half	.L114-.L113
+	.byte	1,5,1,9
+	.half	.L115-.L114
+	.byte	3,1,1,7,9
+	.half	.L39-.L115
+	.byte	0,1,1
+.L100:
+	.sdecl	'.debug_ranges',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_ranges'
+.L38:
+	.word	-1,.L14,0,.L39-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_info'
+.L40:
+	.word	240
+	.half	3
+	.word	.L41
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L43,.L42
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'OSEKMP_UserResumeAllInterrupts',0,1,202,1,6,1,1,1
+	.word	.L16,.L64,.L15
+	.byte	4
+	.word	.L16,.L64
+	.byte	5
+	.byte	'CoreId',0,1,204,1,9
+	.word	.L62,.L65
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_abbrev'
+.L41:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_line'
+.L42:
+	.word	.L117-.L116
+.L116:
+	.half	3
+	.word	.L119-.L118
+.L118:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L119:
+	.byte	5,26,7,0,5,2
+	.word	.L16
+	.byte	3,206,1,1,5,7,9
+	.half	.L82-.L16
+	.byte	3,2,1,5,31,9
+	.half	.L120-.L82
+	.byte	1,5,3,9
+	.half	.L121-.L120
+	.byte	1,5,5,7,9
+	.half	.L122-.L121
+	.byte	3,2,1,5,29,9
+	.half	.L123-.L122
+	.byte	1,5,5,9
+	.half	.L124-.L123
+	.byte	1,5,29,9
+	.half	.L125-.L124
+	.byte	1,5,37,9
+	.half	.L126-.L125
+	.byte	1,5,7,9
+	.half	.L3-.L126
+	.byte	3,3,1,5,31,9
+	.half	.L127-.L3
+	.byte	1,5,3,9
+	.half	.L128-.L127
+	.byte	1,5,9,7,9
+	.half	.L129-.L128
+	.byte	3,2,1,5,31,9
+	.half	.L130-.L129
+	.byte	1,5,5,9
+	.half	.L131-.L130
+	.byte	1,5,7,7,9
+	.half	.L132-.L131
+	.byte	3,3,1,5,1,9
+	.half	.L4-.L132
+	.byte	3,3,1,7,9
+	.half	.L44-.L4
+	.byte	0,1,1
+.L117:
+	.sdecl	'.debug_ranges',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_ranges'
+.L43:
+	.word	-1,.L16,0,.L44-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_info'
+.L45:
+	.word	247
+	.half	3
+	.word	.L46
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L48,.L47
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Os_GetCurrentStackArea',0,1,243,1,6,1,1,1
+	.word	.L18,.L66,.L17
+	.byte	4
+	.byte	'start',0,1,243,1,37
+	.word	.L67,.L68
+	.byte	4
+	.byte	'end',0,1,243,1,51
+	.word	.L67,.L69
+	.byte	5
+	.word	.L18,.L66
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_abbrev'
+.L46:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_line'
+.L47:
+	.word	.L134-.L133
+.L133:
+	.half	3
+	.word	.L136-.L135
+.L135:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L136:
+	.byte	5,3,7,0,5,2
+	.word	.L18
+	.byte	3,246,1,1,7,9
+	.half	.L6-.L18
+	.byte	3,2,1,5,1,7,9
+	.half	.L7-.L6
+	.byte	3,2,1,7,9
+	.half	.L49-.L7
+	.byte	0,1,1
+.L134:
+	.sdecl	'.debug_ranges',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_ranges'
+.L48:
+	.word	-1,.L18,0,.L49-.L18,0,0
+	.sdecl	'.debug_info',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_info'
+.L50:
+	.word	318
+	.half	3
+	.word	.L51
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1
+	.word	.L53,.L52
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Os_UpdateRegSV',0,1,150,2,6,1,1,1
+	.word	.L20,.L70,.L19
+	.byte	4
+	.byte	'Address',0,1,150,2,39
+	.word	.L71,.L72
+	.byte	4
+	.byte	'SetMask',0,1,150,2,54
+	.word	.L73,.L74
+	.byte	4
+	.byte	'ClearMask',0,1,150,2,69
+	.word	.L73,.L75
+	.byte	4
+	.byte	'InitProtectionType',0,1,151,2,35
+	.word	.L62,.L76
+	.byte	4
+	.byte	'Area',0,1,151,2,61
+	.word	.L77,.L78
+	.byte	5
+	.word	.L20,.L70
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_abbrev'
+.L51:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_line'
+.L52:
+	.word	.L138-.L137
+.L137:
+	.half	3
+	.word	.L140-.L139
+.L139:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0,0,0,0,0
+.L140:
+	.byte	5,6,7,0,5,2
+	.word	.L20
+	.byte	3,149,2,1,5,50,9
+	.half	.L84-.L20
+	.byte	3,3,1,5,3,9
+	.half	.L83-.L84
+	.byte	3,1,1,5,1,7,9
+	.half	.L8-.L83
+	.byte	3,1,1,7,9
+	.half	.L54-.L8
+	.byte	0,1,1
+.L138:
+	.sdecl	'.debug_ranges',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_ranges'
+.L53:
+	.word	-1,.L20,0,.L54-.L20,0,0
+	.sdecl	'.debug_info',debug,cluster('Os_IntSaveDisableCounter')
+	.sect	'.debug_info'
+.L55:
+	.word	189
+	.half	3
+	.word	.L56
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L21
+	.byte	3
+	.byte	'Os_IntSaveDisableCounter',0,2,83,23
+	.word	.L79
+	.byte	5,3
+	.word	Os_IntSaveDisableCounter
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Os_IntSaveDisableCounter')
+	.sect	'.debug_abbrev'
+.L56:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('Os_SavedIntLevelNested')
+	.sect	'.debug_info'
+.L57:
+	.word	187
+	.half	3
+	.word	.L58
+	.byte	4,1
+	.byte	'..\\BSW\\mcal_base\\integration_general\\src\\Os.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Workspace_AURIX\\DEVICECONTROL_MCAL\\Debug\\',0,1,1,2
+	.word	.L21
+	.byte	3
+	.byte	'Os_SavedIntLevelNested',0,2,84,24
+	.word	.L80
+	.byte	5,3
+	.word	Os_SavedIntLevelNested
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Os_SavedIntLevelNested')
+	.sect	'.debug_abbrev'
+.L58:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_loc',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L60-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_loc'
+.L9:
+	.word	-1,.L10,0,.L59-.L10
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_loc'
+.L65:
+	.word	-1,.L16,.L82-.L16,.L64-.L16
+	.half	5
+	.byte	144,33,157,32,0
+	.word	0,0
+.L15:
+	.word	-1,.L16,0,.L64-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_loc'
+.L63:
+	.word	-1,.L14,.L81-.L14,.L61-.L14
+	.half	5
+	.byte	144,33,157,32,0
+	.word	0,0
+.L13:
+	.word	-1,.L14,0,.L61-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_loc'
+.L17:
+	.word	-1,.L18,0,.L66-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L69:
+	.word	-1,.L18,0,.L66-.L18
+	.half	1
+	.byte	101
+	.word	0,0
+.L68:
+	.word	-1,.L18,0,.L66-.L18
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_loc'
+.L72:
+	.word	-1,.L20,0,.L83-.L20
+	.half	1
+	.byte	100
+	.word	0,0
+.L78:
+	.word	-1,.L20,0,.L83-.L20
+	.half	5
+	.byte	144,35,157,32,32
+	.word	.L84-.L20,.L70-.L20
+	.half	5
+	.byte	144,39,157,32,32
+	.word	0,0
+.L75:
+	.word	-1,.L20,0,.L83-.L20
+	.half	5
+	.byte	144,34,157,32,32
+	.word	0,0
+.L76:
+	.word	-1,.L20,0,.L83-.L20
+	.half	5
+	.byte	144,35,157,32,0
+	.word	0,0
+.L19:
+	.word	-1,.L20,0,.L70-.L20
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L74:
+	.word	-1,.L20,0,.L83-.L20
+	.half	5
+	.byte	144,34,157,32,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L141:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('OSEKMP_UserEnableAllInterrupts')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L141,.L10,.L59-.L10
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('OSEKMP_UserDisableAllInterrupts')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L141,.L12,.L60-.L12
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('OSEKMP_UserSuspendAllInterrupts')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L141,.L14,.L61-.L14
+	.sdecl	'.debug_frame',debug,cluster('OSEKMP_UserResumeAllInterrupts')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L141,.L16,.L64-.L16
+	.sdecl	'.debug_frame',debug,cluster('Os_GetCurrentStackArea')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L141,.L18,.L66-.L18
+	.byte	8,18,8,19,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Os_UpdateRegSV')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L141,.L20,.L70-.L20
+
+; ..\BSW\mcal_base\integration_general\src\Os.c	   284  
+; ..\BSW\mcal_base\integration_general\src\Os.c	   285  
+
+	; Module end
