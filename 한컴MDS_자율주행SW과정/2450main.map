@@ -1,0 +1,128 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+CODE             0x30000000         0x04000000         rw
+_ISR_START       0x33ffff00         0x00000100         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000      0x354
+ *s3c2450_startup.o(.text)
+ .text          0x30000000      0x290 s3c2450_startup.o
+                0x30000000                _start
+                0x300000b0                ResetHandler
+                0x30000184                IsrIRQ
+ *(.text)
+ .text          0x30000290       0xc4 Main.o
+                0x30000290                Main
+                0x30000354                . = ALIGN (0x4)
+
+.glue_7         0x30000354        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x30000354        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x30000354        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x30000354        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.rodata         0x00000000        0x0
+                0x00000000                rodata_start_addr = .
+ *(.rodata)
+ *(.rodata.*)
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                rodata_end_addr = .
+
+.data           0x30000354        0x4
+                0x30000354                data_start_addr = .
+                0x30000354                __DATA_START__ = .
+ *(.data)
+ .data          0x30000354        0x0 s3c2450_startup.o
+ .data          0x30000354        0x0 Main.o
+ *(.data.*)
+                0x30000358                . = ALIGN (0x8)
+ *fill*         0x30000354        0x4 00
+                0x30000358                data_end_addr = .
+                0x30000358                __DATA_END__ = .
+
+.bss            0x30000358        0x0
+                0x30000358                bss_start_addr = .
+                0x30000358                __BSS_START__ = .
+ *(.bss)
+ .bss           0x30000358        0x0 s3c2450_startup.o
+ .bss           0x30000358        0x0 Main.o
+ *(.bss.*)
+ *(COMMON)
+                0x30000358                . = ALIGN (0x8)
+                0x30000358                bss_end_addr = .
+                0x30000358                __BSS_END__ = .
+                0x30000358                end = .
+                0x30000358                PROVIDE (end, .)
+
+.int_vec        0x33ffff00       0x24
+ s3c2450_startup.o(int_vect)
+ int_vect       0x33ffff00       0x24 s3c2450_startup.o
+LOAD Main.o
+LOAD s3c2450_startup.o
+LOAD /root/arm-2011.03/arm-none-eabi/lib/libc.a
+LOAD /root/arm-2011.03/lib/gcc/arm-none-eabi/4.5.2/libgcc.a
+LOAD /root/arm-2011.03/lib/gcc/arm-none-eabi/4.5.2/libgcc.a
+OUTPUT(MDS2450 elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x28
+ .ARM.attributes
+                0x00000000       0x1c s3c2450_startup.o
+ .ARM.attributes
+                0x0000001c       0x2c Main.o
+
+.comment        0x00000000       0x2a
+ .comment       0x00000000       0x2a Main.o
+                                 0x2b (size before relaxing)
+
+.debug_line     0x00000000      0x100
+ .debug_line    0x00000000       0xa9 s3c2450_startup.o
+ .debug_line    0x000000a9       0x57 Main.o
+
+.debug_info     0x00000000       0xba
+ .debug_info    0x00000000       0x68 s3c2450_startup.o
+ .debug_info    0x00000068       0x52 Main.o
+
+.debug_abbrev   0x00000000       0x57
+ .debug_abbrev  0x00000000       0x14 s3c2450_startup.o
+ .debug_abbrev  0x00000014       0x43 Main.o
+
+.debug_aranges  0x00000000       0x40
+ .debug_aranges
+                0x00000000       0x20 s3c2450_startup.o
+ .debug_aranges
+                0x00000020       0x20 Main.o
+
+.debug_loc      0x00000000       0x2c
+ .debug_loc     0x00000000       0x2c Main.o
+
+.debug_pubnames
+                0x00000000       0x1b
+ .debug_pubnames
+                0x00000000       0x1b Main.o
+
+.debug_str      0x00000000       0x45
+ .debug_str     0x00000000       0x45 Main.o
+
+.debug_frame    0x00000000       0x30
+ .debug_frame   0x00000000       0x30 Main.o
+
+Cross Reference Table
+
+Symbol                                            File
+IsrIRQ                                            s3c2450_startup.o
+Main                                              Main.o
+                                                  s3c2450_startup.o
+ResetHandler                                      s3c2450_startup.o
+_start                                            s3c2450_startup.o

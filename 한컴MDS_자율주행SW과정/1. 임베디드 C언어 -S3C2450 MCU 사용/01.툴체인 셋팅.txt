@@ -1,0 +1,31 @@
+
+#크로스 컴파일러 Path에 등록
+etc에서 gedit(혹은 vi 에디터) environment
+/root/arm-2011.03/bin 추가
+source /etc/environment
+(소스라는 명령어가 저 환경을 실행 시켜주고, 재부팅한 효과를 나타냄)
+
+#tftp데몬 생성
+cd /etc/xinetd.d (슈퍼 데몬)
+netstat -au (network statistics통계)
+tftp : 서버=host=ubuntu . (t 가 붙은거는 임베디드에 많이 쓰임)
+ifconfig eth3 192.168.20.90 up
+
+#ip 영구적으로 설정
+etc/network/interfaces 파일을 수정
+auto eth0
+iface eth0 inet static
+address 192.168.11.111
+netmask 255.255.255.0
+gateway 192.68.11.1
+
+
+#부트로더 환경설정
+부트로더에서 printenv
+부트로더에서 set serverip 192.168.20.90
+부트로더에서 set ipaddr 192.168.20.11 //1
+부트로더에서 saveenv
+vm에서 이더넷 연결 시킴
+서버 ip 셋팅 : ifconfig eth숫자 192.168.20.90 up 
+부트로더에서 tftp 30000000 MDS2450.bin
+go 0x30000000
